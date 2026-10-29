@@ -8,7 +8,7 @@
     "solid2-aria",
     "solidjs"
   ],
-  "license": "MIT",
+  "license": "(MIT AND Apache-2.0)",
   "author": {
     "name": "pekochan069",
     "email": "pekochan069@gmail.com",
