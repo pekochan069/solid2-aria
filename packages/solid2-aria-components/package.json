@@ -1,0 +1,439 @@
+{
+  "name": "@solid2-aria/components",
+  "version": "0.0.1",
+  "private": false,
+  "description": "Styleable accessible components for Solid 2",
+  "keywords": [
+    "solid",
+    "solid2-aria",
+    "solidjs"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "pekochan069",
+    "email": "pekochan069@gmail.com",
+    "url": "https://github.com/pekochan069/solid2-aria.git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pekochan069/solid2-aria.git",
+    "directory": "packages/solid2-aria-components"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/browser/index.d.ts",
+      "browser": "./dist/browser/index.js",
+      "default": "./dist/server/index.js"
+    },
+    "./autocomplete": {
+      "types": "./dist/browser/autocomplete.d.ts",
+      "browser": "./dist/browser/autocomplete.js",
+      "default": "./dist/server/autocomplete.js"
+    },
+    "./breadcrumbs": {
+      "types": "./dist/browser/breadcrumbs.d.ts",
+      "browser": "./dist/browser/breadcrumbs.js",
+      "default": "./dist/server/breadcrumbs.js"
+    },
+    "./button": {
+      "types": "./dist/browser/button.d.ts",
+      "browser": "./dist/browser/button.js",
+      "default": "./dist/server/button.js"
+    },
+    "./calendar": {
+      "types": "./dist/browser/calendar.d.ts",
+      "browser": "./dist/browser/calendar.js",
+      "default": "./dist/server/calendar.js"
+    },
+    "./checkbox": {
+      "types": "./dist/browser/checkbox.d.ts",
+      "browser": "./dist/browser/checkbox.js",
+      "default": "./dist/server/checkbox.js"
+    },
+    "./collection": {
+      "types": "./dist/browser/collection.d.ts",
+      "browser": "./dist/browser/collection.js",
+      "default": "./dist/server/collection.js"
+    },
+    "./collection-dnd": {
+      "types": "./dist/browser/collection-dnd.d.ts",
+      "browser": "./dist/browser/collection-dnd.js",
+      "default": "./dist/server/collection-dnd.js"
+    },
+    "./color-area": {
+      "types": "./dist/browser/color-area.d.ts",
+      "browser": "./dist/browser/color-area.js",
+      "default": "./dist/server/color-area.js"
+    },
+    "./color-field": {
+      "types": "./dist/browser/color-field.d.ts",
+      "browser": "./dist/browser/color-field.js",
+      "default": "./dist/server/color-field.js"
+    },
+    "./color-picker": {
+      "types": "./dist/browser/color-picker.d.ts",
+      "browser": "./dist/browser/color-picker.js",
+      "default": "./dist/server/color-picker.js"
+    },
+    "./color-slider": {
+      "types": "./dist/browser/color-slider.d.ts",
+      "browser": "./dist/browser/color-slider.js",
+      "default": "./dist/server/color-slider.js"
+    },
+    "./color-swatch": {
+      "types": "./dist/browser/color-swatch.d.ts",
+      "browser": "./dist/browser/color-swatch.js",
+      "default": "./dist/server/color-swatch.js"
+    },
+    "./color-swatch-picker": {
+      "types": "./dist/browser/color-swatch-picker.d.ts",
+      "browser": "./dist/browser/color-swatch-picker.js",
+      "default": "./dist/server/color-swatch-picker.js"
+    },
+    "./color-thumb": {
+      "types": "./dist/browser/color-thumb.d.ts",
+      "browser": "./dist/browser/color-thumb.js",
+      "default": "./dist/server/color-thumb.js"
+    },
+    "./color-wheel": {
+      "types": "./dist/browser/color-wheel.d.ts",
+      "browser": "./dist/browser/color-wheel.js",
+      "default": "./dist/server/color-wheel.js"
+    },
+    "./combo-box": {
+      "types": "./dist/browser/combo-box.d.ts",
+      "browser": "./dist/browser/combo-box.js",
+      "default": "./dist/server/combo-box.js"
+    },
+    "./create-drag-and-drop": {
+      "types": "./dist/browser/create-drag-and-drop.d.ts",
+      "browser": "./dist/browser/create-drag-and-drop.js",
+      "default": "./dist/server/create-drag-and-drop.js"
+    },
+    "./date-field": {
+      "types": "./dist/browser/date-field.d.ts",
+      "browser": "./dist/browser/date-field.js",
+      "default": "./dist/server/date-field.js"
+    },
+    "./date-picker": {
+      "types": "./dist/browser/date-picker.d.ts",
+      "browser": "./dist/browser/date-picker.js",
+      "default": "./dist/server/date-picker.js"
+    },
+    "./dialog": {
+      "types": "./dist/browser/dialog.d.ts",
+      "browser": "./dist/browser/dialog.js",
+      "default": "./dist/server/dialog.js"
+    },
+    "./disclosure": {
+      "types": "./dist/browser/disclosure.d.ts",
+      "browser": "./dist/browser/disclosure.js",
+      "default": "./dist/server/disclosure.js"
+    },
+    "./drag-and-drop": {
+      "types": "./dist/browser/drag-and-drop.d.ts",
+      "browser": "./dist/browser/drag-and-drop.js",
+      "default": "./dist/server/drag-and-drop.js"
+    },
+    "./drop-zone": {
+      "types": "./dist/browser/drop-zone.d.ts",
+      "browser": "./dist/browser/drop-zone.js",
+      "default": "./dist/server/drop-zone.js"
+    },
+    "./field-error": {
+      "types": "./dist/browser/field-error.d.ts",
+      "browser": "./dist/browser/field-error.js",
+      "default": "./dist/server/field-error.js"
+    },
+    "./file-trigger": {
+      "types": "./dist/browser/file-trigger.d.ts",
+      "browser": "./dist/browser/file-trigger.js",
+      "default": "./dist/server/file-trigger.js"
+    },
+    "./form": {
+      "types": "./dist/browser/form.d.ts",
+      "browser": "./dist/browser/form.js",
+      "default": "./dist/server/form.js"
+    },
+    "./grid-layout": {
+      "types": "./dist/browser/grid-layout.d.ts",
+      "browser": "./dist/browser/grid-layout.js",
+      "default": "./dist/server/grid-layout.js"
+    },
+    "./grid-list": {
+      "types": "./dist/browser/grid-list.d.ts",
+      "browser": "./dist/browser/grid-list.js",
+      "default": "./dist/server/grid-list.js"
+    },
+    "./group": {
+      "types": "./dist/browser/group.d.ts",
+      "browser": "./dist/browser/group.js",
+      "default": "./dist/server/group.js"
+    },
+    "./header": {
+      "types": "./dist/browser/header.d.ts",
+      "browser": "./dist/browser/header.js",
+      "default": "./dist/server/header.js"
+    },
+    "./heading": {
+      "types": "./dist/browser/heading.d.ts",
+      "browser": "./dist/browser/heading.js",
+      "default": "./dist/server/heading.js"
+    },
+    "./hidden-date-input": {
+      "types": "./dist/browser/hidden-date-input.d.ts",
+      "browser": "./dist/browser/hidden-date-input.js",
+      "default": "./dist/server/hidden-date-input.js"
+    },
+    "./input": {
+      "types": "./dist/browser/input.d.ts",
+      "browser": "./dist/browser/input.js",
+      "default": "./dist/server/input.js"
+    },
+    "./keyboard": {
+      "types": "./dist/browser/keyboard.d.ts",
+      "browser": "./dist/browser/keyboard.js",
+      "default": "./dist/server/keyboard.js"
+    },
+    "./label": {
+      "types": "./dist/browser/label.d.ts",
+      "browser": "./dist/browser/label.js",
+      "default": "./dist/server/label.js"
+    },
+    "./link": {
+      "types": "./dist/browser/link.d.ts",
+      "browser": "./dist/browser/link.js",
+      "default": "./dist/server/link.js"
+    },
+    "./list-box": {
+      "types": "./dist/browser/list-box.d.ts",
+      "browser": "./dist/browser/list-box.js",
+      "default": "./dist/server/list-box.js"
+    },
+    "./menu": {
+      "types": "./dist/browser/menu.d.ts",
+      "browser": "./dist/browser/menu.js",
+      "default": "./dist/server/menu.js"
+    },
+    "./meter": {
+      "types": "./dist/browser/meter.d.ts",
+      "browser": "./dist/browser/meter.js",
+      "default": "./dist/server/meter.js"
+    },
+    "./modal": {
+      "types": "./dist/browser/modal.d.ts",
+      "browser": "./dist/browser/modal.js",
+      "default": "./dist/server/modal.js"
+    },
+    "./navigation-tree": {
+      "types": "./dist/browser/navigation-tree.d.ts",
+      "browser": "./dist/browser/navigation-tree.js",
+      "default": "./dist/server/navigation-tree.js"
+    },
+    "./number-field": {
+      "types": "./dist/browser/number-field.d.ts",
+      "browser": "./dist/browser/number-field.js",
+      "default": "./dist/server/number-field.js"
+    },
+    "./overlay-arrow": {
+      "types": "./dist/browser/overlay-arrow.d.ts",
+      "browser": "./dist/browser/overlay-arrow.js",
+      "default": "./dist/server/overlay-arrow.js"
+    },
+    "./overlay-contexts": {
+      "types": "./dist/browser/overlay-contexts.d.ts",
+      "browser": "./dist/browser/overlay-contexts.js",
+      "default": "./dist/server/overlay-contexts.js"
+    },
+    "./popover": {
+      "types": "./dist/browser/popover.d.ts",
+      "browser": "./dist/browser/popover.js",
+      "default": "./dist/server/popover.js"
+    },
+    "./preview-trigger": {
+      "types": "./dist/browser/preview-trigger.d.ts",
+      "browser": "./dist/browser/preview-trigger.js",
+      "default": "./dist/server/preview-trigger.js"
+    },
+    "./progress-bar": {
+      "types": "./dist/browser/progress-bar.d.ts",
+      "browser": "./dist/browser/progress-bar.js",
+      "default": "./dist/server/progress-bar.js"
+    },
+    "./radio-group": {
+      "types": "./dist/browser/radio-group.d.ts",
+      "browser": "./dist/browser/radio-group.js",
+      "default": "./dist/server/radio-group.js"
+    },
+    "./search-field": {
+      "types": "./dist/browser/search-field.d.ts",
+      "browser": "./dist/browser/search-field.js",
+      "default": "./dist/server/search-field.js"
+    },
+    "./select": {
+      "types": "./dist/browser/select.d.ts",
+      "browser": "./dist/browser/select.js",
+      "default": "./dist/server/select.js"
+    },
+    "./selection-indicator": {
+      "types": "./dist/browser/selection-indicator.d.ts",
+      "browser": "./dist/browser/selection-indicator.js",
+      "default": "./dist/server/selection-indicator.js"
+    },
+    "./separator": {
+      "types": "./dist/browser/separator.d.ts",
+      "browser": "./dist/browser/separator.js",
+      "default": "./dist/server/separator.js"
+    },
+    "./shared-element-transition": {
+      "types": "./dist/browser/shared-element-transition.d.ts",
+      "browser": "./dist/browser/shared-element-transition.js",
+      "default": "./dist/server/shared-element-transition.js"
+    },
+    "./sheet": {
+      "types": "./dist/browser/sheet.d.ts",
+      "browser": "./dist/browser/sheet.js",
+      "default": "./dist/server/sheet.js"
+    },
+    "./slider": {
+      "types": "./dist/browser/slider.d.ts",
+      "browser": "./dist/browser/slider.js",
+      "default": "./dist/server/slider.js"
+    },
+    "./switch": {
+      "types": "./dist/browser/switch.d.ts",
+      "browser": "./dist/browser/switch.js",
+      "default": "./dist/server/switch.js"
+    },
+    "./table": {
+      "types": "./dist/browser/table.d.ts",
+      "browser": "./dist/browser/table.js",
+      "default": "./dist/server/table.js"
+    },
+    "./table-layout": {
+      "types": "./dist/browser/table-layout.d.ts",
+      "browser": "./dist/browser/table-layout.js",
+      "default": "./dist/server/table-layout.js"
+    },
+    "./tabs": {
+      "types": "./dist/browser/tabs.d.ts",
+      "browser": "./dist/browser/tabs.js",
+      "default": "./dist/server/tabs.js"
+    },
+    "./tag-group": {
+      "types": "./dist/browser/tag-group.d.ts",
+      "browser": "./dist/browser/tag-group.js",
+      "default": "./dist/server/tag-group.js"
+    },
+    "./text": {
+      "types": "./dist/browser/text.d.ts",
+      "browser": "./dist/browser/text.js",
+      "default": "./dist/server/text.js"
+    },
+    "./text-area": {
+      "types": "./dist/browser/text-area.d.ts",
+      "browser": "./dist/browser/text-area.js",
+      "default": "./dist/server/text-area.js"
+    },
+    "./text-field": {
+      "types": "./dist/browser/text-field.d.ts",
+      "browser": "./dist/browser/text-field.js",
+      "default": "./dist/server/text-field.js"
+    },
+    "./toast": {
+      "types": "./dist/browser/toast.d.ts",
+      "browser": "./dist/browser/toast.js",
+      "default": "./dist/server/toast.js"
+    },
+    "./toggle-button": {
+      "types": "./dist/browser/toggle-button.d.ts",
+      "browser": "./dist/browser/toggle-button.js",
+      "default": "./dist/server/toggle-button.js"
+    },
+    "./toggle-button-group": {
+      "types": "./dist/browser/toggle-button-group.d.ts",
+      "browser": "./dist/browser/toggle-button-group.js",
+      "default": "./dist/server/toggle-button-group.js"
+    },
+    "./token-field": {
+      "types": "./dist/browser/token-field.d.ts",
+      "browser": "./dist/browser/token-field.js",
+      "default": "./dist/server/token-field.js"
+    },
+    "./toolbar": {
+      "types": "./dist/browser/toolbar.d.ts",
+      "browser": "./dist/browser/toolbar.js",
+      "default": "./dist/server/toolbar.js"
+    },
+    "./tooltip": {
+      "types": "./dist/browser/tooltip.d.ts",
+      "browser": "./dist/browser/tooltip.js",
+      "default": "./dist/server/tooltip.js"
+    },
+    "./tree": {
+      "types": "./dist/browser/tree.d.ts",
+      "browser": "./dist/browser/tree.js",
+      "default": "./dist/server/tree.js"
+    },
+    "./tree-drop-target-delegate": {
+      "types": "./dist/browser/tree-drop-target-delegate.d.ts",
+      "browser": "./dist/browser/tree-drop-target-delegate.js",
+      "default": "./dist/server/tree-drop-target-delegate.js"
+    },
+    "./utils": {
+      "types": "./dist/browser/utils.d.ts",
+      "browser": "./dist/browser/utils.js",
+      "default": "./dist/server/utils.js"
+    },
+    "./virtualizer": {
+      "types": "./dist/browser/virtualizer.d.ts",
+      "browser": "./dist/browser/virtualizer.js",
+      "default": "./dist/server/virtualizer.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "prepack": "bun run build",
+    "check-types": "tsrs --noEmit",
+    "check": "ultracite check",
+    "fix": "ultracite fix",
+    "test": "bun test --conditions=browser --conditions=development --preload ./test/setup.ts",
+    "check-port-coverage": "bun scripts/check-port-coverage.ts",
+    "generate-public-barrel": "bun scripts/generate-public-barrel.ts",
+    "check-build": "bun scripts/check-build.ts"
+  },
+  "dependencies": {
+    "@internationalized/date": "^3.12.4",
+    "@internationalized/string": "^3.2.10",
+    "@solid2-aria/core": "^0.0.1",
+    "@solid2-aria/stately": "^0.0.1",
+    "@solid2-aria/types-shared": "^0.0.1",
+    "@solid2-aria/types-shared-web": "^0.0.1"
+  },
+  "devDependencies": {
+    "@solidjs/compiler": "^2.0.0-rc.17",
+    "@solidjs/web": "^2.0.0-rc.17",
+    "@types/bun": "^1.4.4",
+    "happy-dom": "^21.0.4",
+    "solid-js": "^2.0.0-rc.17",
+    "tsdown": "^0.23.2",
+    "tsrs": "^0.20.0-ts7.1.0-beta",
+    "typescript": "^7.1.0-beta"
+  },
+  "peerDependencies": {
+    "@solidjs/web": "^2.0.0-rc.17",
+    "solid-js": "^2.0.0-rc.17"
+  }
+}

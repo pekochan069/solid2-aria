@@ -1,0 +1,49 @@
+{
+  "name": "@internal/plugins",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "pekochan069",
+    "email": "pekochan069@gmail.com",
+    "url": "https://github.com/pekochan069/solid2-aria.git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pekochan069/solid2-aria.git",
+    "directory": "packages/internal/plugins"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "type": "module",
+  "exports": {
+    "./vite-plugin-satteri": "./dist/vite-plugin-satteri.js",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "check-types": "tsrs --noEmit",
+    "check": "ultracite check",
+    "fix": "ultracite fix"
+  },
+  "dependencies": {
+    "satteri": "^0.11.1",
+    "satteri-autolink-headings": "^0.2.0",
+    "satteri-callouts": "^1.0.1",
+    "satteri-slug": "^0.2.0",
+    "vite": "^8.3.5"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.4",
+    "@types/node": "^26.6.5",
+    "tsdown": "^0.23.2",
+    "typescript": "^7.1.0-beta"
+  }
+}

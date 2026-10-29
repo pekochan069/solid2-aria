@@ -1,0 +1,19 @@
+@solid2-aria/types third-party notices
+================================
+
+This package contains type declarations derived from Adobe React Spectrum.
+Upstream: https://github.com/adobe/react-spectrum
+Reference revision: 261344335e54265b2d02dc57a43b911a718de707
+Upstream sources: packages/@react-types/*/src.
+
+Derived files in src/ retain their original copyright years, license
+notices, upstream paths, and modification notices. Modified for Solid Aria:
+Solid 2 type declarations, renderer imports, module organization, and formatting.
+Adobe-derived material remains licensed under Apache-2.0. The unmodified
+license is in LICENSES/Apache-2.0.txt. The unmodified upstream NOTICE.txt is
+in LICENSES/react-spectrum-NOTICE.txt; it also describes material not included
+in this package.
+
+Independently authored Solid Aria material is covered by the MIT license in
+LICENSE. That license does not replace the notices on Adobe-derived files.
+This package introduces no upstream JSON translations.

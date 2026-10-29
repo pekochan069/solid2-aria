@@ -1,0 +1,29 @@
+{
+  "$schema": "https://turborepo.dev/schema.json",
+  "tasks": {
+    "build": {
+      "outputs": ["dist/**"],
+      "dependsOn": ["^build"]
+    },
+    "check-types": {
+      "dependsOn": ["^check-types"]
+    },
+    "check-compatibility": {},
+    "@solid2-aria/core#check-compatibility": {
+      "dependsOn": ["^build", "build"]
+    },
+    "@solid2-aria/tanstack-charts#check-compatibility": {
+      "dependsOn": ["^build", "build"]
+    },
+    "dev": {
+      "persistent": true,
+      "cache": false
+    },
+    "check": {
+      "dependsOn": ["^check"]
+    },
+    "fix": {
+      "dependsOn": ["^fix"]
+    }
+  }
+}

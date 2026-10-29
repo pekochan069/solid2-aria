@@ -1,0 +1,20 @@
+TanStack Charts Solid 2 third-party notices
+=========================================
+
+src/index.tsx is derived from TanStack/charts:
+https://github.com/TanStack/charts
+packages/solid-charts/src/Chart.tsx and packages/solid-charts/src/types.ts,
+as distributed by @tanstack/charts 1.1.0.
+Copyright (c) 2026-present Tanner Linsley
+The upstream MIT license is reproduced verbatim in TANSTACK-LICENSE and
+retained in src/index.tsx. Its copyright and license were compared with the installed
+1.1.0 package and the upstream repository LICENSE during extraction.
+
+Modified for Solid Aria: Solid 2 renderer imports, reactive props,
+compute/apply effects, owner-scoped mount and teardown, callback refs,
+control-flow accessors, tooltip portals, and browser/server packaging.
+
+Build configuration and verification scripts are independently authored.
+Solid Aria contributions use the MIT license in LICENSE, Copyright (c) 2026
+pekochan069. This license does not replace the upstream license and notices.
+This package introduces no Adobe-derived material or JSON translations.

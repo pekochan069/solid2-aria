@@ -1,0 +1,69 @@
+{
+  "name": "@solid2-aria/tanstack-charts",
+  "version": "0.0.1",
+  "private": false,
+  "description": "TanStack Charts SVG adapter for Solid 2",
+  "keywords": [
+    "solid",
+    "solid2-aria",
+    "solidjs",
+    "tanstack-charts"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "pekochan069",
+    "email": "pekochan069@gmail.com",
+    "url": "https://github.com/pekochan069/solid2-aria.git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pekochan069/solid2-aria.git",
+    "directory": "packages/tanstack-charts-solid2"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "TANSTACK-LICENSE",
+    "NOTICE.txt"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/browser/index.d.ts",
+      "browser": "./dist/browser/index.js",
+      "default": "./dist/server/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "prepack": "bun run build",
+    "check-types": "tsrs --noEmit",
+    "check-build": "bun scripts/check-build.ts",
+    "check-compatibility": "bun scripts/check-minimum-version.ts",
+    "check": "ultracite check",
+    "fix": "ultracite fix"
+  },
+  "devDependencies": {
+    "@solidjs/compiler": "^2.0.0-rc.17",
+    "@solidjs/web": "^2.0.0-rc.17",
+    "@tanstack/charts": "^1.1.0",
+    "@types/bun": "^1.4.4",
+    "happy-dom": "^21.0.4",
+    "solid-js": "^2.0.0-rc.17",
+    "tanstack-charts-minimum": "npm:@tanstack/charts@1.0.0",
+    "tsdown": "^0.23.2",
+    "tsrs": "^0.20.0-ts7.1.0-beta",
+    "typescript": "^7.1.0-beta"
+  },
+  "peerDependencies": {
+    "@solidjs/web": "^2.0.0-rc.17",
+    "@tanstack/charts": "^1.0.0",
+    "solid-js": "^2.0.0-rc.17"
+  }
+}

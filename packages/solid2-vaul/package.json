@@ -1,0 +1,77 @@
+{
+  "name": "@solid2-aria/vaul",
+  "version": "0.0.1",
+  "private": false,
+  "description": "Unstyled, draggable drawers for Solid 2, based on Vaul",
+  "keywords": [
+    "solid",
+    "solid2-aria",
+    "solidjs",
+    "vaul"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "pekochan069",
+    "email": "pekochan069@gmail.com",
+    "url": "https://github.com/pekochan069/solid2-aria.git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pekochan069/solid2-aria.git",
+    "directory": "packages/solid2-vaul"
+  },
+  "files": [
+    "dist",
+    "docs",
+    "LICENSE",
+    "VAUL-LICENSE",
+    "NOTICE.txt",
+    "README.md"
+  ],
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/browser/index.d.ts",
+      "browser": "./dist/browser/index.js",
+      "default": "./dist/server/index.js"
+    },
+    "./style.css": "./dist/style.css",
+    "./styles.css": "./dist/style.css",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "prepack": "bun run build",
+    "check-types": "tsrs --noEmit",
+    "test": "bun test --conditions=browser --conditions=development --preload ./tests/setup.ts",
+    "check": "ultracite check",
+    "fix": "ultracite fix",
+    "check-build": "bun scripts/check-build.ts",
+    "check-browser": "bun scripts/check-browser.ts"
+  },
+  "dependencies": {
+    "@solid2-aria/core": "^0.0.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@solidjs/compiler": "^2.0.0-rc.17",
+    "@solidjs/web": "^2.0.0-rc.17",
+    "@types/bun": "^1.4.4",
+    "happy-dom": "^21.0.4",
+    "solid-js": "^2.0.0-rc.17",
+    "tsdown": "^0.23.2",
+    "tsrs": "^0.20.0-ts7.1.0-beta",
+    "typescript": "^7.1.0-beta"
+  },
+  "peerDependencies": {
+    "@solidjs/web": "^2.0.0-rc.17",
+    "solid-js": "^2.0.0-rc.17"
+  }
+}

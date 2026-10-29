@@ -1,0 +1,636 @@
+Solid2 Aria third-party notices
+==============================
+
+The Create hover previews and iframe synchronization also adapt
+apps/v4/app/(app)/(create)/components/{preview-override,preview}.tsx and
+hooks/use-iframe-sync.tsx from shadcn/ui at the revision below. Solid 2
+signals keep transient hover/focus values separate from committed presets,
+and validated same-origin messages update the existing preview document.
+The derived controls and page retain Copyright (c) 2023 shadcn and the
+existing shadcn/ui MIT license.
+
+The Create sidebar picker controls and glyphs in
+apps/shadcn-solid2-aria/src/components/tools/designer-{picker,icons}.tsx also
+adapt shadcn/ui apps/v4/app/(app)/(create)/components/{picker,lock-button,
+style-picker,theme-picker,icon-library-picker,radius-picker}.tsx and
+apps/v4/registry/styles.tsx at the revision identified below. They retain
+Copyright (c) 2023 shadcn and the existing shadcn/ui MIT license. Native Solid 2
+and Solid Aria replace React/Base UI menus, state, and lock controls; upstream
+SVG paths, customizer spacing, footer surfaces, and picker styling are retained.
+
+The Create theme palettes in apps/shadcn-solid2-aria/src/lib/tool-data/themes.ts
+derive from shadcn/ui apps/v4/registry/{themes,base-colors}.ts at revision
+481d523374745e77d0cf9c53a4115ab5dd7c8481. Palette token values are retained
+verbatim in a local typed lookup. src/lib/design-theme.ts adapts
+registry/config.ts (buildRegistryTheme) and
+app/(app)/(create)/components/design-system-provider.tsx to share complete light
+and dark CSS between Solid previews and exported configuration. Copyright (c)
+2023 shadcn and apps/shadcn-solid2-aria/LICENSES/shadcn-ui-MIT.txt apply.
+
+This repository contains code and translations derived from Adobe React Spectrum.
+
+Upstream: https://github.com/adobe/react-spectrum
+Reference revision: 261344335e54265b2d02dc57a43b911a718de707
+License: Apache License, Version 2.0 (LICENSES/Apache-2.0.txt).
+Original copyright and attribution notices are retained in the source files.
+The upstream NOTICE.txt is reproduced in LICENSES/react-spectrum-NOTICE.txt.
+That upstream notice also describes components that are not included in this port.
+
+Ported source files carry their upstream paths and modification notices.
+The affected directories are packages/@solid2-aria/*/types, packages/solid2-aria-types/src,
+packages/solid2-stately/src, packages/solid2-aria/src, and
+packages/solid2-aria-components/src. Changes include Solid
+type declarations, Solid 2
+reactivity, state APIs, module organization, imports, and formatting.
+These notices apply to the derived files identified by their source headers.
+
+The type packages packages/@solid2-aria/types-shared, packages/@solid2-aria/types-shared-web,
+and packages/solid2-aria-types distribute the original Apache-2.0 license and
+upstream NOTICE.txt verbatim in their LICENSES directories, with package-specific
+provenance in NOTICE.txt. Their MIT LICENSE covers independently authored
+Solid Aria material and does not replace Adobe source notices or Apache-2.0
+license terms. Source headers and original copyright years remain unchanged.
+
+The autocomplete, calendar, checkbox, and collections modules in
+packages/solid2-stately/src are derived from the corresponding directories in
+packages/react-stately/src at the reference revision above. They retain the
+upstream date and collection algorithms, adapted to Solid 2 reactive getters,
+controlled signals, and inert JSX collection descriptors in place of React
+elements. Checkbox validation also uses the upstream mergeValidation helper.
+
+The combobox, data, datepicker, disclosure, dnd, and flags modules in
+packages/solid2-stately/src are derived from the corresponding directories in
+packages/react-stately/src at the reference revision above. The supporting
+list/ListCollection.ts, list/useListState.ts, overlays/useOverlayTriggerState.ts,
+selection/Selection.ts, selection/SelectionManager.ts, selection/types.ts, and
+selection/useMultipleSelectionState.ts are also ported from that revision.
+Changes replace React hooks and rerenders with Solid 2 signals, reactive getters,
+and lifecycle handling, rename state factories, and adapt imports and strict
+TypeScript declarations. Async list requests are cancelled on disposal and stale
+responses are ignored; drag and focus ref changes notify Solid observers.
+
+The remaining grid, layout, menu, radio, searchfield, select, steplist, table,
+tabs, toast, toggle, tokenfield, tooltip, tree, and virtualizer modules, and
+list/useSingleSelectListState.ts, are derived from packages/react-stately/src
+at the same reference revision. Changes preserve collection, layout, geometry,
+scroll anchoring, column sizing, token editing, and toast queue algorithms while
+adapting imports, strict TypeScript declarations, state factories, and reactive
+getters for Solid 2. Table elements use inert Solid collection descriptors.
+Tooltip timers and toast subscriptions are cleaned up when their owner disposes.
+
+The JSON translations in packages/solid2-stately/intl/color and
+packages/solid2-stately/intl/datepicker are copied from the corresponding
+packages/react-stately/intl directories. Their JSON contents are unchanged.
+They are covered by the upstream Apache-2.0 license and this attribution.
+
+Locally written tests, tooling, generated barrel files, and Solid platform
+compatibility types do not acquire Adobe copyright notices merely because
+they accompany the port.
+
+Deprecated collection traversal and layout member accesses in @solid2-aria/stately are
+adapted to shared node-construction helpers and normalized modern layout sizes.
+Legacy selection, validation, column-span, and layout options remain supported
+at explicit compatibility boundaries. Original upstream notices are retained.
+
+Web-specific shared DOM, ref, and style declarations are separated into
+packages/@solid2-aria/types-shared-web/types from the corresponding
+packages/@react-types/shared/src files at the reference revision above.
+Renderer-neutral declarations remain in packages/@solid2-aria/types-shared/types.
+Collection and content types use Solid core Element instead of web JSX types.
+Original upstream copyright and license notices are preserved in each derived file.
+
+The modules in packages/solid2-aria/src are derived from the corresponding
+packages/react-aria/src files at the reference revision above. Changes replace
+React hooks, components, contexts, and DOM integration with Solid 2 primitives,
+reactive properties, owner-scoped cleanup, and renderer-specific components.
+Hook factories and file paths use create-prefixed, kebab-case names; imports
+reference @solid2-aria/stately and @solid2-aria type packages. The upstream accessibility,
+interaction, internationalization, positioning, and collection algorithms are
+retained where applicable. Each derived file records its upstream source path,
+original copyright and license notices, and Solid2 Aria modifications.
+
+The 680 JSON translations in packages/solid2-aria/intl are copied from the
+corresponding packages/react-aria/intl directories at the reference revision
+above. Their parsed JSON contents were compared with upstream and are unchanged.
+They are covered by the upstream Apache-2.0 license and this attribution.
+
+The source modules in packages/solid2-aria-components/src are derived from
+packages/react-aria-components/src at the reference revision above. Changes
+replace React components, hooks, and contexts with Solid 2 components, reactive
+getters, native DOM events, owner-scoped lifecycle, and local Solid2 Aria and
+Solid2 Stately primitives. Source paths and original notices remain in each
+derived file. Source filenames use kebab case. Generated public export barrels
+and independently written build and verification tools have no Adobe headers.
+
+Overlay adaptations also share resolved focus-scope content between rendering
+and focus tracking, use native bubbling focus events for descendant controls,
+and preserve popover dialog semantics and preview/tooltip warmup animation
+behavior. The focus-within source retains the upstream React portions notice;
+the corresponding React attribution and MIT license are reproduced in
+LICENSES/react-spectrum-NOTICE.txt.
+
+The 34 JSON translations in packages/solid2-aria-components/intl are copied from
+packages/react-aria-components/intl at that revision. Their parsed JSON contents
+were compared with upstream and are unchanged. They are covered by the upstream
+Apache-2.0 license and this attribution.
+
+The docs router factory and root route in apps/docs/src/router.tsx and
+apps/docs/src/routes/__root.tsx are derived from TanStack Router
+(https://github.com/TanStack/router), respectively
+examples/solid/basic-file-based/src/main.tsx and
+examples/solid/basic-file-based/src/routes/__root.tsx. They are adapted to
+Solid 2 and TanStack Start request-scoped routing, document rendering,
+metadata, styles, and hydration. The upstream MIT license and copyright
+notice are reproduced verbatim in apps/docs/LICENSES/tanstack-router-MIT.txt.
+
+Solid 2 native API migration replaces React compatibility adapters and object
+refs with native signals, accessors, callback refs, and compute/apply effects.
+Obsolete hook, ref, memoization, and SSR-provider shims are removed; original
+upstream notices in the remaining derived files are retained. Capture listeners
+use native event listener options, and descendant focus tracking uses native
+focusin/focusout events rather than React event propagation.
+
+The UI wrappers in apps/shadcn-solid2-aria/src/registry/ui are derived
+from shadcn/ui (https://github.com/shadcn-ui/ui), apps/v4/registry/bases/aria/ui,
+at revision 481d523374745e77d0cf9c53a4115ab5dd7c8481. The original MIT license,
+including Copyright (c) 2023 shadcn, is reproduced verbatim in
+apps/shadcn-solid2-aria/LICENSES/shadcn-ui-MIT.txt. Each wrapper identifies
+its source path. Changes adapt JSX, reactive props, contexts, refs, state,
+render callbacks, and icons to Solid 2 and Solid2 Aria Components. React-only
+integrations use @solid2-aria/vaul drawers and @solid2-aria/sonner toasts, Embla's framework-independent
+carousel, native OTP input, native panel resizing, message scrolling, and a native
+questionnaire form. Chart containers, CSS variables, tooltips, and legends accept
+Solid-rendered charts in place of React Recharts elements.
+
+The eight style files in apps/shadcn-solid2-aria/src/registry/styles are
+from apps/v4/registry/styles at the same shadcn/ui revision. Their CSS rules
+are adapted to scoped style boundaries and presence selectors for Solid boolean
+data attributes, with source
+and MIT attribution headers and formatting changes added. The
+no-scrollbar utility in apps/shadcn-solid2-aria/src/registry/styles.css is derived
+from apps/v4/app/globals.css at that revision. No upstream JSON
+translations are introduced by this port. The registry indexes, conversion and
+verification tooling, and independently written Solid helpers have no Adobe
+copyright headers; Adobe-derived accessibility code remains in the separately
+attributed Solid2 Aria packages.
+
+The generated component files in apps/shadcn-solid2-aria/src/components/ui
+derive from the corresponding registry wrappers and shadcn/ui source paths
+identified in their headers. Generation inlines the selected upstream style's
+utility classes, resolves static Lucide icons, and rewrites local imports.
+The original shadcn copyright year and MIT license reference are retained.
+The generator, export barrel, and class helper are independent tools and
+Solid helpers and do not require Adobe attribution.
+
+The drawer wrappers in apps/shadcn-solid2-aria/src/{registry,components}/ui
+use the separately licensed @solid2-aria/vaul package for native Solid 2 portals,
+accessible dialogs, directional gestures, handles, snap points, and nested
+drawers. They retain their shadcn/ui source attribution. The examples and
+drawer documentation use Vaul's open, direction, and nested-root APIs.
+Vaul's source attribution and original MIT license remain in
+packages/solid2-vaul/NOTICE.txt and packages/solid2-vaul/VAUL-LICENSE.
+
+The UI components in apps/docs/src/components/ui, except the pre-existing
+menu.tsx, were generated from those registry wrappers and are now maintained
+locally for the independent Solid2 Aria documentation site. They retain their
+upstream paths, original copyright year, and modification notices. Their MIT
+license is reproduced verbatim in apps/docs/LICENSES/shadcn-ui-MIT.txt.
+The shared animations and no-scrollbar utility in apps/docs/src/styles/ui.css
+retain the source attribution from the registry style entry point. The two
+documentation sites do not require one another to generate, build, or test.
+
+The documentation title and description metadata in
+apps/shadcn-solid2-aria/src/lib/component-metadata.ts derives from
+apps/v4/content/docs/components/aria/*.mdx in shadcn/ui at revision
+481d523374745e77d0cf9c53a4115ab5dd7c8481. React-specific wording is adapted
+for Solid 2. The documentation header, sidebar, and homepage identify the
+upstream apps/v4 components and page layouts that informed their adaptations.
+The site uses native Solid 2 JSX, TanStack routing, local component inventories,
+search, theme persistence, and independently authored live examples and guides.
+The shadcn/ui MIT license and original Copyright (c) 2023 shadcn are retained in
+LICENSES/shadcn-ui-MIT.txt within the app and reproduced for site visitors in
+public/licenses/shadcn-ui-MIT.txt. No new Adobe-derived source or translations
+are introduced by the documentation shell, examples, guides, or verification.
+
+The shadcn documentation generator also translates upstream horizontal/vertical
+utility selectors to Solid2 Aria's data-orientation attributes. Upstream style
+attribution and license texts remain intact; generated local component classes
+use the adapted orientation and boolean state selectors. Interactive documentation sandboxes mount on the
+client, while the surrounding documentation and component source render on the
+server.
+
+Standalone examples retain their upstream Nova or Rhea style through the generated
+src/lib/example-styles.ts import-path inventory. Nested preview styles are scoped
+so the documentation's default style does not override a different example style.
+
+Native form validation in packages/solid2-aria/src/form/create-form-validation.ts
+commits after native change handlers so Solid controlled inputs can record the
+user's value before validation causes a reactive update. The upstream Adobe
+copyright, source path, and Apache-2.0 notices are retained.
+Nested collection builders also clear inherited item identities before building
+their own items, preventing parent menu keys from being reused in submenus.
+Menu triggers in @solid2-aria/components retain the upstream press responder
+composition so custom Pressable children receive context-menu interactions.
+
+The shadcn-matching documentation design and homepage in
+apps/shadcn-solid2-aria/src/components/home, src/components/docs/article.tsx,
+src/components/docs/component-preview.tsx, src/routes/index.tsx, and
+src/styles/{global,site,home}.css derive from shadcn/ui at revision
+481d523374745e77d0cf9c53a4115ab5dd7c8481. Source paths are recorded in each
+file. They adapt apps/v4/app/(app)/(root)/page.tsx and cards/*.tsx,
+apps/v4/examples/radix/message-scroller-demo.tsx, apps/v4/app/globals.css,
+apps/v4/app/(app)/docs/[[...slug]]/page.tsx, and the page-header, announcement,
+site-header, main-nav, docs-sidebar, and component-preview-tabs components.
+Changes use Solid 2 JSX, local Solid2 Aria controls, Lucide icons, native
+attributes, responsive CSS, local demo state, and local documentation links.
+The original Copyright (c) 2023 shadcn and MIT license remain intact.
+The unmodified mobile gallery images public/images/full-light.png and
+full-dark.png are copied from apps/v4/public/images at that revision and are
+covered by the same shadcn/ui MIT license.
+
+The wide-screen homepage rails in src/components/home/skeleton-rails.tsx and
+src/components/home/skeleton/*.tsx also adapt apps/v4/app/(app)/(root)/cards/index.tsx
+and its skeleton/*.tsx files at that revision. They retain Copyright (c) 2023
+shadcn and the MIT license, with Solid 2 JSX and local registry imports.
+
+The Geist and Geist Mono Latin fonts in
+apps/shadcn-solid2-aria/public/fonts are copied without modification from
+Next.js 16.4.2, dist/next-devtools/server/font/{geist,geist-mono}-latin.woff2,
+as installed in the sibling shadcn-ui checkout. The upstream font project
+is https://github.com/vercel/geist-font. Copyright (c) 2023 Vercel, in
+collaboration with basement.studio. The SIL Open Font License, Version 1.1,
+is reproduced verbatim from that project's LICENSE.txt in
+apps/shadcn-solid2-aria/LICENSES/geist-OFL.txt and
+apps/shadcn-solid2-aria/public/licenses/geist-OFL.txt.
+
+The source files in packages/solid2-sonner/src are derived from solid-sonner
+(https://github.com/wobsoriano/solid-sonner), src/{index.tsx,assets.tsx,state.ts,
+types.ts,primitives.ts,styles.css}, which is based on Sonner
+(https://github.com/emilkowalski/sonner), src/{index.tsx,assets.tsx,state.ts,
+types.ts,styles.css}. Copyright (c) 2022 Robert Soriano
+<https://github.com/wobsoriano> and Copyright (c) 2023 Emil Kowalski.
+The upstream MIT licenses are reproduced verbatim in
+packages/solid2-sonner/SOLID-SONNER-LICENSE.md and
+packages/solid2-sonner/SONNER-LICENSE.md. Original source notices are retained.
+Changes adapt Solid 2 types, reactivity, lifecycle, DOM events, promise and
+dismissal handling, and browser/server package builds. Each derived file
+identifies its upstream path and modifications; packages/solid2-sonner/NOTICE.txt
+records package provenance. Styles are exported as a separate CSS entry point.
+Independently written tests and packaging tools have no Adobe attribution.
+
+The 61 per-component MDX documents in
+apps/shadcn-solid2-aria/content/docs/components are derived from
+apps/v4/content/docs/components/aria/*.mdx in shadcn/ui at revision
+481d523374745e77d0cf9c53a4115ab5dd7c8481. The introduction document derives
+from apps/v4/content/docs/(root)/index.mdx at that revision. Each derived
+MDX file retains Copyright (c) 2023 shadcn and records its source path.
+Changes preserve component-specific sections and preview compositions while
+adapting imports, snippets, local installation, state, native attributes,
+and APIs to Solid 2. React-only chart, drawer, resizable, toast, code
+highlighting, and message scroller integrations are documented against the
+local Solid implementation. The upstream MIT license remains verbatim in
+apps/shadcn-solid2-aria/LICENSES/shadcn-ui-MIT.txt. The theming
+and accessibility guides and the port verification scripts are independently
+authored and do not acquire Adobe copyright attribution.
+
+The documentation sidebar images public/images/sidebar-{structure,structure-dark,
+menu,menu-dark}.png and the public/avatars images in apps/shadcn-solid2-aria are
+copied from the corresponding apps/v4/public directories in shadcn/ui at the
+revision above. They retain the shadcn/ui MIT attribution and original
+Copyright (c) 2023 shadcn. The document layout, table of contents, base switcher,
+mode switcher, and CTA also adapt apps/v4/app/(app)/docs/layout.tsx,
+app/(app)/(typeset)/typeset.css, and components/{docs-toc,docs-base-switcher,
+mode-switcher,open-in-v0-cta}.tsx. CSS rules are adapted and formatted for Solid.
+
+The Solid documentation examples in apps/shadcn-solid2-aria/src/examples are
+adapted from apps/v4/examples/aria at the shadcn/ui revision above. Each derived
+example retains Copyright (c) 2023 shadcn, the source path, and the MIT license
+reference. Changes replace React JSX, state, refs, and hooks with Solid 2,
+use the local component registry, and adapt chart, message, markdown, and
+questionnaire integrations. The message animation helper also adapts
+apps/v4/components/message-animated.tsx and lib/message-animations.ts. Shared
+independently authored Solid helpers do not acquire Adobe attribution.
+
+The additional site pages in apps/shadcn-solid2-aria/src/components/{catalog,
+showcase,tools}, their route entries and src/styles/{catalog,showcase,tools}.css
+adapt the shadcn/ui apps/v4/app/(app) blocks, charts, colors, examples, sera,
+create, and typeset pages and their supporting components at revision
+481d523374745e77d0cf9c53a4115ab5dd7c8481. Standalone examples, preview, typeset
+fixtures, and view routes adapt apps/v4/app/(view). Each derived source records
+the applicable upstream paths, original Copyright (c) 2023 shadcn, and MIT
+license reference. Changes replace Next.js and React routing, rendering, hooks,
+charting, tables, and state with TanStack Start, Solid 2, Solid2 Aria controls,
+native SVG charts, native tables and media controls, and local configuration,
+history, filtering, clipboard, and preview behavior. Independent route wiring,
+state helpers, conversion scripts, and verification tools do not acquire Adobe
+attribution.
+
+The blocks in apps/shadcn-solid2-aria/src/blocks adapt all source files in
+apps/v4/registry/bases/aria/blocks. The chart wrappers and their fixture data
+also derive from apps/v4/registry/new-york-v4/charts and
+apps/v4/app/(app)/charts/charts.tsx. Their generated inventories record source
+paths. React integrations are replaced with Solid components and native browser
+behavior. The original upstream preview-03 entry contains only placeholder text.
+The local QR asset is generated independently.
+
+Questionnaire navigation visibility, error messages, and choice indicators also
+adapt packages/react/src/questionnaire/components.tsx in shadcn/ui at the same
+revision. They use Solid 2 state and native form controls. The original
+Copyright (c) 2023 shadcn and shadcn/ui MIT license apply.
+
+The color data in apps/shadcn-solid2-aria/src/lib/tool-data/colors.ts derives
+from apps/v4/registry/_legacy-colors.ts. Typography fixtures in
+src/lib/tool-data/typeset derive from apps/v4/app/(app)/(typeset)/lib/fixtures.
+The downloadable public/typeset.css retains the rules and original
+shadcn/typeset notice from apps/v4/app/(app)/(typeset)/typeset.css, with a source
+and modification header added. These files retain the shadcn/ui MIT license.
+
+The JSON task and dashboard fixtures in
+apps/shadcn-solid2-aria/src/components/showcase/{tasks,dashboard}.json are copied
+from apps/v4/app/(app)/examples/tasks/data/tasks.json and
+apps/v4/app/(app)/examples/dashboard/data.json. The registry directory at
+src/lib/registry-directory.json is copied from apps/v4/registry/directory.json.
+Their bytes were compared with upstream and are unchanged. Provenance is
+recorded here to preserve valid JSON; the original Copyright (c) 2023 shadcn
+and MIT license in apps/shadcn-solid2-aria/LICENSES/shadcn-ui-MIT.txt apply.
+
+The additional framework-neutral guides, release notes, and AI interface
+documents in apps/shadcn-solid2-aria/content/docs derive from the upstream
+apps/v4/content/docs paths recorded in content/docs/port-manifest.json.
+React-specific integration and migration pages are intentionally excluded.
+Guide-specific live examples adapt apps/v4/examples/aria, replacing React state,
+refs, forms, and AI transports with local Solid 2 interactions. Supporting
+transport helpers also adapt apps/v4/lib/ai.ts and
+packages/helpers/src/core/writer.ts where identified in their source headers.
+Documentation images are copied from the matching apps/v4/public/images paths
+listed in the manifest. Original source notices, copyright years, and the
+shadcn/ui MIT license are preserved. No new Adobe-derived source or JSON
+translations are introduced by this site-page port.
+
+The shared site shell, page headers, navigation, footer, catalog toolbars,
+color palettes, and designer layouts in apps/shadcn-solid2-aria also adapt
+apps/v4/app/{layout.tsx,legacy-themes.css}, apps/v4/app/(app)/layout.tsx,
+components/{site-footer,page-header,page-nav,announcement,block-viewer,
+chart-display,chart-toolbar,color,color-palette,color-format-selector,
+components-list}.tsx, content/docs/components/index.mdx,
+app/(app)/{blocks,charts,colors,examples}/layout.tsx, and the components under
+app/(app)/{(create),(typeset)}/components at shadcn/ui revision
+481d523374745e77d0cf9c53a4115ab5dd7c8481. Changes use Solid 2 JSX and state,
+TanStack routing, local source and clipboard controls, native selectors,
+and Solid2 Aria previews. Sera's scoped taupe theme also derives from
+app/(app)/(styles)/sera/style.css. Copyright (c) 2023 shadcn and the MIT
+license are preserved in the derived sources. The independent browser
+verification tooling does not acquire Adobe or shadcn copyright attribution.
+
+The unmodified Latin font files public/fonts/playfair-display-latin.woff2
+and noto-sans-latin.woff2 in apps/shadcn-solid2-aria are copied from the
+sibling shadcn-ui checkout's Next.js Google Fonts build assets for Playfair
+Display and Noto Sans. Their bytes were compared with those build assets.
+Playfair Display: Copyright 2017 The Playfair Display Project Authors
+(https://github.com/clauseggers/Playfair-Display), with Reserved Font Name
+"Playfair Display". Noto Sans: Copyright 2022 The Noto Project Authors
+(https://github.com/notofonts/latin-greek-cyrillic). Both use the SIL Open
+Font License, Version 1.1. The respective upstream OFL.txt files from
+https://github.com/google/fonts/tree/main/ofl/{playfairdisplay,notosans}
+are preserved verbatim in the app's LICENSES and public/licenses directories
+as playfair-OFL.txt and noto-sans-OFL.txt.
+
+The public Solid site excludes unsupported upstream CLI, directory, registry,
+MCP, AI integration, and release-history documents and their unused guide-only
+demos. These exclusions are recorded in content/docs/port-manifest.json; the
+original attribution for retained derived files remains unchanged. The upstream
+preview-03 block is excluded because it contains only placeholder text.
+The local Typeset guide is independently authored. The Typeset documentation
+fixture and code-display examples replace React-specific instructions with
+Solid 2 component examples. public/theme.css derives from apps/v4/app/globals.css
+through the local component theme, retaining Copyright (c) 2023 shadcn and the
+MIT notice. Package version changes do not alter any original copyright years.
+
+Interaction fixes in the existing Adobe-derived autocomplete, hover, tooltip,
+calendar, hidden-select, popover, and sheet sources retain their original notices.
+Changes preserve lazy input properties and native option identity, expose
+popover trigger geometry, support initial pointer hover, and allow touch
+dragging on elements marked data-sheet-drag-handle while retaining native
+content scrolling. Calendar cells retain rendered day content, and picker labels
+retain item identity while date getters follow the current focused date.
+The independent DOM behavior helper resolves trigger children once and applies
+native attributes through the Solid renderer. The shadcn-derived wrappers and styles adapt explicit label
+contexts, stable slider thumbs, directional drawer animations, and viewport
+fraction snap points to these Solid primitives. Original copyright years and
+license texts remain unchanged. The interaction regression tests are independent.
+
+Further changes to these Adobe-derived overlay sources release detached content
+refs on disposal so repeat openings animate the mounted element, and preserve
+calculated arrow offsets when custom render styles extend defaultStyle. Collection
+builders subscribe only on the client and finalize initial descriptors before
+hydration reads. Tab selection and focus synchronization run in client effects.
+Press responder registration explicitly snapshots its initial context.
+Combobox announcement messages are formatted in tracked compute functions before
+client effects publish them, preserving reactive locale reads.
+Virtual focus and blur events run outside reactive tracking so their handlers
+can observe state at dispatch time without subscribing the caller's effect.
+Original copyright years, license texts, and upstream notices remain unchanged.
+The shadcn-derived documentation preview also follows
+apps/v4/components/component-preview.tsx for contained block iframes. Page layout
+styling uses route attributes to avoid broad relational-selector recalculation.
+The MDX module default-export adapter and diagnostic/performance tests are
+independently authored.
+
+The installable registry serves the existing shadcn-derived Solid component
+sources with Nova classes and omits inline license headers from installed code.
+Repository sources retain their copyright years, upstream paths, and modification
+notices. The shared theme dependency distributes the original shadcn MIT license
+verbatim and a registry-specific provenance notice containing the original
+per-file attribution headers. Theme metadata uses the existing
+apps/v4/app/globals.css-derived component theme and Solid animation adaptations.
+Registry HTTP handlers and dependency discovery are independently authored.
+
+Drawer composition in the existing shadcn-derived wrappers preserves the
+upstream directional handle order, popup sizing, scrollable content, and title
+and description semantics. Backdrop blur and tint transition with drawer entry
+and exit. Sheet detents use browser-resolved CSS
+lengths for snap geometry. Sheets track page offsets to keep nested sheets in
+the viewport and defer dialog focus until entry completes. The installable
+Nova copy and documentation copy include the same adaptations. Original upstream copyright years and license
+texts remain unchanged. Browser fixtures and interaction checks are independent.
+
+Documentation component themes load once per active page or preview through
+Solid's head registry. Shared registry utilities and animations live in
+apps/shadcn-solid2-aria/src/registry/styles/base.css; the aggregate registry
+stylesheet still includes all eight themes. The split preserves the existing
+shadcn/ui source notices, copyright year, and MIT license. Theme URL selection
+and browser checks are independently authored.
+
+The Inter Latin font public/fonts/inter-latin.woff2 in apps/shadcn-solid2-aria
+is copied without modification from the sibling shadcn-ui checkout's Next.js
+Google Fonts build asset for Inter. Its bytes were compared with that asset.
+Copyright 2020 The Inter Project Authors (https://github.com/rsms/inter).
+The SIL Open Font License, Version 1.1 is reproduced verbatim from
+https://github.com/google/fonts/blob/main/ofl/inter/OFL.txt in the app's
+LICENSES/inter-OFL.txt and public/licenses/inter-OFL.txt.
+
+The Solid tool menu and Create welcome dialog additionally adapt
+apps/v4/app/(app)/{(create),(typeset)}/components/main-menu.tsx and
+apps/v4/app/(app)/(create)/components/welcome-dialog.tsx, with the logo from
+apps/v4/components/icons.tsx. They retain Copyright (c) 2023 shadcn and MIT
+attribution, replacing React state and dialogs with Solid 2 and Solid2 Aria.
+
+The dashboard SVG node data in src/components/showcase/dashboard-icons.tsx in
+apps/shadcn-solid2-aria derives from @tabler/icons-react 3.34.1, dist/esm/icons,
+published from https://github.com/tabler/tabler-icons. The original
+Copyright (c) 2020-2024 Paweł Kuna and MIT license are preserved in
+LICENSES/tabler-icons-MIT.txt and public/licenses/tabler-icons-MIT.txt in the app.
+SVG nodes are adapted to the local Solid renderer; the original module license
+notice is retained. The source module paths are identified in the derived file.
+
+The Sera mobile previews public/images/sera-{02,03,06}-{light,dark}.png in
+apps/shadcn-solid2-aria are copied unchanged from apps/v4/public/images in the
+shadcn/ui checkout at the revision above, with their bytes compared to upstream.
+They retain Copyright (c) 2023 shadcn and the shadcn/ui MIT license.
+The mobile dashboard previews public/examples/dashboard-{light,dark}.png are
+copied unchanged from apps/v4/public/examples at the same revision and retain
+the same copyright and MIT attribution.
+
+The @solid2-aria/vaul package derives from emilkowalski/vaul, version 1.1.2,
+revision 3e97aac6a38e4481bade71d7233ed6002e80f9b0. Its original
+Copyright (c) 2023 Emil Kowalski and MIT license are retained verbatim in
+packages/solid2-vaul/VAUL-LICENSE. The package LICENSE covers Solid Aria
+contributions under MIT, Copyright (c) 2026 pekochan069. Derived files identify
+upstream paths and Solid 2 modifications. See packages/solid2-vaul/NOTICE.txt for the source
+mapping and accessibility dependency attribution. No upstream translations
+are introduced.
+
+The native SVG timelines in
+apps/shadcn-solid2-aria/src/components/showcase/timeline-chart.tsx adapt the
+chart layout in apps/v4/app/(app)/examples/dashboard/components/chart-area-interactive.tsx
+and apps/v4/app/(app)/(styles)/sera/audience-analytics/components/traffic-overview.tsx
+from the shadcn/ui source described above. They use d3-shape 3.2.0 and d3-path
+3.1.0 for curve geometry. Copyright 2010-2022 Mike Bostock (d3-shape) and
+Copyright 2015-2022 Mike Bostock (d3-path). Their ISC license texts are preserved
+verbatim in apps/shadcn-solid2-aria/{LICENSES,public/licenses}/d3-shape-ISC.txt
+and d3-path-ISC.txt.
+
+The theme controls in apps/shadcn-solid2-aria/src/routes/examples.tsx also
+adapt apps/v4/components/theme-selector.tsx from the shadcn/ui source described
+above, using the local Solid Aria Select and the supported Solid preview themes.
+
+The responsive Tasks, Playground, and Authentication previews in
+apps/shadcn-solid2-aria/public/examples/{tasks,playground,authentication}-{light,dark}.png
+are copied unchanged from the corresponding apps/v4/public/examples files in
+shadcn/ui. Their bytes were compared with upstream. The native SVG components
+src/components/showcase/{playground-mode-icon,github-mark}.tsx adapt the inline
+SVG in apps/v4/app/(app)/examples/playground/page.tsx and components/icons.tsx.
+The Tasks icon labels and avatar layout also adapt the tasks/data/data.tsx and
+tasks/components/user-nav.tsx files. Copyright (c) 2023 shadcn and the MIT license
+in apps/shadcn-solid2-aria/LICENSES/shadcn-ui-MIT.txt apply to these materials.
+
+The native RTL example composition in
+apps/shadcn-solid2-aria/src/components/showcase/rtl/*.tsx adapts all source
+components in apps/v4/app/(app)/examples/rtl/components and the language provider
+in apps/v4/components/language-selector.tsx from the shadcn/ui source described
+above. The source component structure and inline Arabic and Hebrew translations
+are retained; React hooks, render props, menus, and selection APIs are replaced
+with native Solid 2 state and local Solid Aria primitives. Copyright (c) 2023
+shadcn and the MIT license in apps/shadcn-solid2-aria/LICENSES/shadcn-ui-MIT.txt
+apply. The SVG node data in rtl/icons.tsx also derives from the named icon modules
+in @tabler/icons-react 3.34.1, retaining its original @license notice and
+Copyright (c) 2020-2024 Paweł Kuna. The Tabler MIT license is preserved in
+apps/shadcn-solid2-aria/{LICENSES,public/licenses}/tabler-icons-MIT.txt.
+
+The Noto Sans Arabic and Noto Sans Hebrew subset files public/fonts/noto-sans-{arabic,hebrew}-*.woff2
+in apps/shadcn-solid2-aria are copied without modification from the original
+site's Next.js build assets declared by apps/v4/lib/fonts.ts. Their bytes were
+compared with the source assets. src/styles/rtl-fonts.css retains the generated
+font-face subset definitions with local asset URLs and the language selectors
+from apps/v4/app/globals.css. Copyright 2022 The Noto Project Authors
+(https://github.com/notofonts/arabic and https://github.com/notofonts/hebrew).
+The corresponding SIL Open Font License texts are preserved verbatim in
+apps/shadcn-solid2-aria/{LICENSES,public/licenses}/noto-sans-arabic-OFL.txt and
+noto-sans-hebrew-OFL.txt.
+
+The full native Sera preview components in
+apps/shadcn-solid2-aria/src/components/showcase/sera/{audience-analytics,
+article-directory,empty-state,edit-article,media-library,media-library-table}
+adapt the corresponding index.tsx and components/*.tsx files from
+apps/v4/app/(app)/(styles)/sera in the shadcn/ui source described above.
+Copyright (c) 2023 shadcn and the MIT license in
+apps/shadcn-solid2-aria/LICENSES/shadcn-ui-MIT.txt apply. The source markup,
+fixtures, and styling classes are retained while React state, Base UI render
+props, collection identities, table headers, menus, date ranges, and selection
+APIs are ported to native Solid 2 and Solid Aria. The traffic chart uses the
+shared native SVG timeline renderer. The media data is re-exported from the
+existing source-derived assets.ts fixture.
+
+The bundled free SVG icon data imported from @hugeicons/core-free-icons 1.2.1
+in apps/shadcn-solid2-aria is created by Hugeicons. The package metadata declares
+the MIT license, and its README states "Created by Hugeicons. All rights reserved."
+The official Hugeicons repository (https://github.com/hugeicons/hugeicons)
+identifies the free core icon pack as MIT-licensed. Its license notice,
+Copyright (c) 2025 Hugeicons, is preserved verbatim in
+apps/shadcn-solid2-aria/{LICENSES,public/licenses}/hugeicons-MIT.txt.
+The native Solid SVG renderer in src/components/huge-icon.tsx is independently
+written and uses the icon data supplied by that package.
+
+The browser-only Sera preview boundaries and placeholders in
+apps/shadcn-solid2-aria/src/components/showcase/sera/client-preview.tsx also
+adapt apps/v4/app/(app)/(styles)/sera/components/lazy-preview.tsx. The original
+browser-only mounting policy and placeholder dimensions are retained with
+TanStack ClientOnly so collection controls initialize after hydration.
+
+The package manager command tabs in
+apps/shadcn-solid2-aria/src/components/docs/code.tsx and package-manager.tsx
+adapt apps/v4/components/code-block-command.tsx, apps/v4/lib/highlight-code.ts,
+and apps/v4/hooks/use-config.ts from the shadcn/ui source described above.
+They retain Copyright (c) 2023 shadcn and the existing shadcn/ui MIT license.
+Changes use Solid 2 context, client-mounted Solid Aria tabs, browser-persisted
+selection, and Bun-to-npm, pnpm, and Yarn command conversion, including development flags.
+
+The manual installation source viewer in
+apps/shadcn-solid2-aria/src/components/docs/component-source.tsx and its site.css
+rules also adapt apps/v4/components/{component-source,code-collapsible-wrapper}.tsx.
+They retain Copyright (c) 2023 shadcn and the existing shadcn/ui MIT license.
+Changes use Solid 2 source loading, native expansion controls, and local code
+highlighting. The displayed and copied code matches the installable registry;
+original source headers remain in the repository and registry attribution file.
+
+The framework installation and dark-mode documentation in
+apps/shadcn-solid2-aria/content/docs/{installation,dark-mode}.mdx and
+content/docs/{installation,dark-mode}/*.mdx adapts shadcn/ui at revision
+481d523374745e77d0cf9c53a4115ab5dd7c8481. Upstream sources are
+apps/v4/content/docs/installation/{index,vite,tanstack-router,tanstack}.mdx
+and apps/v4/content/docs/dark-mode/{index,vite,tanstack-start}.mdx.
+The overview cards, framework SVG paths, setup choices, numbered steps,
+Card and Button examples, and sun/moon mode-toggle layout retain the
+upstream structure. Commands use the local Solid component registry;
+framework entries, providers, lifecycle, icons, and menus use Solid 2 APIs.
+The linked-card component in src/components/docs/linked-card.tsx and the
+responsive documentation steps also adapt apps/v4/mdx-components.tsx.
+The installation callout in src/components/docs/callout.tsx adapts
+apps/v4/components/callout.tsx and apps/v4/registry/new-york-v4/ui/alert.tsx
+using the local Solid Alert components with the upstream documentation spacing.
+Framework SVG paths are preserved in src/components/docs/framework-cards.tsx.
+These derived files retain Copyright (c) 2023 shadcn and the MIT license in
+apps/shadcn-solid2-aria/LICENSES/shadcn-ui-MIT.txt. Source mappings are recorded
+in content/docs/port-manifest.json. Documentation verification tooling and
+Markdown metadata parsing are independently authored.
+
+The Chart adapter in packages/tanstack-charts-solid2/src/index.tsx derives
+from TanStack/charts (https://github.com/TanStack/charts),
+packages/solid-charts/src/{Chart.tsx,types.ts}, distributed in
+@tanstack/charts 1.1.0. Copyright (c) 2026-present Tanner Linsley.
+The upstream MIT license is preserved verbatim in the package TANSTACK-LICENSE
+and source header. The package LICENSE covers Solid Aria contributions under
+MIT, Copyright (c) 2026 pekochan069. Changes use native Solid 2 imports,
+reactivity, lifecycle,
+callback refs, tooltip portals, and separate browser/server builds. See
+packages/tanstack-charts-solid2/NOTICE.txt for the source mapping.
+
+Chart rendering in apps/shadcn-solid2-aria uses @tanstack/charts 1.1.0
+and the @solid2-aria/tanstack-charts workspace adapter. Existing shadcn-derived
+chart examples, preview cards, dashboard timelines, and chart documentation
+retain their source notices and original Copyright (c) 2023 shadcn. Changes
+replace the independent SVG renderers with TanStack chart definitions,
+reactive series and range selection, shared tooltip and legend content,
+keyboard interaction, and responsive Cartesian and polar layouts. The data,
+Cartesian, polar, and definition helpers and chart checks are independently
+authored. No Adobe-derived material or JSON translations are introduced.

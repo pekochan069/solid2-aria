@@ -1,0 +1,6 @@
+- Read @docs/solid2-cheat-sheet.md before doing anything related solid-js
+- Before copying, porting, or modifying upstream-derived files, read @NOTICE.txt and compare the upstream source notices.
+- Preserve upstream copyright, license, and attribution notices, including their original years. In each derived source file, identify the upstream repository and file path and state how the file was modified for Solid Aria. Follow the existing `Derived from Adobe React Spectrum` and `Modified for Solid Aria` comment format.
+- Reference @LICENSES/Apache-2.0.txt and @NOTICE.txt from Apache-2.0 source notices. Keep license texts and upstream notices verbatim; update the repository notice when adding new upstream sources or attribution requirements.
+- For copied JSON translations, record provenance in @NOTICE.txt and preserve valid JSON. Describe them as unchanged only after comparing their contents with upstream.
+- Add Adobe attribution only to Adobe-derived material. Independently written tests, tooling, generated barrel files, and Solid compatibility types do not need Adobe copyright headers solely because they accompany the port.

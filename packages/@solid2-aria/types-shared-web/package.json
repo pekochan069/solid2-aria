@@ -1,0 +1,50 @@
+{
+  "name": "@solid2-aria/types-shared-web",
+  "version": "0.0.1",
+  "private": false,
+  "description": "Web renderer attributes, refs, and style types for Solid",
+  "keywords": [
+    "solid",
+    "solid2-aria",
+    "solidjs"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "pekochan069",
+    "email": "pekochan069@gmail.com",
+    "url": "https://github.com/pekochan069/solid2-aria.git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pekochan069/solid2-aria.git",
+    "directory": "packages/@solid2-aria/types-shared-web"
+  },
+  "files": [
+    "types",
+    "LICENSE",
+    "LICENSES",
+    "NOTICE.txt",
+    "README.md"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@solid2-aria/types-shared": "^0.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^7.1.0-beta"
+  },
+  "peerDependencies": {
+    "@solidjs/web": "^2.0.0-rc.17",
+    "solid-js": "^2.0.0-rc.17"
+  }
+}

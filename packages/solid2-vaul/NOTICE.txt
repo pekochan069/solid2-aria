@@ -1,0 +1,29 @@
+@solid2-aria/vaul third-party notices
+==============================
+
+Derived from Vaul (https://github.com/emilkowalski/vaul), version 1.1.2,
+revision 3e97aac6a38e4481bade71d7233ed6002e80f9b0.
+Copyright (c) 2023 Emil Kowalski.
+The upstream MIT license is reproduced verbatim in VAUL-LICENSE.
+
+Source mappings are recorded in each derived source file. Changes replace
+React and Radix Dialog with native Solid 2 reactivity, callback refs, JSX,
+contexts, lifecycle, presence, and DOM events. Drawer geometry, drag damping,
+velocity thresholds, snap selection, background scaling, fixed positioning,
+and directional CSS are adapted from Vaul. CSS also corrects the upstream
+handle selector and supports native touch scrolling and reduced motion.
+Exit motion uses Solid-controlled transitions without competing CSS keyframes.
+Snap entry waits for viewport measurement and starts from the closed position.
+
+Vaul's src/use-prevent-scroll.ts identifies Adobe React Spectrum as its
+source. That file is not copied into this package. Accessibility and scroll
+prevention use the separately licensed @solid2-aria/core dependency, whose Adobe
+attribution and Apache-2.0 notices remain with that package.
+
+Vaul's React-specific src/use-controllable-state.ts and src/use-composed-refs.ts
+identify Radix UI as their source. Neither file is copied. Controlled signals
+and ref arrays use Solid's native APIs.
+
+Tests, build scripts, and the export barrel are independently authored.
+Solid Aria contributions use the MIT license in LICENSE, Copyright (c) 2026
+pekochan069. This license does not replace the upstream license and notices.

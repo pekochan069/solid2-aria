@@ -1,0 +1,188 @@
+{
+  "name": "@solid2-aria/types",
+  "version": "0.0.1",
+  "private": false,
+  "description": "Accessible UI component types for Solid",
+  "keywords": [
+    "solid",
+    "solid2-aria",
+    "solidjs"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "pekochan069",
+    "email": "pekochan069@gmail.com",
+    "url": "https://github.com/pekochan069/solid2-aria.git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pekochan069/solid2-aria.git",
+    "directory": "packages/solid2-aria-types"
+  },
+  "files": [
+    "src",
+    "LICENSE",
+    "LICENSES",
+    "NOTICE.txt",
+    "README.md"
+  ],
+  "type": "module",
+  "exports": {
+    "./actionbar": {
+      "types": "./src/actionbar.d.ts"
+    },
+    "./actiongroup": {
+      "types": "./src/actiongroup.d.ts"
+    },
+    "./autocomplete": {
+      "types": "./src/autocomplete.d.ts"
+    },
+    "./avatar": {
+      "types": "./src/avatar.d.ts"
+    },
+    "./badge": {
+      "types": "./src/badge.d.ts"
+    },
+    "./breadcrumbs": {
+      "types": "./src/breadcrumbs.d.ts"
+    },
+    "./button": {
+      "types": "./src/button.d.ts"
+    },
+    "./buttongroup": {
+      "types": "./src/buttongroup.d.ts"
+    },
+    "./calendar": {
+      "types": "./src/calendar.d.ts"
+    },
+    "./card": {
+      "types": "./src/card.d.ts"
+    },
+    "./checkbox": {
+      "types": "./src/checkbox.d.ts"
+    },
+    "./color": {
+      "types": "./src/color.d.ts"
+    },
+    "./combobox": {
+      "types": "./src/combobox.d.ts"
+    },
+    "./contextualhelp": {
+      "types": "./src/contextualhelp.d.ts"
+    },
+    "./datepicker": {
+      "types": "./src/datepicker.d.ts"
+    },
+    "./dialog": {
+      "types": "./src/dialog.d.ts"
+    },
+    "./divider": {
+      "types": "./src/divider.d.ts"
+    },
+    "./form": {
+      "types": "./src/form.d.ts"
+    },
+    "./grid": {
+      "types": "./src/grid.d.ts"
+    },
+    "./illustratedmessage": {
+      "types": "./src/illustratedmessage.d.ts"
+    },
+    "./image": {
+      "types": "./src/image.d.ts"
+    },
+    "./label": {
+      "types": "./src/label.d.ts"
+    },
+    "./layout": {
+      "types": "./src/layout.d.ts"
+    },
+    "./link": {
+      "types": "./src/link.d.ts"
+    },
+    "./list": {
+      "types": "./src/list.d.ts"
+    },
+    "./listbox": {
+      "types": "./src/listbox.d.ts"
+    },
+    "./menu": {
+      "types": "./src/menu.d.ts"
+    },
+    "./meter": {
+      "types": "./src/meter.d.ts"
+    },
+    "./numberfield": {
+      "types": "./src/numberfield.d.ts"
+    },
+    "./overlays": {
+      "types": "./src/overlays.d.ts"
+    },
+    "./progress": {
+      "types": "./src/progress.d.ts"
+    },
+    "./provider": {
+      "types": "./src/provider.d.ts"
+    },
+    "./radio": {
+      "types": "./src/radio.d.ts"
+    },
+    "./searchfield": {
+      "types": "./src/searchfield.d.ts"
+    },
+    "./select": {
+      "types": "./src/select.d.ts"
+    },
+    "./slider": {
+      "types": "./src/slider.d.ts"
+    },
+    "./statuslight": {
+      "types": "./src/statuslight.d.ts"
+    },
+    "./switch": {
+      "types": "./src/switch.d.ts"
+    },
+    "./table": {
+      "types": "./src/table.d.ts"
+    },
+    "./tabs": {
+      "types": "./src/tabs.d.ts"
+    },
+    "./text": {
+      "types": "./src/text.d.ts"
+    },
+    "./textfield": {
+      "types": "./src/textfield.d.ts"
+    },
+    "./tooltip": {
+      "types": "./src/tooltip.d.ts"
+    },
+    "./view": {
+      "types": "./src/view.d.ts"
+    },
+    "./well": {
+      "types": "./src/well.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "check-types": "tsrs --noEmit",
+    "check": "ultracite check",
+    "fix": "ultracite fix"
+  },
+  "dependencies": {
+    "@internationalized/date": "^3.0.0",
+    "@solid2-aria/types-shared": "^0.0.1",
+    "@solid2-aria/types-shared-web": "^0.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^7.1.0-beta"
+  },
+  "peerDependencies": {
+    "@solidjs/web": "^2.0.0-rc.17",
+    "solid-js": "^2.0.0-rc.17"
+  }
+}

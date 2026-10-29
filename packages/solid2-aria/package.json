@@ -1,0 +1,1360 @@
+{
+  "name": "@solid2-aria/core",
+  "version": "0.0.1",
+  "private": false,
+  "keywords": [
+    "solid",
+    "solid2-aria",
+    "solidjs"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "pekochan069",
+    "email": "pekochan069@gmail.com",
+    "url": "https://github.com/pekochan069/solid2-aria.git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pekochan069/solid2-aria.git",
+    "directory": "packages/solid2-aria"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "type": "module",
+  "imports": {
+    "#*": "./src/*"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/browser/index.d.ts",
+      "browser": "./dist/browser/index.js",
+      "default": "./dist/server/index.js"
+    },
+    "./actiongroup/create-action-group": {
+      "types": "./dist/browser/actiongroup/create-action-group.d.ts",
+      "browser": "./dist/browser/actiongroup/create-action-group.js",
+      "default": "./dist/server/actiongroup/create-action-group.js"
+    },
+    "./actiongroup/create-action-group-item": {
+      "types": "./dist/browser/actiongroup/create-action-group-item.d.ts",
+      "browser": "./dist/browser/actiongroup/create-action-group-item.js",
+      "default": "./dist/server/actiongroup/create-action-group-item.js"
+    },
+    "./aria-modal-polyfill/aria-modal-polyfill": {
+      "types": "./dist/browser/aria-modal-polyfill/aria-modal-polyfill.d.ts",
+      "browser": "./dist/browser/aria-modal-polyfill/aria-modal-polyfill.js",
+      "default": "./dist/server/aria-modal-polyfill/aria-modal-polyfill.js"
+    },
+    "./autocomplete/create-autocomplete": {
+      "types": "./dist/browser/autocomplete/create-autocomplete.d.ts",
+      "browser": "./dist/browser/autocomplete/create-autocomplete.js",
+      "default": "./dist/server/autocomplete/create-autocomplete.js"
+    },
+    "./autocomplete/create-search-autocomplete": {
+      "types": "./dist/browser/autocomplete/create-search-autocomplete.d.ts",
+      "browser": "./dist/browser/autocomplete/create-search-autocomplete.js",
+      "default": "./dist/server/autocomplete/create-search-autocomplete.js"
+    },
+    "./breadcrumbs/create-breadcrumb-item": {
+      "types": "./dist/browser/breadcrumbs/create-breadcrumb-item.d.ts",
+      "browser": "./dist/browser/breadcrumbs/create-breadcrumb-item.js",
+      "default": "./dist/server/breadcrumbs/create-breadcrumb-item.js"
+    },
+    "./breadcrumbs/create-breadcrumbs": {
+      "types": "./dist/browser/breadcrumbs/create-breadcrumbs.d.ts",
+      "browser": "./dist/browser/breadcrumbs/create-breadcrumbs.js",
+      "default": "./dist/server/breadcrumbs/create-breadcrumbs.js"
+    },
+    "./button/create-button": {
+      "types": "./dist/browser/button/create-button.d.ts",
+      "browser": "./dist/browser/button/create-button.js",
+      "default": "./dist/server/button/create-button.js"
+    },
+    "./button/create-toggle-button": {
+      "types": "./dist/browser/button/create-toggle-button.d.ts",
+      "browser": "./dist/browser/button/create-toggle-button.js",
+      "default": "./dist/server/button/create-toggle-button.js"
+    },
+    "./button/create-toggle-button-group": {
+      "types": "./dist/browser/button/create-toggle-button-group.d.ts",
+      "browser": "./dist/browser/button/create-toggle-button-group.js",
+      "default": "./dist/server/button/create-toggle-button-group.js"
+    },
+    "./calendar/create-calendar": {
+      "types": "./dist/browser/calendar/create-calendar.d.ts",
+      "browser": "./dist/browser/calendar/create-calendar.js",
+      "default": "./dist/server/calendar/create-calendar.js"
+    },
+    "./calendar/create-calendar-base": {
+      "types": "./dist/browser/calendar/create-calendar-base.d.ts",
+      "browser": "./dist/browser/calendar/create-calendar-base.js",
+      "default": "./dist/server/calendar/create-calendar-base.js"
+    },
+    "./calendar/create-calendar-cell": {
+      "types": "./dist/browser/calendar/create-calendar-cell.d.ts",
+      "browser": "./dist/browser/calendar/create-calendar-cell.js",
+      "default": "./dist/server/calendar/create-calendar-cell.js"
+    },
+    "./calendar/create-calendar-grid": {
+      "types": "./dist/browser/calendar/create-calendar-grid.d.ts",
+      "browser": "./dist/browser/calendar/create-calendar-grid.js",
+      "default": "./dist/server/calendar/create-calendar-grid.js"
+    },
+    "./calendar/create-calendar-heading": {
+      "types": "./dist/browser/calendar/create-calendar-heading.d.ts",
+      "browser": "./dist/browser/calendar/create-calendar-heading.js",
+      "default": "./dist/server/calendar/create-calendar-heading.js"
+    },
+    "./calendar/create-calendar-month-picker": {
+      "types": "./dist/browser/calendar/create-calendar-month-picker.d.ts",
+      "browser": "./dist/browser/calendar/create-calendar-month-picker.js",
+      "default": "./dist/server/calendar/create-calendar-month-picker.js"
+    },
+    "./calendar/create-calendar-year-picker": {
+      "types": "./dist/browser/calendar/create-calendar-year-picker.d.ts",
+      "browser": "./dist/browser/calendar/create-calendar-year-picker.js",
+      "default": "./dist/server/calendar/create-calendar-year-picker.js"
+    },
+    "./calendar/create-range-calendar": {
+      "types": "./dist/browser/calendar/create-range-calendar.d.ts",
+      "browser": "./dist/browser/calendar/create-range-calendar.js",
+      "default": "./dist/server/calendar/create-range-calendar.js"
+    },
+    "./calendar/utils": {
+      "types": "./dist/browser/calendar/utils.d.ts",
+      "browser": "./dist/browser/calendar/utils.js",
+      "default": "./dist/server/calendar/utils.js"
+    },
+    "./checkbox/create-checkbox": {
+      "types": "./dist/browser/checkbox/create-checkbox.d.ts",
+      "browser": "./dist/browser/checkbox/create-checkbox.js",
+      "default": "./dist/server/checkbox/create-checkbox.js"
+    },
+    "./checkbox/create-checkbox-group": {
+      "types": "./dist/browser/checkbox/create-checkbox-group.d.ts",
+      "browser": "./dist/browser/checkbox/create-checkbox-group.js",
+      "default": "./dist/server/checkbox/create-checkbox-group.js"
+    },
+    "./checkbox/create-checkbox-group-item": {
+      "types": "./dist/browser/checkbox/create-checkbox-group-item.d.ts",
+      "browser": "./dist/browser/checkbox/create-checkbox-group-item.js",
+      "default": "./dist/server/checkbox/create-checkbox-group-item.js"
+    },
+    "./checkbox/utils": {
+      "types": "./dist/browser/checkbox/utils.d.ts",
+      "browser": "./dist/browser/checkbox/utils.js",
+      "default": "./dist/server/checkbox/utils.js"
+    },
+    "./collections/base-collection": {
+      "types": "./dist/browser/collections/base-collection.d.ts",
+      "browser": "./dist/browser/collections/base-collection.js",
+      "default": "./dist/server/collections/base-collection.js"
+    },
+    "./collections/collection-builder": {
+      "types": "./dist/browser/collections/collection-builder.d.ts",
+      "browser": "./dist/browser/collections/collection-builder.js",
+      "default": "./dist/server/collections/collection-builder.js"
+    },
+    "./collections/create-cached-children": {
+      "types": "./dist/browser/collections/create-cached-children.d.ts",
+      "browser": "./dist/browser/collections/create-cached-children.js",
+      "default": "./dist/server/collections/create-cached-children.js"
+    },
+    "./collections/document": {
+      "types": "./dist/browser/collections/document.d.ts",
+      "browser": "./dist/browser/collections/document.js",
+      "default": "./dist/server/collections/document.js"
+    },
+    "./collections/hidden": {
+      "types": "./dist/browser/collections/hidden.d.ts",
+      "browser": "./dist/browser/collections/hidden.js",
+      "default": "./dist/server/collections/hidden.js"
+    },
+    "./color/create-color-area": {
+      "types": "./dist/browser/color/create-color-area.d.ts",
+      "browser": "./dist/browser/color/create-color-area.js",
+      "default": "./dist/server/color/create-color-area.js"
+    },
+    "./color/create-color-area-gradient": {
+      "types": "./dist/browser/color/create-color-area-gradient.d.ts",
+      "browser": "./dist/browser/color/create-color-area-gradient.js",
+      "default": "./dist/server/color/create-color-area-gradient.js"
+    },
+    "./color/create-color-channel-field": {
+      "types": "./dist/browser/color/create-color-channel-field.d.ts",
+      "browser": "./dist/browser/color/create-color-channel-field.js",
+      "default": "./dist/server/color/create-color-channel-field.js"
+    },
+    "./color/create-color-field": {
+      "types": "./dist/browser/color/create-color-field.d.ts",
+      "browser": "./dist/browser/color/create-color-field.js",
+      "default": "./dist/server/color/create-color-field.js"
+    },
+    "./color/create-color-slider": {
+      "types": "./dist/browser/color/create-color-slider.d.ts",
+      "browser": "./dist/browser/color/create-color-slider.js",
+      "default": "./dist/server/color/create-color-slider.js"
+    },
+    "./color/create-color-swatch": {
+      "types": "./dist/browser/color/create-color-swatch.d.ts",
+      "browser": "./dist/browser/color/create-color-swatch.js",
+      "default": "./dist/server/color/create-color-swatch.js"
+    },
+    "./color/create-color-wheel": {
+      "types": "./dist/browser/color/create-color-wheel.d.ts",
+      "browser": "./dist/browser/color/create-color-wheel.js",
+      "default": "./dist/server/color/create-color-wheel.js"
+    },
+    "./combobox/create-combo-box": {
+      "types": "./dist/browser/combobox/create-combo-box.d.ts",
+      "browser": "./dist/browser/combobox/create-combo-box.js",
+      "default": "./dist/server/combobox/create-combo-box.js"
+    },
+    "./datepicker/create-date-field": {
+      "types": "./dist/browser/datepicker/create-date-field.d.ts",
+      "browser": "./dist/browser/datepicker/create-date-field.js",
+      "default": "./dist/server/datepicker/create-date-field.js"
+    },
+    "./datepicker/create-date-picker": {
+      "types": "./dist/browser/datepicker/create-date-picker.d.ts",
+      "browser": "./dist/browser/datepicker/create-date-picker.js",
+      "default": "./dist/server/datepicker/create-date-picker.js"
+    },
+    "./datepicker/create-date-picker-group": {
+      "types": "./dist/browser/datepicker/create-date-picker-group.d.ts",
+      "browser": "./dist/browser/datepicker/create-date-picker-group.js",
+      "default": "./dist/server/datepicker/create-date-picker-group.js"
+    },
+    "./datepicker/create-date-range-picker": {
+      "types": "./dist/browser/datepicker/create-date-range-picker.d.ts",
+      "browser": "./dist/browser/datepicker/create-date-range-picker.js",
+      "default": "./dist/server/datepicker/create-date-range-picker.js"
+    },
+    "./datepicker/create-date-segment": {
+      "types": "./dist/browser/datepicker/create-date-segment.d.ts",
+      "browser": "./dist/browser/datepicker/create-date-segment.js",
+      "default": "./dist/server/datepicker/create-date-segment.js"
+    },
+    "./datepicker/create-display-names": {
+      "types": "./dist/browser/datepicker/create-display-names.d.ts",
+      "browser": "./dist/browser/datepicker/create-display-names.js",
+      "default": "./dist/server/datepicker/create-display-names.js"
+    },
+    "./dialog/create-dialog": {
+      "types": "./dist/browser/dialog/create-dialog.d.ts",
+      "browser": "./dist/browser/dialog/create-dialog.js",
+      "default": "./dist/server/dialog/create-dialog.js"
+    },
+    "./disclosure/create-disclosure": {
+      "types": "./dist/browser/disclosure/create-disclosure.d.ts",
+      "browser": "./dist/browser/disclosure/create-disclosure.js",
+      "default": "./dist/server/disclosure/create-disclosure.js"
+    },
+    "./dnd/constants": {
+      "types": "./dist/browser/dnd/constants.d.ts",
+      "browser": "./dist/browser/dnd/constants.js",
+      "default": "./dist/server/dnd/constants.js"
+    },
+    "./dnd/create-auto-scroll": {
+      "types": "./dist/browser/dnd/create-auto-scroll.d.ts",
+      "browser": "./dist/browser/dnd/create-auto-scroll.js",
+      "default": "./dist/server/dnd/create-auto-scroll.js"
+    },
+    "./dnd/create-clipboard": {
+      "types": "./dist/browser/dnd/create-clipboard.d.ts",
+      "browser": "./dist/browser/dnd/create-clipboard.js",
+      "default": "./dist/server/dnd/create-clipboard.js"
+    },
+    "./dnd/create-drag": {
+      "types": "./dist/browser/dnd/create-drag.d.ts",
+      "browser": "./dist/browser/dnd/create-drag.js",
+      "default": "./dist/server/dnd/create-drag.js"
+    },
+    "./dnd/create-draggable-collection": {
+      "types": "./dist/browser/dnd/create-draggable-collection.d.ts",
+      "browser": "./dist/browser/dnd/create-draggable-collection.js",
+      "default": "./dist/server/dnd/create-draggable-collection.js"
+    },
+    "./dnd/create-draggable-item": {
+      "types": "./dist/browser/dnd/create-draggable-item.d.ts",
+      "browser": "./dist/browser/dnd/create-draggable-item.js",
+      "default": "./dist/server/dnd/create-draggable-item.js"
+    },
+    "./dnd/create-drop": {
+      "types": "./dist/browser/dnd/create-drop.d.ts",
+      "browser": "./dist/browser/dnd/create-drop.js",
+      "default": "./dist/server/dnd/create-drop.js"
+    },
+    "./dnd/create-drop-indicator": {
+      "types": "./dist/browser/dnd/create-drop-indicator.d.ts",
+      "browser": "./dist/browser/dnd/create-drop-indicator.js",
+      "default": "./dist/server/dnd/create-drop-indicator.js"
+    },
+    "./dnd/create-droppable-collection": {
+      "types": "./dist/browser/dnd/create-droppable-collection.d.ts",
+      "browser": "./dist/browser/dnd/create-droppable-collection.js",
+      "default": "./dist/server/dnd/create-droppable-collection.js"
+    },
+    "./dnd/create-droppable-item": {
+      "types": "./dist/browser/dnd/create-droppable-item.d.ts",
+      "browser": "./dist/browser/dnd/create-droppable-item.js",
+      "default": "./dist/server/dnd/create-droppable-item.js"
+    },
+    "./dnd/create-virtual-drop": {
+      "types": "./dist/browser/dnd/create-virtual-drop.d.ts",
+      "browser": "./dist/browser/dnd/create-virtual-drop.js",
+      "default": "./dist/server/dnd/create-virtual-drop.js"
+    },
+    "./dnd/drag-manager": {
+      "types": "./dist/browser/dnd/drag-manager.d.ts",
+      "browser": "./dist/browser/dnd/drag-manager.js",
+      "default": "./dist/server/dnd/drag-manager.js"
+    },
+    "./dnd/drag-preview": {
+      "types": "./dist/browser/dnd/drag-preview.d.ts",
+      "browser": "./dist/browser/dnd/drag-preview.js",
+      "default": "./dist/server/dnd/drag-preview.js"
+    },
+    "./dnd/drop-target-keyboard-navigation": {
+      "types": "./dist/browser/dnd/drop-target-keyboard-navigation.d.ts",
+      "browser": "./dist/browser/dnd/drop-target-keyboard-navigation.js",
+      "default": "./dist/server/dnd/drop-target-keyboard-navigation.js"
+    },
+    "./dnd/list-drop-target-delegate": {
+      "types": "./dist/browser/dnd/list-drop-target-delegate.d.ts",
+      "browser": "./dist/browser/dnd/list-drop-target-delegate.js",
+      "default": "./dist/server/dnd/list-drop-target-delegate.js"
+    },
+    "./dnd/utils": {
+      "types": "./dist/browser/dnd/utils.d.ts",
+      "browser": "./dist/browser/dnd/utils.js",
+      "default": "./dist/server/dnd/utils.js"
+    },
+    "./focus/create-focus-ring": {
+      "types": "./dist/browser/focus/create-focus-ring.d.ts",
+      "browser": "./dist/browser/focus/create-focus-ring.js",
+      "default": "./dist/server/focus/create-focus-ring.js"
+    },
+    "./focus/create-has-tabbable-child": {
+      "types": "./dist/browser/focus/create-has-tabbable-child.d.ts",
+      "browser": "./dist/browser/focus/create-has-tabbable-child.js",
+      "default": "./dist/server/focus/create-has-tabbable-child.js"
+    },
+    "./focus/focus-ring": {
+      "types": "./dist/browser/focus/focus-ring.d.ts",
+      "browser": "./dist/browser/focus/focus-ring.js",
+      "default": "./dist/server/focus/focus-ring.js"
+    },
+    "./focus/focus-scope": {
+      "types": "./dist/browser/focus/focus-scope.d.ts",
+      "browser": "./dist/browser/focus/focus-scope.js",
+      "default": "./dist/server/focus/focus-scope.js"
+    },
+    "./focus/virtual-focus": {
+      "types": "./dist/browser/focus/virtual-focus.d.ts",
+      "browser": "./dist/browser/focus/virtual-focus.js",
+      "default": "./dist/server/focus/virtual-focus.js"
+    },
+    "./form/create-form-validation": {
+      "types": "./dist/browser/form/create-form-validation.d.ts",
+      "browser": "./dist/browser/form/create-form-validation.js",
+      "default": "./dist/server/form/create-form-validation.js"
+    },
+    "./grid/create-grid": {
+      "types": "./dist/browser/grid/create-grid.d.ts",
+      "browser": "./dist/browser/grid/create-grid.js",
+      "default": "./dist/server/grid/create-grid.js"
+    },
+    "./grid/create-grid-cell": {
+      "types": "./dist/browser/grid/create-grid-cell.d.ts",
+      "browser": "./dist/browser/grid/create-grid-cell.js",
+      "default": "./dist/server/grid/create-grid-cell.js"
+    },
+    "./grid/create-grid-row": {
+      "types": "./dist/browser/grid/create-grid-row.d.ts",
+      "browser": "./dist/browser/grid/create-grid-row.js",
+      "default": "./dist/server/grid/create-grid-row.js"
+    },
+    "./grid/create-grid-row-group": {
+      "types": "./dist/browser/grid/create-grid-row-group.d.ts",
+      "browser": "./dist/browser/grid/create-grid-row-group.js",
+      "default": "./dist/server/grid/create-grid-row-group.js"
+    },
+    "./grid/create-grid-selection-announcement": {
+      "types": "./dist/browser/grid/create-grid-selection-announcement.d.ts",
+      "browser": "./dist/browser/grid/create-grid-selection-announcement.js",
+      "default": "./dist/server/grid/create-grid-selection-announcement.js"
+    },
+    "./grid/create-grid-selection-checkbox": {
+      "types": "./dist/browser/grid/create-grid-selection-checkbox.d.ts",
+      "browser": "./dist/browser/grid/create-grid-selection-checkbox.js",
+      "default": "./dist/server/grid/create-grid-selection-checkbox.js"
+    },
+    "./grid/create-highlight-selection-description": {
+      "types": "./dist/browser/grid/create-highlight-selection-description.d.ts",
+      "browser": "./dist/browser/grid/create-highlight-selection-description.js",
+      "default": "./dist/server/grid/create-highlight-selection-description.js"
+    },
+    "./grid/grid-keyboard-delegate": {
+      "types": "./dist/browser/grid/grid-keyboard-delegate.d.ts",
+      "browser": "./dist/browser/grid/grid-keyboard-delegate.js",
+      "default": "./dist/server/grid/grid-keyboard-delegate.js"
+    },
+    "./grid/utils": {
+      "types": "./dist/browser/grid/utils.d.ts",
+      "browser": "./dist/browser/grid/utils.js",
+      "default": "./dist/server/grid/utils.js"
+    },
+    "./gridlist/create-grid-list": {
+      "types": "./dist/browser/gridlist/create-grid-list.d.ts",
+      "browser": "./dist/browser/gridlist/create-grid-list.js",
+      "default": "./dist/server/gridlist/create-grid-list.js"
+    },
+    "./gridlist/create-grid-list-item": {
+      "types": "./dist/browser/gridlist/create-grid-list-item.d.ts",
+      "browser": "./dist/browser/gridlist/create-grid-list-item.js",
+      "default": "./dist/server/gridlist/create-grid-list-item.js"
+    },
+    "./gridlist/create-grid-list-section": {
+      "types": "./dist/browser/gridlist/create-grid-list-section.d.ts",
+      "browser": "./dist/browser/gridlist/create-grid-list-section.js",
+      "default": "./dist/server/gridlist/create-grid-list-section.js"
+    },
+    "./gridlist/create-grid-list-selection-checkbox": {
+      "types": "./dist/browser/gridlist/create-grid-list-selection-checkbox.d.ts",
+      "browser": "./dist/browser/gridlist/create-grid-list-selection-checkbox.js",
+      "default": "./dist/server/gridlist/create-grid-list-selection-checkbox.js"
+    },
+    "./gridlist/utils": {
+      "types": "./dist/browser/gridlist/utils.d.ts",
+      "browser": "./dist/browser/gridlist/utils.js",
+      "default": "./dist/server/gridlist/utils.js"
+    },
+    "./i18n/create-collator": {
+      "types": "./dist/browser/i18n/create-collator.d.ts",
+      "browser": "./dist/browser/i18n/create-collator.js",
+      "default": "./dist/server/i18n/create-collator.js"
+    },
+    "./i18n/create-date-formatter": {
+      "types": "./dist/browser/i18n/create-date-formatter.d.ts",
+      "browser": "./dist/browser/i18n/create-date-formatter.js",
+      "default": "./dist/server/i18n/create-date-formatter.js"
+    },
+    "./i18n/create-default-locale": {
+      "types": "./dist/browser/i18n/create-default-locale.d.ts",
+      "browser": "./dist/browser/i18n/create-default-locale.js",
+      "default": "./dist/server/i18n/create-default-locale.js"
+    },
+    "./i18n/create-filter": {
+      "types": "./dist/browser/i18n/create-filter.d.ts",
+      "browser": "./dist/browser/i18n/create-filter.js",
+      "default": "./dist/server/i18n/create-filter.js"
+    },
+    "./i18n/create-list-formatter": {
+      "types": "./dist/browser/i18n/create-list-formatter.d.ts",
+      "browser": "./dist/browser/i18n/create-list-formatter.js",
+      "default": "./dist/server/i18n/create-list-formatter.js"
+    },
+    "./i18n/create-localized-string-formatter": {
+      "types": "./dist/browser/i18n/create-localized-string-formatter.d.ts",
+      "browser": "./dist/browser/i18n/create-localized-string-formatter.js",
+      "default": "./dist/server/i18n/create-localized-string-formatter.js"
+    },
+    "./i18n/create-number-formatter": {
+      "types": "./dist/browser/i18n/create-number-formatter.d.ts",
+      "browser": "./dist/browser/i18n/create-number-formatter.js",
+      "default": "./dist/server/i18n/create-number-formatter.js"
+    },
+    "./i18n/i18n-provider": {
+      "types": "./dist/browser/i18n/i18n-provider.d.ts",
+      "browser": "./dist/browser/i18n/i18n-provider.js",
+      "default": "./dist/server/i18n/i18n-provider.js"
+    },
+    "./i18n/server": {
+      "types": "./dist/browser/i18n/server.d.ts",
+      "browser": "./dist/browser/i18n/server.js",
+      "default": "./dist/server/i18n/server.js"
+    },
+    "./i18n/utils": {
+      "types": "./dist/browser/i18n/utils.d.ts",
+      "browser": "./dist/browser/i18n/utils.js",
+      "default": "./dist/server/i18n/utils.js"
+    },
+    "./interactions/context": {
+      "types": "./dist/browser/interactions/context.d.ts",
+      "browser": "./dist/browser/interactions/context.js",
+      "default": "./dist/server/interactions/context.js"
+    },
+    "./interactions/create-context-menu": {
+      "types": "./dist/browser/interactions/create-context-menu.d.ts",
+      "browser": "./dist/browser/interactions/create-context-menu.js",
+      "default": "./dist/server/interactions/create-context-menu.js"
+    },
+    "./interactions/create-event-handler": {
+      "types": "./dist/browser/interactions/create-event-handler.d.ts",
+      "browser": "./dist/browser/interactions/create-event-handler.js",
+      "default": "./dist/server/interactions/create-event-handler.js"
+    },
+    "./interactions/create-focus": {
+      "types": "./dist/browser/interactions/create-focus.d.ts",
+      "browser": "./dist/browser/interactions/create-focus.js",
+      "default": "./dist/server/interactions/create-focus.js"
+    },
+    "./interactions/create-focus-visible": {
+      "types": "./dist/browser/interactions/create-focus-visible.d.ts",
+      "browser": "./dist/browser/interactions/create-focus-visible.js",
+      "default": "./dist/server/interactions/create-focus-visible.js"
+    },
+    "./interactions/create-focus-within": {
+      "types": "./dist/browser/interactions/create-focus-within.d.ts",
+      "browser": "./dist/browser/interactions/create-focus-within.js",
+      "default": "./dist/server/interactions/create-focus-within.js"
+    },
+    "./interactions/create-focusable": {
+      "types": "./dist/browser/interactions/create-focusable.d.ts",
+      "browser": "./dist/browser/interactions/create-focusable.js",
+      "default": "./dist/server/interactions/create-focusable.js"
+    },
+    "./interactions/create-hover": {
+      "types": "./dist/browser/interactions/create-hover.d.ts",
+      "browser": "./dist/browser/interactions/create-hover.js",
+      "default": "./dist/server/interactions/create-hover.js"
+    },
+    "./interactions/create-interact-outside": {
+      "types": "./dist/browser/interactions/create-interact-outside.d.ts",
+      "browser": "./dist/browser/interactions/create-interact-outside.js",
+      "default": "./dist/server/interactions/create-interact-outside.js"
+    },
+    "./interactions/create-keyboard": {
+      "types": "./dist/browser/interactions/create-keyboard.d.ts",
+      "browser": "./dist/browser/interactions/create-keyboard.js",
+      "default": "./dist/server/interactions/create-keyboard.js"
+    },
+    "./interactions/create-keyboard-shortcut-handler": {
+      "types": "./dist/browser/interactions/create-keyboard-shortcut-handler.d.ts",
+      "browser": "./dist/browser/interactions/create-keyboard-shortcut-handler.js",
+      "default": "./dist/server/interactions/create-keyboard-shortcut-handler.js"
+    },
+    "./interactions/create-long-press": {
+      "types": "./dist/browser/interactions/create-long-press.d.ts",
+      "browser": "./dist/browser/interactions/create-long-press.js",
+      "default": "./dist/server/interactions/create-long-press.js"
+    },
+    "./interactions/create-move": {
+      "types": "./dist/browser/interactions/create-move.d.ts",
+      "browser": "./dist/browser/interactions/create-move.js",
+      "default": "./dist/server/interactions/create-move.js"
+    },
+    "./interactions/create-press": {
+      "types": "./dist/browser/interactions/create-press.d.ts",
+      "browser": "./dist/browser/interactions/create-press.js",
+      "default": "./dist/server/interactions/create-press.js"
+    },
+    "./interactions/create-scroll-wheel": {
+      "types": "./dist/browser/interactions/create-scroll-wheel.d.ts",
+      "browser": "./dist/browser/interactions/create-scroll-wheel.js",
+      "default": "./dist/server/interactions/create-scroll-wheel.js"
+    },
+    "./interactions/focus-safely": {
+      "types": "./dist/browser/interactions/focus-safely.d.ts",
+      "browser": "./dist/browser/interactions/focus-safely.js",
+      "default": "./dist/server/interactions/focus-safely.js"
+    },
+    "./interactions/press-responder": {
+      "types": "./dist/browser/interactions/press-responder.d.ts",
+      "browser": "./dist/browser/interactions/press-responder.js",
+      "default": "./dist/server/interactions/press-responder.js"
+    },
+    "./interactions/pressable": {
+      "types": "./dist/browser/interactions/pressable.d.ts",
+      "browser": "./dist/browser/interactions/pressable.js",
+      "default": "./dist/server/interactions/pressable.js"
+    },
+    "./interactions/text-selection": {
+      "types": "./dist/browser/interactions/text-selection.d.ts",
+      "browser": "./dist/browser/interactions/text-selection.js",
+      "default": "./dist/server/interactions/text-selection.js"
+    },
+    "./interactions/utils": {
+      "types": "./dist/browser/interactions/utils.d.ts",
+      "browser": "./dist/browser/interactions/utils.js",
+      "default": "./dist/server/interactions/utils.js"
+    },
+    "./label/create-field": {
+      "types": "./dist/browser/label/create-field.d.ts",
+      "browser": "./dist/browser/label/create-field.js",
+      "default": "./dist/server/label/create-field.js"
+    },
+    "./label/create-label": {
+      "types": "./dist/browser/label/create-label.d.ts",
+      "browser": "./dist/browser/label/create-label.js",
+      "default": "./dist/server/label/create-label.js"
+    },
+    "./landmark/create-landmark": {
+      "types": "./dist/browser/landmark/create-landmark.d.ts",
+      "browser": "./dist/browser/landmark/create-landmark.js",
+      "default": "./dist/server/landmark/create-landmark.js"
+    },
+    "./link/create-link": {
+      "types": "./dist/browser/link/create-link.d.ts",
+      "browser": "./dist/browser/link/create-link.js",
+      "default": "./dist/server/link/create-link.js"
+    },
+    "./listbox/create-list-box": {
+      "types": "./dist/browser/listbox/create-list-box.d.ts",
+      "browser": "./dist/browser/listbox/create-list-box.js",
+      "default": "./dist/server/listbox/create-list-box.js"
+    },
+    "./listbox/create-list-box-section": {
+      "types": "./dist/browser/listbox/create-list-box-section.d.ts",
+      "browser": "./dist/browser/listbox/create-list-box-section.js",
+      "default": "./dist/server/listbox/create-list-box-section.js"
+    },
+    "./listbox/create-option": {
+      "types": "./dist/browser/listbox/create-option.d.ts",
+      "browser": "./dist/browser/listbox/create-option.js",
+      "default": "./dist/server/listbox/create-option.js"
+    },
+    "./listbox/utils": {
+      "types": "./dist/browser/listbox/utils.d.ts",
+      "browser": "./dist/browser/listbox/utils.js",
+      "default": "./dist/server/listbox/utils.js"
+    },
+    "./live-announcer/live-announcer": {
+      "types": "./dist/browser/live-announcer/live-announcer.d.ts",
+      "browser": "./dist/browser/live-announcer/live-announcer.js",
+      "default": "./dist/server/live-announcer/live-announcer.js"
+    },
+    "./menu/create-menu": {
+      "types": "./dist/browser/menu/create-menu.d.ts",
+      "browser": "./dist/browser/menu/create-menu.js",
+      "default": "./dist/server/menu/create-menu.js"
+    },
+    "./menu/create-menu-item": {
+      "types": "./dist/browser/menu/create-menu-item.d.ts",
+      "browser": "./dist/browser/menu/create-menu-item.js",
+      "default": "./dist/server/menu/create-menu-item.js"
+    },
+    "./menu/create-menu-section": {
+      "types": "./dist/browser/menu/create-menu-section.d.ts",
+      "browser": "./dist/browser/menu/create-menu-section.js",
+      "default": "./dist/server/menu/create-menu-section.js"
+    },
+    "./menu/create-menu-trigger": {
+      "types": "./dist/browser/menu/create-menu-trigger.d.ts",
+      "browser": "./dist/browser/menu/create-menu-trigger.js",
+      "default": "./dist/server/menu/create-menu-trigger.js"
+    },
+    "./menu/create-safely-mouse-to-submenu": {
+      "types": "./dist/browser/menu/create-safely-mouse-to-submenu.d.ts",
+      "browser": "./dist/browser/menu/create-safely-mouse-to-submenu.js",
+      "default": "./dist/server/menu/create-safely-mouse-to-submenu.js"
+    },
+    "./menu/create-submenu-trigger": {
+      "types": "./dist/browser/menu/create-submenu-trigger.d.ts",
+      "browser": "./dist/browser/menu/create-submenu-trigger.js",
+      "default": "./dist/server/menu/create-submenu-trigger.js"
+    },
+    "./menu/utils": {
+      "types": "./dist/browser/menu/utils.d.ts",
+      "browser": "./dist/browser/menu/utils.js",
+      "default": "./dist/server/menu/utils.js"
+    },
+    "./meter/create-meter": {
+      "types": "./dist/browser/meter/create-meter.d.ts",
+      "browser": "./dist/browser/meter/create-meter.js",
+      "default": "./dist/server/meter/create-meter.js"
+    },
+    "./numberfield/create-number-field": {
+      "types": "./dist/browser/numberfield/create-number-field.d.ts",
+      "browser": "./dist/browser/numberfield/create-number-field.js",
+      "default": "./dist/server/numberfield/create-number-field.js"
+    },
+    "./overlays/aria-hide-outside": {
+      "types": "./dist/browser/overlays/aria-hide-outside.d.ts",
+      "browser": "./dist/browser/overlays/aria-hide-outside.js",
+      "default": "./dist/server/overlays/aria-hide-outside.js"
+    },
+    "./overlays/calculate-position": {
+      "types": "./dist/browser/overlays/calculate-position.d.ts",
+      "browser": "./dist/browser/overlays/calculate-position.js",
+      "default": "./dist/server/overlays/calculate-position.js"
+    },
+    "./overlays/create-close-on-scroll": {
+      "types": "./dist/browser/overlays/create-close-on-scroll.d.ts",
+      "browser": "./dist/browser/overlays/create-close-on-scroll.js",
+      "default": "./dist/server/overlays/create-close-on-scroll.js"
+    },
+    "./overlays/create-modal": {
+      "types": "./dist/browser/overlays/create-modal.d.ts",
+      "browser": "./dist/browser/overlays/create-modal.js",
+      "default": "./dist/server/overlays/create-modal.js"
+    },
+    "./overlays/create-modal-overlay": {
+      "types": "./dist/browser/overlays/create-modal-overlay.d.ts",
+      "browser": "./dist/browser/overlays/create-modal-overlay.js",
+      "default": "./dist/server/overlays/create-modal-overlay.js"
+    },
+    "./overlays/create-overlay": {
+      "types": "./dist/browser/overlays/create-overlay.d.ts",
+      "browser": "./dist/browser/overlays/create-overlay.js",
+      "default": "./dist/server/overlays/create-overlay.js"
+    },
+    "./overlays/create-overlay-position": {
+      "types": "./dist/browser/overlays/create-overlay-position.d.ts",
+      "browser": "./dist/browser/overlays/create-overlay-position.js",
+      "default": "./dist/server/overlays/create-overlay-position.js"
+    },
+    "./overlays/create-overlay-trigger": {
+      "types": "./dist/browser/overlays/create-overlay-trigger.d.ts",
+      "browser": "./dist/browser/overlays/create-overlay-trigger.js",
+      "default": "./dist/server/overlays/create-overlay-trigger.js"
+    },
+    "./overlays/create-popover": {
+      "types": "./dist/browser/overlays/create-popover.d.ts",
+      "browser": "./dist/browser/overlays/create-popover.js",
+      "default": "./dist/server/overlays/create-popover.js"
+    },
+    "./overlays/create-prevent-scroll": {
+      "types": "./dist/browser/overlays/create-prevent-scroll.d.ts",
+      "browser": "./dist/browser/overlays/create-prevent-scroll.js",
+      "default": "./dist/server/overlays/create-prevent-scroll.js"
+    },
+    "./overlays/dismiss-button": {
+      "types": "./dist/browser/overlays/dismiss-button.d.ts",
+      "browser": "./dist/browser/overlays/dismiss-button.js",
+      "default": "./dist/server/overlays/dismiss-button.js"
+    },
+    "./overlays/overlay": {
+      "types": "./dist/browser/overlays/overlay.d.ts",
+      "browser": "./dist/browser/overlays/overlay.js",
+      "default": "./dist/server/overlays/overlay.js"
+    },
+    "./overlays/portal-provider": {
+      "types": "./dist/browser/overlays/portal-provider.d.ts",
+      "browser": "./dist/browser/overlays/portal-provider.js",
+      "default": "./dist/server/overlays/portal-provider.js"
+    },
+    "./progress/create-progress-bar": {
+      "types": "./dist/browser/progress/create-progress-bar.d.ts",
+      "browser": "./dist/browser/progress/create-progress-bar.js",
+      "default": "./dist/server/progress/create-progress-bar.js"
+    },
+    "./radio/create-radio": {
+      "types": "./dist/browser/radio/create-radio.d.ts",
+      "browser": "./dist/browser/radio/create-radio.js",
+      "default": "./dist/server/radio/create-radio.js"
+    },
+    "./radio/create-radio-group": {
+      "types": "./dist/browser/radio/create-radio-group.d.ts",
+      "browser": "./dist/browser/radio/create-radio-group.js",
+      "default": "./dist/server/radio/create-radio-group.js"
+    },
+    "./radio/utils": {
+      "types": "./dist/browser/radio/utils.d.ts",
+      "browser": "./dist/browser/radio/utils.js",
+      "default": "./dist/server/radio/utils.js"
+    },
+    "./searchfield/create-search-field": {
+      "types": "./dist/browser/searchfield/create-search-field.d.ts",
+      "browser": "./dist/browser/searchfield/create-search-field.js",
+      "default": "./dist/server/searchfield/create-search-field.js"
+    },
+    "./select/create-select": {
+      "types": "./dist/browser/select/create-select.d.ts",
+      "browser": "./dist/browser/select/create-select.js",
+      "default": "./dist/server/select/create-select.js"
+    },
+    "./select/hidden-select": {
+      "types": "./dist/browser/select/hidden-select.d.ts",
+      "browser": "./dist/browser/select/hidden-select.js",
+      "default": "./dist/server/select/hidden-select.js"
+    },
+    "./selection/create-selectable-collection": {
+      "types": "./dist/browser/selection/create-selectable-collection.d.ts",
+      "browser": "./dist/browser/selection/create-selectable-collection.js",
+      "default": "./dist/server/selection/create-selectable-collection.js"
+    },
+    "./selection/create-selectable-item": {
+      "types": "./dist/browser/selection/create-selectable-item.d.ts",
+      "browser": "./dist/browser/selection/create-selectable-item.js",
+      "default": "./dist/server/selection/create-selectable-item.js"
+    },
+    "./selection/create-selectable-list": {
+      "types": "./dist/browser/selection/create-selectable-list.d.ts",
+      "browser": "./dist/browser/selection/create-selectable-list.js",
+      "default": "./dist/server/selection/create-selectable-list.js"
+    },
+    "./selection/create-type-select": {
+      "types": "./dist/browser/selection/create-type-select.d.ts",
+      "browser": "./dist/browser/selection/create-type-select.js",
+      "default": "./dist/server/selection/create-type-select.js"
+    },
+    "./selection/dom-layout-delegate": {
+      "types": "./dist/browser/selection/dom-layout-delegate.d.ts",
+      "browser": "./dist/browser/selection/dom-layout-delegate.js",
+      "default": "./dist/server/selection/dom-layout-delegate.js"
+    },
+    "./selection/list-keyboard-delegate": {
+      "types": "./dist/browser/selection/list-keyboard-delegate.d.ts",
+      "browser": "./dist/browser/selection/list-keyboard-delegate.js",
+      "default": "./dist/server/selection/list-keyboard-delegate.js"
+    },
+    "./selection/utils": {
+      "types": "./dist/browser/selection/utils.d.ts",
+      "browser": "./dist/browser/selection/utils.js",
+      "default": "./dist/server/selection/utils.js"
+    },
+    "./separator/create-separator": {
+      "types": "./dist/browser/separator/create-separator.d.ts",
+      "browser": "./dist/browser/separator/create-separator.js",
+      "default": "./dist/server/separator/create-separator.js"
+    },
+    "./slider/create-slider": {
+      "types": "./dist/browser/slider/create-slider.d.ts",
+      "browser": "./dist/browser/slider/create-slider.js",
+      "default": "./dist/server/slider/create-slider.js"
+    },
+    "./slider/create-slider-thumb": {
+      "types": "./dist/browser/slider/create-slider-thumb.d.ts",
+      "browser": "./dist/browser/slider/create-slider-thumb.js",
+      "default": "./dist/server/slider/create-slider-thumb.js"
+    },
+    "./slider/utils": {
+      "types": "./dist/browser/slider/utils.d.ts",
+      "browser": "./dist/browser/slider/utils.js",
+      "default": "./dist/server/slider/utils.js"
+    },
+    "./spinbutton/create-spin-button": {
+      "types": "./dist/browser/spinbutton/create-spin-button.d.ts",
+      "browser": "./dist/browser/spinbutton/create-spin-button.js",
+      "default": "./dist/server/spinbutton/create-spin-button.js"
+    },
+    "./steplist/create-step-list": {
+      "types": "./dist/browser/steplist/create-step-list.d.ts",
+      "browser": "./dist/browser/steplist/create-step-list.js",
+      "default": "./dist/server/steplist/create-step-list.js"
+    },
+    "./steplist/create-step-list-item": {
+      "types": "./dist/browser/steplist/create-step-list-item.d.ts",
+      "browser": "./dist/browser/steplist/create-step-list-item.js",
+      "default": "./dist/server/steplist/create-step-list-item.js"
+    },
+    "./switch/create-switch": {
+      "types": "./dist/browser/switch/create-switch.d.ts",
+      "browser": "./dist/browser/switch/create-switch.js",
+      "default": "./dist/server/switch/create-switch.js"
+    },
+    "./table/create-table": {
+      "types": "./dist/browser/table/create-table.d.ts",
+      "browser": "./dist/browser/table/create-table.js",
+      "default": "./dist/server/table/create-table.js"
+    },
+    "./table/create-table-cell": {
+      "types": "./dist/browser/table/create-table-cell.d.ts",
+      "browser": "./dist/browser/table/create-table-cell.js",
+      "default": "./dist/server/table/create-table-cell.js"
+    },
+    "./table/create-table-column-header": {
+      "types": "./dist/browser/table/create-table-column-header.d.ts",
+      "browser": "./dist/browser/table/create-table-column-header.js",
+      "default": "./dist/server/table/create-table-column-header.js"
+    },
+    "./table/create-table-column-resize": {
+      "types": "./dist/browser/table/create-table-column-resize.d.ts",
+      "browser": "./dist/browser/table/create-table-column-resize.js",
+      "default": "./dist/server/table/create-table-column-resize.js"
+    },
+    "./table/create-table-header-row": {
+      "types": "./dist/browser/table/create-table-header-row.d.ts",
+      "browser": "./dist/browser/table/create-table-header-row.js",
+      "default": "./dist/server/table/create-table-header-row.js"
+    },
+    "./table/create-table-row": {
+      "types": "./dist/browser/table/create-table-row.d.ts",
+      "browser": "./dist/browser/table/create-table-row.js",
+      "default": "./dist/server/table/create-table-row.js"
+    },
+    "./table/create-table-row-group": {
+      "types": "./dist/browser/table/create-table-row-group.d.ts",
+      "browser": "./dist/browser/table/create-table-row-group.js",
+      "default": "./dist/server/table/create-table-row-group.js"
+    },
+    "./table/create-table-selection-checkbox": {
+      "types": "./dist/browser/table/create-table-selection-checkbox.d.ts",
+      "browser": "./dist/browser/table/create-table-selection-checkbox.js",
+      "default": "./dist/server/table/create-table-selection-checkbox.js"
+    },
+    "./table/table-keyboard-delegate": {
+      "types": "./dist/browser/table/table-keyboard-delegate.d.ts",
+      "browser": "./dist/browser/table/table-keyboard-delegate.js",
+      "default": "./dist/server/table/table-keyboard-delegate.js"
+    },
+    "./table/utils": {
+      "types": "./dist/browser/table/utils.d.ts",
+      "browser": "./dist/browser/table/utils.js",
+      "default": "./dist/server/table/utils.js"
+    },
+    "./tabs/create-tab": {
+      "types": "./dist/browser/tabs/create-tab.d.ts",
+      "browser": "./dist/browser/tabs/create-tab.js",
+      "default": "./dist/server/tabs/create-tab.js"
+    },
+    "./tabs/create-tab-list": {
+      "types": "./dist/browser/tabs/create-tab-list.d.ts",
+      "browser": "./dist/browser/tabs/create-tab-list.js",
+      "default": "./dist/server/tabs/create-tab-list.js"
+    },
+    "./tabs/create-tab-panel": {
+      "types": "./dist/browser/tabs/create-tab-panel.d.ts",
+      "browser": "./dist/browser/tabs/create-tab-panel.js",
+      "default": "./dist/server/tabs/create-tab-panel.js"
+    },
+    "./tabs/tabs-keyboard-delegate": {
+      "types": "./dist/browser/tabs/tabs-keyboard-delegate.d.ts",
+      "browser": "./dist/browser/tabs/tabs-keyboard-delegate.js",
+      "default": "./dist/server/tabs/tabs-keyboard-delegate.js"
+    },
+    "./tabs/utils": {
+      "types": "./dist/browser/tabs/utils.d.ts",
+      "browser": "./dist/browser/tabs/utils.js",
+      "default": "./dist/server/tabs/utils.js"
+    },
+    "./tag/create-tag": {
+      "types": "./dist/browser/tag/create-tag.d.ts",
+      "browser": "./dist/browser/tag/create-tag.js",
+      "default": "./dist/server/tag/create-tag.js"
+    },
+    "./tag/create-tag-group": {
+      "types": "./dist/browser/tag/create-tag-group.d.ts",
+      "browser": "./dist/browser/tag/create-tag-group.js",
+      "default": "./dist/server/tag/create-tag-group.js"
+    },
+    "./textfield/create-formatted-text-field": {
+      "types": "./dist/browser/textfield/create-formatted-text-field.d.ts",
+      "browser": "./dist/browser/textfield/create-formatted-text-field.js",
+      "default": "./dist/server/textfield/create-formatted-text-field.js"
+    },
+    "./textfield/create-text-field": {
+      "types": "./dist/browser/textfield/create-text-field.d.ts",
+      "browser": "./dist/browser/textfield/create-text-field.js",
+      "default": "./dist/server/textfield/create-text-field.js"
+    },
+    "./toast/create-toast": {
+      "types": "./dist/browser/toast/create-toast.d.ts",
+      "browser": "./dist/browser/toast/create-toast.js",
+      "default": "./dist/server/toast/create-toast.js"
+    },
+    "./toast/create-toast-region": {
+      "types": "./dist/browser/toast/create-toast-region.d.ts",
+      "browser": "./dist/browser/toast/create-toast-region.js",
+      "default": "./dist/server/toast/create-toast-region.js"
+    },
+    "./toggle/create-toggle": {
+      "types": "./dist/browser/toggle/create-toggle.d.ts",
+      "browser": "./dist/browser/toggle/create-toggle.js",
+      "default": "./dist/server/toggle/create-toggle.js"
+    },
+    "./tokenfield/create-token": {
+      "types": "./dist/browser/tokenfield/create-token.d.ts",
+      "browser": "./dist/browser/tokenfield/create-token.js",
+      "default": "./dist/server/tokenfield/create-token.js"
+    },
+    "./tokenfield/create-token-field": {
+      "types": "./dist/browser/tokenfield/create-token-field.d.ts",
+      "browser": "./dist/browser/tokenfield/create-token-field.js",
+      "default": "./dist/server/tokenfield/create-token-field.js"
+    },
+    "./toolbar/create-toolbar": {
+      "types": "./dist/browser/toolbar/create-toolbar.d.ts",
+      "browser": "./dist/browser/toolbar/create-toolbar.js",
+      "default": "./dist/server/toolbar/create-toolbar.js"
+    },
+    "./tooltip/create-preview-trigger": {
+      "types": "./dist/browser/tooltip/create-preview-trigger.d.ts",
+      "browser": "./dist/browser/tooltip/create-preview-trigger.js",
+      "default": "./dist/server/tooltip/create-preview-trigger.js"
+    },
+    "./tooltip/create-safe-area": {
+      "types": "./dist/browser/tooltip/create-safe-area.d.ts",
+      "browser": "./dist/browser/tooltip/create-safe-area.js",
+      "default": "./dist/server/tooltip/create-safe-area.js"
+    },
+    "./tooltip/create-tooltip": {
+      "types": "./dist/browser/tooltip/create-tooltip.d.ts",
+      "browser": "./dist/browser/tooltip/create-tooltip.js",
+      "default": "./dist/server/tooltip/create-tooltip.js"
+    },
+    "./tooltip/create-tooltip-trigger": {
+      "types": "./dist/browser/tooltip/create-tooltip-trigger.d.ts",
+      "browser": "./dist/browser/tooltip/create-tooltip-trigger.js",
+      "default": "./dist/server/tooltip/create-tooltip-trigger.js"
+    },
+    "./tree/create-tree": {
+      "types": "./dist/browser/tree/create-tree.d.ts",
+      "browser": "./dist/browser/tree/create-tree.js",
+      "default": "./dist/server/tree/create-tree.js"
+    },
+    "./tree/create-tree-item": {
+      "types": "./dist/browser/tree/create-tree-item.d.ts",
+      "browser": "./dist/browser/tree/create-tree-item.js",
+      "default": "./dist/server/tree/create-tree-item.js"
+    },
+    "./types": {
+      "types": "./dist/browser/types.d.ts",
+      "browser": "./dist/browser/types.js",
+      "default": "./dist/server/types.js"
+    },
+    "./utils/animation": {
+      "types": "./dist/browser/utils/animation.d.ts",
+      "browser": "./dist/browser/utils/animation.js",
+      "default": "./dist/server/utils/animation.js"
+    },
+    "./utils/aria-value": {
+      "types": "./dist/browser/utils/aria-value.d.ts",
+      "browser": "./dist/browser/utils/aria-value.js",
+      "default": "./dist/server/utils/aria-value.js"
+    },
+    "./utils/bit-mask": {
+      "types": "./dist/browser/utils/bit-mask.d.ts",
+      "browser": "./dist/browser/utils/bit-mask.js",
+      "default": "./dist/server/utils/bit-mask.js"
+    },
+    "./utils/chain": {
+      "types": "./dist/browser/utils/chain.d.ts",
+      "browser": "./dist/browser/utils/chain.js",
+      "default": "./dist/server/utils/chain.js"
+    },
+    "./utils/constants": {
+      "types": "./dist/browser/utils/constants.d.ts",
+      "browser": "./dist/browser/utils/constants.js",
+      "default": "./dist/server/utils/constants.js"
+    },
+    "./utils/create-description": {
+      "types": "./dist/browser/utils/create-description.d.ts",
+      "browser": "./dist/browser/utils/create-description.js",
+      "default": "./dist/server/utils/create-description.js"
+    },
+    "./utils/create-drag1-d": {
+      "types": "./dist/browser/utils/create-drag1-d.d.ts",
+      "browser": "./dist/browser/utils/create-drag1-d.js",
+      "default": "./dist/server/utils/create-drag1-d.js"
+    },
+    "./utils/create-event": {
+      "types": "./dist/browser/utils/create-event.d.ts",
+      "browser": "./dist/browser/utils/create-event.js",
+      "default": "./dist/server/utils/create-event.js"
+    },
+    "./utils/create-form-reset": {
+      "types": "./dist/browser/utils/create-form-reset.d.ts",
+      "browser": "./dist/browser/utils/create-form-reset.js",
+      "default": "./dist/server/utils/create-form-reset.js"
+    },
+    "./utils/create-global-listeners": {
+      "types": "./dist/browser/utils/create-global-listeners.d.ts",
+      "browser": "./dist/browser/utils/create-global-listeners.js",
+      "default": "./dist/server/utils/create-global-listeners.js"
+    },
+    "./utils/create-id": {
+      "types": "./dist/browser/utils/create-id.d.ts",
+      "browser": "./dist/browser/utils/create-id.js",
+      "default": "./dist/server/utils/create-id.js"
+    },
+    "./utils/create-labels": {
+      "types": "./dist/browser/utils/create-labels.d.ts",
+      "browser": "./dist/browser/utils/create-labels.js",
+      "default": "./dist/server/utils/create-labels.js"
+    },
+    "./utils/create-load-more": {
+      "types": "./dist/browser/utils/create-load-more.d.ts",
+      "browser": "./dist/browser/utils/create-load-more.js",
+      "default": "./dist/server/utils/create-load-more.js"
+    },
+    "./utils/create-load-more-sentinel": {
+      "types": "./dist/browser/utils/create-load-more-sentinel.d.ts",
+      "browser": "./dist/browser/utils/create-load-more-sentinel.js",
+      "default": "./dist/server/utils/create-load-more-sentinel.js"
+    },
+    "./utils/create-resize-observer": {
+      "types": "./dist/browser/utils/create-resize-observer.d.ts",
+      "browser": "./dist/browser/utils/create-resize-observer.js",
+      "default": "./dist/server/utils/create-resize-observer.js"
+    },
+    "./utils/create-slot": {
+      "types": "./dist/browser/utils/create-slot.d.ts",
+      "browser": "./dist/browser/utils/create-slot.js",
+      "default": "./dist/server/utils/create-slot.js"
+    },
+    "./utils/create-value-effect": {
+      "types": "./dist/browser/utils/create-value-effect.d.ts",
+      "browser": "./dist/browser/utils/create-value-effect.js",
+      "default": "./dist/server/utils/create-value-effect.js"
+    },
+    "./utils/create-viewport-size": {
+      "types": "./dist/browser/utils/create-viewport-size.d.ts",
+      "browser": "./dist/browser/utils/create-viewport-size.js",
+      "default": "./dist/server/utils/create-viewport-size.js"
+    },
+    "./utils/current-browser-event": {
+      "types": "./dist/browser/utils/current-browser-event.d.ts",
+      "browser": "./dist/browser/utils/current-browser-event.js",
+      "default": "./dist/server/utils/current-browser-event.js"
+    },
+    "./utils/dom-helpers": {
+      "types": "./dist/browser/utils/dom-helpers.d.ts",
+      "browser": "./dist/browser/utils/dom-helpers.js",
+      "default": "./dist/server/utils/dom-helpers.js"
+    },
+    "./utils/dom-value": {
+      "types": "./dist/browser/utils/dom-value.d.ts",
+      "browser": "./dist/browser/utils/dom-value.js",
+      "default": "./dist/server/utils/dom-value.js"
+    },
+    "./utils/element-props": {
+      "types": "./dist/browser/utils/element-props.d.ts",
+      "browser": "./dist/browser/utils/element-props.js",
+      "default": "./dist/server/utils/element-props.js"
+    },
+    "./utils/filter-dom-props": {
+      "types": "./dist/browser/utils/filter-dom-props.d.ts",
+      "browser": "./dist/browser/utils/filter-dom-props.js",
+      "default": "./dist/server/utils/filter-dom-props.js"
+    },
+    "./utils/finish-animations": {
+      "types": "./dist/browser/utils/finish-animations.d.ts",
+      "browser": "./dist/browser/utils/finish-animations.js",
+      "default": "./dist/server/utils/finish-animations.js"
+    },
+    "./utils/focus-without-scrolling": {
+      "types": "./dist/browser/utils/focus-without-scrolling.d.ts",
+      "browser": "./dist/browser/utils/focus-without-scrolling.js",
+      "default": "./dist/server/utils/focus-without-scrolling.js"
+    },
+    "./utils/get-collection-node-props": {
+      "types": "./dist/browser/utils/get-collection-node-props.d.ts",
+      "browser": "./dist/browser/utils/get-collection-node-props.js",
+      "default": "./dist/server/utils/get-collection-node-props.js"
+    },
+    "./utils/get-meta-value": {
+      "types": "./dist/browser/utils/get-meta-value.d.ts",
+      "browser": "./dist/browser/utils/get-meta-value.js",
+      "default": "./dist/server/utils/get-meta-value.js"
+    },
+    "./utils/get-nonce": {
+      "types": "./dist/browser/utils/get-nonce.d.ts",
+      "browser": "./dist/browser/utils/get-nonce.js",
+      "default": "./dist/server/utils/get-nonce.js"
+    },
+    "./utils/get-offset": {
+      "types": "./dist/browser/utils/get-offset.d.ts",
+      "browser": "./dist/browser/utils/get-offset.js",
+      "default": "./dist/server/utils/get-offset.js"
+    },
+    "./utils/get-scroll-parent": {
+      "types": "./dist/browser/utils/get-scroll-parent.d.ts",
+      "browser": "./dist/browser/utils/get-scroll-parent.js",
+      "default": "./dist/server/utils/get-scroll-parent.js"
+    },
+    "./utils/get-scroll-parents": {
+      "types": "./dist/browser/utils/get-scroll-parents.d.ts",
+      "browser": "./dist/browser/utils/get-scroll-parents.js",
+      "default": "./dist/server/utils/get-scroll-parents.js"
+    },
+    "./utils/inert-value": {
+      "types": "./dist/browser/utils/inert-value.d.ts",
+      "browser": "./dist/browser/utils/inert-value.js",
+      "default": "./dist/server/utils/inert-value.js"
+    },
+    "./utils/is-callable": {
+      "types": "./dist/browser/utils/is-callable.d.ts",
+      "browser": "./dist/browser/utils/is-callable.js",
+      "default": "./dist/server/utils/is-callable.js"
+    },
+    "./utils/is-element-visible": {
+      "types": "./dist/browser/utils/is-element-visible.d.ts",
+      "browser": "./dist/browser/utils/is-element-visible.js",
+      "default": "./dist/server/utils/is-element-visible.js"
+    },
+    "./utils/is-focusable": {
+      "types": "./dist/browser/utils/is-focusable.d.ts",
+      "browser": "./dist/browser/utils/is-focusable.js",
+      "default": "./dist/server/utils/is-focusable.js"
+    },
+    "./utils/is-present": {
+      "types": "./dist/browser/utils/is-present.d.ts",
+      "browser": "./dist/browser/utils/is-present.js",
+      "default": "./dist/server/utils/is-present.js"
+    },
+    "./utils/is-propagation-stopped": {
+      "types": "./dist/browser/utils/is-propagation-stopped.d.ts",
+      "browser": "./dist/browser/utils/is-propagation-stopped.js",
+      "default": "./dist/server/utils/is-propagation-stopped.js"
+    },
+    "./utils/is-scrollable": {
+      "types": "./dist/browser/utils/is-scrollable.d.ts",
+      "browser": "./dist/browser/utils/is-scrollable.js",
+      "default": "./dist/server/utils/is-scrollable.js"
+    },
+    "./utils/is-virtual-event": {
+      "types": "./dist/browser/utils/is-virtual-event.d.ts",
+      "browser": "./dist/browser/utils/is-virtual-event.js",
+      "default": "./dist/server/utils/is-virtual-event.js"
+    },
+    "./utils/keyboard": {
+      "types": "./dist/browser/utils/keyboard.d.ts",
+      "browser": "./dist/browser/utils/keyboard.js",
+      "default": "./dist/server/utils/keyboard.js"
+    },
+    "./utils/legacy-option": {
+      "types": "./dist/browser/utils/legacy-option.d.ts",
+      "browser": "./dist/browser/utils/legacy-option.js",
+      "default": "./dist/server/utils/legacy-option.js"
+    },
+    "./utils/merge-props": {
+      "types": "./dist/browser/utils/merge-props.d.ts",
+      "browser": "./dist/browser/utils/merge-props.js",
+      "default": "./dist/server/utils/merge-props.js"
+    },
+    "./utils/noop": {
+      "types": "./dist/browser/utils/noop.d.ts",
+      "browser": "./dist/browser/utils/noop.js",
+      "default": "./dist/server/utils/noop.js"
+    },
+    "./utils/open-link": {
+      "types": "./dist/browser/utils/open-link.d.ts",
+      "browser": "./dist/browser/utils/open-link.js",
+      "default": "./dist/server/utils/open-link.js"
+    },
+    "./utils/platform": {
+      "types": "./dist/browser/utils/platform.d.ts",
+      "browser": "./dist/browser/utils/platform.js",
+      "default": "./dist/server/utils/platform.js"
+    },
+    "./utils/pointer-id": {
+      "types": "./dist/browser/utils/pointer-id.d.ts",
+      "browser": "./dist/browser/utils/pointer-id.js",
+      "default": "./dist/server/utils/pointer-id.js"
+    },
+    "./utils/pointer-type": {
+      "types": "./dist/browser/utils/pointer-type.d.ts",
+      "browser": "./dist/browser/utils/pointer-type.js",
+      "default": "./dist/server/utils/pointer-type.js"
+    },
+    "./utils/read-property": {
+      "types": "./dist/browser/utils/read-property.d.ts",
+      "browser": "./dist/browser/utils/read-property.js",
+      "default": "./dist/server/utils/read-property.js"
+    },
+    "./utils/require-value": {
+      "types": "./dist/browser/utils/require-value.d.ts",
+      "browser": "./dist/browser/utils/require-value.js",
+      "default": "./dist/server/utils/require-value.js"
+    },
+    "./utils/run-after-keyboard": {
+      "types": "./dist/browser/utils/run-after-keyboard.d.ts",
+      "browser": "./dist/browser/utils/run-after-keyboard.js",
+      "default": "./dist/server/utils/run-after-keyboard.js"
+    },
+    "./utils/run-after-transition": {
+      "types": "./dist/browser/utils/run-after-transition.d.ts",
+      "browser": "./dist/browser/utils/run-after-transition.js",
+      "default": "./dist/server/utils/run-after-transition.js"
+    },
+    "./utils/scroll-into-view": {
+      "types": "./dist/browser/utils/scroll-into-view.d.ts",
+      "browser": "./dist/browser/utils/scroll-into-view.js",
+      "default": "./dist/server/utils/scroll-into-view.js"
+    },
+    "./utils/shadowdom/dom-functions": {
+      "types": "./dist/browser/utils/shadowdom/dom-functions.d.ts",
+      "browser": "./dist/browser/utils/shadowdom/dom-functions.js",
+      "default": "./dist/server/utils/shadowdom/dom-functions.js"
+    },
+    "./utils/shadowdom/shadow-tree-walker": {
+      "types": "./dist/browser/utils/shadowdom/shadow-tree-walker.d.ts",
+      "browser": "./dist/browser/utils/shadowdom/shadow-tree-walker.js",
+      "default": "./dist/server/utils/shadowdom/shadow-tree-walker.js"
+    },
+    "./utils/truthy": {
+      "types": "./dist/browser/utils/truthy.d.ts",
+      "browser": "./dist/browser/utils/truthy.js",
+      "default": "./dist/server/utils/truthy.js"
+    },
+    "./virtualizer/create-virtualizer-item": {
+      "types": "./dist/browser/virtualizer/create-virtualizer-item.d.ts",
+      "browser": "./dist/browser/virtualizer/create-virtualizer-item.js",
+      "default": "./dist/server/virtualizer/create-virtualizer-item.js"
+    },
+    "./virtualizer/scroll-view": {
+      "types": "./dist/browser/virtualizer/scroll-view.d.ts",
+      "browser": "./dist/browser/virtualizer/scroll-view.js",
+      "default": "./dist/server/virtualizer/scroll-view.js"
+    },
+    "./virtualizer/utils": {
+      "types": "./dist/browser/virtualizer/utils.d.ts",
+      "browser": "./dist/browser/virtualizer/utils.js",
+      "default": "./dist/server/virtualizer/utils.js"
+    },
+    "./virtualizer/virtualizer": {
+      "types": "./dist/browser/virtualizer/virtualizer.d.ts",
+      "browser": "./dist/browser/virtualizer/virtualizer.js",
+      "default": "./dist/server/virtualizer/virtualizer.js"
+    },
+    "./virtualizer/virtualizer-item": {
+      "types": "./dist/browser/virtualizer/virtualizer-item.d.ts",
+      "browser": "./dist/browser/virtualizer/virtualizer-item.js",
+      "default": "./dist/server/virtualizer/virtualizer-item.js"
+    },
+    "./visually-hidden/visually-hidden": {
+      "types": "./dist/browser/visually-hidden/visually-hidden.d.ts",
+      "browser": "./dist/browser/visually-hidden/visually-hidden.js",
+      "default": "./dist/server/visually-hidden/visually-hidden.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "prepack": "bun run build",
+    "check-types": "tsrs --noEmit",
+    "check": "ultracite check",
+    "fix": "ultracite fix",
+    "generate-intl-barrel-files": "bun scripts/generate-intl-barrel-files.ts",
+    "test": "bun test --conditions=browser --conditions=development --preload ./test/setup.ts",
+    "check-port-coverage": "bun scripts/check-port-coverage.ts",
+    "generate-public-barrel": "bun scripts/generate-public-barrel.ts",
+    "check-build": "bun scripts/check-build.ts && bun --conditions=browser --preload ./test/setup.ts scripts/check-build.ts --browser",
+    "check-package-types": "bun scripts/check-package-types.ts",
+    "check-compatibility": "bun run check-package-types"
+  },
+  "dependencies": {
+    "@internationalized/date": "^3.12.4",
+    "@internationalized/number": "^3.6.9",
+    "@internationalized/string": "^3.2.10",
+    "@solid2-aria/stately": "^0.0.1",
+    "@solid2-aria/types-shared": "^0.0.1",
+    "@solid2-aria/types-shared-web": "^0.0.1",
+    "aria-hidden": "^1.2.3",
+    "clsx": "^2.0.0"
+  },
+  "devDependencies": {
+    "@solidjs/compiler": "^2.0.0-rc.17",
+    "@solidjs/web": "^2.0.0-rc.17",
+    "@types/bun": "^1.4.4",
+    "happy-dom": "^21.0.4",
+    "solid-js": "^2.0.0-rc.17",
+    "tsdown": "^0.23.2",
+    "tsrs": "^0.20.0-ts7.1.0-beta",
+    "typescript": "^7.1.0-beta"
+  },
+  "peerDependencies": {
+    "@solidjs/web": "^2.0.0-rc.17",
+    "solid-js": "^2.0.0-rc.17"
+  }
+}

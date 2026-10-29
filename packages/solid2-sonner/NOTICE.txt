@@ -1,0 +1,27 @@
+Solid2 Sonner third-party notices
+================================
+
+The source files in src/ are derived from solid-sonner:
+https://github.com/wobsoriano/solid-sonner (src/index.tsx, src/assets.tsx,
+src/state.ts, src/types.ts, src/primitives.ts, and src/styles.css).
+Copyright (c) 2022 Robert Soriano <https://github.com/wobsoriano>
+The upstream MIT license is reproduced verbatim in SOLID-SONNER-LICENSE.md.
+
+solid-sonner is based on Sonner:
+https://github.com/emilkowalski/sonner (src/index.tsx, src/assets.tsx,
+src/state.ts, src/types.ts, and src/styles.css).
+Copyright (c) 2023 Emil Kowalski
+The upstream MIT license is reproduced verbatim in SONNER-LICENSE.md.
+The original Sonner attribution comment is retained in src/index.tsx.
+
+Modified for Solid Aria: Solid 2 renderer imports, reactive props, signals,
+stores, compute/apply effects, lifecycle cleanup, native DOM events, promise
+handling, dismissal and history management, and browser/server packaging.
+Styles are exported as a separate CSS entry point. Each derived source file
+identifies its upstream path and modifications. Upstream source notices and
+license texts were compared with upstream main during package integration.
+
+Tests, build configuration, and package verification scripts are independently
+written. Solid Aria contributions use the MIT license in LICENSE, Copyright
+(c) 2026 pekochan069. This license does not replace the upstream licenses and
+notices. This package introduces no Adobe-derived code or JSON translations.

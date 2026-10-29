@@ -1,0 +1,91 @@
+/*
+ * Copyright 2020 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+/*
+ * Derived from Adobe React Spectrum: packages/react-aria/src/listbox/useListBoxSection.ts.
+ * Modified for Solid Aria: adapted hooks, reactive getters, DOM types, and imports for Solid 2.
+ * Licensed under Apache-2.0. See LICENSES/Apache-2.0.txt and NOTICE.txt at the repository root.
+ */
+
+import type { DOMAttributes } from "@solid2-aria/types-shared-web";
+import type { Element as SolidElement } from "solid-js";
+
+import { ariaValue } from "../utils/aria-value";
+import { createId } from "../utils/create-id";
+import { isTruthy } from "../utils/truthy";
+
+export interface AriaListBoxSectionProps {
+  /** The heading for the section. */
+  heading?: SolidElement;
+  /** An accessibility label for the section. Required if `heading` is not present. */
+  "aria-label"?: string;
+}
+
+export interface ListBoxSectionAria {
+  /** Props for the wrapper list item. */
+  itemProps: DOMAttributes;
+  /** Props for the heading element, if any. */
+  headingProps: DOMAttributes;
+  /** Props for the group element. */
+  groupProps: DOMAttributes;
+}
+
+/**
+ * Provides the behavior and accessibility implementation for a section in a listbox.
+ * See `useListBox` for more details about listboxes.
+ *
+ * @param props - Props for the section.
+ */
+export function createListBoxSection(
+  props: AriaListBoxSectionProps
+): ListBoxSectionAria {
+  const headingId = createId();
+
+  return {
+    get groupProps() {
+      return {
+        get "aria-label"() {
+          return ariaValue(ariaValue(props["aria-label"]));
+        },
+        get "aria-labelledby"() {
+          return ariaValue(
+            ariaValue(isTruthy(props.heading) ? headingId() : undefined)
+          );
+        },
+        get role(): "group" {
+          return "group";
+        },
+      };
+    },
+    get headingProps() {
+      return isTruthy(props.heading)
+        ? {
+            // Technically, listbox cannot contain headings according to ARIA.
+            // We hide the heading from assistive technology, using role="presentation",
+            // and only use it as a visual label for the nested group.
+            id: headingId(),
+            onMouseDown: (e: globalThis.MouseEvent) => {
+              // Prevent DOM focus from moving on mouse down when using virtual focus
+              e.preventDefault();
+            },
+            role: "presentation" as const,
+          }
+        : {};
+    },
+    get itemProps() {
+      return {
+        get role(): "presentation" {
+          return "presentation";
+        },
+      };
+    },
+  };
+}
