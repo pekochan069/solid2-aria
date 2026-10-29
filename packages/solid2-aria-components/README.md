@@ -2,6 +2,12 @@
 
 Styleable, accessible components for Solid 2, ported from Adobe React Aria Components. Components compose the local `@solid2-aria/core` behaviors and `@solid2-aria/stately` state managers.
 
+## Installation
+
+```sh
+bun add @solid2-aria/components solid-js@next @solidjs/web@next
+```
+
 ## Use a component
 
 Configure your JSX compiler for Solid 2 and set TypeScript's `jsxImportSource` to `@solidjs/web`.

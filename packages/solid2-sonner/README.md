@@ -1,13 +1,14 @@
-# Solid 2 Sonner
+# @solid2-aria/sonner
 
 Toast notifications for Solid 2, adapted from solid-sonner and Sonner. Requires `solid-js` and `@solidjs/web` 2.0.0-rc.17 or later in the Solid 2 release line.
 
-In a workspace app, add the dependency and build the package from the repository root:
+## Installation
 
 ```sh
-bun add --cwd apps/your-app @solid2-aria/sonner@^0.0.1
-bun run --filter @solid2-aria/sonner build
+bun add @solid2-aria/sonner solid-js@next @solidjs/web@next
 ```
+
+## Usage
 
 Import the stylesheet once in your app entry point, and mount a `Toaster`:
 
@@ -61,7 +62,7 @@ function NotificationCount() {
 
 The export selects compiled browser code for browser bundles and SSR code for server bundles. SSR and hydration are checked with Solid's rendering APIs. Toast state is module scoped, so call `toast()` from client interactions rather than request-scoped server code.
 
-Run verification from `packages/sonner`:
+Run verification from `packages/solid2-sonner`:
 
 ```sh
 bun run build

@@ -2,6 +2,14 @@
 
 Accessible UI component types for Solid 2, ported from Adobe React Spectrum.
 
+## Installation
+
+```sh
+bun add @solid2-aria/types solid-js@next @solidjs/web@nextt
+```
+
+## Usage
+
 Import types from component subpaths:
 
 ```ts

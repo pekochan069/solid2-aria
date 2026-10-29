@@ -2,13 +2,15 @@
 
 Build unstyled, draggable drawers with Solid 2. This package ports [Vaul](https://github.com/emilkowalski/vaul) 1.1.2 and uses Solid2 Aria for focus management and scroll prevention.
 
-## Add a drawer
+## Installation
 
 Install the package alongside Solid 2 and its web renderer:
 
 ```sh
-bun add @solid2-aria/vaul solid-js@^2.0.0-rc.17 @solidjs/web@^2.0.0-rc.17
+bun add @solid2-aria/vaul solid-js@next @solidjs/web@next
 ```
+
+## Add a drawer
 
 Set `jsxImportSource` to `@solidjs/web` in your TypeScript configuration. Import the drawer stylesheet once in your application:
 
