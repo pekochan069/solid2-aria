@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
-import { transform } from "@solidjs/compiler";
+import { solid } from "rolldown-plugin-solid-compiler";
 import { defineConfig } from "tsdown";
 import type { UserConfig } from "tsdown";
 
@@ -91,23 +91,12 @@ export default defineConfig(
     },
     platform: "neutral",
     plugins: [
-      {
-        name: "solid-jsx",
-        transform: {
-          filter: { id: /\.tsx$/u },
-          handler(code, id) {
-            const result = transform(code, {
-              filename: id,
-              generate: server ? "ssr" : "dom",
-              hydratable: true,
-              sourceMap: true,
-            });
-
-            return { code: result.code, map: result.map ?? null };
-          },
-          order: "pre",
+      solid({
+        jsx: {
+          generate: server ? "ssr" : "dom",
+          hydratable: true,
         },
-      },
+      }),
     ],
     sourcemap: true,
     unbundle: true,

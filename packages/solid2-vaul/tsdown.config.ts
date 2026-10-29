@@ -1,4 +1,4 @@
-import { transform } from "@solidjs/compiler";
+import { solid } from "rolldown-plugin-solid-compiler";
 import { defineConfig } from "tsdown";
 import type { UserConfig } from "tsdown";
 
@@ -27,23 +27,12 @@ export default defineConfig(
     outDir: server ? "dist/server" : "dist/browser",
     platform: "neutral",
     plugins: [
-      {
-        name: "solid-2-jsx",
-        transform: {
-          filter: { id: /\.tsx$/u },
-          handler(code, id) {
-            const result = transform(code, {
-              filename: id,
-              generate: server ? "ssr" : "dom",
-              hydratable: true,
-              sourceMap: true,
-            });
-
-            return { code: result.code, map: result.map ?? null };
-          },
-          order: "pre",
+      solid({
+        jsx: {
+          generate: server ? "ssr" : "dom",
+          hydratable: true,
         },
-      },
+      }),
     ],
     sourcemap: true,
   }))

@@ -50,11 +50,11 @@
     "fix": "ultracite fix"
   },
   "devDependencies": {
-    "@solidjs/compiler": "^2.0.0-rc.17",
     "@solidjs/web": "^2.0.0-rc.17",
     "@tanstack/charts": "^1.1.0",
     "@types/bun": "^1.4.4",
     "happy-dom": "^21.0.4",
+    "rolldown-plugin-solid-compiler": "^0.1.0",
     "solid-js": "^2.0.0-rc.17",
     "tanstack-charts-minimum": "npm:@tanstack/charts@1.0.0",
     "tsdown": "^0.23.2",
