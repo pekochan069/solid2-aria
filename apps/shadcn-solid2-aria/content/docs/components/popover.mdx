@@ -1,0 +1,81 @@
+---
+title: "Popover"
+description: "Displays rich content in a portal, triggered by a button."
+---
+
+{/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/content/docs/components/aria/popover.mdx.
+ * Modified for Solid Aria: Solid 2 examples and imports, local installation, supported APIs, and documentation links.
+ * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */}
+
+import { ComponentPreview, Installation } from "#components/docs/mdx";
+
+
+
+<ComponentPreview styleName="aria-nova" name="popover-demo" />
+
+## Installation
+
+<Installation component="popover" />
+
+## Usage
+
+```tsx showLineNumbers
+import {
+  Popover,
+  PopoverDescription,
+  PopoverHeader,
+  PopoverTitle,
+  PopoverTrigger,
+} from "#components/ui/popover";
+```
+
+```tsx showLineNumbers
+<PopoverTrigger>
+  <Button variant="outline">Open Popover</Button>
+  <Popover>
+    <PopoverHeader>
+      <PopoverTitle>Title</PopoverTitle>
+      <PopoverDescription>Description text here.</PopoverDescription>
+    </PopoverHeader>
+  </Popover>
+</PopoverTrigger>
+```
+
+## Composition
+
+Use the following composition to build a `Popover`:
+
+```text
+PopoverTrigger
+├── Button
+└── Popover
+```
+
+## Basic
+
+A simple popover with a header, title, and description.
+
+<ComponentPreview styleName="aria-nova" name="popover-basic" />
+
+## Align
+
+Use the `placement` prop on `Popover` to control the horizontal alignment.
+
+<ComponentPreview styleName="aria-nova" name="popover-alignments" />
+
+## With Form
+
+A popover with form fields inside.
+
+<ComponentPreview styleName="aria-nova" name="popover-form" />
+
+## RTL
+
+To configure right-to-left layouts, see the [RTL configuration guide](/docs/accessibility#right-to-left).
+
+<ComponentPreview styleName="aria-nova" name="popover-rtl" direction="rtl" />
+
+## API Reference

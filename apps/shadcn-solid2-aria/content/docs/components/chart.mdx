@@ -1,0 +1,430 @@
+---
+title: "Chart"
+description: "TanStack Charts with native Solid 2 rendering, themed tooltips, and legends."
+---
+
+{/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/content/docs/components/aria/chart.mdx.
+ * Modified for Solid Aria: Solid 2 examples and imports, TanStack Charts through @solid2-aria/tanstack-charts, local installation, and documentation links.
+ * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */}
+
+import {
+  ComponentPreview,
+  Installation,
+  Callout,
+  Steps,
+  Step,
+} from "#components/docs/mdx";
+
+
+
+<Callout>
+  Charts use [TanStack Charts](https://tanstack.com/charts/latest) with the
+  `@solid2-aria/tanstack-charts` adapter. `ChartContainer` supplies theme colors;
+  `Chart` renders responsive SVG and manages pointer and keyboard interaction.
+</Callout>
+
+<ComponentPreview
+  styleName="aria-nova"
+  name="chart-demo"
+  class="theme-blue"
+  previewClassName="h-auto p-0 lg:min-h-[404px] [&>div]:w-full [&>div]:border-none [&>div]:shadow-none"
+  hideCode
+/>
+
+Introducing **Charts**. A collection of chart components that you can copy and paste into your apps.
+
+Charts are designed to look great out of the box. They work well with the other components and are fully customizable to fit your project.
+
+[Browse the Charts Library](https://ui.shadcn.com/charts).
+
+## Component
+
+Import `Chart` and its theme helpers from the chart component. Build chart definitions with `@tanstack/charts`.
+
+```tsx
+import { Chart, ChartContainer, ChartTooltipContent, ChartLegendContent } from "#components/ui/chart";
+```
+
+## Installation
+
+<Installation component="chart" />
+
+The command installs `@tanstack/charts` and `@solid2-aria/tanstack-charts` automatically, along with the chart component and its other dependencies.
+
+## Your First Chart
+
+Define the values and display configuration, then pass a TanStack definition to `Chart`.
+
+```tsx
+import { barY, defineChart, group } from "@tanstack/charts";
+import { scaleBand } from "@tanstack/charts/scales/band";
+import { scaleLinear } from "@tanstack/charts/scales/linear";
+import { Chart, ChartContainer, type ChartConfig } from "#components/ui/chart";
+
+const chartData = [
+  { month: "January", desktop: 186, mobile: 80 },
+  { month: "February", desktop: 305, mobile: 200 },
+  { month: "March", desktop: 237, mobile: 120 },
+];
+
+const chartConfig = {
+  desktop: { label: "Desktop", color: "var(--chart-1)" },
+  mobile: { label: "Mobile", color: "var(--chart-2)" },
+} satisfies ChartConfig;
+
+const rows = chartData.flatMap((row) => [
+  { month: row.month, series: "desktop", visitors: row.desktop },
+  { month: row.month, series: "mobile", visitors: row.mobile },
+]);
+
+const definition = defineChart({
+  marks: [barY(rows, {
+    x: "month",
+    y: "visitors",
+    z: "series",
+    fill: (row) => `var(--color-${row.series})`,
+    radius: 4,
+    layout: group(),
+  })],
+  scales: {
+    x: { scale: () => scaleBand<string>().padding(0.2), axis: false },
+    y: { scale: scaleLinear, axis: false },
+  },
+});
+
+export function FirstChart() {
+  return (
+    <ChartContainer config={chartConfig} class="h-64 w-full">
+      <Chart definition={definition} ariaLabel="Monthly desktop and mobile users" height={256} />
+    </ChartContainer>
+  );
+}
+```
+
+For reactive data, build the definition inside `createMemo` and pass its current value as `definition={definition()}`.
+
+<ComponentPreview styleName="aria-nova" name="chart-example" previewClassName="h-80" />
+
+### Add a Grid
+
+Set `grid: true` on the value scale. Theme tokens keep grid lines consistent with the surrounding components.
+
+```tsx
+y: { scale: scaleLinear, axis: false, grid: { stroke: "var(--border)" } }
+```
+
+<ComponentPreview styleName="aria-nova" name="chart-example-grid" previewClassName="h-80" />
+
+### Add an Axis
+
+Configure the category scale's axis and tick formatter. TanStack Charts thins labels as the available width changes.
+
+```tsx
+x: {
+  scale: () => scaleBand<string>().padding(0.2),
+  axis: {
+    line: false,
+    ticks: { line: false, format: (value) => value.slice(0, 3) },
+  },
+}
+```
+
+<ComponentPreview styleName="aria-nova" name="chart-example-axis" previewClassName="h-80" />
+
+### Add Tooltip
+
+Enable the tooltip extension on the definition and use `renderTooltipBody` to render Solid content. The adapter updates the context as pointer or keyboard focus moves.
+
+```tsx
+import { tooltip } from "@tanstack/charts/tooltip";
+
+// Add these options to defineChart:
+// focus: "group-x",
+// tooltip,
+
+<Chart
+  definition={definition}
+  ariaLabel="Monthly desktop and mobile users"
+  height={256}
+  renderTooltipBody={(context) => (
+    <ChartTooltipContent
+      active
+      label={context.primaryPoint?.datum.month}
+      payload={context.points.map((point) => ({
+        dataKey: point.datum.series,
+        name: point.datum.series,
+        value: point.datum.visitors,
+        color: `var(--color-${point.datum.series})`,
+      }))}
+    />
+  )}
+/>
+```
+
+<ComponentPreview styleName="aria-nova" name="chart-example-tooltip" previewClassName="h-80" />
+
+### Add Legend
+
+Pass the displayed series to `ChartLegendContent` beneath `Chart`. It reads labels from the surrounding container.
+
+```tsx
+<ChartLegendContent payload={[
+  { dataKey: "desktop", name: "desktop", color: "var(--color-desktop)" },
+  { dataKey: "mobile", name: "mobile", color: "var(--color-mobile)" },
+]} />
+```
+
+<ComponentPreview styleName="aria-nova" name="chart-example-legend" previewClassName="h-80" />
+
+## Chart Config
+
+`ChartConfig` maps each data key to a label and an optional icon. Choose either one `color` or a `theme` with separate light and dark colors.
+
+```tsx
+import { MonitorIcon } from "@lucide/solid";
+import type { ChartConfig } from "#components/ui/chart";
+
+const chartConfig = {
+  desktop: {
+    label: "Desktop",
+    icon: MonitorIcon,
+    theme: { light: "#2563eb", dark: "#60a5fa" },
+  },
+} satisfies ChartConfig;
+```
+
+## Theming
+
+Charts have built-in support for theming. You can use css variables (recommended) or color values in any color format, such as hex, hsl or oklch.
+
+### CSS Variables
+
+<Steps class="mb-0 pt-2">
+
+<Step>Define your colors in your css file</Step>
+
+```css title="app/globals.css" showLineNumbers
+@layer base {
+  :root {
+    --chart-1: oklch(0.646 0.222 41.116);
+    --chart-2: oklch(0.6 0.118 184.704);
+  }
+
+  .dark: {
+    --chart-1: oklch(0.488 0.243 264.376);
+    --chart-2: oklch(0.696 0.17 162.48);
+  }
+}
+```
+
+<Step>Add the color to your `chartConfig`</Step>
+
+```tsx title="components/example-chart.tsx" showLineNumbers
+const chartConfig = {
+  desktop: {
+    label: "Desktop",
+    color: "var(--chart-1)",
+  },
+  mobile: {
+    label: "Mobile",
+    color: "var(--chart-2)",
+  },
+} satisfies ChartConfig;
+```
+
+</Steps>
+
+### hex, hsl or oklch
+
+You can also define your colors directly in the chart config. Use the color format you prefer.
+
+```tsx title="components/example-chart.tsx" showLineNumbers
+const chartConfig = {
+  desktop: {
+    label: "Desktop",
+    color: "#2563eb",
+  },
+  mobile: {
+    label: "Mobile",
+    color: "hsl(220, 98%, 61%)",
+  },
+  tablet: {
+    label: "Tablet",
+    color: "oklch(0.5 0.2 240)",
+  },
+  laptop: {
+    label: "Laptop",
+    color: "var(--chart-2)",
+  },
+} satisfies ChartConfig;
+```
+
+### Using Colors
+
+To use the theme colors in your chart, reference the colors using the format `var(--color-KEY)`.
+
+#### Components
+
+```tsx
+<rect
+  x="24"
+  y="20"
+  width="32"
+  height="120"
+  rx="4"
+  fill="var(--color-desktop)"
+/>
+```
+
+#### Chart Data
+
+```tsx title="components/example-chart.tsx" showLineNumbers
+const chartData = [
+  { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
+  { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
+];
+```
+
+#### Tailwind
+
+```tsx
+<text class="fill-[--color-desktop]">Desktop</text>
+```
+
+## Tooltip
+
+A chart tooltip contains a label, name, indicator and value. You can use a combination of these to customize your tooltip.
+
+<ComponentPreview styleName="aria-nova" name="chart-tooltip" hideCode />
+
+You can turn on/off any of these using the `hideLabel`, `hideIndicator` props and customize the indicator style using the `indicator` prop.
+
+Use `labelKey` and `nameKey` to use a custom key for the tooltip label and name.
+
+Chart comes with the `<ChartTooltip>` and `<ChartTooltipContent>` components. You can use these two components to add custom tooltips to your chart.
+
+```tsx title="components/example-chart.tsx"
+import { ChartTooltip, ChartTooltipContent } from "#components/ui/chart";
+```
+
+```tsx
+<ChartTooltipContent active label="January" payload={payload} />
+```
+
+### Props
+
+Use the following props to customize the tooltip.
+
+| Prop | Type | Description |
+| :-- | :-- | :-- |
+| `labelKey` | string | The config or data key to use for the label. |
+| `nameKey` | string | The config or data key to use for the name. |
+| `indicator` | `dot` `line` or `dashed` | The indicator style for the tooltip. |
+| `hideLabel` | boolean | Whether to hide the label. |
+| `hideIndicator` | boolean | Whether to hide the indicator. |
+
+### Colors
+
+Colors are automatically referenced from the chart config.
+
+### Custom
+
+To use a custom key for tooltip label and names, use the `labelKey` and `nameKey` props.
+
+```tsx showLineNumbers /browser/
+const chartData = [
+  { browser: "chrome", visitors: 187, fill: "var(--color-chrome)" },
+  { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
+];
+
+const chartConfig = {
+  visitors: {
+    label: "Total Visitors",
+  },
+  chrome: {
+    label: "Chrome",
+    color: "var(--chart-1)",
+  },
+  safari: {
+    label: "Safari",
+    color: "var(--chart-2)",
+  },
+} satisfies ChartConfig;
+```
+
+```tsx
+<ChartTooltipContent
+  active
+  labelKey="visitors"
+  nameKey="browser"
+  payload={payload}
+/>
+```
+
+This will use `Total Visitors` for label and `Chrome` and `Safari` for the tooltip names.
+
+## Legend
+
+You can use the custom `<ChartLegend>` and `<ChartLegendContent>` components to add a legend to your chart.
+
+```tsx title="components/example-chart.tsx"
+import { ChartLegend, ChartLegendContent } from "#components/ui/chart";
+```
+
+```tsx
+<ChartLegendContent nameKey="browser" payload={payload} />
+```
+
+### Colors
+
+Colors are automatically referenced from the chart config.
+
+### Custom
+
+To use a custom key for legend names, use the `nameKey` prop.
+
+```tsx showLineNumbers /browser/
+const chartData = [
+  { browser: "chrome", visitors: 187, fill: "var(--color-chrome)" },
+  { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
+];
+
+const chartConfig = {
+  chrome: {
+    label: "Chrome",
+    color: "var(--chart-1)",
+  },
+  safari: {
+    label: "Safari",
+    color: "var(--chart-2)",
+  },
+} satisfies ChartConfig;
+```
+
+```tsx
+<ChartLegendContent nameKey="browser" payload={payload} />
+```
+
+This will use `Chrome` and `Safari` for the legend names.
+
+## Accessibility
+
+Give every `Chart` an `ariaLabel`. The SVG surface supports keyboard focus and arrow-key navigation through data points. The tooltip follows pointer and keyboard focus. Provide the values in text or a table when the visual alone cannot communicate them.
+
+```tsx
+<Chart definition={definition} ariaLabel="Monthly desktop and mobile users" height={256} />
+```
+
+## RTL
+
+To configure right-to-left layouts, see the [RTL configuration guide](/docs/accessibility#right-to-left).
+
+<ComponentPreview
+  styleName="aria-nova"
+  name="chart-rtl"
+  direction="rtl"
+  previewClassName="h-92"
+/>

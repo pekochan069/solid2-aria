@@ -1,0 +1,273 @@
+---
+title: "Item"
+description: "A versatile component for displaying content with media, title, description, and actions."
+---
+
+{/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/content/docs/components/aria/item.mdx.
+ * Modified for Solid Aria: Solid 2 examples and imports, local installation, supported APIs, and documentation links.
+ * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */}
+
+import { ComponentPreview, Installation } from "#components/docs/mdx";
+
+
+
+<ComponentPreview styleName="aria-nova" name="item-demo" />
+
+The `Item` component is a straightforward flex container that can house nearly any type of content. Use it to display a title, description, and actions. Group it with the `ItemGroup` component to create a list of items.
+
+## Installation
+
+<Installation component="item" />
+
+## Usage
+
+```tsx showLineNumbers
+import {
+  Item,
+  ItemActions,
+  ItemContent,
+  ItemDescription,
+  ItemMedia,
+  ItemTitle,
+} from "#components/ui/item";
+```
+
+```tsx showLineNumbers
+<Item>
+  <ItemMedia variant="icon">
+    <Icon />
+  </ItemMedia>
+  <ItemContent>
+    <ItemTitle>Title</ItemTitle>
+    <ItemDescription>Description</ItemDescription>
+  </ItemContent>
+  <ItemActions>
+    <Button>Action</Button>
+  </ItemActions>
+</Item>
+```
+
+## Composition
+
+Use the following composition to build an `Item`:
+
+```text
+ItemGroup
+└── Item
+    ├── ItemHeader
+    ├── ItemMedia
+    ├── ItemContent
+    │   ├── ItemTitle
+    │   └── ItemDescription
+    ├── ItemActions
+    └── ItemFooter
+```
+
+## Item vs Field
+
+Use `Field` if you need to display a form input such as a checkbox, input, radio, or select.
+
+If you only need to display content such as a title, description, and actions, use `Item`.
+
+## Variant
+
+Use the `variant` prop to change the visual style of the item.
+
+<ComponentPreview
+  styleName="aria-nova"
+  name="item-variant"
+  previewClassName="h-96"
+/>
+
+## Size
+
+Use the `size` prop to change the size of the item. Available sizes are `default`, `sm`, and `xs`.
+
+<ComponentPreview
+  styleName="aria-nova"
+  name="item-size"
+  previewClassName="h-96"
+/>
+
+## Icon
+
+Use `ItemMedia` with `variant="icon"` to display an icon.
+
+<ComponentPreview styleName="aria-nova" name="item-icon" />
+
+## Avatar
+
+You can use `ItemMedia` with `variant="avatar"` to display an avatar.
+
+<ComponentPreview styleName="aria-nova" name="item-avatar" />
+
+## Image
+
+Use `ItemMedia` with `variant="image"` to display an image.
+
+<ComponentPreview styleName="aria-nova" name="item-image" />
+
+## Group
+
+Use `ItemGroup` to group related items together.
+
+<ComponentPreview
+  styleName="aria-nova"
+  name="item-group"
+  previewClassName="h-96"
+/>
+
+## Header
+
+Use `ItemHeader` to add a header above the item content.
+
+<ComponentPreview
+  styleName="aria-nova"
+  name="item-header"
+  previewClassName="h-96"
+/>
+
+## Link
+
+Use the `render` prop to render the item as a link. The hover and focus states will be applied to the anchor element.
+
+<ComponentPreview styleName="aria-nova" name="item-link" />
+
+```tsx showLineNumbers
+<Item href="/dashboard">
+  <ItemMedia variant="icon">
+    <HomeIcon />
+  </ItemMedia>
+  <ItemContent>
+    <ItemTitle>Dashboard</ItemTitle>
+    <ItemDescription>Overview of your account and activity.</ItemDescription>
+  </ItemContent>
+</Item>
+```
+
+## Dropdown
+
+<ComponentPreview styleName="aria-nova" name="item-dropdown" />
+
+## RTL
+
+To configure right-to-left layouts, see the [RTL configuration guide](/docs/accessibility#right-to-left).
+
+<ComponentPreview styleName="aria-nova" name="item-rtl" direction="rtl" />
+
+## API Reference
+
+### Item
+
+The main component for displaying content with media, title, description, and actions.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `variant` | `"default" \| "outline" \| "muted"` | `"default"` |
+| `size` | `"default" \| "sm" \| "xs"` | `"default"` |
+| `href` | `string` | Renders a Solid2 Aria link when supplied. |
+
+### ItemGroup
+
+A container that groups related items together with consistent styling.
+
+```tsx
+<ItemGroup>
+  <Item />
+  <Item />
+</ItemGroup>
+```
+
+### ItemSeparator
+
+A separator between items in a group.
+
+```tsx
+<ItemGroup>
+  <Item />
+  <ItemSeparator />
+  <Item />
+</ItemGroup>
+```
+
+### ItemMedia
+
+Use `ItemMedia` to display media content such as icons, images, or avatars.
+
+| Prop      | Type                             | Default     |
+| --------- | -------------------------------- | ----------- |
+| `variant` | `"default" \| "icon" \| "image"` | `"default"` |
+
+```tsx
+<ItemMedia variant="icon">
+  <Icon />
+</ItemMedia>
+```
+
+```tsx
+<ItemMedia variant="image">
+  <img src="..." alt="..." />
+</ItemMedia>
+```
+
+### ItemContent
+
+Wraps the title and description of the item.
+
+```tsx
+<ItemContent>
+  <ItemTitle>Title</ItemTitle>
+  <ItemDescription>Description</ItemDescription>
+</ItemContent>
+```
+
+### ItemTitle
+
+Displays the title of the item.
+
+```tsx
+<ItemTitle>Item Title</ItemTitle>
+```
+
+### ItemDescription
+
+Displays the description of the item.
+
+```tsx
+<ItemDescription>Item description</ItemDescription>
+```
+
+### ItemActions
+
+Container for action buttons or other interactive elements.
+
+```tsx
+<ItemActions>
+  <Button>Action</Button>
+</ItemActions>
+```
+
+### ItemHeader
+
+Displays a header above the item content.
+
+```tsx
+<Item>
+  <ItemHeader>Header</ItemHeader>
+  <ItemContent>...</ItemContent>
+</Item>
+```
+
+### ItemFooter
+
+Displays a footer below the item content.
+
+```tsx
+<Item>
+  <ItemContent>...</ItemContent>
+  <ItemFooter>Footer</ItemFooter>
+</Item>
+```

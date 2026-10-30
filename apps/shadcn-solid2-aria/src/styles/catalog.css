@@ -1,0 +1,313 @@
+/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/app/(app)/blocks/{layout,page}.tsx, apps/v4/app/(app)/charts/[type]/page.tsx, and apps/v4/components/{block-viewer,chart-display,chart-toolbar}.tsx.
+ * Modified for Solid Aria: responsive CSS for Solid 2 catalogs and native preview controls.
+ * Licensed under MIT. See ../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */
+
+.catalog-main {
+  min-width: 0;
+}
+.catalog-browse-all {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  margin-right: 28px;
+  padding-inline: 12px;
+  border-radius: 9999px;
+  background: var(--secondary);
+  font-size: 14px;
+  font-weight: 500;
+}
+.catalog-blocks-content {
+  padding-block: 48px;
+}
+.catalog-block-list {
+  display: flex;
+  flex-direction: column;
+  gap: 96px;
+}
+.catalog-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+  scroll-margin-top: 96px;
+}
+.catalog-block-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  padding: 0 24px 0 8px;
+}
+.catalog-view-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-radius: 8px;
+  background: var(--muted);
+  padding: 4px;
+}
+.catalog-view-tabs button {
+  height: 24px;
+  padding-inline: 8px;
+  border: 0;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  background: transparent;
+}
+.catalog-view-tabs button[aria-pressed="true"] {
+  background: var(--background);
+  box-shadow: 0 1px 2px #0000000d;
+}
+.catalog-block-toolbar > .header-divider {
+  margin-inline: 8px;
+}
+.catalog-block-description {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+}
+.catalog-block-description:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.catalog-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+}
+.catalog-devices {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 32px;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.catalog-devices :is(button, a) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+}
+.catalog-devices button[aria-pressed="true"],
+.catalog-devices :is(button, a):hover {
+  background: var(--muted);
+}
+.catalog-devices .header-divider {
+  height: 16px;
+}
+.catalog-customize,
+.catalog-browse-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding-inline: 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--background);
+  font-size: 12px;
+  font-weight: 500;
+}
+.catalog-browse-more {
+  align-self: center;
+  height: 36px;
+  font-size: 14px;
+  margin-block: 24px;
+}
+.catalog-frame-wrap {
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+  margin-right: 14px;
+  overflow: auto;
+  border-radius: 12px;
+  background-image: radial-gradient(var(--border) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+.catalog-block-frame {
+  display: block;
+  flex-shrink: 0;
+  max-width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--background);
+  transition: width 200ms;
+}
+.catalog-source {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.catalog-source details + details {
+  border-top: 1px solid var(--border);
+}
+.catalog-source summary,
+.catalog-chart-source summary {
+  position: relative;
+  padding: 16px 40px 16px 16px;
+  font: 13px/20px var(--font-mono);
+  background: var(--code);
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+.catalog-source .copy-button,
+.catalog-chart-source .copy-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.catalog-source pre,
+.catalog-chart-source pre {
+  max-height: 544px;
+  padding: 24px;
+  overflow: auto;
+  background: var(--code);
+  font: 12px/1.65 var(--font-mono);
+}
+.catalog-charts-content {
+  padding-bottom: 24px;
+}
+.catalog-chart-grid {
+  display: grid;
+  align-items: stretch;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
+}
+.catalog-chart {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+.catalog-chart-full {
+  grid-column: 1/-1;
+}
+.catalog-chart-placeholder {
+  display: none;
+  aspect-ratio: 1;
+  width: 100%;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+}
+@media (min-width: 1280px) {
+  .catalog-chart-placeholder {
+    display: block;
+  }
+}
+.catalog-chart-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+}
+.catalog-chart-toolbar > span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-left: 4px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
+.catalog-chart-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.catalog-chart-code {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  padding-inline: 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--background);
+  font-size: 12px;
+  font-weight: 500;
+}
+.catalog-chart-preview {
+  flex: 1;
+  min-height: 460px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--background);
+}
+.catalog-chart-preview > [data-slot="card"] {
+  min-height: 460px;
+  height: 100%;
+}
+.catalog-chart-source {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.catalog-view {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  overflow: auto;
+}
+.catalog-view:has([role="img"][aria-label*="Chart"]) {
+  padding: 16px;
+}
+.catalog-view > p {
+  padding: 32px;
+}
+@media (max-width: 1279px) {
+  .catalog-chart-grid {
+    gap: 24px;
+  }
+}
+@media (max-width: 1023px) {
+  .catalog-block-toolbar {
+    padding-inline: 0;
+  }
+  .catalog-block-toolbar > .header-divider,
+  .catalog-view-tabs,
+  .catalog-devices {
+    display: none;
+  }
+  .catalog-browse-all {
+    display: none;
+  }
+  .catalog-block-list {
+    gap: 48px;
+  }
+  .catalog-chart-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 767px) {
+  .catalog-blocks-content {
+    padding-block: 0 24px;
+  }
+  .catalog-frame-wrap {
+    margin-right: 0;
+  }
+  .catalog-block-toolbar {
+    flex-wrap: wrap;
+  }
+  .catalog-chart-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+}
+
+.catalog-main:has(.catalog-blocks-content) .page-nav-content {
+  min-height: 64px;
+}

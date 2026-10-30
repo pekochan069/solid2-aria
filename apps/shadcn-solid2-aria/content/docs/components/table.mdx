@@ -1,0 +1,119 @@
+---
+title: "Table"
+description: "A responsive table component."
+---
+
+{/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/content/docs/components/aria/table.mdx.
+ * Modified for Solid Aria: Solid 2 examples and imports, local installation, supported APIs, and documentation links.
+ * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */}
+
+import { ComponentPreview, Installation } from "#components/docs/mdx";
+
+
+
+<ComponentPreview
+  styleName="aria-nova"
+  name="table-demo"
+  previewClassName="h-[30rem]"
+/>
+
+## Installation
+
+<Installation component="table" />
+
+## Usage
+
+```tsx showLineNumbers
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "#components/ui/table";
+```
+
+```tsx showLineNumbers
+<Table>
+  <TableHeader>
+    <TableHead isRowHeader class="w-[100px]">Invoice</TableHead>
+    <TableHead>Status</TableHead>
+    <TableHead>Method</TableHead>
+    <TableHead class="text-right">Amount</TableHead>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell class="font-medium">INV001</TableCell>
+      <TableCell>Paid</TableCell>
+      <TableCell>Credit Card</TableCell>
+      <TableCell class="text-right">$250.00</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+<TableCaption>A list of your recent invoices.</TableCaption>
+```
+
+## Composition
+
+Use the following composition to build a `Table`:
+
+```text
+Table
+├── TableCaption
+├── TableHeader
+│   └── TableRow
+│       ├── TableHead
+│       ├── TableHead
+│       ├── TableHead
+│       └── TableHead
+├── TableBody
+│   ├── TableRow
+│   │   ├── TableCell
+│   │   ├── TableCell
+│   │   ├── TableCell
+│   │   └── TableCell
+│   └── TableRow
+│       ├── TableCell
+│       ├── TableCell
+│       ├── TableCell
+│       └── TableCell
+└── TableFooter
+```
+
+## Footer
+
+Use the `<TableFooter />` component to add a footer to the table.
+
+<ComponentPreview styleName="aria-nova" name="table-footer" />
+
+## Actions
+
+A table showing actions for each row using a `<DropdownMenu />` component.
+
+<ComponentPreview styleName="aria-nova" name="table-actions" />
+
+## Data Table
+
+You can use the `<Table />` component to build more complex data tables. Combine it with [@tanstack/solid-table](https://tanstack.com/table/latest/docs/framework/solid/solid-table) to create tables with sorting, filtering and pagination.
+
+Combine the table with your application’s sorting, selection, and filtering state.
+
+You can also see an example of a data table in the [Tasks](https://ui.shadcn.com/examples/tasks) demo.
+
+## RTL
+
+To configure right-to-left layouts, see the [RTL configuration guide](/docs/accessibility#right-to-left).
+
+<ComponentPreview
+  styleName="aria-nova"
+  name="table-rtl"
+  direction="rtl"
+  previewClassName="h-auto"
+/>
+
+## API Reference

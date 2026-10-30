@@ -1,0 +1,47 @@
+/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui: apps/v4/app/globals.css, no-scrollbar utility.
+ * Modified for Solid Aria: shared utilities and animations for aggregate and per-page component styles.
+ * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */
+
+@custom-variant data-selected (&:where([data-selected]:not([data-selected="false"])));
+
+@layer components {
+  .cn-font-heading {
+    font-family: var(--font-heading, var(--font-sans));
+  }
+
+  .cn-rtl-flip {
+    @apply rtl:rotate-180;
+  }
+}
+
+@theme inline {
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--disclosure-panel-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--disclosure-panel-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

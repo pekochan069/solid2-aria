@@ -1,0 +1,53 @@
+/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/registry/new-york-v4/charts/chart-line-dots-custom.tsx.
+ * Modified for Solid Aria: upstream chart data and card content rendered with native Solid SVG charts in place of React Recharts.
+ * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */
+
+import { ChartDemo } from "../../components/catalog/chart-demo";
+
+const chartData = [
+  {
+    desktop: 186,
+    mobile: 80,
+    month: "January",
+  },
+  {
+    desktop: 305,
+    mobile: 200,
+    month: "February",
+  },
+  {
+    desktop: 237,
+    mobile: 120,
+    month: "March",
+  },
+  {
+    desktop: 73,
+    mobile: 190,
+    month: "April",
+  },
+  {
+    desktop: 209,
+    mobile: 130,
+    month: "May",
+  },
+  {
+    desktop: 214,
+    mobile: 140,
+    month: "June",
+  },
+];
+
+export default function Chart() {
+  return (
+    <ChartDemo
+      name="chart-line-dots-custom"
+      type="line"
+      title="Line Chart - Custom Dots"
+      description="January - June 2024"
+      data={chartData}
+    />
+  );
+}

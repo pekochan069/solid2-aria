@@ -1,0 +1,2977 @@
+[
+  {
+    "name": "accordion-basic",
+    "upstream": "apps/v4/examples/aria/accordion-basic.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "accordion-borders",
+    "upstream": "apps/v4/examples/aria/accordion-borders.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "accordion-card",
+    "upstream": "apps/v4/examples/aria/accordion-card.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "accordion-demo",
+    "upstream": "apps/v4/examples/aria/accordion-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "accordion-disabled",
+    "upstream": "apps/v4/examples/aria/accordion-disabled.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "accordion-multiple",
+    "upstream": "apps/v4/examples/aria/accordion-multiple.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "accordion-rtl",
+    "upstream": "apps/v4/examples/aria/accordion-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "alert-action",
+    "upstream": "apps/v4/examples/aria/alert-action.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "alert-basic",
+    "upstream": "apps/v4/examples/aria/alert-basic.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "alert-colors",
+    "upstream": "apps/v4/examples/aria/alert-colors.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "alert-demo",
+    "upstream": "apps/v4/examples/aria/alert-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "alert-destructive",
+    "upstream": "apps/v4/examples/aria/alert-destructive.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "alert-dialog-basic",
+    "upstream": "apps/v4/examples/aria/alert-dialog-basic.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "alert-dialog-demo",
+    "upstream": "apps/v4/examples/aria/alert-dialog-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "alert-dialog-destructive",
+    "upstream": "apps/v4/examples/aria/alert-dialog-destructive.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "alert-dialog-media",
+    "upstream": "apps/v4/examples/aria/alert-dialog-media.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "alert-dialog-rtl",
+    "upstream": "apps/v4/examples/aria/alert-dialog-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "alert-dialog-small",
+    "upstream": "apps/v4/examples/aria/alert-dialog-small.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "alert-dialog-small-media",
+    "upstream": "apps/v4/examples/aria/alert-dialog-small-media.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "alert-rtl",
+    "upstream": "apps/v4/examples/aria/alert-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "aspect-ratio-demo",
+    "upstream": "apps/v4/examples/aria/aspect-ratio-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "aspect-ratio-portrait",
+    "upstream": "apps/v4/examples/aria/aspect-ratio-portrait.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "aspect-ratio-rtl",
+    "upstream": "apps/v4/examples/aria/aspect-ratio-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "aspect-ratio-square",
+    "upstream": "apps/v4/examples/aria/aspect-ratio-square.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "attachment-demo",
+    "upstream": "apps/v4/examples/aria/attachment-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "attachment-group",
+    "upstream": "apps/v4/examples/aria/attachment-group.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "attachment-image",
+    "upstream": "apps/v4/examples/aria/attachment-image.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "attachment-sizes",
+    "upstream": "apps/v4/examples/aria/attachment-sizes.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "attachment-states",
+    "upstream": "apps/v4/examples/aria/attachment-states.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "attachment-trigger",
+    "upstream": "apps/v4/examples/aria/attachment-trigger.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "avatar-badge",
+    "upstream": "apps/v4/examples/aria/avatar-badge.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "avatar-badge-icon",
+    "upstream": "apps/v4/examples/aria/avatar-badge-icon.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "avatar-basic",
+    "upstream": "apps/v4/examples/aria/avatar-basic.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "avatar-demo",
+    "upstream": "apps/v4/examples/aria/avatar-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "avatar-dropdown",
+    "upstream": "apps/v4/examples/aria/avatar-dropdown.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "avatar-group",
+    "upstream": "apps/v4/examples/aria/avatar-group.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "avatar-group-count",
+    "upstream": "apps/v4/examples/aria/avatar-group-count.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "avatar-group-count-icon",
+    "upstream": "apps/v4/examples/aria/avatar-group-count-icon.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "avatar-rtl",
+    "upstream": "apps/v4/examples/aria/avatar-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "avatar-size",
+    "upstream": "apps/v4/examples/aria/avatar-size.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "badge-colors",
+    "upstream": "apps/v4/examples/aria/badge-colors.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "badge-demo",
+    "upstream": "apps/v4/examples/aria/badge-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "badge-icon",
+    "upstream": "apps/v4/examples/aria/badge-icon.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "badge-link",
+    "upstream": "apps/v4/examples/aria/badge-link.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "badge-rtl",
+    "upstream": "apps/v4/examples/aria/badge-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "badge-spinner",
+    "upstream": "apps/v4/examples/aria/badge-spinner.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "badge-variants",
+    "upstream": "apps/v4/examples/aria/badge-variants.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "breadcrumb-basic",
+    "upstream": "apps/v4/examples/aria/breadcrumb-basic.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "breadcrumb-demo",
+    "upstream": "apps/v4/examples/aria/breadcrumb-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "breadcrumb-dropdown",
+    "upstream": "apps/v4/examples/aria/breadcrumb-dropdown.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "breadcrumb-ellipsis",
+    "upstream": "apps/v4/examples/aria/breadcrumb-ellipsis.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "breadcrumb-link",
+    "upstream": "apps/v4/examples/aria/breadcrumb-link.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "breadcrumb-rtl",
+    "upstream": "apps/v4/examples/aria/breadcrumb-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "breadcrumb-separator",
+    "upstream": "apps/v4/examples/aria/breadcrumb-separator.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "bubble-alignment",
+    "upstream": "apps/v4/examples/aria/bubble-alignment.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "bubble-collapsible",
+    "upstream": "apps/v4/examples/aria/bubble-collapsible.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "bubble-demo",
+    "upstream": "apps/v4/examples/aria/bubble-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "bubble-group-demo",
+    "upstream": "apps/v4/examples/aria/bubble-group-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "bubble-link-button",
+    "upstream": "apps/v4/examples/aria/bubble-link-button.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "bubble-popover",
+    "upstream": "apps/v4/examples/aria/bubble-popover.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "bubble-reactions",
+    "upstream": "apps/v4/examples/aria/bubble-reactions.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "bubble-tooltip",
+    "upstream": "apps/v4/examples/aria/bubble-tooltip.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "bubble-variants",
+    "upstream": "apps/v4/examples/aria/bubble-variants.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "button-default",
+    "upstream": "apps/v4/examples/aria/button-default.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "button-demo",
+    "upstream": "apps/v4/examples/aria/button-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "button-destructive",
+    "upstream": "apps/v4/examples/aria/button-destructive.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "button-ghost",
+    "upstream": "apps/v4/examples/aria/button-ghost.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "button-group-demo",
+    "upstream": "apps/v4/examples/aria/button-group-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "button-group-dropdown",
+    "upstream": "apps/v4/examples/aria/button-group-dropdown.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "button-group-input",
+    "upstream": "apps/v4/examples/aria/button-group-input.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "button-group-input-group",
+    "upstream": "apps/v4/examples/aria/button-group-input-group.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "button-group-nested",
+    "upstream": "apps/v4/examples/aria/button-group-nested.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "button-group-orientation",
+    "upstream": "apps/v4/examples/aria/button-group-orientation.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "button-group-popover",
+    "upstream": "apps/v4/examples/aria/button-group-popover.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "button-group-rtl",
+    "upstream": "apps/v4/examples/aria/button-group-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "button-group-select",
+    "upstream": "apps/v4/examples/aria/button-group-select.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "button-group-separator",
+    "upstream": "apps/v4/examples/aria/button-group-separator.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "button-group-size",
+    "upstream": "apps/v4/examples/aria/button-group-size.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "button-group-split",
+    "upstream": "apps/v4/examples/aria/button-group-split.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "button-icon",
+    "upstream": "apps/v4/examples/aria/button-icon.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "button-link",
+    "upstream": "apps/v4/examples/aria/button-link.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "button-outline",
+    "upstream": "apps/v4/examples/aria/button-outline.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "button-render",
+    "upstream": "apps/v4/examples/aria/button-render.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "button-rounded",
+    "upstream": "apps/v4/examples/aria/button-rounded.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "button-rtl",
+    "upstream": "apps/v4/examples/aria/button-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "button-secondary",
+    "upstream": "apps/v4/examples/aria/button-secondary.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "button-size",
+    "upstream": "apps/v4/examples/aria/button-size.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "button-spinner",
+    "upstream": "apps/v4/examples/aria/button-spinner.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "button-with-icon",
+    "upstream": "apps/v4/examples/aria/button-with-icon.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "calendar-basic",
+    "upstream": "apps/v4/examples/aria/calendar-basic.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "calendar-booked-dates",
+    "upstream": "apps/v4/examples/aria/calendar-booked-dates.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "calendar-caption",
+    "upstream": "apps/v4/examples/aria/calendar-caption.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "calendar-custom-days",
+    "upstream": "apps/v4/examples/aria/calendar-custom-days.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "calendar-demo",
+    "upstream": "apps/v4/examples/aria/calendar-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "calendar-hijri",
+    "upstream": "apps/v4/examples/aria/calendar-hijri.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "calendar-presets",
+    "upstream": "apps/v4/examples/aria/calendar-presets.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "calendar-range",
+    "upstream": "apps/v4/examples/aria/calendar-range.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "calendar-rtl",
+    "upstream": "apps/v4/examples/aria/calendar-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "calendar-time",
+    "upstream": "apps/v4/examples/aria/calendar-time.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "card-demo",
+    "upstream": "apps/v4/examples/aria/card-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "card-edge-to-edge",
+    "upstream": "apps/v4/examples/aria/card-edge-to-edge.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "card-image",
+    "upstream": "apps/v4/examples/aria/card-image.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "card-rtl",
+    "upstream": "apps/v4/examples/aria/card-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "card-small",
+    "upstream": "apps/v4/examples/aria/card-small.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "card-spacing",
+    "upstream": "apps/v4/examples/aria/card-spacing.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "carousel-api",
+    "upstream": "apps/v4/examples/aria/carousel-api.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "carousel-demo",
+    "upstream": "apps/v4/examples/aria/carousel-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "carousel-orientation",
+    "upstream": "apps/v4/examples/aria/carousel-orientation.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "carousel-plugin",
+    "upstream": "apps/v4/examples/aria/carousel-plugin.tsx",
+    "kind": "adapted",
+    "adaptations": []
+  },
+  {
+    "name": "carousel-rtl",
+    "upstream": "apps/v4/examples/aria/carousel-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "carousel-size",
+    "upstream": "apps/v4/examples/aria/carousel-size.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "carousel-spacing",
+    "upstream": "apps/v4/examples/aria/carousel-spacing.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "chart-demo",
+    "upstream": "apps/v4/examples/aria/chart-demo.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Native Solid SVG bars and title tooltips replace Recharts."
+    ]
+  },
+  {
+    "name": "chart-example",
+    "upstream": "apps/v4/examples/aria/chart-example.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Native Solid SVG bars and title tooltips replace Recharts."
+    ]
+  },
+  {
+    "name": "chart-example-axis",
+    "upstream": "apps/v4/examples/aria/chart-example-axis.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Native Solid SVG bars and title tooltips replace Recharts."
+    ]
+  },
+  {
+    "name": "chart-example-grid",
+    "upstream": "apps/v4/examples/aria/chart-example-grid.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Native Solid SVG bars and title tooltips replace Recharts."
+    ]
+  },
+  {
+    "name": "chart-example-legend",
+    "upstream": "apps/v4/examples/aria/chart-example-legend.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Native Solid SVG bars and title tooltips replace Recharts."
+    ]
+  },
+  {
+    "name": "chart-example-tooltip",
+    "upstream": "apps/v4/examples/aria/chart-example-tooltip.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Native Solid SVG bars and title tooltips replace Recharts."
+    ]
+  },
+  {
+    "name": "chart-rtl",
+    "upstream": "apps/v4/examples/aria/chart-rtl.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Native Solid SVG bars and title tooltips replace Recharts.",
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "chart-tooltip",
+    "upstream": "apps/v4/examples/aria/chart-tooltip.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "checkbox-basic",
+    "upstream": "apps/v4/examples/aria/checkbox-basic.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "checkbox-demo",
+    "upstream": "apps/v4/examples/aria/checkbox-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "checkbox-description",
+    "upstream": "apps/v4/examples/aria/checkbox-description.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "checkbox-disabled",
+    "upstream": "apps/v4/examples/aria/checkbox-disabled.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "checkbox-group",
+    "upstream": "apps/v4/examples/aria/checkbox-group.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "checkbox-invalid",
+    "upstream": "apps/v4/examples/aria/checkbox-invalid.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "checkbox-rtl",
+    "upstream": "apps/v4/examples/aria/checkbox-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "checkbox-table",
+    "upstream": "apps/v4/examples/aria/checkbox-table.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "code-block-actions",
+    "upstream": "apps/v4/examples/aria/code-block-actions.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "code-block-ansi",
+    "upstream": "apps/v4/examples/aria/code-block-ansi.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "code-block-basic",
+    "upstream": "apps/v4/examples/aria/code-block-basic.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "code-block-chat",
+    "upstream": "apps/v4/examples/aria/code-block-chat.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "code-block-demo",
+    "upstream": "apps/v4/examples/aria/code-block-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "code-block-destructive",
+    "upstream": "apps/v4/examples/aria/code-block-destructive.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "code-block-diff",
+    "upstream": "apps/v4/examples/aria/code-block-diff.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "code-block-floating-actions",
+    "upstream": "apps/v4/examples/aria/code-block-floating-actions.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "code-block-header",
+    "upstream": "apps/v4/examples/aria/code-block-header.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "code-block-height",
+    "upstream": "apps/v4/examples/aria/code-block-height.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "code-block-highlighted-lines",
+    "upstream": "apps/v4/examples/aria/code-block-highlighted-lines.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "code-block-highlighting",
+    "upstream": "apps/v4/examples/aria/code-block-highlighting.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "code-block-languages",
+    "upstream": "apps/v4/examples/aria/code-block-languages.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "code-block-line-numbers",
+    "upstream": "apps/v4/examples/aria/code-block-line-numbers.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "code-block-markdown",
+    "upstream": "apps/v4/examples/aria/code-block-markdown.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  },
+  {
+    "name": "code-block-rtl",
+    "upstream": "apps/v4/examples/aria/code-block-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "code-block-show-more",
+    "upstream": "apps/v4/examples/aria/code-block-show-more.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "code-block-show-more-scroll",
+    "upstream": "apps/v4/examples/aria/code-block-show-more-scroll.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "code-block-size",
+    "upstream": "apps/v4/examples/aria/code-block-size.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "code-block-start-line",
+    "upstream": "apps/v4/examples/aria/code-block-start-line.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "code-block-streaming",
+    "upstream": "apps/v4/examples/aria/code-block-streaming.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "code-block-tabs",
+    "upstream": "apps/v4/examples/aria/code-block-tabs.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "code-block-trace",
+    "upstream": "apps/v4/examples/aria/code-block-trace.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "code-block-typeset",
+    "upstream": "apps/v4/examples/aria/code-block-typeset.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "code-block-wrap",
+    "upstream": "apps/v4/examples/aria/code-block-wrap.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "collapsible-basic",
+    "upstream": "apps/v4/examples/aria/collapsible-basic.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "collapsible-demo",
+    "upstream": "apps/v4/examples/aria/collapsible-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "collapsible-file-tree",
+    "upstream": "apps/v4/examples/aria/collapsible-file-tree.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "collapsible-rtl",
+    "upstream": "apps/v4/examples/aria/collapsible-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "collapsible-settings",
+    "upstream": "apps/v4/examples/aria/collapsible-settings.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "combobox-basic",
+    "upstream": "apps/v4/examples/aria/combobox-basic.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "combobox-clear",
+    "upstream": "apps/v4/examples/aria/combobox-clear.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "combobox-custom",
+    "upstream": "apps/v4/examples/aria/combobox-custom.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "combobox-demo",
+    "upstream": "apps/v4/examples/aria/combobox-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "combobox-disabled",
+    "upstream": "apps/v4/examples/aria/combobox-disabled.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "combobox-groups",
+    "upstream": "apps/v4/examples/aria/combobox-groups.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "combobox-input-group",
+    "upstream": "apps/v4/examples/aria/combobox-input-group.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "combobox-invalid",
+    "upstream": "apps/v4/examples/aria/combobox-invalid.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "combobox-multiple",
+    "upstream": "apps/v4/examples/aria/combobox-multiple.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "combobox-rtl",
+    "upstream": "apps/v4/examples/aria/combobox-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "command-basic",
+    "upstream": "apps/v4/examples/aria/command-basic.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "command-demo",
+    "upstream": "apps/v4/examples/aria/command-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "command-groups",
+    "upstream": "apps/v4/examples/aria/command-groups.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "command-rtl",
+    "upstream": "apps/v4/examples/aria/command-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "command-scrollable",
+    "upstream": "apps/v4/examples/aria/command-scrollable.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "command-shortcuts",
+    "upstream": "apps/v4/examples/aria/command-shortcuts.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "context-menu-basic",
+    "upstream": "apps/v4/examples/aria/context-menu-basic.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "context-menu-checkboxes",
+    "upstream": "apps/v4/examples/aria/context-menu-checkboxes.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "context-menu-demo",
+    "upstream": "apps/v4/examples/aria/context-menu-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "context-menu-destructive",
+    "upstream": "apps/v4/examples/aria/context-menu-destructive.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "context-menu-groups",
+    "upstream": "apps/v4/examples/aria/context-menu-groups.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "context-menu-icons",
+    "upstream": "apps/v4/examples/aria/context-menu-icons.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "context-menu-radio",
+    "upstream": "apps/v4/examples/aria/context-menu-radio.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "context-menu-rtl",
+    "upstream": "apps/v4/examples/aria/context-menu-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "context-menu-shortcuts",
+    "upstream": "apps/v4/examples/aria/context-menu-shortcuts.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "context-menu-sides",
+    "upstream": "apps/v4/examples/aria/context-menu-sides.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "context-menu-submenu",
+    "upstream": "apps/v4/examples/aria/context-menu-submenu.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "dialog-close-button",
+    "upstream": "apps/v4/examples/aria/dialog-close-button.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "dialog-demo",
+    "upstream": "apps/v4/examples/aria/dialog-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "dialog-no-close-button",
+    "upstream": "apps/v4/examples/aria/dialog-no-close-button.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "dialog-rtl",
+    "upstream": "apps/v4/examples/aria/dialog-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "dialog-scrollable-content",
+    "upstream": "apps/v4/examples/aria/dialog-scrollable-content.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "dialog-sticky-footer",
+    "upstream": "apps/v4/examples/aria/dialog-sticky-footer.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "drawer-demo",
+    "upstream": "apps/v4/examples/aria/drawer-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "drawer-dialog",
+    "upstream": "apps/v4/examples/aria/drawer-dialog.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "drawer-nested",
+    "upstream": "apps/v4/examples/aria/drawer-nested.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "drawer-sides",
+    "upstream": "apps/v4/examples/aria/drawer-sides.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "drawer-snap-points",
+    "upstream": "apps/v4/examples/aria/drawer-snap-points.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "drawer-swipe-handle",
+    "upstream": "apps/v4/examples/aria/drawer-swipe-handle.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "dropdown-menu-avatar",
+    "upstream": "apps/v4/examples/aria/dropdown-menu-avatar.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "dropdown-menu-basic",
+    "upstream": "apps/v4/examples/aria/dropdown-menu-basic.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "dropdown-menu-checkboxes",
+    "upstream": "apps/v4/examples/aria/dropdown-menu-checkboxes.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "dropdown-menu-checkboxes-icons",
+    "upstream": "apps/v4/examples/aria/dropdown-menu-checkboxes-icons.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "dropdown-menu-complex",
+    "upstream": "apps/v4/examples/aria/dropdown-menu-complex.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "dropdown-menu-demo",
+    "upstream": "apps/v4/examples/aria/dropdown-menu-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "dropdown-menu-destructive",
+    "upstream": "apps/v4/examples/aria/dropdown-menu-destructive.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "dropdown-menu-icons",
+    "upstream": "apps/v4/examples/aria/dropdown-menu-icons.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "dropdown-menu-radio-group",
+    "upstream": "apps/v4/examples/aria/dropdown-menu-radio-group.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "dropdown-menu-radio-icons",
+    "upstream": "apps/v4/examples/aria/dropdown-menu-radio-icons.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "dropdown-menu-rtl",
+    "upstream": "apps/v4/examples/aria/dropdown-menu-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "dropdown-menu-shortcuts",
+    "upstream": "apps/v4/examples/aria/dropdown-menu-shortcuts.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "dropdown-menu-submenu",
+    "upstream": "apps/v4/examples/aria/dropdown-menu-submenu.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "empty-avatar",
+    "upstream": "apps/v4/examples/aria/empty-avatar.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "empty-avatar-group",
+    "upstream": "apps/v4/examples/aria/empty-avatar-group.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "empty-background",
+    "upstream": "apps/v4/examples/aria/empty-background.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "empty-demo",
+    "upstream": "apps/v4/examples/aria/empty-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "empty-input-group",
+    "upstream": "apps/v4/examples/aria/empty-input-group.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "empty-outline",
+    "upstream": "apps/v4/examples/aria/empty-outline.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "empty-rtl",
+    "upstream": "apps/v4/examples/aria/empty-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "field-checkbox",
+    "upstream": "apps/v4/examples/aria/field-checkbox.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "field-choice-card",
+    "upstream": "apps/v4/examples/aria/field-choice-card.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "field-demo",
+    "upstream": "apps/v4/examples/aria/field-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "field-fieldset",
+    "upstream": "apps/v4/examples/aria/field-fieldset.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "field-group",
+    "upstream": "apps/v4/examples/aria/field-group.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "field-input",
+    "upstream": "apps/v4/examples/aria/field-input.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "field-radio",
+    "upstream": "apps/v4/examples/aria/field-radio.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "field-responsive",
+    "upstream": "apps/v4/examples/aria/field-responsive.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "field-rtl",
+    "upstream": "apps/v4/examples/aria/field-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "field-select",
+    "upstream": "apps/v4/examples/aria/field-select.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "field-slider",
+    "upstream": "apps/v4/examples/aria/field-slider.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "field-switch",
+    "upstream": "apps/v4/examples/aria/field-switch.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "field-textarea",
+    "upstream": "apps/v4/examples/aria/field-textarea.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "hover-card-demo",
+    "upstream": "apps/v4/examples/aria/hover-card-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "hover-card-rtl",
+    "upstream": "apps/v4/examples/aria/hover-card-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "hover-card-sides",
+    "upstream": "apps/v4/examples/aria/hover-card-sides.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-badge",
+    "upstream": "apps/v4/examples/aria/input-badge.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-basic",
+    "upstream": "apps/v4/examples/aria/input-basic.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-button-group",
+    "upstream": "apps/v4/examples/aria/input-button-group.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-demo",
+    "upstream": "apps/v4/examples/aria/input-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-disabled",
+    "upstream": "apps/v4/examples/aria/input-disabled.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-field",
+    "upstream": "apps/v4/examples/aria/input-field.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-fieldgroup",
+    "upstream": "apps/v4/examples/aria/input-fieldgroup.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-file",
+    "upstream": "apps/v4/examples/aria/input-file.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-form",
+    "upstream": "apps/v4/examples/aria/input-form.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-grid",
+    "upstream": "apps/v4/examples/aria/input-grid.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-group-block-end",
+    "upstream": "apps/v4/examples/aria/input-group-block-end.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-group-block-start",
+    "upstream": "apps/v4/examples/aria/input-group-block-start.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-group-button",
+    "upstream": "apps/v4/examples/aria/input-group-button.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-group-custom",
+    "upstream": "apps/v4/examples/aria/input-group-custom.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-group-demo",
+    "upstream": "apps/v4/examples/aria/input-group-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-group-dropdown",
+    "upstream": "apps/v4/examples/aria/input-group-dropdown.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-group-icon",
+    "upstream": "apps/v4/examples/aria/input-group-icon.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-group-inline-end",
+    "upstream": "apps/v4/examples/aria/input-group-inline-end.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-group-inline-start",
+    "upstream": "apps/v4/examples/aria/input-group-inline-start.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-group-kbd",
+    "upstream": "apps/v4/examples/aria/input-group-kbd.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-group-rtl",
+    "upstream": "apps/v4/examples/aria/input-group-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "input-group-spinner",
+    "upstream": "apps/v4/examples/aria/input-group-spinner.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-group-text",
+    "upstream": "apps/v4/examples/aria/input-group-text.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-group-textarea",
+    "upstream": "apps/v4/examples/aria/input-group-textarea.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-inline",
+    "upstream": "apps/v4/examples/aria/input-inline.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-input-group",
+    "upstream": "apps/v4/examples/aria/input-input-group.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-invalid",
+    "upstream": "apps/v4/examples/aria/input-invalid.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-otp-alphanumeric",
+    "upstream": "apps/v4/examples/aria/input-otp-alphanumeric.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-otp-controlled",
+    "upstream": "apps/v4/examples/aria/input-otp-controlled.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-otp-demo",
+    "upstream": "apps/v4/examples/aria/input-otp-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-otp-disabled",
+    "upstream": "apps/v4/examples/aria/input-otp-disabled.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-otp-form",
+    "upstream": "apps/v4/examples/aria/input-otp-form.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-otp-four-digits",
+    "upstream": "apps/v4/examples/aria/input-otp-four-digits.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-otp-invalid",
+    "upstream": "apps/v4/examples/aria/input-otp-invalid.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-otp-pattern",
+    "upstream": "apps/v4/examples/aria/input-otp-pattern.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-otp-rtl",
+    "upstream": "apps/v4/examples/aria/input-otp-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "input-otp-separator",
+    "upstream": "apps/v4/examples/aria/input-otp-separator.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-required",
+    "upstream": "apps/v4/examples/aria/input-required.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "input-rtl",
+    "upstream": "apps/v4/examples/aria/input-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "item-avatar",
+    "upstream": "apps/v4/examples/aria/item-avatar.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "item-demo",
+    "upstream": "apps/v4/examples/aria/item-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "item-dropdown",
+    "upstream": "apps/v4/examples/aria/item-dropdown.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "item-group",
+    "upstream": "apps/v4/examples/aria/item-group.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "item-header",
+    "upstream": "apps/v4/examples/aria/item-header.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "item-icon",
+    "upstream": "apps/v4/examples/aria/item-icon.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "item-image",
+    "upstream": "apps/v4/examples/aria/item-image.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "item-link",
+    "upstream": "apps/v4/examples/aria/item-link.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "item-rtl",
+    "upstream": "apps/v4/examples/aria/item-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "item-size",
+    "upstream": "apps/v4/examples/aria/item-size.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "item-variant",
+    "upstream": "apps/v4/examples/aria/item-variant.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "kbd-button",
+    "upstream": "apps/v4/examples/aria/kbd-button.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "kbd-demo",
+    "upstream": "apps/v4/examples/aria/kbd-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "kbd-group",
+    "upstream": "apps/v4/examples/aria/kbd-group.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "kbd-input-group",
+    "upstream": "apps/v4/examples/aria/kbd-input-group.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "kbd-rtl",
+    "upstream": "apps/v4/examples/aria/kbd-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "kbd-tooltip",
+    "upstream": "apps/v4/examples/aria/kbd-tooltip.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "label-demo",
+    "upstream": "apps/v4/examples/aria/label-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "label-rtl",
+    "upstream": "apps/v4/examples/aria/label-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "marker-border",
+    "upstream": "apps/v4/examples/aria/marker-border.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "marker-demo",
+    "upstream": "apps/v4/examples/aria/marker-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "marker-icon",
+    "upstream": "apps/v4/examples/aria/marker-icon.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "marker-link-button",
+    "upstream": "apps/v4/examples/aria/marker-link-button.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "marker-separator",
+    "upstream": "apps/v4/examples/aria/marker-separator.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "marker-shimmer",
+    "upstream": "apps/v4/examples/aria/marker-shimmer.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "marker-status",
+    "upstream": "apps/v4/examples/aria/marker-status.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "marker-variants",
+    "upstream": "apps/v4/examples/aria/marker-variants.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "message-actions",
+    "upstream": "apps/v4/examples/aria/message-actions.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "message-attachment",
+    "upstream": "apps/v4/examples/aria/message-attachment.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "message-avatar",
+    "upstream": "apps/v4/examples/aria/message-avatar.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "message-demo",
+    "upstream": "apps/v4/examples/aria/message-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "message-group",
+    "upstream": "apps/v4/examples/aria/message-group.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "message-header-footer",
+    "upstream": "apps/v4/examples/aria/message-header-footer.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "message-scroller-anchoring",
+    "upstream": "apps/v4/examples/aria/message-scroller-anchoring.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  },
+  {
+    "name": "message-scroller-animation",
+    "upstream": "apps/v4/examples/aria/message-scroller-animation.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  },
+  {
+    "name": "message-scroller-commands",
+    "upstream": "apps/v4/examples/aria/message-scroller-commands.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  },
+  {
+    "name": "message-scroller-demo",
+    "upstream": "apps/v4/examples/aria/message-scroller-demo.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  },
+  {
+    "name": "message-scroller-group-chat",
+    "upstream": "apps/v4/examples/aria/message-scroller-group-chat.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  },
+  {
+    "name": "message-scroller-load-history",
+    "upstream": "apps/v4/examples/aria/message-scroller-load-history.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  },
+  {
+    "name": "message-scroller-opening-position",
+    "upstream": "apps/v4/examples/aria/message-scroller-opening-position.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  },
+  {
+    "name": "message-scroller-previous-context",
+    "upstream": "apps/v4/examples/aria/message-scroller-previous-context.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  },
+  {
+    "name": "message-scroller-scrollable",
+    "upstream": "apps/v4/examples/aria/message-scroller-scrollable.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  },
+  {
+    "name": "message-scroller-streaming",
+    "upstream": "apps/v4/examples/aria/message-scroller-streaming.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  },
+  {
+    "name": "message-scroller-visibility",
+    "upstream": "apps/v4/examples/aria/message-scroller-visibility.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  },
+  {
+    "name": "native-select-demo",
+    "upstream": "apps/v4/examples/aria/native-select-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "native-select-disabled",
+    "upstream": "apps/v4/examples/aria/native-select-disabled.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "native-select-groups",
+    "upstream": "apps/v4/examples/aria/native-select-groups.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "native-select-invalid",
+    "upstream": "apps/v4/examples/aria/native-select-invalid.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "native-select-rtl",
+    "upstream": "apps/v4/examples/aria/native-select-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "pagination-demo",
+    "upstream": "apps/v4/examples/aria/pagination-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "pagination-icons-only",
+    "upstream": "apps/v4/examples/aria/pagination-icons-only.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "pagination-rtl",
+    "upstream": "apps/v4/examples/aria/pagination-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "pagination-simple",
+    "upstream": "apps/v4/examples/aria/pagination-simple.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "popover-alignments",
+    "upstream": "apps/v4/examples/aria/popover-alignments.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "popover-basic",
+    "upstream": "apps/v4/examples/aria/popover-basic.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "popover-demo",
+    "upstream": "apps/v4/examples/aria/popover-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "popover-form",
+    "upstream": "apps/v4/examples/aria/popover-form.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "popover-rtl",
+    "upstream": "apps/v4/examples/aria/popover-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "progress-controlled",
+    "upstream": "apps/v4/examples/aria/progress-controlled.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "progress-demo",
+    "upstream": "apps/v4/examples/aria/progress-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "progress-label",
+    "upstream": "apps/v4/examples/aria/progress-label.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "progress-rtl",
+    "upstream": "apps/v4/examples/aria/progress-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "questionnaire-animated",
+    "upstream": "apps/v4/examples/aria/questionnaire-animated.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Native questionnaire state and progress replace React render customization."
+    ]
+  },
+  {
+    "name": "questionnaire-card",
+    "upstream": "apps/v4/examples/aria/questionnaire-card.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Native questionnaire state and progress replace React render customization."
+    ]
+  },
+  {
+    "name": "questionnaire-conditional",
+    "upstream": "apps/v4/examples/aria/questionnaire-conditional.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Native questionnaire state and progress replace React render customization."
+    ]
+  },
+  {
+    "name": "questionnaire-controlled",
+    "upstream": "apps/v4/examples/aria/questionnaire-controlled.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Native questionnaire state and progress replace React render customization."
+    ]
+  },
+  {
+    "name": "questionnaire-demo",
+    "upstream": "apps/v4/examples/aria/questionnaire-demo.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Native questionnaire state and progress replace React render customization."
+    ]
+  },
+  {
+    "name": "questionnaire-dialog",
+    "upstream": "apps/v4/examples/aria/questionnaire-dialog.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Native questionnaire state and progress replace React render customization."
+    ]
+  },
+  {
+    "name": "questionnaire-freeform",
+    "upstream": "apps/v4/examples/aria/questionnaire-freeform.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Native questionnaire state and progress replace React render customization."
+    ]
+  },
+  {
+    "name": "questionnaire-multiple",
+    "upstream": "apps/v4/examples/aria/questionnaire-multiple.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Native questionnaire state and progress replace React render customization."
+    ]
+  },
+  {
+    "name": "questionnaire-navigation-state",
+    "upstream": "apps/v4/examples/aria/questionnaire-navigation-state.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Native questionnaire state and progress replace React render customization."
+    ]
+  },
+  {
+    "name": "questionnaire-progress",
+    "upstream": "apps/v4/examples/aria/questionnaire-progress.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Native questionnaire state and progress replace React render customization."
+    ]
+  },
+  {
+    "name": "questionnaire-resume",
+    "upstream": "apps/v4/examples/aria/questionnaire-resume.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Native questionnaire state and progress replace React render customization."
+    ]
+  },
+  {
+    "name": "questionnaire-shortcuts",
+    "upstream": "apps/v4/examples/aria/questionnaire-shortcuts.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Native questionnaire state and progress replace React render customization."
+    ]
+  },
+  {
+    "name": "questionnaire-skip",
+    "upstream": "apps/v4/examples/aria/questionnaire-skip.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Native questionnaire state and progress replace React render customization."
+    ]
+  },
+  {
+    "name": "questionnaire-validation",
+    "upstream": "apps/v4/examples/aria/questionnaire-validation.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Native questionnaire state and progress replace React render customization."
+    ]
+  },
+  {
+    "name": "radio-group-choice-card",
+    "upstream": "apps/v4/examples/aria/radio-group-choice-card.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "radio-group-demo",
+    "upstream": "apps/v4/examples/aria/radio-group-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "radio-group-description",
+    "upstream": "apps/v4/examples/aria/radio-group-description.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "radio-group-disabled",
+    "upstream": "apps/v4/examples/aria/radio-group-disabled.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "radio-group-fieldset",
+    "upstream": "apps/v4/examples/aria/radio-group-fieldset.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "radio-group-invalid",
+    "upstream": "apps/v4/examples/aria/radio-group-invalid.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "radio-group-rtl",
+    "upstream": "apps/v4/examples/aria/radio-group-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "resizable-demo",
+    "upstream": "apps/v4/examples/aria/resizable-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "resizable-handle",
+    "upstream": "apps/v4/examples/aria/resizable-handle.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "resizable-rtl",
+    "upstream": "apps/v4/examples/aria/resizable-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "resizable-vertical",
+    "upstream": "apps/v4/examples/aria/resizable-vertical.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "scroll-area-demo",
+    "upstream": "apps/v4/examples/aria/scroll-area-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "scroll-area-horizontal-demo",
+    "upstream": "apps/v4/examples/aria/scroll-area-horizontal-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "scroll-area-rtl",
+    "upstream": "apps/v4/examples/aria/scroll-area-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "select-autocomplete",
+    "upstream": "apps/v4/examples/aria/select-autocomplete.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "select-demo",
+    "upstream": "apps/v4/examples/aria/select-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "select-disabled",
+    "upstream": "apps/v4/examples/aria/select-disabled.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "select-groups",
+    "upstream": "apps/v4/examples/aria/select-groups.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "select-invalid",
+    "upstream": "apps/v4/examples/aria/select-invalid.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "select-rtl",
+    "upstream": "apps/v4/examples/aria/select-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "select-scrollable",
+    "upstream": "apps/v4/examples/aria/select-scrollable.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "separator-demo",
+    "upstream": "apps/v4/examples/aria/separator-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "separator-list",
+    "upstream": "apps/v4/examples/aria/separator-list.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "separator-menu",
+    "upstream": "apps/v4/examples/aria/separator-menu.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "separator-rtl",
+    "upstream": "apps/v4/examples/aria/separator-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "separator-vertical",
+    "upstream": "apps/v4/examples/aria/separator-vertical.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "sheet-demo",
+    "upstream": "apps/v4/examples/aria/sheet-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "sheet-no-close-button",
+    "upstream": "apps/v4/examples/aria/sheet-no-close-button.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "sheet-rtl",
+    "upstream": "apps/v4/examples/aria/sheet-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "sheet-side",
+    "upstream": "apps/v4/examples/aria/sheet-side.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "sidebar-demo",
+    "upstream": "apps/v4/examples/aria/sidebar-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "skeleton-avatar",
+    "upstream": "apps/v4/examples/aria/skeleton-avatar.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "skeleton-card",
+    "upstream": "apps/v4/examples/aria/skeleton-card.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "skeleton-demo",
+    "upstream": "apps/v4/examples/aria/skeleton-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "skeleton-form",
+    "upstream": "apps/v4/examples/aria/skeleton-form.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "skeleton-rtl",
+    "upstream": "apps/v4/examples/aria/skeleton-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "skeleton-table",
+    "upstream": "apps/v4/examples/aria/skeleton-table.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "skeleton-text",
+    "upstream": "apps/v4/examples/aria/skeleton-text.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "slider-controlled",
+    "upstream": "apps/v4/examples/aria/slider-controlled.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "slider-demo",
+    "upstream": "apps/v4/examples/aria/slider-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "slider-disabled",
+    "upstream": "apps/v4/examples/aria/slider-disabled.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "slider-multiple",
+    "upstream": "apps/v4/examples/aria/slider-multiple.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "slider-range",
+    "upstream": "apps/v4/examples/aria/slider-range.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "slider-rtl",
+    "upstream": "apps/v4/examples/aria/slider-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "slider-vertical",
+    "upstream": "apps/v4/examples/aria/slider-vertical.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "sonner-demo",
+    "upstream": "apps/v4/examples/aria/sonner-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "sonner-description",
+    "upstream": "apps/v4/examples/aria/sonner-description.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "sonner-position",
+    "upstream": "apps/v4/examples/aria/sonner-position.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "sonner-types",
+    "upstream": "apps/v4/examples/aria/sonner-types.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "spinner-badge",
+    "upstream": "apps/v4/examples/aria/spinner-badge.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "spinner-button",
+    "upstream": "apps/v4/examples/aria/spinner-button.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "spinner-custom",
+    "upstream": "apps/v4/examples/aria/spinner-custom.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "spinner-demo",
+    "upstream": "apps/v4/examples/aria/spinner-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "spinner-empty",
+    "upstream": "apps/v4/examples/aria/spinner-empty.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "spinner-input-group",
+    "upstream": "apps/v4/examples/aria/spinner-input-group.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "spinner-rtl",
+    "upstream": "apps/v4/examples/aria/spinner-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "spinner-size",
+    "upstream": "apps/v4/examples/aria/spinner-size.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "switch-choice-card",
+    "upstream": "apps/v4/examples/aria/switch-choice-card.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "switch-demo",
+    "upstream": "apps/v4/examples/aria/switch-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "switch-description",
+    "upstream": "apps/v4/examples/aria/switch-description.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "switch-disabled",
+    "upstream": "apps/v4/examples/aria/switch-disabled.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "switch-invalid",
+    "upstream": "apps/v4/examples/aria/switch-invalid.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "switch-rtl",
+    "upstream": "apps/v4/examples/aria/switch-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "switch-sizes",
+    "upstream": "apps/v4/examples/aria/switch-sizes.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "table-actions",
+    "upstream": "apps/v4/examples/aria/table-actions.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "table-demo",
+    "upstream": "apps/v4/examples/aria/table-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "table-footer",
+    "upstream": "apps/v4/examples/aria/table-footer.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "table-rtl",
+    "upstream": "apps/v4/examples/aria/table-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "tabs-demo",
+    "upstream": "apps/v4/examples/aria/tabs-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "tabs-disabled",
+    "upstream": "apps/v4/examples/aria/tabs-disabled.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "tabs-icons",
+    "upstream": "apps/v4/examples/aria/tabs-icons.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "tabs-line",
+    "upstream": "apps/v4/examples/aria/tabs-line.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "tabs-rtl",
+    "upstream": "apps/v4/examples/aria/tabs-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "tabs-vertical",
+    "upstream": "apps/v4/examples/aria/tabs-vertical.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "textarea-button",
+    "upstream": "apps/v4/examples/aria/textarea-button.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "textarea-demo",
+    "upstream": "apps/v4/examples/aria/textarea-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "textarea-disabled",
+    "upstream": "apps/v4/examples/aria/textarea-disabled.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "textarea-field",
+    "upstream": "apps/v4/examples/aria/textarea-field.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "textarea-invalid",
+    "upstream": "apps/v4/examples/aria/textarea-invalid.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "textarea-rtl",
+    "upstream": "apps/v4/examples/aria/textarea-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "toggle-demo",
+    "upstream": "apps/v4/examples/aria/toggle-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "toggle-disabled",
+    "upstream": "apps/v4/examples/aria/toggle-disabled.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "toggle-group-demo",
+    "upstream": "apps/v4/examples/aria/toggle-group-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "toggle-group-disabled",
+    "upstream": "apps/v4/examples/aria/toggle-group-disabled.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "toggle-group-font-weight-selector",
+    "upstream": "apps/v4/examples/aria/toggle-group-font-weight-selector.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "toggle-group-outline",
+    "upstream": "apps/v4/examples/aria/toggle-group-outline.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "toggle-group-rtl",
+    "upstream": "apps/v4/examples/aria/toggle-group-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "toggle-group-sizes",
+    "upstream": "apps/v4/examples/aria/toggle-group-sizes.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "toggle-group-spacing",
+    "upstream": "apps/v4/examples/aria/toggle-group-spacing.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "toggle-group-vertical",
+    "upstream": "apps/v4/examples/aria/toggle-group-vertical.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "toggle-outline",
+    "upstream": "apps/v4/examples/aria/toggle-outline.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "toggle-rtl",
+    "upstream": "apps/v4/examples/aria/toggle-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "toggle-sizes",
+    "upstream": "apps/v4/examples/aria/toggle-sizes.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "toggle-text",
+    "upstream": "apps/v4/examples/aria/toggle-text.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "tooltip-demo",
+    "upstream": "apps/v4/examples/aria/tooltip-demo.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "tooltip-disabled",
+    "upstream": "apps/v4/examples/aria/tooltip-disabled.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "tooltip-keyboard",
+    "upstream": "apps/v4/examples/aria/tooltip-keyboard.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "tooltip-rtl",
+    "upstream": "apps/v4/examples/aria/tooltip-rtl.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Default Arabic translation; Solid native direction inheritance."
+    ]
+  },
+  {
+    "name": "tooltip-sides",
+    "upstream": "apps/v4/examples/aria/tooltip-sides.tsx",
+    "kind": "ported",
+    "adaptations": []
+  },
+  {
+    "name": "trace-collapsible",
+    "upstream": "apps/v4/examples/aria/trace-collapsible.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  },
+  {
+    "name": "trace-commit",
+    "upstream": "apps/v4/examples/aria/trace-commit.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  },
+  {
+    "name": "trace-demo",
+    "upstream": "apps/v4/examples/aria/trace-demo.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  },
+  {
+    "name": "trace-description",
+    "upstream": "apps/v4/examples/aria/trace-description.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  },
+  {
+    "name": "trace-dialog",
+    "upstream": "apps/v4/examples/aria/trace-dialog.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  },
+  {
+    "name": "trace-group",
+    "upstream": "apps/v4/examples/aria/trace-group.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  },
+  {
+    "name": "trace-link",
+    "upstream": "apps/v4/examples/aria/trace-link.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  },
+  {
+    "name": "trace-open",
+    "upstream": "apps/v4/examples/aria/trace-open.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  },
+  {
+    "name": "trace-sheet",
+    "upstream": "apps/v4/examples/aria/trace-sheet.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  },
+  {
+    "name": "trace-sources",
+    "upstream": "apps/v4/examples/aria/trace-sources.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  },
+  {
+    "name": "trace-static",
+    "upstream": "apps/v4/examples/aria/trace-static.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  },
+  {
+    "name": "trace-status",
+    "upstream": "apps/v4/examples/aria/trace-status.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  },
+  {
+    "name": "trace-steps",
+    "upstream": "apps/v4/examples/aria/trace-steps.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  },
+  {
+    "name": "trace-thinking",
+    "upstream": "apps/v4/examples/aria/trace-thinking.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  },
+  {
+    "name": "trace-tool-calls",
+    "upstream": "apps/v4/examples/aria/trace-tool-calls.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  },
+  {
+    "name": "trace-turn",
+    "upstream": "apps/v4/examples/aria/trace-turn.tsx",
+    "kind": "adapted",
+    "adaptations": [
+      "Solid scripted chat state and native scroll helpers replace React adapters."
+    ]
+  }
+]

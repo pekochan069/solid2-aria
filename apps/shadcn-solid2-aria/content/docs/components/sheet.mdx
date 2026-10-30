@@ -1,0 +1,81 @@
+---
+title: "Sheet"
+description: "Extends the Dialog component to display content that complements the main content of the screen."
+---
+
+{/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/content/docs/components/aria/sheet.mdx.
+ * Modified for Solid Aria: Solid 2 examples and imports, local installation, supported APIs, and documentation links.
+ * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */}
+
+import { ComponentPreview, Installation } from "#components/docs/mdx";
+
+
+
+<ComponentPreview styleName="aria-nova" name="sheet-demo" />
+
+## Installation
+
+<Installation component="sheet" />
+
+## Usage
+
+```tsx showLineNumbers
+import {
+  Sheet,
+  SheetClose,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "#components/ui/sheet";
+```
+
+```tsx showLineNumbers
+<SheetTrigger>
+  <Button>Open</Button>
+  <Sheet>
+    <SheetHeader>
+      <SheetTitle>Are you absolutely sure?</SheetTitle>
+      <SheetDescription>This action cannot be undone.</SheetDescription>
+    </SheetHeader>
+  </Sheet>
+</SheetTrigger>
+```
+
+## Composition
+
+Use the following composition to build a `Sheet`:
+
+```text
+SheetTrigger
+├── Button
+└── Sheet
+    ├── SheetHeader
+    │   ├── SheetTitle
+    │   └── SheetDescription
+    └── SheetFooter
+```
+
+## Side
+
+Use the `side` prop on `SheetContent` to set the edge of the screen where the sheet appears. Values are `top`, `right`, `bottom`, or `left`.
+
+<ComponentPreview styleName="aria-nova" name="sheet-side" />
+
+## No Close Button
+
+Use `showCloseButton={false}` on `SheetContent` to hide the close button.
+
+<ComponentPreview styleName="aria-nova" name="sheet-no-close-button" />
+
+## RTL
+
+To configure right-to-left layouts, see the [RTL configuration guide](/docs/accessibility#right-to-left).
+
+<ComponentPreview styleName="aria-nova" name="sheet-rtl" direction="rtl" />
+
+## API Reference

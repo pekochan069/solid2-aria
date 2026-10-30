@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "jsxImportSource": "@solidjs/web",
+    "target": "ESNext",
+    "moduleResolution": "Bundler",
+    "module": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "skipLibCheck": true,
+    "resolvePackageJsonImports": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+
+    "paths": {
+      "#*": ["./src/*"],
+      "content-collections": ["./.content-collections/generated"]
+    }
+  }
+}

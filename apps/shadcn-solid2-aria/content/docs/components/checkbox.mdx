@@ -1,0 +1,100 @@
+---
+title: "Checkbox"
+description: "A control that allows the user to toggle between checked and not checked."
+---
+
+{/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/content/docs/components/aria/checkbox.mdx.
+ * Modified for Solid Aria: Solid 2 examples and imports, local installation, supported APIs, and documentation links.
+ * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */}
+
+import { ComponentPreview, Installation } from "#components/docs/mdx";
+
+
+
+<ComponentPreview
+  styleName="aria-nova"
+  name="checkbox-demo"
+  previewClassName="h-80"
+/>
+
+## Installation
+
+<Installation component="checkbox" />
+
+## Usage
+
+```tsx
+import { Checkbox } from "#components/ui/checkbox";
+```
+
+```tsx
+<Checkbox />
+```
+
+## Checked State
+
+Use `defaultSelected` for uncontrolled checkboxes, or `isSelected` and `onChange` to control the state.
+
+```tsx showLineNumbers
+import { createSignal } from "solid-js";
+
+export function Example() {
+  const [checked, setChecked] = createSignal(false);
+
+  return <Checkbox isSelected={checked()} onChange={setChecked} />;
+}
+```
+
+## Invalid State
+
+Set `isInvalid` on the checkbox and `data-invalid` on the field wrapper to show the invalid styles.
+
+<ComponentPreview styleName="aria-nova" name="checkbox-invalid" />
+
+## Basic
+
+Pair the checkbox with `Field` and `FieldLabel` for proper layout and labeling.
+
+<ComponentPreview styleName="aria-nova" name="checkbox-basic" />
+
+## Description
+
+Use `FieldContent` and `FieldDescription` for helper text.
+
+<ComponentPreview styleName="aria-nova" name="checkbox-description" />
+
+## Disabled
+
+Use the `isDisabled` prop to prevent interaction and add the `data-disabled` attribute to the `<Field>` component for disabled styles.
+
+<ComponentPreview styleName="aria-nova" name="checkbox-disabled" />
+
+## Group
+
+Use multiple fields to create a checkbox list.
+
+<ComponentPreview styleName="aria-nova" name="checkbox-group" />
+
+## Table
+
+<ComponentPreview
+  styleName="aria-nova"
+  name="checkbox-table"
+  previewClassName="p-4 md:p-8"
+/>
+
+## RTL
+
+To configure right-to-left layouts, see the [RTL configuration guide](/docs/accessibility#right-to-left).
+
+<ComponentPreview
+  styleName="aria-nova"
+  name="checkbox-rtl"
+  direction="rtl"
+  previewClassName="h-80"
+/>
+
+## API Reference

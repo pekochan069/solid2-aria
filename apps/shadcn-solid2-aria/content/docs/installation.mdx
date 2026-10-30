@@ -1,0 +1,42 @@
+---
+title: Installation
+description: Choose your framework to create a Solid 2 app and install components.
+---
+
+{/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/content/docs/installation/index.mdx.
+ * Modified for Solid Aria: Solid 2 prerequisites and framework-specific installation guides.
+ * Licensed under MIT. See ../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */}
+
+import { FrameworkCards } from "#components/docs/framework-cards";
+import { Callout } from "#components/docs/callout";
+
+Choose your framework. Each guide includes project creation, shadcn configuration, theme setup, and component installation.
+
+<FrameworkCards section="installation" />
+
+## Before you start
+
+<Callout>
+
+These components require Solid 2. If you have a Solid 1 app, follow the migration steps in your framework guide before installing components.
+
+</Callout>
+
+Install Node.js 22.12 or later and a package manager. The guide commands default to Bun, with tabs for npm, pnpm, and Yarn.
+
+The accessibility package is available on npm. You can create the app in any directory without cloning the Solid Aria repository.
+
+## Existing projects
+
+Open the guide for your framework and continue at **Configure shadcn** after checking the Solid 2 and Tailwind CSS prerequisites.
+
+Component installation preserves your stylesheet. Apply the shared theme separately when setting up a new app.
+
+## Customize the theme
+
+Use [Create](/create) to preview colors, fonts, and radius settings, then copy the theme settings into your app.
+
+Continue with [theming](/docs/theming), [dark mode](/docs/dark-mode), or the [component documentation](/docs/components).

@@ -1,0 +1,145 @@
+---
+title: "Native Select"
+description: "A styled native HTML select element with consistent design system integration."
+---
+
+{/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/content/docs/components/aria/native-select.mdx.
+ * Modified for Solid Aria: Solid 2 examples and imports, local installation, supported APIs, and documentation links.
+ * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */}
+
+import { ComponentPreview, Installation, Callout } from "#components/docs/mdx";
+
+
+
+<Callout variant="info">
+  For a styled select component, see the [Select](/docs/components/select)
+  component.
+</Callout>
+
+<ComponentPreview styleName="aria-nova" name="native-select-demo" />
+
+## Installation
+
+<Installation component="native-select" />
+
+## Usage
+
+```tsx showLineNumbers
+import {
+  NativeSelect,
+  NativeSelectOptGroup,
+  NativeSelectOption,
+} from "#components/ui/native-select";
+```
+
+```tsx showLineNumbers
+<NativeSelect>
+  <NativeSelectOption value="">Select a fruit</NativeSelectOption>
+  <NativeSelectOption value="apple">Apple</NativeSelectOption>
+  <NativeSelectOption value="banana">Banana</NativeSelectOption>
+  <NativeSelectOption value="blueberry">Blueberry</NativeSelectOption>
+  <NativeSelectOption value="pineapple">Pineapple</NativeSelectOption>
+</NativeSelect>
+```
+
+## Composition
+
+### Simple
+
+Options placed directly under `NativeSelect` (no `NativeSelectOptGroup`).
+
+```text
+NativeSelect
+├── NativeSelectOption
+├── NativeSelectOption
+├── NativeSelectOption
+└── NativeSelectOption
+```
+
+### With groups
+
+Use `NativeSelectOptGroup` to organize options into categories.
+
+```text
+NativeSelect
+├── NativeSelectOptGroup
+│   ├── NativeSelectOption
+│   └── NativeSelectOption
+└── NativeSelectOptGroup
+    ├── NativeSelectOption
+    └── NativeSelectOption
+```
+
+## Groups
+
+Use `NativeSelectOptGroup` to organize options into categories.
+
+<ComponentPreview styleName="aria-nova" name="native-select-groups" />
+
+## Disabled
+
+Add the `disabled` prop to the `NativeSelect` component to disable the select.
+
+<ComponentPreview styleName="aria-nova" name="native-select-disabled" />
+
+## Invalid
+
+Use `aria-invalid` to show validation errors and the `data-invalid` attribute to the `Field` component for styling.
+
+<ComponentPreview styleName="aria-nova" name="native-select-invalid" />
+
+## Native Select vs Select
+
+- Use `NativeSelect` for native browser behavior, better performance, or mobile-optimized dropdowns.
+- Use `Select` for custom styling, animations, or complex interactions.
+
+## RTL
+
+To configure right-to-left layouts, see the [RTL configuration guide](/docs/accessibility#right-to-left).
+
+<ComponentPreview
+  styleName="aria-nova"
+  name="native-select-rtl"
+  direction="rtl"
+/>
+
+## API Reference
+
+### NativeSelect
+
+The main select component that wraps the native HTML select element.
+
+```tsx
+<NativeSelect>
+  <NativeSelectOption value="option1">Option 1</NativeSelectOption>
+  <NativeSelectOption value="option2">Option 2</NativeSelectOption>
+</NativeSelect>
+```
+
+### NativeSelectOption
+
+Represents an individual option within the select.
+
+| Prop       | Type      | Default |
+| ---------- | --------- | ------- |
+| `value`    | `string`  |         |
+| `disabled` | `boolean` | `false` |
+
+### NativeSelectOptGroup
+
+Groups related options together for better organization.
+
+| Prop       | Type      | Default |
+| ---------- | --------- | ------- |
+| `label`    | `string`  |         |
+| `disabled` | `boolean` | `false` |
+
+```tsx
+<NativeSelectOptGroup label="Fruits">
+  <NativeSelectOption value="apple">Apple</NativeSelectOption>
+  <NativeSelectOption value="banana">Banana</NativeSelectOption>
+</NativeSelectOptGroup>
+```

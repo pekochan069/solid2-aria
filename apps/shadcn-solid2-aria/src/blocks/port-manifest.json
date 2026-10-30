@@ -1,0 +1,1378 @@
+[
+  {
+    "name": "dashboard-01/components/app-sidebar",
+    "upstream": "apps/v4/registry/bases/aria/blocks/dashboard-01/components/app-sidebar.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "dashboard-01/components/chart-area-interactive",
+    "upstream": "apps/v4/registry/bases/aria/blocks/dashboard-01/components/chart-area-interactive.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "dashboard-01/components/data-table",
+    "upstream": "apps/v4/registry/bases/aria/blocks/dashboard-01/components/data-table.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "dashboard-01/components/nav-documents",
+    "upstream": "apps/v4/registry/bases/aria/blocks/dashboard-01/components/nav-documents.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "dashboard-01/components/nav-main",
+    "upstream": "apps/v4/registry/bases/aria/blocks/dashboard-01/components/nav-main.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "dashboard-01/components/nav-secondary",
+    "upstream": "apps/v4/registry/bases/aria/blocks/dashboard-01/components/nav-secondary.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "dashboard-01/components/nav-user",
+    "upstream": "apps/v4/registry/bases/aria/blocks/dashboard-01/components/nav-user.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "dashboard-01/components/section-cards",
+    "upstream": "apps/v4/registry/bases/aria/blocks/dashboard-01/components/section-cards.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "dashboard-01/components/site-header",
+    "upstream": "apps/v4/registry/bases/aria/blocks/dashboard-01/components/site-header.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "dashboard-01/page",
+    "upstream": "apps/v4/registry/bases/aria/blocks/dashboard-01/page.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "login-01/components/login-form",
+    "upstream": "apps/v4/registry/bases/aria/blocks/login-01/components/login-form.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "login-01/page",
+    "upstream": "apps/v4/registry/bases/aria/blocks/login-01/page.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "login-02/components/login-form",
+    "upstream": "apps/v4/registry/bases/aria/blocks/login-02/components/login-form.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "login-02/page",
+    "upstream": "apps/v4/registry/bases/aria/blocks/login-02/page.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "login-03/components/login-form",
+    "upstream": "apps/v4/registry/bases/aria/blocks/login-03/components/login-form.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "login-03/page",
+    "upstream": "apps/v4/registry/bases/aria/blocks/login-03/page.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "login-04/components/login-form",
+    "upstream": "apps/v4/registry/bases/aria/blocks/login-04/components/login-form.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "login-04/page",
+    "upstream": "apps/v4/registry/bases/aria/blocks/login-04/page.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "login-05/components/login-form",
+    "upstream": "apps/v4/registry/bases/aria/blocks/login-05/components/login-form.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "login-05/page",
+    "upstream": "apps/v4/registry/bases/aria/blocks/login-05/page.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/account-access",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/account-access.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/album-card",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/album-card.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/card-overview",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/card-overview.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/catalog-toolbar",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/catalog-toolbar.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/claimable-balance",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/claimable-balance.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/contribution-history",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/contribution-history.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/cover-art",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/cover-art.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/dividend-income",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/dividend-income.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/empty-connect-bank",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/empty-connect-bank.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/empty-distribute-track",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/empty-distribute-track.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/empty-explore-catalog",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/empty-explore-catalog.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/faq",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/faq.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/front-door",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/front-door.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/index-investing",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/index-investing.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/kitchen-island",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/kitchen-island.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/loading-card",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/loading-card.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/new-milestone",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/new-milestone.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/notification-settings",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/notification-settings.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/payments",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/payments.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/payout-threshold",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/payout-threshold.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/power-usage",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/power-usage.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/preferences",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/preferences.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/qr-connect",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/qr-connect.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/receiving-method",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/receiving-method.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/recent-transactions",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/recent-transactions.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/release-catalog",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/release-catalog.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/roller-shades",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/roller-shades.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/savings-progress",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/savings-progress.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/savings-targets",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/savings-targets.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/sidebar-nav",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/sidebar-nav.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/social-links",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/social-links.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/stock-performance",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/stock-performance.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/syncing-state",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/syncing-state.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/transfer-funds",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/transfer-funds.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/cards/upcoming-payments",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/cards/upcoming-payments.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview-02/index",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview-02/index.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/activate-agent-dialog",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/activate-agent-dialog.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/analytics-card",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/analytics-card.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/anomaly-alert",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/anomaly-alert.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/assign-issue",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/assign-issue.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/bar-chart-card",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/bar-chart-card.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/bar-visualizer",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/bar-visualizer.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/book-appointment",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/book-appointment.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/codespaces-card",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/codespaces-card.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/contributions-activity",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/contributions-activity.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/contributors",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/contributors.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/environment-variables",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/environment-variables.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/feedback-form",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/feedback-form.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/file-upload",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/file-upload.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/github-profile",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/github-profile.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/icon-preview-grid",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/icon-preview-grid.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/invite-team",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/invite-team.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/invoice",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/invoice.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/live-waveform",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/live-waveform.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/no-team-members",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/no-team-members.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/not-found",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/not-found.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/observability-card",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/observability-card.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/pie-chart-card",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/pie-chart-card.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/report-bug",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/report-bug.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/shipping-address",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/shipping-address.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/shortcuts",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/shortcuts.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/skeleton-loading",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/skeleton-loading.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/sleep-report",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/sleep-report.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/style-overview",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/style-overview.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/typography-specimen",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/typography-specimen.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/ui-elements",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/ui-elements.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/usage-card",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/usage-card.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/visitors",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/visitors.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/cards/weekly-fitness-summary",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/cards/weekly-fitness-summary.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "preview/index",
+    "upstream": "apps/v4/registry/bases/aria/blocks/preview/index.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-01/components/app-sidebar",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-01/components/app-sidebar.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-01/components/search-form",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-01/components/search-form.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-01/components/version-switcher",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-01/components/version-switcher.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-01/page",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-01/page.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-02/components/app-sidebar",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-02/components/app-sidebar.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-02/components/search-form",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-02/components/search-form.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-02/components/version-switcher",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-02/components/version-switcher.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-02/page",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-02/page.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-03/components/app-sidebar",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-03/components/app-sidebar.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-03/page",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-03/page.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-04/components/app-sidebar",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-04/components/app-sidebar.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-04/page",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-04/page.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-05/components/app-sidebar",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-05/components/app-sidebar.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-05/components/search-form",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-05/components/search-form.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-05/page",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-05/page.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-06/components/app-sidebar",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-06/components/app-sidebar.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-06/components/nav-main",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-06/components/nav-main.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-06/components/sidebar-opt-in-form",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-06/components/sidebar-opt-in-form.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-06/page",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-06/page.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-07/components/app-sidebar",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-07/components/app-sidebar.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-07/components/nav-main",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-07/components/nav-main.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-07/components/nav-projects",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-07/components/nav-projects.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-07/components/nav-user",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-07/components/nav-user.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-07/components/team-switcher",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-07/components/team-switcher.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-07/page",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-07/page.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-08/components/app-sidebar",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-08/components/app-sidebar.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-08/components/nav-main",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-08/components/nav-main.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-08/components/nav-projects",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-08/components/nav-projects.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-08/components/nav-secondary",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-08/components/nav-secondary.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-08/components/nav-user",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-08/components/nav-user.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-08/page",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-08/page.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-09/components/app-sidebar",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-09/components/app-sidebar.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-09/components/nav-user",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-09/components/nav-user.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-09/page",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-09/page.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-10/components/app-sidebar",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-10/components/app-sidebar.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-10/components/nav-actions",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-10/components/nav-actions.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-10/components/nav-favorites",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-10/components/nav-favorites.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-10/components/nav-main",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-10/components/nav-main.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-10/components/nav-secondary",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-10/components/nav-secondary.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-10/components/nav-workspaces",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-10/components/nav-workspaces.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-10/components/team-switcher",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-10/components/team-switcher.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-10/page",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-10/page.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-11/components/app-sidebar",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-11/components/app-sidebar.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-11/page",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-11/page.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-12/components/app-sidebar",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-12/components/app-sidebar.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-12/components/calendars",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-12/components/calendars.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-12/components/date-picker",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-12/components/date-picker.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-12/components/nav-user",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-12/components/nav-user.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-12/page",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-12/page.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-13/components/settings-dialog",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-13/components/settings-dialog.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-13/page",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-13/page.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-14/components/app-sidebar",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-14/components/app-sidebar.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-14/page",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-14/page.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-15/components/calendars",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-15/components/calendars.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-15/components/date-picker",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-15/components/date-picker.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-15/components/nav-favorites",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-15/components/nav-favorites.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-15/components/nav-main",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-15/components/nav-main.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-15/components/nav-secondary",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-15/components/nav-secondary.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-15/components/nav-user",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-15/components/nav-user.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-15/components/nav-workspaces",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-15/components/nav-workspaces.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-15/components/sidebar-left",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-15/components/sidebar-left.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-15/components/sidebar-right",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-15/components/sidebar-right.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-15/components/team-switcher",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-15/components/team-switcher.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-15/page",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-15/page.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-16/components/app-sidebar",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-16/components/app-sidebar.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-16/components/nav-main",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-16/components/nav-main.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-16/components/nav-projects",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-16/components/nav-projects.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-16/components/nav-secondary",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-16/components/nav-secondary.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-16/components/nav-user",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-16/components/nav-user.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-16/components/search-form",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-16/components/search-form.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-16/components/site-header",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-16/components/site-header.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "sidebar-16/page",
+    "upstream": "apps/v4/registry/bases/aria/blocks/sidebar-16/page.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "signup-01/components/signup-form",
+    "upstream": "apps/v4/registry/bases/aria/blocks/signup-01/components/signup-form.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "signup-01/page",
+    "upstream": "apps/v4/registry/bases/aria/blocks/signup-01/page.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "signup-02/components/signup-form",
+    "upstream": "apps/v4/registry/bases/aria/blocks/signup-02/components/signup-form.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "signup-02/page",
+    "upstream": "apps/v4/registry/bases/aria/blocks/signup-02/page.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "signup-03/components/signup-form",
+    "upstream": "apps/v4/registry/bases/aria/blocks/signup-03/components/signup-form.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "signup-03/page",
+    "upstream": "apps/v4/registry/bases/aria/blocks/signup-03/page.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "signup-04/components/signup-form",
+    "upstream": "apps/v4/registry/bases/aria/blocks/signup-04/components/signup-form.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "signup-04/page",
+    "upstream": "apps/v4/registry/bases/aria/blocks/signup-04/page.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "signup-05/components/signup-form",
+    "upstream": "apps/v4/registry/bases/aria/blocks/signup-05/components/signup-form.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  },
+  {
+    "name": "signup-05/page",
+    "upstream": "apps/v4/registry/bases/aria/blocks/signup-05/page.tsx",
+    "kind": "ported",
+    "adaptations": [
+      "Solid 2 state, local accessible controls, native SVG charts and browser audio APIs."
+    ]
+  }
+]

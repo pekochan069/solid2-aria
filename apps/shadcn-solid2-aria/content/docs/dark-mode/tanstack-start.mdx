@@ -1,0 +1,188 @@
+---
+title: TanStack Start
+description: Adding dark mode to your TanStack Start app.
+---
+
+{/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/content/docs/dark-mode/tanstack-start.mdx.
+ * Modified for Solid Aria: Solid 2 APIs, local component registry commands, supported framework setup, and native Solid components.
+ * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */}
+
+import { RegistryCommand, Steps } from "#components/docs/mdx";
+
+<Steps>
+
+### Create a theme provider
+
+The theme provider includes a script that runs before Solid hydrates, preventing a flash of the wrong theme.
+
+```tsx title="src/components/theme-provider.tsx" showLineNumbers
+import { createContext, createSignal, onSettled, untrack, useContext } from "solid-js";
+import type { Accessor, ParentProps } from "solid-js";
+
+type Theme = "dark" | "light" | "system";
+
+type ThemeProviderProps = ParentProps<{
+  defaultTheme?: Theme;
+  storageKey?: string;
+}>;
+
+type ThemeProviderState = {
+  theme: Accessor<Theme>;
+  setTheme: (theme: Theme) => void;
+};
+
+const ThemeProviderContext = createContext<ThemeProviderState>();
+
+function getThemeScript(storageKey: string, defaultTheme: Theme) {
+  const key = JSON.stringify(storageKey);
+  const fallback = JSON.stringify(defaultTheme);
+  return `(function(){var t=${fallback};try{var s=localStorage.getItem(${key});if(s==='light'||s==='dark'||s==='system')t=s}catch{}var d=matchMedia('(prefers-color-scheme: dark)').matches;var r=t==='system'?(d?'dark':'light'):t;var e=document.documentElement;e.classList.remove('light','dark');e.classList.add(r);e.style.colorScheme=r})();`;
+}
+
+function applyTheme(theme: Theme) {
+  const root = document.documentElement;
+  const resolved = theme === "system"
+    ? window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+    : theme;
+  root.classList.remove("light", "dark");
+  root.classList.add(resolved);
+  root.style.colorScheme = resolved;
+}
+
+export function ThemeProvider(props: ThemeProviderProps) {
+  const defaultTheme = () => props.defaultTheme ?? "system";
+  const storageKey = () => props.storageKey ?? "theme";
+  const [theme, setThemeState] = createSignal<Theme>(untrack(defaultTheme));
+
+  function restoreTheme() {
+    let next = untrack(defaultTheme);
+    try {
+      const stored = localStorage.getItem(untrack(storageKey));
+      if (stored === "light" || stored === "dark" || stored === "system") next = stored;
+    } catch {}
+    setThemeState(next);
+    applyTheme(next);
+  }
+
+  onSettled(() => {
+    restoreTheme();
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const syncSystem = () => {
+      if (untrack(theme) === "system") applyTheme("system");
+    };
+    const syncStorage = (event: StorageEvent) => {
+      if (event.key === untrack(storageKey) || event.key === null) restoreTheme();
+    };
+    media.addEventListener("change", syncSystem);
+    window.addEventListener("storage", syncStorage);
+    return () => {
+      media.removeEventListener("change", syncSystem);
+      window.removeEventListener("storage", syncStorage);
+    };
+  });
+
+  function setTheme(next: Theme) {
+    try {
+      localStorage.setItem(untrack(storageKey), next);
+    } catch {}
+    setThemeState(next);
+    applyTheme(next);
+  }
+
+  return (
+    <ThemeProviderContext value={{ theme, setTheme }}>
+      <script>{getThemeScript(storageKey(), defaultTheme())}</script>
+      {props.children}
+    </ThemeProviderContext>
+  );
+}
+
+export function useTheme() {
+  return useContext(ThemeProviderContext);
+}
+```
+
+### Wrap your root layout
+
+Add the `ThemeProvider` to your root layout.
+
+```tsx title="src/routes/__root.tsx" showLineNumbers
+import { ThemeProvider } from "#components/theme-provider";
+import { ModeToggle } from "#components/mode-toggle";
+import {
+  createRootRoute,
+  HeadContent,
+  Outlet,
+  Scripts,
+} from "@tanstack/solid-router";
+import "../styles/global.css";
+
+export const Route = createRootRoute({
+  head: () => ({
+    meta: [
+      { charSet: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { title: "My app" },
+    ],
+  }),
+  component: RootDocument,
+});
+
+function RootDocument() {
+  return (
+    <html lang="en">
+      <head>
+        <HeadContent />
+      </head>
+      <body>
+        <ThemeProvider defaultTheme="system" storageKey="theme">
+          <ModeToggle />
+          <Outlet />
+        </ThemeProvider>
+        <Scripts />
+      </body>
+    </html>
+  );
+}
+```
+
+### Add a mode toggle
+
+Place a mode toggle on your site to toggle between light and dark mode. Add the dropdown menu if it is not already installed.
+
+<RegistryCommand name="dropdown-menu" />
+
+```tsx title="src/components/mode-toggle.tsx" showLineNumbers
+import { MoonIcon, SunIcon } from "@lucide/solid";
+import { Button } from "#components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "#components/ui/dropdown-menu";
+import { useTheme } from "#components/theme-provider";
+
+export function ModeToggle() {
+  const { setTheme } = useTheme();
+
+  return (
+    <DropdownMenuTrigger>
+      <Button variant="outline" size="icon">
+        <SunIcon class="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+        <MoonIcon class="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+        <span class="sr-only">Toggle theme</span>
+      </Button>
+      <DropdownMenu placement="bottom end">
+        <DropdownMenuItem onAction={() => setTheme("light")}>Light</DropdownMenuItem>
+        <DropdownMenuItem onAction={() => setTheme("dark")}>Dark</DropdownMenuItem>
+        <DropdownMenuItem onAction={() => setTheme("system")}>System</DropdownMenuItem>
+      </DropdownMenu>
+    </DropdownMenuTrigger>
+  );
+}
+```
+
+</Steps>

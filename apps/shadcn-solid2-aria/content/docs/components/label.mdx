@@ -1,0 +1,59 @@
+---
+title: "Label"
+description: "Renders an accessible label associated with controls."
+---
+
+{/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/content/docs/components/aria/label.mdx.
+ * Modified for Solid Aria: Solid 2 examples and imports, local installation, supported APIs, and documentation links.
+ * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */}
+
+import { ComponentPreview, Installation, Callout } from "#components/docs/mdx";
+
+
+
+<ComponentPreview styleName="aria-nova" name="label-demo" />
+
+<Callout>
+  For form fields, use the [Field](/docs/components/field) component which
+  includes built-in label, description, and error handling.
+</Callout>
+
+## Installation
+
+<Installation component="label" />
+
+## Usage
+
+```tsx
+import { Label } from "#components/ui/label";
+```
+
+```tsx
+<Label for="email">Your email address</Label>
+```
+
+## Label in Field
+
+For form fields, use the [Field](/docs/components/field) component which includes built-in `FieldLabel`, `FieldDescription`, and `FieldError` components.
+
+```tsx
+<Field>
+  <FieldLabel for="email">Your email address</FieldLabel>
+  <Input id="email" />
+</Field>
+```
+
+<ComponentPreview
+  styleName="aria-nova"
+  name="field-demo"
+  previewClassName="h-[44rem]"
+/>
+
+## RTL
+
+To configure right-to-left layouts, see the [RTL configuration guide](/docs/accessibility#right-to-left).
+
+<ComponentPreview styleName="aria-nova" name="label-rtl" direction="rtl" />

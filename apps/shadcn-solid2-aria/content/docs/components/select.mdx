@@ -1,0 +1,120 @@
+---
+title: "Select"
+description: "Displays a list of options for the user to pick from—triggered by a button."
+---
+
+{/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/content/docs/components/aria/select.mdx.
+ * Modified for Solid Aria: Solid 2 examples and imports, local installation, supported APIs, and documentation links.
+ * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */}
+
+import { ComponentPreview, Installation } from "#components/docs/mdx";
+
+
+
+<ComponentPreview styleName="aria-nova" name="select-demo" />
+
+## Installation
+
+<Installation component="select" />
+
+## Usage
+
+```tsx showLineNumbers
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "#components/ui/select";
+```
+
+```tsx showLineNumbers
+const items = [
+  { label: "Light", value: "light" },
+  { label: "Dark", value: "dark" },
+  { label: "System", value: "system" },
+]
+
+<Select placeholder="Theme">
+  <SelectTrigger class="w-[180px]">
+    <SelectValue />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectGroup>
+      {items.map((item) => (
+        <SelectItem id={item.value}>
+          {item.label}
+        </SelectItem>
+      ))}
+    </SelectGroup>
+  </SelectContent>
+</Select>
+```
+
+## Composition
+
+Use the following composition to build a `Select`:
+
+```text
+Select
+├── SelectTrigger
+│   └── SelectValue
+└── SelectContent
+    ├── SelectGroup
+    │   ├── SelectLabel
+    │   ├── SelectItem
+    │   └── SelectItem
+    ├── SelectSeparator
+    └── SelectGroup
+        ├── SelectLabel
+        ├── SelectItem
+        └── SelectItem
+```
+
+## Groups
+
+Use `SelectGroup`, `SelectLabel`, and `SelectSeparator` to organize items.
+
+<ComponentPreview styleName="aria-nova" name="select-groups" />
+
+## Scrollable
+
+A select with many items that scrolls.
+
+<ComponentPreview styleName="aria-nova" name="select-scrollable" />
+
+## Disabled
+
+<ComponentPreview styleName="aria-nova" name="select-disabled" />
+
+## Invalid
+
+Add the `data-invalid` attribute to the `Field` component and the `isInvalid` prop to the `SelectTrigger` component to show an error state.
+
+```tsx showLineNumbers /data-invalid/ /aria-invalid/
+<Field data-invalid>
+  <FieldLabel>Fruit</FieldLabel>
+  <Select isInvalid>{/* ... */}</Select>
+</Field>
+```
+
+<ComponentPreview styleName="aria-nova" name="select-invalid" />
+
+## Searchable
+
+Use [Combobox](/docs/components/combobox) for a searchable list of choices.
+
+<ComponentPreview styleName="aria-nova" name="select-autocomplete" />
+
+## RTL
+
+To configure right-to-left layouts, see the [RTL configuration guide](/docs/accessibility#right-to-left).
+
+<ComponentPreview styleName="aria-nova" name="select-rtl" direction="rtl" />
+
+## API Reference

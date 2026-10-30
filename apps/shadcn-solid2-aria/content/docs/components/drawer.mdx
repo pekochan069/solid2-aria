@@ -1,0 +1,134 @@
+---
+title: "Drawer"
+description: "A drawer component with accessible focus management and swipe gestures."
+---
+
+{/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/content/docs/components/aria/drawer.mdx.
+ * Modified for Solid Aria: Solid 2 examples and imports, local installation, supported APIs, and documentation links.
+ * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */}
+
+import { ComponentPreview, Installation, Callout } from "#components/docs/mdx";
+
+
+
+<ComponentPreview styleName="aria-nova" name="drawer-demo" />
+
+<Callout>
+  The Solid drawer uses `@solid2-aria/vaul` for swipe gestures, snap points, nested
+  drawers, and accessible focus management.
+</Callout>
+
+## Installation
+
+<Installation component="drawer" />
+
+The command installs `@solid2-aria/vaul` automatically, along with the drawer component and its other dependencies.
+
+The component imports `@solid2-aria/vaul/style.css` for gestures and directional animations. `DrawerContent` includes the portal and overlay.
+
+## Usage
+
+```tsx showLineNumbers
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "#components/ui/drawer";
+```
+
+```tsx showLineNumbers
+<Drawer>
+  <DrawerTrigger variant="outline">Open</DrawerTrigger>
+  <DrawerContent>
+    <DrawerHeader>
+      <DrawerTitle>Are you absolutely sure?</DrawerTitle>
+      <DrawerDescription>This action cannot be undone.</DrawerDescription>
+    </DrawerHeader>
+    <div class="p-4">{/* Content here */}</div>
+    <DrawerFooter>
+      <Button>Submit</Button>
+      <DrawerClose variant="outline">Cancel</DrawerClose>
+    </DrawerFooter>
+  </DrawerContent>
+</Drawer>
+```
+
+## Composition
+
+Use the following composition to build a `Drawer`:
+
+```text
+Drawer
+├── DrawerTrigger
+└── DrawerContent
+    ├── DrawerHeader
+    │   ├── DrawerTitle
+    │   └── DrawerDescription
+    └── DrawerFooter
+```
+
+`DrawerContent` composes the Vaul portal, overlay, popup, and dialog content. `DrawerPortal`, `DrawerOverlay`, and `DrawerSwipeHandle` are also exported. Use `DrawerNestedRoot` for a drawer inside another drawer.
+
+## Custom Sizes
+
+Set height or width utilities with `DrawerContent`'s `class` prop. These classes apply to the outer popup. The inner dialog keeps its header and footer visible while its content scrolls.
+
+```tsx
+<DrawerContent class="min-h-64">
+  <DrawerHeader>
+    <DrawerTitle>Drawer title</DrawerTitle>
+  </DrawerHeader>
+  <div class="min-h-0 flex-1 overflow-y-auto p-4">Scrollable content</div>
+  <DrawerFooter>
+    <DrawerClose>Close</DrawerClose>
+  </DrawerFooter>
+</DrawerContent>
+```
+
+## Styling
+
+Style `DrawerContent` with `class`. The popup exposes `data-vaul-drawer-direction`, `data-state`, `data-position`, and `data-swipe-axis`. The local wrapper supplies the backdrop, portal, and optional swipe handle.
+
+## Position
+
+Use the `direction` prop to set the side of the drawer.
+
+Available options are `top`, `right`, `bottom`, and `left`. The default is `bottom`.
+
+<ComponentPreview styleName="aria-nova" name="drawer-sides" />
+
+## Swipe Handle
+
+Use `showSwipeHandle` on `Drawer` to render a swipe handle. Set `handleOnly` to restrict dragging to the handle. Add `data-vaul-no-drag` to controls that must not start a drag.
+
+<ComponentPreview styleName="aria-nova" name="drawer-swipe-handle" />
+
+## Nested
+
+Use `DrawerNestedRoot` inside a parent drawer. Parent drawers stay mounted and stack behind the frontmost drawer.
+
+<ComponentPreview styleName="aria-nova" name="drawer-nested" />
+
+## Snap Points
+
+Pass `snapPoints` to `Drawer` to define its resting positions, ordered from smallest to largest. Numbers are viewport fractions along the swipe axis; strings are pixel lengths such as `"496px"`. The first point is the initial position. Use `activeSnapPoint` and `setActiveSnapPoint` for controlled snapping, or `snapToSequentialPoint` to move one point per gesture. Tapping the handle cycles through the points.
+
+<ComponentPreview styleName="aria-nova" name="drawer-snap-points" />
+
+## Responsive
+
+You can combine the `Dialog` and `Drawer` components to create a responsive dialog. This renders a `Dialog` component on desktop and a `Drawer` on mobile.
+
+<ComponentPreview styleName="aria-nova" name="drawer-dialog" />
+
+## API Reference
+
+The root `Drawer` accepts `open`, `defaultOpen`, `onOpenChange`, `direction`, `snapPoints`, `modal`, `dismissible`, `handleOnly`, and the other `@solid2-aria/vaul` root props, plus `showSwipeHandle`. `DrawerNestedRoot` accepts the same props. Triggers and close controls accept native button props, `variant`, `size`, and Vaul's `render` callback. `DrawerContent` accepts Vaul content props, including `class`, `style`, callback refs, and dismissal and focus event handlers.

@@ -1,0 +1,4652 @@
+{
+  "schemaVersion": "report-1",
+  "run": {
+    "id": "01a18090-22ba-7edb-b7cf-897d82ca5979",
+    "specVersion": "0.1",
+    "runner": {
+      "name": "e2e",
+      "version": "0.21.3"
+    },
+    "status": "passed",
+    "exitCode": 0,
+    "startedAt": "2026-10-28T03:31:32.598Z",
+    "finishedAt": "2026-10-28T03:32:11.238Z",
+    "project": {
+      "id": "shadcn-solid2-aria",
+      "configDigest": "019553f1418c72d89c5f04316c4d3094b8d6fb17bbebf689cd905f95fa3f3b4b"
+    },
+    "environment": {
+      "ci": false,
+      "trustNoticeShown": false,
+      "os": "linux 6.12.111+deb13-amd64",
+      "arch": "x64",
+      "runtime": "node v26.12.1"
+    },
+    "targets": [
+      {
+        "id": "web",
+        "index": 0,
+        "platform": "web",
+        "baseOrigin": "http://localhost:5500",
+        "environment": "test",
+        "engine": {
+          "name": "web",
+          "version": "0.15.3",
+          "spiVersion": 1
+        },
+        "capabilities": [
+          "actions",
+          "artifacts",
+          "browser",
+          "keyboard",
+          "location",
+          "observation",
+          "pointer",
+          "state"
+        ],
+        "artifactCapabilities": ["screenshot", "video"],
+        "stateCapability": true
+      }
+    ],
+    "serialGroups": [],
+    "results": [
+      {
+        "id": "8ab296de52f5e172581439b97d310ab6b8168567ffda16a7a46e51cc7f985e85",
+        "testId": "tests/design.e2e.ts::documentation%20keeps%20upstream%20typography%20around%20live%20components",
+        "kind": "test",
+        "declarationIndex": 0,
+        "titlePath": [
+          "documentation keeps upstream typography around live components"
+        ],
+        "file": "tests/design.e2e.ts",
+        "source": {
+          "file": "tests/design.e2e.ts",
+          "line": 6,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "3f2ce0767b807a9629ff873ebcf2971dd4419d7d469e9862c8cc26b9cbfa147d",
+        "testId": "tests/design.e2e.ts::homepage%20preserves%20upstream%20gallery%20breakpoints%20and%20has%20no%20horizontal%20overflow",
+        "kind": "test",
+        "declarationIndex": 1,
+        "titlePath": [
+          "homepage preserves upstream gallery breakpoints and has no horizontal overflow"
+        ],
+        "file": "tests/design.e2e.ts",
+        "source": {
+          "file": "tests/design.e2e.ts",
+          "line": 39,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "22fd4e4b1820ea98a0cc38519a7ab8a9aaa569e9346ad2a32f6c52e092ee82a7",
+        "testId": "tests/design.e2e.ts::chart%20catalog%20starts%20with%20the%20full%20width%20interactive%20example",
+        "kind": "test",
+        "declarationIndex": 2,
+        "titlePath": [
+          "chart catalog starts with the full width interactive example"
+        ],
+        "file": "tests/design.e2e.ts",
+        "source": {
+          "file": "tests/design.e2e.ts",
+          "line": 90,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "5e3e483ebb76f7cc4193a5788c06da1f2a9e2db9806a017624adafca3d4ec218",
+        "testId": "tests/design.e2e.ts::color%20format%20selectors%20share%20the%20selected%20format%20across%20palettes",
+        "kind": "test",
+        "declarationIndex": 3,
+        "titlePath": [
+          "color format selectors share the selected format across palettes"
+        ],
+        "file": "tests/design.e2e.ts",
+        "source": {
+          "file": "tests/design.e2e.ts",
+          "line": 113,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "b70922f3071cc7cd49a8bf9ef510846a8280bb6edc12a87d73ff41224e80999b",
+        "testId": "tests/design.e2e.ts::dashboard%20keeps%20the%20upstream%20initial%20date%20range%20and%20updates%20the%20visitor%20chart",
+        "kind": "test",
+        "declarationIndex": 4,
+        "titlePath": [
+          "dashboard keeps the upstream initial date range and updates the visitor chart"
+        ],
+        "file": "tests/design.e2e.ts",
+        "source": {
+          "file": "tests/design.e2e.ts",
+          "line": 129,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "24c9c9d75d9a82e2b62431d19ed6a2b7a9d6360440ec0cdd6664e9b80f9836ab",
+        "testId": "tests/design.e2e.ts::typeset%20menu%20can%20undo%20a%20typography%20change",
+        "kind": "test",
+        "declarationIndex": 5,
+        "titlePath": ["typeset menu can undo a typography change"],
+        "file": "tests/design.e2e.ts",
+        "source": {
+          "file": "tests/design.e2e.ts",
+          "line": 147,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "b9b8fac985e71a6b8d1fe1121f83227251b39fe701874dd3a380da5ccc0da991",
+        "testId": "tests/design.e2e.ts::create%20welcome%20opens%20a%20working%20preview%20with%20readable%20chart%20labels",
+        "kind": "test",
+        "declarationIndex": 6,
+        "titlePath": [
+          "create welcome opens a working preview with readable chart labels"
+        ],
+        "file": "tests/design.e2e.ts",
+        "source": {
+          "file": "tests/design.e2e.ts",
+          "line": 180,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "6898365e32d11b96836f77b1e14e1271f5d1ae0331257bc948b58c04414b4ed2",
+        "testId": "tests/drawer.e2e.ts::drawer%20stays%20visible%20while%20animating%20closed",
+        "kind": "test",
+        "declarationIndex": 0,
+        "titlePath": ["drawer stays visible while animating closed"],
+        "file": "tests/drawer.e2e.ts",
+        "source": {
+          "file": "tests/drawer.e2e.ts",
+          "line": 6,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": true,
+        "status": "passed",
+        "attempts": [
+          {
+            "id": "01a18090-26da-7436-bd9e-a0972c1e733e",
+            "index": 0,
+            "status": "passed",
+            "startedAt": "2026-10-28T03:31:33.210Z",
+            "durationMs": 3190,
+            "artifacts": [],
+            "secondaryErrors": [],
+            "cleanup": "complete",
+            "environment": {
+              "browser": "chromium 156.0.8078.4",
+              "user agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36"
+            },
+            "steps": [
+              {
+                "id": "01a18090-26da-7436-bd9e-a0972c1e733e:0",
+                "index": 0,
+                "kind": "resource",
+                "api": "browser.setViewport",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:33.262Z",
+                "durationMs": 0,
+                "events": [],
+                "artifacts": [],
+                "viewport": {
+                  "width": 390,
+                  "height": 844,
+                  "scale": 1
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 10,
+                  "column": 17
+                }
+              },
+              {
+                "id": "01a18090-26da-7436-bd9e-a0972c1e733e:1",
+                "index": 1,
+                "kind": "resource",
+                "api": "browser.emulateMedia",
+                "label": "reducedMotion: no-preference",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:33.263Z",
+                "durationMs": 0,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 11,
+                  "column": 17
+                }
+              },
+              {
+                "id": "01a18090-26da-7436-bd9e-a0972c1e733e:2",
+                "index": 2,
+                "kind": "app",
+                "api": "app.open",
+                "label": "/docs/components/drawer",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:33.264Z",
+                "durationMs": 1230,
+                "events": [],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 299,
+                  "changes": []
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 12,
+                  "column": 13
+                }
+              },
+              {
+                "id": "01a18090-26da-7436-bd9e-a0972c1e733e:3",
+                "index": 3,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "locator(\"[data-example='drawer-swipe-handle']\") >> getByRole(\"button\", name: \"Open Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:34.496Z",
+                "durationMs": 855,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:31:34.496Z",
+                    "durationMs": 855,
+                    "status": "passed",
+                    "detail": "tap button \"Open Drawer\" (appeared after 757ms)"
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 7,
+                  "since": 2,
+                  "changes": [
+                    "added box",
+                    "added dialog \"Drawer\"",
+                    "added text=\"Drawer with a swipe handle.\"",
+                    "added box",
+                    "added button \"Close\"",
+                    "removed link \"Skip to content\" href=\"/docs/components/drawer#…\"",
+                    "removed banner",
+                    "removed button \"Toggle navigation\"",
+                    "removed text=\"Menu\"",
+                    "removed link \"shadcn-solid2-aria on GitHub\" href=\"https://github.com/pekochan069/solid2-aria\"",
+                    "removed button \"Toggle theme\"",
+                    "removed link \"New\" href=\"/create\""
+                  ],
+                  "more": 290
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 16,
+                  "column": 6
+                }
+              },
+              {
+                "id": "01a18090-26da-7436-bd9e-a0972c1e733e:4",
+                "index": 4,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:35.352Z",
+                "durationMs": 2,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 20,
+                  "column": 23
+                }
+              },
+              {
+                "id": "01a18090-26da-7436-bd9e-a0972c1e733e:5",
+                "index": 5,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:35.454Z",
+                "durationMs": 1,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 20,
+                  "column": 23
+                }
+              },
+              {
+                "id": "01a18090-26da-7436-bd9e-a0972c1e733e:6",
+                "index": 6,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:35.556Z",
+                "durationMs": 2,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 20,
+                  "column": 23
+                }
+              },
+              {
+                "id": "01a18090-26da-7436-bd9e-a0972c1e733e:7",
+                "index": 7,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:35.659Z",
+                "durationMs": 2,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 20,
+                  "column": 23
+                }
+              },
+              {
+                "id": "01a18090-26da-7436-bd9e-a0972c1e733e:8",
+                "index": 8,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:35.761Z",
+                "durationMs": 2,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 20,
+                  "column": 23
+                }
+              },
+              {
+                "id": "01a18090-26da-7436-bd9e-a0972c1e733e:9",
+                "index": 9,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:35.864Z",
+                "durationMs": 2,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 20,
+                  "column": 23
+                }
+              },
+              {
+                "id": "01a18090-26da-7436-bd9e-a0972c1e733e:10",
+                "index": 10,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:35.866Z",
+                "durationMs": 517,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 30,
+                  "column": 32
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "0bf009e2df304f22d6b11d4eb139a9c159461dda9c9f9dc6f72b33e5043edc75",
+        "testId": "tests/drawer.e2e.ts::snap%20drawer%20opens%20directly%20toward%20its%20compact%20snap%20point",
+        "kind": "test",
+        "declarationIndex": 1,
+        "titlePath": [
+          "snap drawer opens directly toward its compact snap point"
+        ],
+        "file": "tests/drawer.e2e.ts",
+        "source": {
+          "file": "tests/drawer.e2e.ts",
+          "line": 72,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": true,
+        "status": "passed",
+        "attempts": [
+          {
+            "id": "01a18090-3350-7139-b6b6-32d7ab084671",
+            "index": 0,
+            "status": "passed",
+            "startedAt": "2026-10-28T03:31:36.400Z",
+            "durationMs": 3306,
+            "artifacts": [],
+            "secondaryErrors": [],
+            "cleanup": "complete",
+            "environment": {
+              "browser": "chromium 156.0.8078.4",
+              "user agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36"
+            },
+            "steps": [
+              {
+                "id": "01a18090-3350-7139-b6b6-32d7ab084671:0",
+                "index": 0,
+                "kind": "resource",
+                "api": "browser.setViewport",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:36.403Z",
+                "durationMs": 0,
+                "events": [],
+                "artifacts": [],
+                "viewport": {
+                  "width": 390,
+                  "height": 844,
+                  "scale": 1
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 77,
+                  "column": 17
+                }
+              },
+              {
+                "id": "01a18090-3350-7139-b6b6-32d7ab084671:1",
+                "index": 1,
+                "kind": "resource",
+                "api": "browser.emulateMedia",
+                "label": "reducedMotion: no-preference",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:36.404Z",
+                "durationMs": 0,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 78,
+                  "column": 17
+                }
+              },
+              {
+                "id": "01a18090-3350-7139-b6b6-32d7ab084671:2",
+                "index": 2,
+                "kind": "app",
+                "api": "app.open",
+                "label": "/docs/components/drawer",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:36.404Z",
+                "durationMs": 1451,
+                "events": [],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 299,
+                  "changes": []
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 79,
+                  "column": 13
+                }
+              },
+              {
+                "id": "01a18090-3350-7139-b6b6-32d7ab084671:3",
+                "index": 3,
+                "kind": "assertion",
+                "api": "expect.toBeVisible",
+                "label": "getByRole(\"button\", name: \"Open Snap Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:37.857Z",
+                "durationMs": 1055,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:37.857Z",
+                    "durationMs": 1055,
+                    "status": "passed",
+                    "count": 7,
+                    "detail": "no node (0 matches) x6 -> at 1055ms default states (1 match)"
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 80,
+                  "column": 64
+                }
+              },
+              {
+                "id": "01a18090-3350-7139-b6b6-32d7ab084671:4",
+                "index": 4,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:38.912Z",
+                "durationMs": 771,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 82,
+                  "column": 30
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "4055405b2318d3f1d28ac526ee0c3ccd6343b043fba61ea79a29761320b5f65b",
+        "testId": "tests/drawer.e2e.ts::drawer%20documentation%20loads%20through%20client%20navigation%20and%20browser%20history",
+        "kind": "test",
+        "declarationIndex": 2,
+        "titlePath": [
+          "drawer documentation loads through client navigation and browser history"
+        ],
+        "file": "tests/drawer.e2e.ts",
+        "source": {
+          "file": "tests/drawer.e2e.ts",
+          "line": 131,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": true,
+        "status": "passed",
+        "attempts": [
+          {
+            "id": "01a18090-403a-74dd-9bf2-e8c2582a1d28",
+            "index": 0,
+            "status": "passed",
+            "startedAt": "2026-10-28T03:31:39.707Z",
+            "durationMs": 6056,
+            "artifacts": [
+              {
+                "id": "01a18090-403a-74dd-9bf2-e8c2582a1d28:artifact:0",
+                "kind": "screenshot",
+                "mediaType": "image/png",
+                "redaction": "complete",
+                "producer": {
+                  "kind": "step",
+                  "stepId": "01a18090-403a-74dd-9bf2-e8c2582a1d28:12"
+                },
+                "path": "drawer-documentation-loads-through-4055405b2318d3f1/attempt-1/screenshots/001-drawer-after-client-navigation.png",
+                "size": 82590,
+                "sha256": "037e75e67c3afb7e36767ee364a153212c83c3d11cbce96d0c7aa5b71f477d1e"
+              },
+              {
+                "id": "01a18090-403a-74dd-9bf2-e8c2582a1d28:artifact:1",
+                "kind": "screenshot",
+                "mediaType": "image/png",
+                "redaction": "complete",
+                "producer": {
+                  "kind": "step",
+                  "stepId": "01a18090-403a-74dd-9bf2-e8c2582a1d28:20"
+                },
+                "path": "drawer-documentation-loads-through-4055405b2318d3f1/attempt-1/screenshots/002-drawer-on-mobile.png",
+                "size": 41854,
+                "sha256": "bbd3b625cf8e938cb760a9185ebcc2b8c49767d59ea7eed9c75ff3eee28a61a7"
+              }
+            ],
+            "secondaryErrors": [],
+            "cleanup": "complete",
+            "environment": {
+              "browser": "chromium 156.0.8078.4",
+              "user agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36"
+            },
+            "steps": [
+              {
+                "id": "01a18090-403a-74dd-9bf2-e8c2582a1d28:0",
+                "index": 0,
+                "kind": "resource",
+                "api": "browser.emulateMedia",
+                "label": "reducedMotion: reduce",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:39.713Z",
+                "durationMs": 0,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 136,
+                  "column": 17
+                }
+              },
+              {
+                "id": "01a18090-403a-74dd-9bf2-e8c2582a1d28:1",
+                "index": 1,
+                "kind": "app",
+                "api": "app.open",
+                "label": "/docs/components/dialog",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:39.713Z",
+                "durationMs": 2325,
+                "events": [],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/dialog",
+                  "nodes": 291,
+                  "changes": []
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 137,
+                  "column": 13
+                }
+              },
+              {
+                "id": "01a18090-403a-74dd-9bf2-e8c2582a1d28:2",
+                "index": 2,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "getByRole(\"link\", name: \"Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:42.043Z",
+                "durationMs": 414,
+                "events": [
+                  {
+                    "kind": "navigation",
+                    "startedAt": "2026-10-28T03:31:42.287Z",
+                    "durationMs": 0,
+                    "status": "passed",
+                    "detail": "navigated to http://localhost:5500/docs/components/drawer"
+                  },
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:31:42.044Z",
+                    "durationMs": 414,
+                    "status": "passed",
+                    "detail": "tap link \"Drawer\""
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 291,
+                  "since": 1,
+                  "changes": [
+                    "changed link \"Skip to content\" href=\"/docs/components/drawer#…\" (was: link \"Skip to content\" href=\"/docs/components/dialog#…\")",
+                    "changed link \"#\" href=\"/docs/components/drawer#…\" (was: link \"#\" href=\"/docs/components/dialog#…\")",
+                    "changed link \"#\" href=\"/docs/components/drawer#…\" (was: link \"#\" href=\"/docs/components/dialog#…\")",
+                    "changed link \"#\" href=\"/docs/components/drawer#…\" (was: link \"#\" href=\"/docs/components/dialog#…\")",
+                    "changed link \"#\" href=\"/docs/components/drawer#…\" (was: link \"#\" href=\"/docs/components/dialog#…\")",
+                    "changed link \"#\" href=\"/docs/components/drawer#…\" (was: link \"#\" href=\"/docs/components/dialog#…\")",
+                    "changed link \"#\" href=\"/docs/components/drawer#…\" (was: link \"#\" href=\"/docs/components/dialog#…\")",
+                    "changed link \"#\" href=\"/docs/components/drawer#…\" (was: link \"#\" href=\"/docs/components/dialog#…\")",
+                    "changed link \"#\" href=\"/docs/components/drawer#…\" (was: link \"#\" href=\"/docs/components/dialog#…\")",
+                    "changed link \"#\" href=\"/docs/components/drawer#…\" (was: link \"#\" href=\"/docs/components/dialog#…\")",
+                    "changed link \"Installation\" href=\"/docs/components/drawer#…\" (was: link \"Installation\" href=\"/docs/components/dialog#…\")",
+                    "changed link \"Usage\" href=\"/docs/components/drawer#…\" (was: link \"Usage\" href=\"/docs/components/dialog#…\")"
+                  ],
+                  "more": 7
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 138,
+                  "column": 61
+                }
+              },
+              {
+                "id": "01a18090-403a-74dd-9bf2-e8c2582a1d28:3",
+                "index": 3,
+                "kind": "assertion",
+                "api": "expect.toBeVisible",
+                "label": "getByRole(\"heading\", name: /^API Reference/u)",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:42.460Z",
+                "durationMs": 58,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:42.460Z",
+                    "durationMs": 58,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 146,
+                  "column": 64
+                }
+              },
+              {
+                "id": "01a18090-403a-74dd-9bf2-e8c2582a1d28:4",
+                "index": 4,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "locator(\"[data-example='drawer-demo']\") >> getByRole(\"button\", name: \"Open Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:42.518Z",
+                "durationMs": 559,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:31:42.518Z",
+                    "durationMs": 558,
+                    "status": "passed",
+                    "detail": "tap button \"Open Drawer\" (appeared after 462ms)"
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 29,
+                  "since": 2,
+                  "changes": [
+                    "changed document \"Drawer — shadcn/solid\" (was: document \"Dialog — shadcn/solid\")",
+                    "added box",
+                    "added dialog \"Pick a delivery time\"",
+                    "added heading \"Pick a delivery time\"",
+                    "added text=\"We'll prepare your order as soon as possible.\"",
+                    "added radiogroup \"Delivery time\"",
+                    "added text=\"Standard delivery\"",
+                    "added text=\"Fastest\"",
+                    "added text=\"25–35 min · Driver assigned now\"",
+                    "added radio \"Standard delivery Fastest 25–35 min · Driver assigned now\" [checked]",
+                    "added group",
+                    "added text=\"5:00 PM – 5:15 PM\""
+                  ],
+                  "more": 305
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 147,
+                  "column": 17
+                }
+              },
+              {
+                "id": "01a18090-403a-74dd-9bf2-e8c2582a1d28:5",
+                "index": 5,
+                "kind": "assertion",
+                "api": "expect.toBeVisible",
+                "label": "getByRole(\"dialog\", name: \"Pick a delivery time\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:43.077Z",
+                "durationMs": 5,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:43.077Z",
+                    "durationMs": 5,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 148,
+                  "column": 24
+                }
+              },
+              {
+                "id": "01a18090-403a-74dd-9bf2-e8c2582a1d28:6",
+                "index": 6,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "getByRole(\"dialog\", name: \"Pick a delivery time\") >> getByRole(\"button\", name: \"Cancel\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:43.082Z",
+                "durationMs": 187,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:31:43.082Z",
+                    "durationMs": 187,
+                    "status": "passed",
+                    "detail": "tap button \"Cancel\""
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 405,
+                  "since": 4,
+                  "changes": [
+                    "added link \"Skip to content\" href=\"/docs/components/drawer#…\"",
+                    "added banner",
+                    "added navigation \"Main navigation\"",
+                    "added link \"Home\" href=\"/\"",
+                    "added link \"Docs\" href=\"/docs/installation\"",
+                    "added link \"Components\" href=\"/docs/components\"",
+                    "added link \"Blocks\" href=\"/blocks\"",
+                    "added link \"Charts\" href=\"/charts\"",
+                    "added link \"Typeset\" href=\"/typeset\"",
+                    "added link \"Create\" href=\"/create\"",
+                    "added button \"Search documentation...\"",
+                    "added text=\"Search documentation...\""
+                  ],
+                  "more": 418
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 149,
+                  "column": 46
+                }
+              },
+              {
+                "id": "01a18090-403a-74dd-9bf2-e8c2582a1d28:7",
+                "index": 7,
+                "kind": "assertion",
+                "api": "expect.toBeHidden",
+                "label": "getByRole(\"dialog\", name: \"Pick a delivery time\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:43.270Z",
+                "durationMs": 23,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:43.271Z",
+                    "durationMs": 23,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 150,
+                  "column": 24
+                }
+              },
+              {
+                "id": "01a18090-403a-74dd-9bf2-e8c2582a1d28:8",
+                "index": 8,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "getByRole(\"link\", name: \"Dialog\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:43.294Z",
+                "durationMs": 186,
+                "events": [
+                  {
+                    "kind": "navigation",
+                    "startedAt": "2026-10-28T03:31:43.320Z",
+                    "durationMs": 0,
+                    "status": "passed",
+                    "detail": "navigated to http://localhost:5500/docs/components/dialog"
+                  },
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:31:43.294Z",
+                    "durationMs": 186,
+                    "status": "passed",
+                    "detail": "tap link \"Dialog\""
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/dialog",
+                  "nodes": 291,
+                  "since": 6,
+                  "changes": [
+                    "changed document \"Dialog — shadcn/solid\" (was: document \"Drawer — shadcn/solid\")",
+                    "changed link \"Skip to content\" href=\"/docs/components/dialog#…\" (was: link \"Skip to content\" href=\"/docs/components/drawer#…\")",
+                    "changed heading \"Dialog\" (was: heading \"Drawer\")",
+                    "changed link \"Previous page\" href=\"/docs/components/context-menu\" (was: link \"Previous page\" href=\"/docs/components/direction\")",
+                    "changed link \"Next page\" href=\"/docs/components/direction\" (was: link \"Next page\" href=\"/docs/components/dropdown-menu\")",
+                    "changed text=\"A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.\" (was: text=\"A drawer component for Solid.\")",
+                    "added text=\"Loading example...\"",
+                    "added text=\"{ Button }\"",
+                    "added text=\"\\\"#components/ui/button\\\"\"",
+                    "added text=\"Dialog,\"",
+                    "added link \"#\" href=\"/docs/components/dialog#…\"",
+                    "added text=\"http://localhost:5500/r/dialog.json\""
+                  ],
+                  "more": 267
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 151,
+                  "column": 61
+                }
+              },
+              {
+                "id": "01a18090-403a-74dd-9bf2-e8c2582a1d28:9",
+                "index": 9,
+                "kind": "resource",
+                "api": "browser.back",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:43.481Z",
+                "durationMs": 11,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 152,
+                  "column": 17
+                }
+              },
+              {
+                "id": "01a18090-403a-74dd-9bf2-e8c2582a1d28:10",
+                "index": 10,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "locator(\"[data-example='drawer-demo']\") >> getByRole(\"button\", name: \"Open Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:43.492Z",
+                "durationMs": 137,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:31:43.492Z",
+                    "durationMs": 137,
+                    "status": "passed",
+                    "detail": "tap button \"Open Drawer\""
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 29,
+                  "since": 8,
+                  "changes": [
+                    "changed document \"Drawer — shadcn/solid\" (was: document \"Dialog — shadcn/solid\")",
+                    "added box",
+                    "added dialog \"Pick a delivery time\"",
+                    "added heading \"Pick a delivery time\"",
+                    "added text=\"We'll prepare your order as soon as possible.\"",
+                    "added radiogroup \"Delivery time\"",
+                    "added text=\"Standard delivery\"",
+                    "added text=\"Fastest\"",
+                    "added text=\"25–35 min · Driver assigned now\"",
+                    "added radio \"Standard delivery Fastest 25–35 min · Driver assigned now\" [checked]",
+                    "added group",
+                    "added text=\"5:00 PM – 5:15 PM\""
+                  ],
+                  "more": 305
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 153,
+                  "column": 17
+                }
+              },
+              {
+                "id": "01a18090-403a-74dd-9bf2-e8c2582a1d28:11",
+                "index": 11,
+                "kind": "assertion",
+                "api": "expect.toBeVisible",
+                "label": "getByRole(\"dialog\", name: \"Pick a delivery time\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:43.629Z",
+                "durationMs": 4,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:43.629Z",
+                    "durationMs": 4,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 154,
+                  "column": 24
+                }
+              },
+              {
+                "id": "01a18090-403a-74dd-9bf2-e8c2582a1d28:12",
+                "index": 12,
+                "kind": "app",
+                "api": "app.screenshot",
+                "label": "drawer-after-client-navigation",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:43.633Z",
+                "durationMs": 92,
+                "events": [],
+                "artifacts": [
+                  "01a18090-403a-74dd-9bf2-e8c2582a1d28:artifact:0"
+                ],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 155,
+                  "column": 13
+                }
+              },
+              {
+                "id": "01a18090-403a-74dd-9bf2-e8c2582a1d28:13",
+                "index": 13,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "getByRole(\"dialog\", name: \"Pick a delivery time\") >> getByRole(\"button\", name: \"Cancel\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:43.725Z",
+                "durationMs": 166,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:31:43.726Z",
+                    "durationMs": 166,
+                    "status": "passed",
+                    "detail": "tap button \"Cancel\""
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 405,
+                  "since": 10,
+                  "changes": [
+                    "added link \"Skip to content\" href=\"/docs/components/drawer#…\"",
+                    "added banner",
+                    "added navigation \"Main navigation\"",
+                    "added link \"Home\" href=\"/\"",
+                    "added link \"Docs\" href=\"/docs/installation\"",
+                    "added link \"Components\" href=\"/docs/components\"",
+                    "added link \"Blocks\" href=\"/blocks\"",
+                    "added link \"Charts\" href=\"/charts\"",
+                    "added link \"Typeset\" href=\"/typeset\"",
+                    "added link \"Create\" href=\"/create\"",
+                    "added button \"Search documentation...\"",
+                    "added text=\"Search documentation...\""
+                  ],
+                  "more": 418
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 156,
+                  "column": 46
+                }
+              },
+              {
+                "id": "01a18090-403a-74dd-9bf2-e8c2582a1d28:14",
+                "index": 14,
+                "kind": "assertion",
+                "api": "expect.toBeHidden",
+                "label": "getByRole(\"dialog\", name: \"Pick a delivery time\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:43.893Z",
+                "durationMs": 15,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:43.893Z",
+                    "durationMs": 15,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 157,
+                  "column": 24
+                }
+              },
+              {
+                "id": "01a18090-403a-74dd-9bf2-e8c2582a1d28:15",
+                "index": 15,
+                "kind": "resource",
+                "api": "browser.setViewport",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:43.908Z",
+                "durationMs": 66,
+                "events": [],
+                "artifacts": [],
+                "viewport": {
+                  "width": 390,
+                  "height": 844,
+                  "scale": 1
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 159,
+                  "column": 17
+                }
+              },
+              {
+                "id": "01a18090-403a-74dd-9bf2-e8c2582a1d28:16",
+                "index": 16,
+                "kind": "resource",
+                "api": "browser.reload",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:43.974Z",
+                "durationMs": 927,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 160,
+                  "column": 17
+                }
+              },
+              {
+                "id": "01a18090-403a-74dd-9bf2-e8c2582a1d28:17",
+                "index": 17,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "locator(\"[data-example='drawer-demo']\") >> getByRole(\"button\", name: \"Open Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:44.901Z",
+                "durationMs": 783,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:31:44.901Z",
+                    "durationMs": 783,
+                    "status": "passed",
+                    "detail": "tap button \"Open Drawer\" (appeared after 643ms)"
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 29,
+                  "since": 13,
+                  "changes": [
+                    "added box",
+                    "added dialog \"Pick a delivery time\"",
+                    "added heading \"Pick a delivery time\"",
+                    "added text=\"We'll prepare your order as soon as possible.\"",
+                    "added radiogroup \"Delivery time\"",
+                    "added text=\"Standard delivery\"",
+                    "added text=\"Fastest\"",
+                    "added text=\"25–35 min · Driver assigned now\"",
+                    "added radio \"Standard delivery Fastest 25–35 min · Driver assigned now\" [checked]",
+                    "added group",
+                    "added text=\"5:00 PM – 5:15 PM\"",
+                    "added text=\"Prep starts at 4:45 PM\""
+                  ],
+                  "more": 418
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 161,
+                  "column": 17
+                }
+              },
+              {
+                "id": "01a18090-403a-74dd-9bf2-e8c2582a1d28:18",
+                "index": 18,
+                "kind": "assertion",
+                "api": "expect.toBeVisible",
+                "label": "getByRole(\"dialog\", name: \"Pick a delivery time\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:45.684Z",
+                "durationMs": 5,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:45.684Z",
+                    "durationMs": 5,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 162,
+                  "column": 24
+                }
+              },
+              {
+                "id": "01a18090-403a-74dd-9bf2-e8c2582a1d28:19",
+                "index": 19,
+                "kind": "assertion",
+                "api": "expect.toHaveAttribute",
+                "label": "getByRole(\"dialog\", name: \"Pick a delivery time\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:45.689Z",
+                "durationMs": 2,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:45.690Z",
+                    "durationMs": 2,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 163,
+                  "column": 24
+                }
+              },
+              {
+                "id": "01a18090-403a-74dd-9bf2-e8c2582a1d28:20",
+                "index": 20,
+                "kind": "app",
+                "api": "app.screenshot",
+                "label": "drawer-on-mobile",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:45.692Z",
+                "durationMs": 47,
+                "events": [],
+                "artifacts": [
+                  "01a18090-403a-74dd-9bf2-e8c2582a1d28:artifact:1"
+                ],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 164,
+                  "column": 13
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "0366108be3a8d6e72b0c0cde19acb8e09e6a49df97d7cee2ea19e5a7bb287b0f",
+        "testId": "tests/drawer.e2e.ts::controlled%20drawer%20supports%20keyboard%20and%20outside%20dismissal%20with%20focus%20restoration",
+        "kind": "test",
+        "declarationIndex": 3,
+        "titlePath": [
+          "controlled drawer supports keyboard and outside dismissal with focus restoration"
+        ],
+        "file": "tests/drawer.e2e.ts",
+        "source": {
+          "file": "tests/drawer.e2e.ts",
+          "line": 167,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": true,
+        "status": "passed",
+        "attempts": [
+          {
+            "id": "01a18090-57e4-7923-b7c5-ac84efeefe6a",
+            "index": 0,
+            "status": "passed",
+            "startedAt": "2026-10-28T03:31:45.764Z",
+            "durationMs": 4993,
+            "artifacts": [],
+            "secondaryErrors": [],
+            "cleanup": "complete",
+            "environment": {
+              "browser": "chromium 156.0.8078.4",
+              "user agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36"
+            },
+            "steps": [
+              {
+                "id": "01a18090-57e4-7923-b7c5-ac84efeefe6a:0",
+                "index": 0,
+                "kind": "resource",
+                "api": "browser.setViewport",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:45.767Z",
+                "durationMs": 0,
+                "events": [],
+                "artifacts": [],
+                "viewport": {
+                  "width": 1280,
+                  "height": 900,
+                  "scale": 1
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 172,
+                  "column": 17
+                }
+              },
+              {
+                "id": "01a18090-57e4-7923-b7c5-ac84efeefe6a:1",
+                "index": 1,
+                "kind": "app",
+                "api": "app.open",
+                "label": "/docs/components/drawer",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:45.767Z",
+                "durationMs": 1293,
+                "events": [],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 402,
+                  "changes": []
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 173,
+                  "column": 13
+                }
+              },
+              {
+                "id": "01a18090-57e4-7923-b7c5-ac84efeefe6a:2",
+                "index": 2,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "locator(\"[data-example='drawer-demo']\") >> getByRole(\"button\", name: \"Open Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:47.061Z",
+                "durationMs": 1087,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:31:47.061Z",
+                    "durationMs": 1087,
+                    "status": "passed",
+                    "detail": "tap button \"Open Drawer\" (appeared after 954ms)"
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 29,
+                  "since": 1,
+                  "changes": [
+                    "added box",
+                    "added dialog \"Pick a delivery time\"",
+                    "added heading \"Pick a delivery time\"",
+                    "added text=\"We'll prepare your order as soon as possible.\"",
+                    "added radiogroup \"Delivery time\"",
+                    "added text=\"Standard delivery\"",
+                    "added text=\"Fastest\"",
+                    "added text=\"25–35 min · Driver assigned now\"",
+                    "added radio \"Standard delivery Fastest 25–35 min · Driver assigned now\" [checked]",
+                    "added group",
+                    "added text=\"5:00 PM – 5:15 PM\"",
+                    "added text=\"Prep starts at 4:45 PM\""
+                  ],
+                  "more": 415
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 181,
+                  "column": 17
+                }
+              },
+              {
+                "id": "01a18090-57e4-7923-b7c5-ac84efeefe6a:3",
+                "index": 3,
+                "kind": "assertion",
+                "api": "expect.toBeVisible",
+                "label": "getByRole(\"dialog\", name: \"Pick a delivery time\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:48.148Z",
+                "durationMs": 9,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:48.148Z",
+                    "durationMs": 9,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 182,
+                  "column": 24
+                }
+              },
+              {
+                "id": "01a18090-57e4-7923-b7c5-ac84efeefe6a:4",
+                "index": 4,
+                "kind": "assertion",
+                "api": "expect.toHaveAttribute",
+                "label": "locator(\"[data-example='drawer-demo']\") >> getByRole(\"button\", name: \"Open Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:48.157Z",
+                "durationMs": 3,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:48.157Z",
+                    "durationMs": 3,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 183,
+                  "column": 25
+                }
+              },
+              {
+                "id": "01a18090-57e4-7923-b7c5-ac84efeefe6a:5",
+                "index": 5,
+                "kind": "assertion",
+                "api": "expect.toHaveAttribute",
+                "label": "getByRole(\"dialog\", name: \"Pick a delivery time\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:48.160Z",
+                "durationMs": 12,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:48.160Z",
+                    "durationMs": 12,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 184,
+                  "column": 24
+                }
+              },
+              {
+                "id": "01a18090-57e4-7923-b7c5-ac84efeefe6a:6",
+                "index": 6,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:48.172Z",
+                "durationMs": 1,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 186,
+                  "column": 37
+                }
+              },
+              {
+                "id": "01a18090-57e4-7923-b7c5-ac84efeefe6a:7",
+                "index": 7,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "getByRole(\"dialog\", name: \"Pick a delivery time\") >> getByRole(\"button\", name: \"Cancel\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:48.173Z",
+                "durationMs": 828,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:31:48.174Z",
+                    "durationMs": 828,
+                    "status": "passed",
+                    "detail": "tap button \"Cancel\""
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 433,
+                  "since": 2,
+                  "changes": [
+                    "added link \"Skip to content\" href=\"/docs/components/drawer#…\"",
+                    "added banner",
+                    "added navigation \"Main navigation\"",
+                    "added link \"Home\" href=\"/\"",
+                    "added link \"Docs\" href=\"/docs/installation\"",
+                    "added link \"Components\" href=\"/docs/components\"",
+                    "added link \"Blocks\" href=\"/blocks\"",
+                    "added link \"Charts\" href=\"/charts\"",
+                    "added link \"Typeset\" href=\"/typeset\"",
+                    "added link \"Create\" href=\"/create\"",
+                    "added button \"Search documentation...\"",
+                    "added text=\"Search documentation...\""
+                  ],
+                  "more": 392
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 198,
+                  "column": 46
+                }
+              },
+              {
+                "id": "01a18090-57e4-7923-b7c5-ac84efeefe6a:8",
+                "index": 8,
+                "kind": "assertion",
+                "api": "expect.toBeHidden",
+                "label": "getByRole(\"dialog\", name: \"Pick a delivery time\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:49.003Z",
+                "durationMs": 336,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:49.003Z",
+                    "durationMs": 336,
+                    "status": "passed",
+                    "count": 4,
+                    "detail": "visible (1 match) x3 -> at 336ms hidden (0 matches)"
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 199,
+                  "column": 24
+                }
+              },
+              {
+                "id": "01a18090-57e4-7923-b7c5-ac84efeefe6a:9",
+                "index": 9,
+                "kind": "assertion",
+                "api": "expect.toBeFocused",
+                "label": "locator(\"[data-example='drawer-demo']\") >> getByRole(\"button\", name: \"Open Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:49.339Z",
+                "durationMs": 3,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:49.340Z",
+                    "durationMs": 2,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 200,
+                  "column": 25
+                }
+              },
+              {
+                "id": "01a18090-57e4-7923-b7c5-ac84efeefe6a:10",
+                "index": 10,
+                "kind": "assertion",
+                "api": "expect.toHaveAttribute",
+                "label": "locator(\"[data-example='drawer-demo']\") >> getByRole(\"button\", name: \"Open Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:49.342Z",
+                "durationMs": 2,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:49.342Z",
+                    "durationMs": 2,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 201,
+                  "column": 25
+                }
+              },
+              {
+                "id": "01a18090-57e4-7923-b7c5-ac84efeefe6a:11",
+                "index": 11,
+                "kind": "locator",
+                "api": "locator.press",
+                "label": "locator(\"[data-example='drawer-demo']\") >> getByRole(\"button\", name: \"Open Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:49.344Z",
+                "durationMs": 65,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "press",
+                    "startedAt": "2026-10-28T03:31:49.345Z",
+                    "durationMs": 64,
+                    "status": "passed",
+                    "detail": "press button \"Open Drawer\""
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 29,
+                  "since": 7,
+                  "changes": [
+                    "removed link \"Skip to content\" href=\"/docs/components/drawer#…\"",
+                    "removed banner",
+                    "removed navigation \"Main navigation\"",
+                    "removed link \"Home\" href=\"/\"",
+                    "removed link \"Docs\" href=\"/docs/installation\"",
+                    "removed link \"Components\" href=\"/docs/components\"",
+                    "removed link \"Blocks\" href=\"/blocks\"",
+                    "removed link \"Charts\" href=\"/charts\"",
+                    "removed link \"Typeset\" href=\"/typeset\"",
+                    "removed link \"Create\" href=\"/create\"",
+                    "removed button \"Search documentation...\"",
+                    "removed text=\"Search documentation...\""
+                  ],
+                  "more": 392
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 203,
+                  "column": 17
+                }
+              },
+              {
+                "id": "01a18090-57e4-7923-b7c5-ac84efeefe6a:12",
+                "index": 12,
+                "kind": "assertion",
+                "api": "expect.toBeVisible",
+                "label": "getByRole(\"dialog\", name: \"Pick a delivery time\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:49.410Z",
+                "durationMs": 4,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:49.410Z",
+                    "durationMs": 4,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 204,
+                  "column": 24
+                }
+              },
+              {
+                "id": "01a18090-57e4-7923-b7c5-ac84efeefe6a:13",
+                "index": 13,
+                "kind": "resource",
+                "api": "browser.keyboard.press",
+                "label": "Escape",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:49.414Z",
+                "durationMs": 32,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 205,
+                  "column": 26
+                }
+              },
+              {
+                "id": "01a18090-57e4-7923-b7c5-ac84efeefe6a:14",
+                "index": 14,
+                "kind": "assertion",
+                "api": "expect.toBeHidden",
+                "label": "getByRole(\"dialog\", name: \"Pick a delivery time\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:49.446Z",
+                "durationMs": 531,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:49.446Z",
+                    "durationMs": 531,
+                    "status": "passed",
+                    "count": 6,
+                    "detail": "visible (1 match) x5 -> at 531ms hidden (0 matches)"
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 206,
+                  "column": 24
+                }
+              },
+              {
+                "id": "01a18090-57e4-7923-b7c5-ac84efeefe6a:15",
+                "index": 15,
+                "kind": "assertion",
+                "api": "expect.toBeFocused",
+                "label": "locator(\"[data-example='drawer-demo']\") >> getByRole(\"button\", name: \"Open Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:49.977Z",
+                "durationMs": 3,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:49.977Z",
+                    "durationMs": 3,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 207,
+                  "column": 25
+                }
+              },
+              {
+                "id": "01a18090-57e4-7923-b7c5-ac84efeefe6a:16",
+                "index": 16,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "locator(\"[data-example='drawer-demo']\") >> getByRole(\"button\", name: \"Open Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:49.980Z",
+                "durationMs": 79,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:31:49.980Z",
+                    "durationMs": 79,
+                    "status": "passed",
+                    "detail": "tap button \"Open Drawer\""
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 29,
+                  "since": 11,
+                  "changes": []
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 209,
+                  "column": 17
+                }
+              },
+              {
+                "id": "01a18090-57e4-7923-b7c5-ac84efeefe6a:17",
+                "index": 17,
+                "kind": "assertion",
+                "api": "expect.toBeVisible",
+                "label": "getByRole(\"dialog\", name: \"Pick a delivery time\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:50.059Z",
+                "durationMs": 5,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:50.059Z",
+                    "durationMs": 5,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 210,
+                  "column": 24
+                }
+              },
+              {
+                "id": "01a18090-57e4-7923-b7c5-ac84efeefe6a:18",
+                "index": 18,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "locator(\"[data-slot='drawer-overlay']\") at (5, 5)",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:50.064Z",
+                "durationMs": 242,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "scrollIntoView",
+                    "startedAt": "2026-10-28T03:31:50.064Z",
+                    "durationMs": 106,
+                    "status": "passed",
+                    "detail": "scrollIntoView box"
+                  },
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:31:50.174Z",
+                    "durationMs": 132,
+                    "status": "passed",
+                    "detail": "tap at (5, 5)"
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 433,
+                  "since": 16,
+                  "changes": [
+                    "added link \"Skip to content\" href=\"/docs/components/drawer#…\"",
+                    "added banner",
+                    "added navigation \"Main navigation\"",
+                    "added link \"Home\" href=\"/\"",
+                    "added link \"Docs\" href=\"/docs/installation\"",
+                    "added link \"Components\" href=\"/docs/components\"",
+                    "added link \"Blocks\" href=\"/blocks\"",
+                    "added link \"Charts\" href=\"/charts\"",
+                    "added link \"Typeset\" href=\"/typeset\"",
+                    "added link \"Create\" href=\"/create\"",
+                    "added button \"Search documentation...\"",
+                    "added text=\"Search documentation...\""
+                  ],
+                  "more": 392
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 213,
+                  "column": 6
+                }
+              },
+              {
+                "id": "01a18090-57e4-7923-b7c5-ac84efeefe6a:19",
+                "index": 19,
+                "kind": "assertion",
+                "api": "expect.toBeHidden",
+                "label": "getByRole(\"dialog\", name: \"Pick a delivery time\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:50.308Z",
+                "durationMs": 436,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:50.308Z",
+                    "durationMs": 436,
+                    "status": "passed",
+                    "count": 5,
+                    "detail": "visible (1 match) x4 -> at 436ms hidden (0 matches)"
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 214,
+                  "column": 24
+                }
+              },
+              {
+                "id": "01a18090-57e4-7923-b7c5-ac84efeefe6a:20",
+                "index": 20,
+                "kind": "assertion",
+                "api": "expect.toHaveAttribute",
+                "label": "locator(\"[data-example='drawer-demo']\") >> getByRole(\"button\", name: \"Open Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:50.744Z",
+                "durationMs": 2,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:50.745Z",
+                    "durationMs": 2,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 215,
+                  "column": 25
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "60aa01c14344c1e1085e4a809a7e64315c8a17510911ee79efccc2fd671e26f6",
+        "testId": "tests/drawer.e2e.ts::drawer%20opens%20against%20the%20top%20viewport%20edge",
+        "kind": "test",
+        "declarationIndex": 4,
+        "titlePath": ["drawer opens against the top viewport edge"],
+        "file": "tests/drawer.e2e.ts",
+        "source": {
+          "file": "tests/drawer.e2e.ts",
+          "line": 219,
+          "column": 3
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": true,
+        "status": "passed",
+        "attempts": [
+          {
+            "id": "01a18090-6b66-72ae-9cae-b83dfadfa8e6",
+            "index": 0,
+            "status": "passed",
+            "startedAt": "2026-10-28T03:31:50.758Z",
+            "durationMs": 2414,
+            "artifacts": [],
+            "secondaryErrors": [],
+            "cleanup": "complete",
+            "environment": {
+              "browser": "chromium 156.0.8078.4",
+              "user agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36"
+            },
+            "steps": [
+              {
+                "id": "01a18090-6b66-72ae-9cae-b83dfadfa8e6:0",
+                "index": 0,
+                "kind": "resource",
+                "api": "browser.setViewport",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:50.760Z",
+                "durationMs": 0,
+                "events": [],
+                "artifacts": [],
+                "viewport": {
+                  "width": 1280,
+                  "height": 900,
+                  "scale": 1
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 224,
+                  "column": 19
+                }
+              },
+              {
+                "id": "01a18090-6b66-72ae-9cae-b83dfadfa8e6:1",
+                "index": 1,
+                "kind": "resource",
+                "api": "browser.emulateMedia",
+                "label": "reducedMotion: reduce",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:50.761Z",
+                "durationMs": 0,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 225,
+                  "column": 19
+                }
+              },
+              {
+                "id": "01a18090-6b66-72ae-9cae-b83dfadfa8e6:2",
+                "index": 2,
+                "kind": "app",
+                "api": "app.open",
+                "label": "/docs/components/drawer",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:50.761Z",
+                "durationMs": 1138,
+                "events": [],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 402,
+                  "changes": []
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 226,
+                  "column": 15
+                }
+              },
+              {
+                "id": "01a18090-6b66-72ae-9cae-b83dfadfa8e6:3",
+                "index": 3,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "locator(\"[data-example='drawer-sides']\") >> getByRole(\"button\", name: \"Open top drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:51.901Z",
+                "durationMs": 1044,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:31:51.901Z",
+                    "durationMs": 1044,
+                    "status": "passed",
+                    "detail": "tap button \"Open top drawer\" (appeared after 925ms)"
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 6,
+                  "since": 2,
+                  "changes": [
+                    "added box",
+                    "added dialog \"Move Goal\"",
+                    "added heading \"Move Goal\"",
+                    "added text=\"Set your daily activity goal.\"",
+                    "added button \"Close\"",
+                    "removed link \"Skip to content\" href=\"/docs/components/drawer#…\"",
+                    "removed banner",
+                    "removed navigation \"Main navigation\"",
+                    "removed link \"Home\" href=\"/\"",
+                    "removed link \"Docs\" href=\"/docs/installation\"",
+                    "removed link \"Components\" href=\"/docs/components\"",
+                    "removed link \"Blocks\" href=\"/blocks\""
+                  ],
+                  "more": 394
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 231,
+                  "column": 8
+                }
+              },
+              {
+                "id": "01a18090-6b66-72ae-9cae-b83dfadfa8e6:4",
+                "index": 4,
+                "kind": "assertion",
+                "api": "expect.toBeVisible",
+                "label": "getByRole(\"dialog\", name: \"Move Goal\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:52.946Z",
+                "durationMs": 5,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:52.946Z",
+                    "durationMs": 5,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 233,
+                  "column": 26
+                }
+              },
+              {
+                "id": "01a18090-6b66-72ae-9cae-b83dfadfa8e6:5",
+                "index": 5,
+                "kind": "assertion",
+                "api": "expect.toHaveAttribute",
+                "label": "getByRole(\"dialog\", name: \"Move Goal\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:52.951Z",
+                "durationMs": 3,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:52.951Z",
+                    "durationMs": 3,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 234,
+                  "column": 26
+                }
+              },
+              {
+                "id": "01a18090-6b66-72ae-9cae-b83dfadfa8e6:6",
+                "index": 6,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:52.954Z",
+                "durationMs": 1,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 239,
+                  "column": 34
+                }
+              },
+              {
+                "id": "01a18090-6b66-72ae-9cae-b83dfadfa8e6:7",
+                "index": 7,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "getByRole(\"dialog\", name: \"Move Goal\") >> getByRole(\"button\", name: \"Close\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:52.956Z",
+                "durationMs": 180,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:31:52.956Z",
+                    "durationMs": 180,
+                    "status": "passed",
+                    "detail": "tap button \"Close\""
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 405,
+                  "since": 3,
+                  "changes": [
+                    "added link \"Skip to content\" href=\"/docs/components/drawer#…\"",
+                    "added banner",
+                    "added navigation \"Main navigation\"",
+                    "added link \"Home\" href=\"/\"",
+                    "added link \"Docs\" href=\"/docs/installation\"",
+                    "added link \"Components\" href=\"/docs/components\"",
+                    "added link \"Blocks\" href=\"/blocks\"",
+                    "added link \"Charts\" href=\"/charts\"",
+                    "added link \"Typeset\" href=\"/typeset\"",
+                    "added link \"Create\" href=\"/create\"",
+                    "added button \"Search documentation...\"",
+                    "added text=\"Search documentation...\""
+                  ],
+                  "more": 397
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 276,
+                  "column": 47
+                }
+              },
+              {
+                "id": "01a18090-6b66-72ae-9cae-b83dfadfa8e6:8",
+                "index": 8,
+                "kind": "assertion",
+                "api": "expect.toBeHidden",
+                "label": "getByRole(\"dialog\", name: \"Move Goal\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:53.138Z",
+                "durationMs": 22,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:53.138Z",
+                    "durationMs": 22,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 277,
+                  "column": 26
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "e69331365a50ca3a3c6feca639981eb7b74c27e62a74c79d60bc93f27eb52b22",
+        "testId": "tests/drawer.e2e.ts::drawer%20opens%20against%20the%20right%20viewport%20edge",
+        "kind": "test",
+        "declarationIndex": 5,
+        "titlePath": ["drawer opens against the right viewport edge"],
+        "file": "tests/drawer.e2e.ts",
+        "source": {
+          "file": "tests/drawer.e2e.ts",
+          "line": 219,
+          "column": 3
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": true,
+        "status": "passed",
+        "attempts": [
+          {
+            "id": "01a18090-74d4-7df4-babd-993d4d86dad0",
+            "index": 0,
+            "status": "passed",
+            "startedAt": "2026-10-28T03:31:53.172Z",
+            "durationMs": 2623,
+            "artifacts": [],
+            "secondaryErrors": [],
+            "cleanup": "complete",
+            "environment": {
+              "browser": "chromium 156.0.8078.4",
+              "user agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36"
+            },
+            "steps": [
+              {
+                "id": "01a18090-74d4-7df4-babd-993d4d86dad0:0",
+                "index": 0,
+                "kind": "resource",
+                "api": "browser.setViewport",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:53.175Z",
+                "durationMs": 0,
+                "events": [],
+                "artifacts": [],
+                "viewport": {
+                  "width": 1280,
+                  "height": 900,
+                  "scale": 1
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 224,
+                  "column": 19
+                }
+              },
+              {
+                "id": "01a18090-74d4-7df4-babd-993d4d86dad0:1",
+                "index": 1,
+                "kind": "resource",
+                "api": "browser.emulateMedia",
+                "label": "reducedMotion: reduce",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:53.175Z",
+                "durationMs": 0,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 225,
+                  "column": 19
+                }
+              },
+              {
+                "id": "01a18090-74d4-7df4-babd-993d4d86dad0:2",
+                "index": 2,
+                "kind": "app",
+                "api": "app.open",
+                "label": "/docs/components/drawer",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:53.175Z",
+                "durationMs": 1323,
+                "events": [],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 402,
+                  "changes": []
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 226,
+                  "column": 15
+                }
+              },
+              {
+                "id": "01a18090-74d4-7df4-babd-993d4d86dad0:3",
+                "index": 3,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "locator(\"[data-example='drawer-sides']\") >> getByRole(\"button\", name: \"Open right drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:54.500Z",
+                "durationMs": 925,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:31:54.508Z",
+                    "durationMs": 925,
+                    "status": "passed",
+                    "detail": "tap button \"Open right drawer\" (appeared after 821ms)"
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 7,
+                  "since": 2,
+                  "changes": [
+                    "added box",
+                    "added dialog \"Move Goal\"",
+                    "added heading \"Move Goal\"",
+                    "added text=\"Set your daily activity goal.\"",
+                    "added box",
+                    "added button \"Close\"",
+                    "removed link \"Skip to content\" href=\"/docs/components/drawer#…\"",
+                    "removed banner",
+                    "removed navigation \"Main navigation\"",
+                    "removed link \"Home\" href=\"/\"",
+                    "removed link \"Docs\" href=\"/docs/installation\"",
+                    "removed link \"Components\" href=\"/docs/components\""
+                  ],
+                  "more": 395
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 231,
+                  "column": 8
+                }
+              },
+              {
+                "id": "01a18090-74d4-7df4-babd-993d4d86dad0:4",
+                "index": 4,
+                "kind": "assertion",
+                "api": "expect.toBeVisible",
+                "label": "getByRole(\"dialog\", name: \"Move Goal\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:55.434Z",
+                "durationMs": 5,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:55.434Z",
+                    "durationMs": 5,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 233,
+                  "column": 26
+                }
+              },
+              {
+                "id": "01a18090-74d4-7df4-babd-993d4d86dad0:5",
+                "index": 5,
+                "kind": "assertion",
+                "api": "expect.toHaveAttribute",
+                "label": "getByRole(\"dialog\", name: \"Move Goal\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:55.439Z",
+                "durationMs": 3,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:55.439Z",
+                    "durationMs": 3,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 234,
+                  "column": 26
+                }
+              },
+              {
+                "id": "01a18090-74d4-7df4-babd-993d4d86dad0:6",
+                "index": 6,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:55.442Z",
+                "durationMs": 1,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 239,
+                  "column": 34
+                }
+              },
+              {
+                "id": "01a18090-74d4-7df4-babd-993d4d86dad0:7",
+                "index": 7,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "getByRole(\"dialog\", name: \"Move Goal\") >> getByRole(\"button\", name: \"Close\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:55.443Z",
+                "durationMs": 317,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:31:55.443Z",
+                    "durationMs": 317,
+                    "status": "passed",
+                    "detail": "tap button \"Close\""
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 405,
+                  "since": 3,
+                  "changes": [
+                    "added link \"Skip to content\" href=\"/docs/components/drawer#…\"",
+                    "added banner",
+                    "added navigation \"Main navigation\"",
+                    "added link \"Home\" href=\"/\"",
+                    "added link \"Docs\" href=\"/docs/installation\"",
+                    "added link \"Components\" href=\"/docs/components\"",
+                    "added link \"Blocks\" href=\"/blocks\"",
+                    "added link \"Charts\" href=\"/charts\"",
+                    "added link \"Typeset\" href=\"/typeset\"",
+                    "added link \"Create\" href=\"/create\"",
+                    "added button \"Search documentation...\"",
+                    "added text=\"Search documentation...\""
+                  ],
+                  "more": 398
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 276,
+                  "column": 47
+                }
+              },
+              {
+                "id": "01a18090-74d4-7df4-babd-993d4d86dad0:8",
+                "index": 8,
+                "kind": "assertion",
+                "api": "expect.toBeHidden",
+                "label": "getByRole(\"dialog\", name: \"Move Goal\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:55.761Z",
+                "durationMs": 22,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:55.761Z",
+                    "durationMs": 22,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 277,
+                  "column": 26
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "d56de2d98607520d7441a68fbe17aae110f7c394b08871720a084a3be6766c6b",
+        "testId": "tests/drawer.e2e.ts::drawer%20opens%20against%20the%20bottom%20viewport%20edge",
+        "kind": "test",
+        "declarationIndex": 6,
+        "titlePath": ["drawer opens against the bottom viewport edge"],
+        "file": "tests/drawer.e2e.ts",
+        "source": {
+          "file": "tests/drawer.e2e.ts",
+          "line": 219,
+          "column": 3
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": true,
+        "status": "passed",
+        "attempts": [
+          {
+            "id": "01a18090-7f14-7155-824b-bc7e4b576351",
+            "index": 0,
+            "status": "passed",
+            "startedAt": "2026-10-28T03:31:55.796Z",
+            "durationMs": 2246,
+            "artifacts": [],
+            "secondaryErrors": [],
+            "cleanup": "complete",
+            "environment": {
+              "browser": "chromium 156.0.8078.4",
+              "user agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36"
+            },
+            "steps": [
+              {
+                "id": "01a18090-7f14-7155-824b-bc7e4b576351:0",
+                "index": 0,
+                "kind": "resource",
+                "api": "browser.setViewport",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:55.799Z",
+                "durationMs": 0,
+                "events": [],
+                "artifacts": [],
+                "viewport": {
+                  "width": 1280,
+                  "height": 900,
+                  "scale": 1
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 224,
+                  "column": 19
+                }
+              },
+              {
+                "id": "01a18090-7f14-7155-824b-bc7e4b576351:1",
+                "index": 1,
+                "kind": "resource",
+                "api": "browser.emulateMedia",
+                "label": "reducedMotion: reduce",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:55.799Z",
+                "durationMs": 0,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 225,
+                  "column": 19
+                }
+              },
+              {
+                "id": "01a18090-7f14-7155-824b-bc7e4b576351:2",
+                "index": 2,
+                "kind": "app",
+                "api": "app.open",
+                "label": "/docs/components/drawer",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:55.799Z",
+                "durationMs": 1175,
+                "events": [],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 402,
+                  "changes": []
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 226,
+                  "column": 15
+                }
+              },
+              {
+                "id": "01a18090-7f14-7155-824b-bc7e4b576351:3",
+                "index": 3,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "locator(\"[data-example='drawer-sides']\") >> getByRole(\"button\", name: \"Open bottom drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:56.975Z",
+                "durationMs": 806,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:31:56.975Z",
+                    "durationMs": 806,
+                    "status": "passed",
+                    "detail": "tap button \"Open bottom drawer\" (appeared after 732ms)"
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 6,
+                  "since": 2,
+                  "changes": [
+                    "added box",
+                    "added dialog \"Move Goal\"",
+                    "added heading \"Move Goal\"",
+                    "added text=\"Set your daily activity goal.\"",
+                    "added button \"Close\"",
+                    "removed link \"Skip to content\" href=\"/docs/components/drawer#…\"",
+                    "removed banner",
+                    "removed navigation \"Main navigation\"",
+                    "removed link \"Home\" href=\"/\"",
+                    "removed link \"Docs\" href=\"/docs/installation\"",
+                    "removed link \"Components\" href=\"/docs/components\"",
+                    "removed link \"Blocks\" href=\"/blocks\""
+                  ],
+                  "more": 394
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 231,
+                  "column": 8
+                }
+              },
+              {
+                "id": "01a18090-7f14-7155-824b-bc7e4b576351:4",
+                "index": 4,
+                "kind": "assertion",
+                "api": "expect.toBeVisible",
+                "label": "getByRole(\"dialog\", name: \"Move Goal\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:57.782Z",
+                "durationMs": 4,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:57.782Z",
+                    "durationMs": 4,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 233,
+                  "column": 26
+                }
+              },
+              {
+                "id": "01a18090-7f14-7155-824b-bc7e4b576351:5",
+                "index": 5,
+                "kind": "assertion",
+                "api": "expect.toHaveAttribute",
+                "label": "getByRole(\"dialog\", name: \"Move Goal\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:57.786Z",
+                "durationMs": 2,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:57.786Z",
+                    "durationMs": 2,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 234,
+                  "column": 26
+                }
+              },
+              {
+                "id": "01a18090-7f14-7155-824b-bc7e4b576351:6",
+                "index": 6,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:57.788Z",
+                "durationMs": 4,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 239,
+                  "column": 34
+                }
+              },
+              {
+                "id": "01a18090-7f14-7155-824b-bc7e4b576351:7",
+                "index": 7,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "getByRole(\"dialog\", name: \"Move Goal\") >> getByRole(\"button\", name: \"Close\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:57.792Z",
+                "durationMs": 213,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:31:57.793Z",
+                    "durationMs": 213,
+                    "status": "passed",
+                    "detail": "tap button \"Close\""
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 405,
+                  "since": 3,
+                  "changes": [
+                    "added link \"Skip to content\" href=\"/docs/components/drawer#…\"",
+                    "added banner",
+                    "added navigation \"Main navigation\"",
+                    "added link \"Home\" href=\"/\"",
+                    "added link \"Docs\" href=\"/docs/installation\"",
+                    "added link \"Components\" href=\"/docs/components\"",
+                    "added link \"Blocks\" href=\"/blocks\"",
+                    "added link \"Charts\" href=\"/charts\"",
+                    "added link \"Typeset\" href=\"/typeset\"",
+                    "added link \"Create\" href=\"/create\"",
+                    "added button \"Search documentation...\"",
+                    "added text=\"Search documentation...\""
+                  ],
+                  "more": 397
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 276,
+                  "column": 47
+                }
+              },
+              {
+                "id": "01a18090-7f14-7155-824b-bc7e4b576351:8",
+                "index": 8,
+                "kind": "assertion",
+                "api": "expect.toBeHidden",
+                "label": "getByRole(\"dialog\", name: \"Move Goal\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:58.007Z",
+                "durationMs": 22,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:58.008Z",
+                    "durationMs": 22,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 277,
+                  "column": 26
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "93e49f8e15f2798a3d4ad4bacacdc91f969ea9795db277f22d0033bfc4730425",
+        "testId": "tests/drawer.e2e.ts::drawer%20opens%20against%20the%20left%20viewport%20edge",
+        "kind": "test",
+        "declarationIndex": 7,
+        "titlePath": ["drawer opens against the left viewport edge"],
+        "file": "tests/drawer.e2e.ts",
+        "source": {
+          "file": "tests/drawer.e2e.ts",
+          "line": 219,
+          "column": 3
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": true,
+        "status": "passed",
+        "attempts": [
+          {
+            "id": "01a18090-87db-75b3-b7c1-8bcc34df4e16",
+            "index": 0,
+            "status": "passed",
+            "startedAt": "2026-10-28T03:31:58.043Z",
+            "durationMs": 2060,
+            "artifacts": [],
+            "secondaryErrors": [],
+            "cleanup": "complete",
+            "environment": {
+              "browser": "chromium 156.0.8078.4",
+              "user agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36"
+            },
+            "steps": [
+              {
+                "id": "01a18090-87db-75b3-b7c1-8bcc34df4e16:0",
+                "index": 0,
+                "kind": "resource",
+                "api": "browser.setViewport",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:58.045Z",
+                "durationMs": 0,
+                "events": [],
+                "artifacts": [],
+                "viewport": {
+                  "width": 1280,
+                  "height": 900,
+                  "scale": 1
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 224,
+                  "column": 19
+                }
+              },
+              {
+                "id": "01a18090-87db-75b3-b7c1-8bcc34df4e16:1",
+                "index": 1,
+                "kind": "resource",
+                "api": "browser.emulateMedia",
+                "label": "reducedMotion: reduce",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:58.046Z",
+                "durationMs": 0,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 225,
+                  "column": 19
+                }
+              },
+              {
+                "id": "01a18090-87db-75b3-b7c1-8bcc34df4e16:2",
+                "index": 2,
+                "kind": "app",
+                "api": "app.open",
+                "label": "/docs/components/drawer",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:58.046Z",
+                "durationMs": 1067,
+                "events": [],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 402,
+                  "changes": []
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 226,
+                  "column": 15
+                }
+              },
+              {
+                "id": "01a18090-87db-75b3-b7c1-8bcc34df4e16:3",
+                "index": 3,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "locator(\"[data-example='drawer-sides']\") >> getByRole(\"button\", name: \"Open left drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:59.114Z",
+                "durationMs": 762,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:31:59.118Z",
+                    "durationMs": 762,
+                    "status": "passed",
+                    "detail": "tap button \"Open left drawer\" (appeared after 689ms)"
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 7,
+                  "since": 2,
+                  "changes": [
+                    "added box",
+                    "added dialog \"Move Goal\"",
+                    "added heading \"Move Goal\"",
+                    "added text=\"Set your daily activity goal.\"",
+                    "added box",
+                    "added button \"Close\"",
+                    "removed link \"Skip to content\" href=\"/docs/components/drawer#…\"",
+                    "removed banner",
+                    "removed navigation \"Main navigation\"",
+                    "removed link \"Home\" href=\"/\"",
+                    "removed link \"Docs\" href=\"/docs/installation\"",
+                    "removed link \"Components\" href=\"/docs/components\""
+                  ],
+                  "more": 395
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 231,
+                  "column": 8
+                }
+              },
+              {
+                "id": "01a18090-87db-75b3-b7c1-8bcc34df4e16:4",
+                "index": 4,
+                "kind": "assertion",
+                "api": "expect.toBeVisible",
+                "label": "getByRole(\"dialog\", name: \"Move Goal\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:59.881Z",
+                "durationMs": 5,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:59.881Z",
+                    "durationMs": 5,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 233,
+                  "column": 26
+                }
+              },
+              {
+                "id": "01a18090-87db-75b3-b7c1-8bcc34df4e16:5",
+                "index": 5,
+                "kind": "assertion",
+                "api": "expect.toHaveAttribute",
+                "label": "getByRole(\"dialog\", name: \"Move Goal\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:59.886Z",
+                "durationMs": 3,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:31:59.886Z",
+                    "durationMs": 3,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 234,
+                  "column": 26
+                }
+              },
+              {
+                "id": "01a18090-87db-75b3-b7c1-8bcc34df4e16:6",
+                "index": 6,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:59.889Z",
+                "durationMs": 0,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 239,
+                  "column": 34
+                }
+              },
+              {
+                "id": "01a18090-87db-75b3-b7c1-8bcc34df4e16:7",
+                "index": 7,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "getByRole(\"dialog\", name: \"Move Goal\") >> getByRole(\"button\", name: \"Close\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:31:59.890Z",
+                "durationMs": 179,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:31:59.890Z",
+                    "durationMs": 178,
+                    "status": "passed",
+                    "detail": "tap button \"Close\""
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 411,
+                  "since": 3,
+                  "changes": [
+                    "added link \"Skip to content\" href=\"/docs/components/drawer#…\"",
+                    "added banner",
+                    "added navigation \"Main navigation\"",
+                    "added link \"Home\" href=\"/\"",
+                    "added link \"Docs\" href=\"/docs/installation\"",
+                    "added link \"Components\" href=\"/docs/components\"",
+                    "added link \"Blocks\" href=\"/blocks\"",
+                    "added link \"Charts\" href=\"/charts\"",
+                    "added link \"Typeset\" href=\"/typeset\"",
+                    "added link \"Create\" href=\"/create\"",
+                    "added button \"Search documentation...\"",
+                    "added text=\"Search documentation...\""
+                  ],
+                  "more": 392
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 276,
+                  "column": 47
+                }
+              },
+              {
+                "id": "01a18090-87db-75b3-b7c1-8bcc34df4e16:8",
+                "index": 8,
+                "kind": "assertion",
+                "api": "expect.toBeHidden",
+                "label": "getByRole(\"dialog\", name: \"Move Goal\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:00.070Z",
+                "durationMs": 23,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:32:00.070Z",
+                    "durationMs": 23,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 277,
+                  "column": 26
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "4edd9e674251eea1557b2a222d2e8e277b33007ea37e20217b83e9bc885cf374",
+        "testId": "tests/drawer.e2e.ts::nested%20drawers%20close%20independently%20and%20return%20focus%20to%20their%20parent",
+        "kind": "test",
+        "declarationIndex": 8,
+        "titlePath": [
+          "nested drawers close independently and return focus to their parent"
+        ],
+        "file": "tests/drawer.e2e.ts",
+        "source": {
+          "file": "tests/drawer.e2e.ts",
+          "line": 281,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": true,
+        "status": "passed",
+        "attempts": [
+          {
+            "id": "01a18090-8fe7-72ed-83b9-7dccd0513739",
+            "index": 0,
+            "status": "passed",
+            "startedAt": "2026-10-28T03:32:00.103Z",
+            "durationMs": 5400,
+            "artifacts": [],
+            "secondaryErrors": [],
+            "cleanup": "complete",
+            "environment": {
+              "browser": "chromium 156.0.8078.4",
+              "user agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36"
+            },
+            "steps": [
+              {
+                "id": "01a18090-8fe7-72ed-83b9-7dccd0513739:0",
+                "index": 0,
+                "kind": "resource",
+                "api": "browser.setViewport",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:00.106Z",
+                "durationMs": 0,
+                "events": [],
+                "artifacts": [],
+                "viewport": {
+                  "width": 390,
+                  "height": 844,
+                  "scale": 1
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 286,
+                  "column": 17
+                }
+              },
+              {
+                "id": "01a18090-8fe7-72ed-83b9-7dccd0513739:1",
+                "index": 1,
+                "kind": "app",
+                "api": "app.open",
+                "label": "/docs/components/drawer",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:00.106Z",
+                "durationMs": 1071,
+                "events": [],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 299,
+                  "changes": []
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 287,
+                  "column": 13
+                }
+              },
+              {
+                "id": "01a18090-8fe7-72ed-83b9-7dccd0513739:2",
+                "index": 2,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "locator(\"[data-example='drawer-nested']\") >> getByRole(\"button\", name: \"Open Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:01.178Z",
+                "durationMs": 746,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:32:01.178Z",
+                    "durationMs": 746,
+                    "status": "passed",
+                    "detail": "tap button \"Open Drawer\" (appeared after 666ms)"
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 8,
+                  "since": 1,
+                  "changes": [
+                    "added box",
+                    "added dialog \"Drawer\"",
+                    "added text=\"Open another drawer from the same direction.\"",
+                    "added box",
+                    "added button \"Open Nested Drawer\"",
+                    "added button \"Close\"",
+                    "removed link \"Skip to content\" href=\"/docs/components/drawer#…\"",
+                    "removed banner",
+                    "removed button \"Toggle navigation\"",
+                    "removed text=\"Menu\"",
+                    "removed link \"shadcn-solid2-aria on GitHub\" href=\"https://github.com/pekochan069/solid2-aria\"",
+                    "removed button \"Toggle theme\""
+                  ],
+                  "more": 291
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 293,
+                  "column": 17
+                }
+              },
+              {
+                "id": "01a18090-8fe7-72ed-83b9-7dccd0513739:3",
+                "index": 3,
+                "kind": "assertion",
+                "api": "expect.toBeVisible",
+                "label": "getByRole(\"dialog\", name: \"Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:01.925Z",
+                "durationMs": 4,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:32:01.925Z",
+                    "durationMs": 4,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 295,
+                  "column": 24
+                }
+              },
+              {
+                "id": "01a18090-8fe7-72ed-83b9-7dccd0513739:4",
+                "index": 4,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "getByRole(\"dialog\", name: \"Drawer\") >> getByRole(\"button\", name: \"Open Nested Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:01.929Z",
+                "durationMs": 923,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:32:01.929Z",
+                    "durationMs": 923,
+                    "status": "passed",
+                    "detail": "tap button \"Open Nested Drawer\""
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 8,
+                  "since": 2,
+                  "changes": [
+                    "added dialog \"Nested Drawer\"",
+                    "added heading \"Nested Drawer\"",
+                    "added text=\"The parent drawer stays mounted behind this one.\"",
+                    "added button \"Open Third Drawer\"",
+                    "removed dialog \"Drawer\"",
+                    "removed heading \"Drawer\"",
+                    "removed text=\"Open another drawer from the same direction.\"",
+                    "removed button \"Open Nested Drawer\""
+                  ]
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 296,
+                  "column": 58
+                }
+              },
+              {
+                "id": "01a18090-8fe7-72ed-83b9-7dccd0513739:5",
+                "index": 5,
+                "kind": "assertion",
+                "api": "expect.toBeVisible",
+                "label": "getByRole(\"dialog\", name: \"Nested Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:02.852Z",
+                "durationMs": 4,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:32:02.852Z",
+                    "durationMs": 4,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 298,
+                  "column": 24
+                }
+              },
+              {
+                "id": "01a18090-8fe7-72ed-83b9-7dccd0513739:6",
+                "index": 6,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "getByRole(\"dialog\", name: \"Nested Drawer\") >> getByRole(\"button\", name: \"Open Third Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:02.856Z",
+                "durationMs": 908,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:32:02.856Z",
+                    "durationMs": 908,
+                    "status": "passed",
+                    "detail": "tap button \"Open Third Drawer\""
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 8,
+                  "since": 4,
+                  "changes": [
+                    "added dialog \"Third Drawer\"",
+                    "added heading \"Third Drawer\"",
+                    "added text=\"Two drawers are stacked behind this one.\"",
+                    "added button \"Open Fourth Drawer\"",
+                    "removed dialog \"Nested Drawer\"",
+                    "removed heading \"Nested Drawer\"",
+                    "removed text=\"The parent drawer stays mounted behind this one.\"",
+                    "removed button \"Open Third Drawer\""
+                  ]
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 299,
+                  "column": 57
+                }
+              },
+              {
+                "id": "01a18090-8fe7-72ed-83b9-7dccd0513739:7",
+                "index": 7,
+                "kind": "assertion",
+                "api": "expect.toBeVisible",
+                "label": "getByRole(\"dialog\", name: \"Third Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:03.764Z",
+                "durationMs": 5,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:32:03.764Z",
+                    "durationMs": 5,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 300,
+                  "column": 60
+                }
+              },
+              {
+                "id": "01a18090-8fe7-72ed-83b9-7dccd0513739:8",
+                "index": 8,
+                "kind": "resource",
+                "api": "browser.keyboard.press",
+                "label": "Escape",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:03.769Z",
+                "durationMs": 4,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 301,
+                  "column": 26
+                }
+              },
+              {
+                "id": "01a18090-8fe7-72ed-83b9-7dccd0513739:9",
+                "index": 9,
+                "kind": "assertion",
+                "api": "expect.toBeHidden",
+                "label": "getByRole(\"dialog\", name: \"Third Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:03.773Z",
+                "durationMs": 522,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:32:03.774Z",
+                    "durationMs": 522,
+                    "status": "passed",
+                    "count": 6,
+                    "detail": "visible (1 match) x5 -> at 522ms hidden (0 matches)"
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 302,
+                  "column": 60
+                }
+              },
+              {
+                "id": "01a18090-8fe7-72ed-83b9-7dccd0513739:10",
+                "index": 10,
+                "kind": "assertion",
+                "api": "expect.toBeFocused",
+                "label": "getByRole(\"dialog\", name: \"Nested Drawer\") >> getByRole(\"button\", name: \"Open Third Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:04.296Z",
+                "durationMs": 3,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:32:04.297Z",
+                    "durationMs": 3,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 303,
+                  "column": 65
+                }
+              },
+              {
+                "id": "01a18090-8fe7-72ed-83b9-7dccd0513739:11",
+                "index": 11,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "getByRole(\"dialog\", name: \"Nested Drawer\") >> getByRole(\"button\", name: \"Close\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:04.300Z",
+                "durationMs": 52,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:32:04.300Z",
+                    "durationMs": 52,
+                    "status": "passed",
+                    "detail": "tap button \"Close\""
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 15,
+                  "since": 6,
+                  "changes": [
+                    "added dialog \"Drawer\"",
+                    "added heading \"Drawer\"",
+                    "added text=\"Open another drawer from the same direction.\"",
+                    "added button \"Open Nested Drawer\"",
+                    "added box",
+                    "added dialog \"Nested Drawer\"",
+                    "added heading \"Nested Drawer\"",
+                    "added text=\"The parent drawer stays mounted behind this one.\"",
+                    "added box",
+                    "added button \"Open Third Drawer\"",
+                    "added button \"Close\"",
+                    "removed dialog \"Third Drawer\""
+                  ],
+                  "more": 3
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 304,
+                  "column": 45
+                }
+              },
+              {
+                "id": "01a18090-8fe7-72ed-83b9-7dccd0513739:12",
+                "index": 12,
+                "kind": "assertion",
+                "api": "expect.toBeHidden",
+                "label": "getByRole(\"dialog\", name: \"Nested Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:04.352Z",
+                "durationMs": 550,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:32:04.353Z",
+                    "durationMs": 550,
+                    "status": "passed",
+                    "count": 6,
+                    "detail": "visible (1 match) x5 -> at 550ms hidden (0 matches)"
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 305,
+                  "column": 24
+                }
+              },
+              {
+                "id": "01a18090-8fe7-72ed-83b9-7dccd0513739:13",
+                "index": 13,
+                "kind": "assertion",
+                "api": "expect.toBeVisible",
+                "label": "getByRole(\"dialog\", name: \"Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:04.903Z",
+                "durationMs": 3,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:32:04.903Z",
+                    "durationMs": 3,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 306,
+                  "column": 24
+                }
+              },
+              {
+                "id": "01a18090-8fe7-72ed-83b9-7dccd0513739:14",
+                "index": 14,
+                "kind": "assertion",
+                "api": "expect.toBeFocused",
+                "label": "getByRole(\"dialog\", name: \"Drawer\") >> getByRole(\"button\", name: \"Open Nested Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:04.906Z",
+                "durationMs": 2,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:32:04.906Z",
+                    "durationMs": 2,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 307,
+                  "column": 66
+                }
+              },
+              {
+                "id": "01a18090-8fe7-72ed-83b9-7dccd0513739:15",
+                "index": 15,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "getByRole(\"dialog\", name: \"Drawer\") >> getByRole(\"button\", name: \"Close\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:04.908Z",
+                "durationMs": 140,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:32:04.908Z",
+                    "durationMs": 140,
+                    "status": "passed",
+                    "detail": "tap button \"Close\""
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 309,
+                  "since": 11,
+                  "changes": [
+                    "added link \"Skip to content\" href=\"/docs/components/drawer#…\"",
+                    "added banner",
+                    "added button \"Toggle navigation\"",
+                    "added text=\"Menu\"",
+                    "added link \"shadcn-solid2-aria on GitHub\" href=\"https://github.com/pekochan069/solid2-aria\"",
+                    "added button \"Toggle theme\"",
+                    "added link \"New\" href=\"/create\"",
+                    "added main",
+                    "added heading \"Drawer\"",
+                    "added link \"Previous page\" href=\"/docs/components/direction\"",
+                    "added link \"Next page\" href=\"/docs/components/dropdown-menu\"",
+                    "added status"
+                  ],
+                  "more": 296
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 308,
+                  "column": 45
+                }
+              },
+              {
+                "id": "01a18090-8fe7-72ed-83b9-7dccd0513739:16",
+                "index": 16,
+                "kind": "assertion",
+                "api": "expect.toBeHidden",
+                "label": "getByRole(\"dialog\", name: \"Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:05.049Z",
+                "durationMs": 434,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:32:05.049Z",
+                    "durationMs": 434,
+                    "status": "passed",
+                    "count": 5,
+                    "detail": "visible (1 match) x4 -> at 434ms hidden (0 matches)"
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 309,
+                  "column": 24
+                }
+              },
+              {
+                "id": "01a18090-8fe7-72ed-83b9-7dccd0513739:17",
+                "index": 17,
+                "kind": "assertion",
+                "api": "expect.toBeFocused",
+                "label": "locator(\"[data-example='drawer-nested']\") >> getByRole(\"button\", name: \"Open Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:05.483Z",
+                "durationMs": 2,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:32:05.483Z",
+                    "durationMs": 2,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 310,
+                  "column": 25
+                }
+              }
+            ],
+            "appLog": [
+              {
+                "source": "console",
+                "level": "warning",
+                "text": "The resource http://localhost:5500/fonts/geist-latin.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. (at http://localhost:5500/docs/components/drawer:1)",
+                "at": "2026-10-28T03:32:04.779Z",
+                "step": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "62add51142308a62cce9d0f7c31608dd41c69ce93c1d55126ab27b4a777335c8",
+        "testId": "tests/drawer.e2e.ts::handle%20cycles%20controlled%20snap%20points%20and%20then%20dismisses%20the%20drawer",
+        "kind": "test",
+        "declarationIndex": 9,
+        "titlePath": [
+          "handle cycles controlled snap points and then dismisses the drawer"
+        ],
+        "file": "tests/drawer.e2e.ts",
+        "source": {
+          "file": "tests/drawer.e2e.ts",
+          "line": 313,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": true,
+        "status": "passed",
+        "attempts": [
+          {
+            "id": "01a18090-a500-76aa-bc6f-64f25bcf9b5f",
+            "index": 0,
+            "status": "passed",
+            "startedAt": "2026-10-28T03:32:05.504Z",
+            "durationMs": 2539,
+            "artifacts": [],
+            "secondaryErrors": [],
+            "cleanup": "complete",
+            "environment": {
+              "browser": "chromium 156.0.8078.4",
+              "user agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36"
+            },
+            "steps": [
+              {
+                "id": "01a18090-a500-76aa-bc6f-64f25bcf9b5f:0",
+                "index": 0,
+                "kind": "resource",
+                "api": "browser.setViewport",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:05.507Z",
+                "durationMs": 0,
+                "events": [],
+                "artifacts": [],
+                "viewport": {
+                  "width": 390,
+                  "height": 844,
+                  "scale": 1
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 318,
+                  "column": 17
+                }
+              },
+              {
+                "id": "01a18090-a500-76aa-bc6f-64f25bcf9b5f:1",
+                "index": 1,
+                "kind": "resource",
+                "api": "browser.emulateMedia",
+                "label": "reducedMotion: reduce",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:05.507Z",
+                "durationMs": 0,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 319,
+                  "column": 17
+                }
+              },
+              {
+                "id": "01a18090-a500-76aa-bc6f-64f25bcf9b5f:2",
+                "index": 2,
+                "kind": "app",
+                "api": "app.open",
+                "label": "/docs/components/drawer",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:05.507Z",
+                "durationMs": 1360,
+                "events": [],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 299,
+                  "changes": []
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 320,
+                  "column": 13
+                }
+              },
+              {
+                "id": "01a18090-a500-76aa-bc6f-64f25bcf9b5f:3",
+                "index": 3,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "getByRole(\"button\", name: \"Open Snap Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:06.867Z",
+                "durationMs": 774,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:32:06.867Z",
+                    "durationMs": 774,
+                    "status": "passed",
+                    "detail": "tap button \"Open Snap Drawer\" (appeared after 700ms)"
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 7,
+                  "since": 2,
+                  "changes": [
+                    "added box",
+                    "added dialog \"Snap points\"",
+                    "added heading \"Snap points\"",
+                    "added text=\"Drag the drawer to snap between a compact peek and a near full-height view.\"",
+                    "added box",
+                    "added button \"Close\"",
+                    "removed link \"Skip to content\" href=\"/docs/components/drawer#…\"",
+                    "removed banner",
+                    "removed button \"Toggle navigation\"",
+                    "removed text=\"Menu\"",
+                    "removed link \"shadcn-solid2-aria on GitHub\" href=\"https://github.com/pekochan069/solid2-aria\"",
+                    "removed button \"Toggle theme\""
+                  ],
+                  "more": 292
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 322,
+                  "column": 17
+                }
+              },
+              {
+                "id": "01a18090-a500-76aa-bc6f-64f25bcf9b5f:4",
+                "index": 4,
+                "kind": "assertion",
+                "api": "expect.toBeVisible",
+                "label": "getByRole(\"dialog\", name: \"Snap points\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:07.642Z",
+                "durationMs": 3,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:32:07.642Z",
+                    "durationMs": 3,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 324,
+                  "column": 24
+                }
+              },
+              {
+                "id": "01a18090-a500-76aa-bc6f-64f25bcf9b5f:5",
+                "index": 5,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:07.645Z",
+                "durationMs": 1,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 327,
+                  "column": 19
+                }
+              },
+              {
+                "id": "01a18090-a500-76aa-bc6f-64f25bcf9b5f:6",
+                "index": 6,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:07.747Z",
+                "durationMs": 1,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 327,
+                  "column": 19
+                }
+              },
+              {
+                "id": "01a18090-a500-76aa-bc6f-64f25bcf9b5f:7",
+                "index": 7,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "locator(\"[data-slot='drawer-swipe-handle']\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:07.749Z",
+                "durationMs": 28,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:32:07.749Z",
+                    "durationMs": 28,
+                    "status": "passed",
+                    "detail": "tap node"
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 7,
+                  "since": 3,
+                  "changes": []
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 335,
+                  "column": 16
+                }
+              },
+              {
+                "id": "01a18090-a500-76aa-bc6f-64f25bcf9b5f:8",
+                "index": 8,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:07.778Z",
+                "durationMs": 1,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 327,
+                  "column": 19
+                }
+              },
+              {
+                "id": "01a18090-a500-76aa-bc6f-64f25bcf9b5f:9",
+                "index": 9,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:07.879Z",
+                "durationMs": 1,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 327,
+                  "column": 19
+                }
+              },
+              {
+                "id": "01a18090-a500-76aa-bc6f-64f25bcf9b5f:10",
+                "index": 10,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "locator(\"[data-slot='drawer-swipe-handle']\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:07.881Z",
+                "durationMs": 133,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:32:07.881Z",
+                    "durationMs": 133,
+                    "status": "passed",
+                    "detail": "tap node"
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 302,
+                  "since": 7,
+                  "changes": [
+                    "added link \"Skip to content\" href=\"/docs/components/drawer#…\"",
+                    "added banner",
+                    "added button \"Toggle navigation\"",
+                    "added text=\"Menu\"",
+                    "added link \"shadcn-solid2-aria on GitHub\" href=\"https://github.com/pekochan069/solid2-aria\"",
+                    "added button \"Toggle theme\"",
+                    "added link \"New\" href=\"/create\"",
+                    "added main",
+                    "added heading \"Drawer\"",
+                    "added link \"Previous page\" href=\"/docs/components/direction\"",
+                    "added link \"Next page\" href=\"/docs/components/dropdown-menu\"",
+                    "added status"
+                  ],
+                  "more": 295
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 337,
+                  "column": 16
+                }
+              },
+              {
+                "id": "01a18090-a500-76aa-bc6f-64f25bcf9b5f:11",
+                "index": 11,
+                "kind": "assertion",
+                "api": "expect.toBeHidden",
+                "label": "getByRole(\"dialog\", name: \"Snap points\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:08.015Z",
+                "durationMs": 15,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:32:08.015Z",
+                    "durationMs": 15,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 338,
+                  "column": 24
+                }
+              },
+              {
+                "id": "01a18090-a500-76aa-bc6f-64f25bcf9b5f:12",
+                "index": 12,
+                "kind": "assertion",
+                "api": "expect.toBeFocused",
+                "label": "getByRole(\"button\", name: \"Open Snap Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:08.030Z",
+                "durationMs": 4,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:32:08.030Z",
+                    "durationMs": 4,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 339,
+                  "column": 25
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "167b5082abf6b551f4414bd2f7367d99ae85c4ab30d6382b63e975cf42e10f9f",
+        "testId": "tests/drawer.e2e.ts::handle-only%20drawer%20dismisses%20with%20a%20pointer%20drag",
+        "kind": "test",
+        "declarationIndex": 10,
+        "titlePath": ["handle-only drawer dismisses with a pointer drag"],
+        "file": "tests/drawer.e2e.ts",
+        "source": {
+          "file": "tests/drawer.e2e.ts",
+          "line": 342,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": true,
+        "status": "passed",
+        "attempts": [
+          {
+            "id": "01a18090-aeec-76b3-b182-fce96f75bc2c",
+            "index": 0,
+            "status": "passed",
+            "startedAt": "2026-10-28T03:32:08.044Z",
+            "durationMs": 3137,
+            "artifacts": [],
+            "secondaryErrors": [],
+            "cleanup": "complete",
+            "environment": {
+              "browser": "chromium 156.0.8078.4",
+              "user agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36"
+            },
+            "steps": [
+              {
+                "id": "01a18090-aeec-76b3-b182-fce96f75bc2c:0",
+                "index": 0,
+                "kind": "resource",
+                "api": "browser.setViewport",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:08.048Z",
+                "durationMs": 0,
+                "events": [],
+                "artifacts": [],
+                "viewport": {
+                  "width": 390,
+                  "height": 844,
+                  "scale": 1
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 347,
+                  "column": 17
+                }
+              },
+              {
+                "id": "01a18090-aeec-76b3-b182-fce96f75bc2c:1",
+                "index": 1,
+                "kind": "app",
+                "api": "app.open",
+                "label": "/docs/components/drawer",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:08.048Z",
+                "durationMs": 1088,
+                "events": [],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 299,
+                  "changes": []
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 348,
+                  "column": 13
+                }
+              },
+              {
+                "id": "01a18090-aeec-76b3-b182-fce96f75bc2c:2",
+                "index": 2,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "locator(\"[data-example='drawer-swipe-handle']\") >> getByRole(\"button\", name: \"Open Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:09.136Z",
+                "durationMs": 920,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T03:32:09.137Z",
+                    "durationMs": 920,
+                    "status": "passed",
+                    "detail": "tap button \"Open Drawer\" (appeared after 844ms)"
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5500/docs/components/drawer",
+                  "nodes": 7,
+                  "since": 1,
+                  "changes": [
+                    "added box",
+                    "added dialog \"Drawer\"",
+                    "added text=\"Drawer with a swipe handle.\"",
+                    "added box",
+                    "added button \"Close\"",
+                    "removed link \"Skip to content\" href=\"/docs/components/drawer#…\"",
+                    "removed banner",
+                    "removed button \"Toggle navigation\"",
+                    "removed text=\"Menu\"",
+                    "removed link \"shadcn-solid2-aria on GitHub\" href=\"https://github.com/pekochan069/solid2-aria\"",
+                    "removed button \"Toggle theme\"",
+                    "removed link \"New\" href=\"/create\""
+                  ],
+                  "more": 290
+                },
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 354,
+                  "column": 17
+                }
+              },
+              {
+                "id": "01a18090-aeec-76b3-b182-fce96f75bc2c:3",
+                "index": 3,
+                "kind": "assertion",
+                "api": "expect.toBeVisible",
+                "label": "getByRole(\"dialog\", name: \"Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:10.057Z",
+                "durationMs": 4,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:32:10.057Z",
+                    "durationMs": 4,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 356,
+                  "column": 24
+                }
+              },
+              {
+                "id": "01a18090-aeec-76b3-b182-fce96f75bc2c:4",
+                "index": 4,
+                "kind": "assertion",
+                "api": "expect.toHaveAttribute",
+                "label": "getByRole(\"dialog\", name: \"Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:10.061Z",
+                "durationMs": 3,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:32:10.061Z",
+                    "durationMs": 3,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 357,
+                  "column": 24
+                }
+              },
+              {
+                "id": "01a18090-aeec-76b3-b182-fce96f75bc2c:5",
+                "index": 5,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:10.064Z",
+                "durationMs": 3,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 362,
+                  "column": 23
+                }
+              },
+              {
+                "id": "01a18090-aeec-76b3-b182-fce96f75bc2c:6",
+                "index": 6,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:10.168Z",
+                "durationMs": 2,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 362,
+                  "column": 23
+                }
+              },
+              {
+                "id": "01a18090-aeec-76b3-b182-fce96f75bc2c:7",
+                "index": 7,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:10.271Z",
+                "durationMs": 1,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 362,
+                  "column": 23
+                }
+              },
+              {
+                "id": "01a18090-aeec-76b3-b182-fce96f75bc2c:8",
+                "index": 8,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:10.373Z",
+                "durationMs": 2,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 362,
+                  "column": 23
+                }
+              },
+              {
+                "id": "01a18090-aeec-76b3-b182-fce96f75bc2c:9",
+                "index": 9,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:10.474Z",
+                "durationMs": 1,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 362,
+                  "column": 23
+                }
+              },
+              {
+                "id": "01a18090-aeec-76b3-b182-fce96f75bc2c:10",
+                "index": 10,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:10.577Z",
+                "durationMs": 1,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 362,
+                  "column": 23
+                }
+              },
+              {
+                "id": "01a18090-aeec-76b3-b182-fce96f75bc2c:11",
+                "index": 11,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:10.578Z",
+                "durationMs": 1,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 372,
+                  "column": 31
+                }
+              },
+              {
+                "id": "01a18090-aeec-76b3-b182-fce96f75bc2c:12",
+                "index": 12,
+                "kind": "resource",
+                "api": "browser.mouse.move",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:10.579Z",
+                "durationMs": 2,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 384,
+                  "column": 23
+                }
+              },
+              {
+                "id": "01a18090-aeec-76b3-b182-fce96f75bc2c:13",
+                "index": 13,
+                "kind": "resource",
+                "api": "browser.mouse.down",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:10.582Z",
+                "durationMs": 1,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 385,
+                  "column": 23
+                }
+              },
+              {
+                "id": "01a18090-aeec-76b3-b182-fce96f75bc2c:14",
+                "index": 14,
+                "kind": "resource",
+                "api": "browser.mouse.move",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:10.583Z",
+                "durationMs": 16,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 386,
+                  "column": 23
+                }
+              },
+              {
+                "id": "01a18090-aeec-76b3-b182-fce96f75bc2c:15",
+                "index": 15,
+                "kind": "resource",
+                "api": "browser.mouse.move",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:10.600Z",
+                "durationMs": 16,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 387,
+                  "column": 23
+                }
+              },
+              {
+                "id": "01a18090-aeec-76b3-b182-fce96f75bc2c:16",
+                "index": 16,
+                "kind": "resource",
+                "api": "browser.mouse.up",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:10.616Z",
+                "durationMs": 25,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 388,
+                  "column": 23
+                }
+              },
+              {
+                "id": "01a18090-aeec-76b3-b182-fce96f75bc2c:17",
+                "index": 17,
+                "kind": "assertion",
+                "api": "expect.toBeHidden",
+                "label": "getByRole(\"dialog\", name: \"Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:10.641Z",
+                "durationMs": 525,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:32:10.641Z",
+                    "durationMs": 525,
+                    "status": "passed",
+                    "count": 6,
+                    "detail": "visible (1 match) x5 -> at 525ms hidden (0 matches)"
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 389,
+                  "column": 24
+                }
+              },
+              {
+                "id": "01a18090-aeec-76b3-b182-fce96f75bc2c:18",
+                "index": 18,
+                "kind": "assertion",
+                "api": "expect.toHaveAttribute",
+                "label": "locator(\"[data-example='drawer-swipe-handle']\") >> getByRole(\"button\", name: \"Open Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:11.166Z",
+                "durationMs": 2,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:32:11.166Z",
+                    "durationMs": 2,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 390,
+                  "column": 25
+                }
+              },
+              {
+                "id": "01a18090-aeec-76b3-b182-fce96f75bc2c:19",
+                "index": 19,
+                "kind": "assertion",
+                "api": "expect.toBeFocused",
+                "label": "locator(\"[data-example='drawer-swipe-handle']\") >> getByRole(\"button\", name: \"Open Drawer\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T03:32:11.168Z",
+                "durationMs": 2,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T03:32:11.168Z",
+                    "durationMs": 2,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/drawer.e2e.ts",
+                  "line": 391,
+                  "column": 25
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "b7d57535871b62b9504b92cbd13f832eec398a229df1a67dcdf78e376aca9549",
+        "testId": "tests/example.e2e.ts::app%20opens",
+        "kind": "test",
+        "declarationIndex": 0,
+        "titlePath": ["app opens"],
+        "file": "tests/example.e2e.ts",
+        "source": {
+          "file": "tests/example.e2e.ts",
+          "line": 4,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      }
+    ],
+    "errors": [],
+    "summary": {
+      "discovered": 19,
+      "selected": 11,
+      "executed": 11,
+      "passed": 11,
+      "failed": 0,
+      "interrupted": 0,
+      "flaky": 0,
+      "skipped": 0
+    },
+    "limits": {
+      "maxAgentContextBytes": 16384,
+      "maxLedgerBytes": 8192,
+      "maxObservationBytes": 262144,
+      "maxEventsPerStep": 1000,
+      "maxModelTokensPerCall": 64000
+    },
+    "usage": {
+      "discoveredResults": 19,
+      "maxAgentContextBytes": 0,
+      "maxLedgerBytes": 0,
+      "maxObservationBytes": 0,
+      "artifactBytes": 124444,
+      "downloads": 0,
+      "events": 83,
+      "modelTokens": 0,
+      "maxModelCallsInStep": 0,
+      "maxActionStepsInStep": 0
+    }
+  }
+}

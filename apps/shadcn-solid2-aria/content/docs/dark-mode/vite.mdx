@@ -1,0 +1,152 @@
+---
+title: Vite
+description: Adding dark mode to your Vite app.
+---
+
+{/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/content/docs/dark-mode/vite.mdx.
+ * Modified for Solid Aria: Solid 2 APIs, local component registry commands, supported framework setup, and native Solid components.
+ * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */}
+
+import { RegistryCommand, Steps } from "#components/docs/mdx";
+
+<Steps>
+
+### Create a theme provider
+
+```tsx title="src/components/theme-provider.tsx" showLineNumbers
+import { createContext, createSignal, onSettled, untrack, useContext } from "solid-js";
+import type { Accessor, ParentProps } from "solid-js";
+
+type Theme = "dark" | "light" | "system";
+
+type ThemeProviderProps = ParentProps<{
+  defaultTheme?: Theme;
+  storageKey?: string;
+}>;
+
+type ThemeProviderState = {
+  theme: Accessor<Theme>;
+  setTheme: (theme: Theme) => void;
+};
+
+const ThemeProviderContext = createContext<ThemeProviderState>();
+
+function applyTheme(theme: Theme) {
+  const root = document.documentElement;
+  const resolved = theme === "system"
+    ? window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+    : theme;
+  root.classList.remove("light", "dark");
+  root.classList.add(resolved);
+  root.style.colorScheme = resolved;
+}
+
+export function ThemeProvider(props: ThemeProviderProps) {
+  const defaultTheme = () => props.defaultTheme ?? "system";
+  const storageKey = () => props.storageKey ?? "vite-ui-theme";
+  const [theme, setThemeState] = createSignal<Theme>(untrack(defaultTheme));
+
+  function restoreTheme() {
+    let next = untrack(defaultTheme);
+    try {
+      const stored = localStorage.getItem(untrack(storageKey));
+      if (stored === "light" || stored === "dark" || stored === "system") next = stored;
+    } catch {}
+    setThemeState(next);
+    applyTheme(next);
+  }
+
+  onSettled(() => {
+    restoreTheme();
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const syncSystem = () => {
+      if (untrack(theme) === "system") applyTheme("system");
+    };
+    const syncStorage = (event: StorageEvent) => {
+      if (event.key === untrack(storageKey) || event.key === null) restoreTheme();
+    };
+    media.addEventListener("change", syncSystem);
+    window.addEventListener("storage", syncStorage);
+    return () => {
+      media.removeEventListener("change", syncSystem);
+      window.removeEventListener("storage", syncStorage);
+    };
+  });
+
+  function setTheme(next: Theme) {
+    try {
+      localStorage.setItem(untrack(storageKey), next);
+    } catch {}
+    setThemeState(next);
+    applyTheme(next);
+  }
+
+  return (
+    <ThemeProviderContext value={{ theme, setTheme }}>
+      {props.children}
+    </ThemeProviderContext>
+  );
+}
+
+export function useTheme() {
+  return useContext(ThemeProviderContext);
+}
+```
+
+### Wrap your root layout
+
+Add the `ThemeProvider` to your root layout.
+
+```tsx title="src/App.tsx" showLineNumbers
+import { ThemeProvider } from "#components/theme-provider";
+import { Button } from "#components/ui/button";
+
+export default function App() {
+  return (
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <Button>Click me</Button>
+    </ThemeProvider>
+  );
+}
+```
+
+### Add a mode toggle
+
+Place a mode toggle on your site to toggle between light and dark mode. Add the dropdown menu if it is not already installed.
+
+<RegistryCommand name="dropdown-menu" />
+
+```tsx title="src/components/mode-toggle.tsx" showLineNumbers
+import { MoonIcon, SunIcon } from "@lucide/solid";
+import { Button } from "#components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "#components/ui/dropdown-menu";
+import { useTheme } from "#components/theme-provider";
+
+export function ModeToggle() {
+  const { setTheme } = useTheme();
+
+  return (
+    <DropdownMenuTrigger>
+      <Button variant="outline" size="icon">
+        <SunIcon class="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+        <MoonIcon class="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+        <span class="sr-only">Toggle theme</span>
+      </Button>
+      <DropdownMenu placement="bottom end">
+        <DropdownMenuItem onAction={() => setTheme("light")}>Light</DropdownMenuItem>
+        <DropdownMenuItem onAction={() => setTheme("dark")}>Dark</DropdownMenuItem>
+        <DropdownMenuItem onAction={() => setTheme("system")}>System</DropdownMenuItem>
+      </DropdownMenu>
+    </DropdownMenuTrigger>
+  );
+}
+```
+
+</Steps>

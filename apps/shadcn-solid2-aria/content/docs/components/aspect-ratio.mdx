@@ -1,0 +1,71 @@
+---
+title: "Aspect Ratio"
+description: "Displays content within a desired ratio."
+---
+
+{/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/content/docs/components/aria/aspect-ratio.mdx.
+ * Modified for Solid Aria: Solid 2 examples and imports, local installation, supported APIs, and documentation links.
+ * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */}
+
+import { ComponentPreview, Installation } from "#components/docs/mdx";
+
+
+
+<ComponentPreview name="aspect-ratio-demo" styleName="aria-nova" />
+
+## Installation
+
+<Installation component="aspect-ratio" />
+
+## Usage
+
+```tsx showLineNumbers
+import { AspectRatio } from "#components/ui/aspect-ratio";
+```
+
+```tsx showLineNumbers
+<AspectRatio ratio={16 / 9}>
+  <img src="..." alt="Image" class="rounded-md object-cover" />
+</AspectRatio>
+```
+
+## Square
+
+A square aspect ratio component using the `ratio={1 / 1}` prop. This is useful for displaying images in a square format.
+
+<ComponentPreview name="aspect-ratio-square" styleName="aria-nova" />
+
+## Portrait
+
+A portrait aspect ratio component using the `ratio={9 / 16}` prop. This is useful for displaying images in a portrait format.
+
+<ComponentPreview
+  styleName="aria-nova"
+  name="aspect-ratio-portrait"
+  previewClassName="h-96"
+/>
+
+## RTL
+
+To configure right-to-left layouts, see the [RTL configuration guide](/docs/accessibility#right-to-left).
+
+<ComponentPreview
+  styleName="aria-nova"
+  name="aspect-ratio-rtl"
+  direction="rtl"
+  previewClassName="h-96"
+/>
+
+## API Reference
+
+### AspectRatio
+
+The `AspectRatio` component displays content within a desired ratio.
+
+| Prop    | Type     | Default | Required |
+| ------- | -------- | ------- | -------- |
+| `ratio` | `number` | -       | Yes      |
+| `class` | `string` | -       | No       |

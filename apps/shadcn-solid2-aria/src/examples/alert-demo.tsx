@@ -1,0 +1,33 @@
+/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/examples/aria/alert-demo.tsx.
+ * Modified for Solid Aria: native Solid 2 JSX, reactive signals, local component imports, and Lucide icons.
+ * Licensed under MIT. See ../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */
+
+import { CheckCircle2Icon, InfoIcon } from "@lucide/solid";
+
+import { Alert, AlertDescription, AlertTitle } from "../registry/ui/alert";
+
+export default function AlertDemo() {
+  return (
+    <div class="grid w-full max-w-md items-start gap-4">
+      <Alert>
+        <CheckCircle2Icon />
+        <AlertTitle>Payment successful</AlertTitle>
+        <AlertDescription>
+          Your payment of $29.99 has been processed. A receipt has been sent to
+          your email address.
+        </AlertDescription>
+      </Alert>
+      <Alert>
+        <InfoIcon />
+        <AlertTitle>New feature available</AlertTitle>
+        <AlertDescription>
+          We&apos;ve added dark mode support. You can enable it in your account
+          settings.
+        </AlertDescription>
+      </Alert>
+    </div>
+  );
+}

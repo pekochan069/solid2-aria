@@ -1,0 +1,294 @@
+/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/app/legacy-themes.css, apps/v4/components/page-header.tsx and app/(app)/(root)/cards/index.tsx and sidebar-nav.tsx.
+ * Modified for Solid Aria: responsive CSS for the Solid 2 hero, gallery columns, gradient masks, and local card interactions.
+ * Licensed under MIT. See ../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */
+
+.announcement {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  background: var(--muted);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+.announcement:hover {
+  background: var(--accent);
+}
+.primary-link,
+.secondary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 35px;
+  padding: 0 12px;
+  border: 1px solid transparent;
+  border-radius: 26px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-size: 14px;
+  font-weight: 500;
+}
+.primary-link:hover {
+  opacity: 0.9;
+}
+.secondary-link {
+  height: 36px;
+  background: var(--secondary);
+  color: var(--secondary-foreground);
+}
+.secondary-link:hover {
+  background: var(--accent);
+}
+.home-gallery {
+  overflow: hidden;
+  margin-inline: 0;
+}
+.cards-demo {
+  --gap: 24px;
+  position: relative;
+  padding: 24px 24px 0;
+  background: var(--muted);
+  overflow: hidden;
+}
+.cards-demo::before,
+.cards-demo::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  pointer-events: none;
+}
+.cards-demo::before {
+  top: 0;
+  height: 480px;
+  background: linear-gradient(
+    to bottom,
+    var(--background),
+    var(--muted),
+    transparent
+  );
+}
+.cards-demo::after {
+  bottom: 0;
+  height: 320px;
+  background: linear-gradient(
+    to top,
+    var(--background),
+    color-mix(in oklch, var(--muted) 80%, transparent),
+    transparent
+  );
+}
+.dark .cards-demo {
+  background: var(--background);
+}
+.dark .cards-demo::before {
+  display: none;
+}
+.dark .cards-demo::after {
+  background: linear-gradient(
+    to top,
+    var(--background),
+    color-mix(in oklch, var(--background) 80%, transparent),
+    transparent
+  );
+}
+.cards-grid {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gap);
+  max-width: 1600px;
+  margin-inline: auto;
+}
+.cards-demo::after {
+  z-index: 20;
+}
+.cards-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  min-width: 0;
+}
+.cards-column > [data-slot="card"] {
+  width: 100%;
+}
+.milestone-column,
+.analytics-column {
+  display: none;
+}
+.cards-demo .cn-font-heading {
+  font-family: var(--font-sans);
+}
+.cards-demo {
+  --foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+}
+.dark .cards-demo {
+  --foreground: oklch(0.985 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --accent: oklch(0.269 0 0);
+}
+.demo-sidebars {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.demo-sidebar[data-slot="card"] {
+  padding: 8px;
+  border-radius: 24px;
+  gap: 0;
+}
+.demo-sidebar h2 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  height: 32px;
+  padding: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted-foreground);
+}
+.demo-sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.demo-sidebar button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  height: 32px;
+  padding: 8px 10px;
+  border: 0;
+  background: transparent;
+  border-radius: 16px;
+  text-align: left;
+  font-size: 14px;
+}
+.demo-sidebar button:hover,
+.demo-sidebar button[aria-pressed="true"] {
+  background: var(--accent);
+}
+.demo-sidebar button[aria-pressed="true"] {
+  font-weight: 500;
+}
+.demo-sidebar svg {
+  flex-shrink: 0;
+}
+.demo-sidebar span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (min-width: 1280px) {
+  .demo-sidebars {
+    gap: 24px;
+  }
+  .demo-sidebar[data-section="Planning"] {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .demo-sidebar[data-section="Support"] {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .demo-sidebar[data-section="Overview"] {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .demo-sidebar[data-section="Account"] {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
+.mobile-gallery,
+.gallery-dark,
+.dark .gallery-light {
+  display: none;
+}
+.dark .gallery-dark {
+  display: block;
+}
+.gallery-image img {
+  height: auto;
+  width: 100%;
+}
+@media (min-width: 1280px) {
+  .cards-demo::after {
+    height: 256px;
+  }
+}
+@media (min-width: 1400px) {
+  .cards-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .milestone-column {
+    display: flex;
+  }
+}
+@media (min-width: 1536px) {
+  .cards-grid {
+    max-width: 1900px;
+  }
+}
+@media (min-width: 1600px) {
+  .cards-demo {
+    --gap: 32px;
+  }
+}
+@media (min-width: 1900px) {
+  .cards-grid {
+    max-width: 1900px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  .analytics-column {
+    display: flex;
+  }
+  .cards-demo {
+    --gap: 40px;
+    padding: 48px 48px 0;
+  }
+}
+@media (max-width: 1023px) {
+  .cards-demo::after {
+    height: 192px;
+  }
+  .cards-demo {
+    --gap: 32px;
+    padding: 48px 48px 0;
+  }
+  .cards-grid {
+    max-width: 768px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .contribution-column {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .mobile-gallery {
+    display: block;
+    width: 140vw;
+    margin-inline: 8px;
+  }
+  .desktop-gallery {
+    display: none;
+  }
+}

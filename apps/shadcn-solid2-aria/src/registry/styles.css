@@ -1,0 +1,18 @@
+/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui: apps/v4/app/globals.css, no-scrollbar utility.
+ * Modified for Solid Aria: included with the port's style entry point.
+ * Licensed under MIT. See ../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */
+
+/* Import after Tailwind CSS and tw-animate-css; supply the shadcn theme colors. */
+@import "./styles/style-luma.css" layer(components);
+@import "./styles/style-lyra.css" layer(components);
+@import "./styles/style-maia.css" layer(components);
+@import "./styles/style-mira.css" layer(components);
+@import "./styles/style-nova.css" layer(components);
+@import "./styles/style-rhea.css" layer(components);
+@import "./styles/style-sera.css" layer(components);
+@import "./styles/style-vega.css" layer(components);
+
+@import "./styles/base.css";

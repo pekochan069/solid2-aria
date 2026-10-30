@@ -1,0 +1,125 @@
+/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/examples/aria/questionnaire-animated.tsx.
+ * Modified for Solid Aria: native Solid 2 JSX, reactive signals, local component imports, and Lucide icons.
+ * Licensed under MIT. See ../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */
+
+import {
+  Questionnaire,
+  QuestionnaireActions,
+  QuestionnaireChoice,
+  QuestionnaireChoices,
+  QuestionnaireDescription,
+  QuestionnaireError,
+  QuestionnaireItem,
+  QuestionnaireNext,
+  QuestionnairePrevious,
+  QuestionnaireProgress,
+  QuestionnaireSubmit,
+  QuestionnaireTitle,
+} from "../registry/ui/questionnaire";
+import { toast } from "../registry/ui/sonner";
+// Mount <Toaster /> once at the application root.
+import { formString } from "./_form";
+
+const items = [
+  { name: "task", required: true },
+  { name: "review", required: true },
+  { name: "delivery", required: true },
+] as const;
+
+const itemClassName =
+  "data-active:animate-in data-active:fade-in-0 data-active:slide-in-from-bottom-2 data-active:duration-300 motion-reduce:animate-none";
+
+function handleSubmit(event: SubmitEvent & { currentTarget: HTMLFormElement }) {
+  event.preventDefault();
+
+  const formData = new FormData(event.currentTarget);
+
+  toast("Agent workflow saved", {
+    description: `Task: ${formString(formData.get("task")) ?? "None"} · Review: ${formString(formData.get("review")) ?? "None"} · Delivery: ${formString(formData.get("delivery")) ?? "None"}`,
+  });
+}
+
+export function QuestionnaireAnimated() {
+  return (
+    <Questionnaire
+      class="mx-auto max-w-md"
+      defaultItem="task"
+      items={items}
+      onSubmit={handleSubmit}
+    >
+      <QuestionnaireProgress />
+
+      <QuestionnaireItem class={itemClassName} name="task" required>
+        <QuestionnaireTitle>What should the agent do?</QuestionnaireTitle>
+        <QuestionnaireDescription>
+          Choose the task for this run.
+        </QuestionnaireDescription>
+        <QuestionnaireChoices>
+          <QuestionnaireChoice value="implement">
+            Implement the requested change
+          </QuestionnaireChoice>
+          <QuestionnaireChoice value="debug">
+            Debug the current behavior
+          </QuestionnaireChoice>
+          <QuestionnaireChoice value="review">
+            Review the implementation
+          </QuestionnaireChoice>
+        </QuestionnaireChoices>
+        <QuestionnaireError />
+      </QuestionnaireItem>
+
+      <QuestionnaireItem class={itemClassName} name="review" required>
+        <QuestionnaireTitle>
+          How should the work be reviewed?
+        </QuestionnaireTitle>
+        <QuestionnaireDescription>
+          Select the verification depth.
+        </QuestionnaireDescription>
+        <QuestionnaireChoices>
+          <QuestionnaireChoice value="targeted">
+            Targeted checks
+          </QuestionnaireChoice>
+          <QuestionnaireChoice value="complete">
+            Complete test suite
+          </QuestionnaireChoice>
+          <QuestionnaireChoice value="manual">
+            Tests and manual QA
+          </QuestionnaireChoice>
+        </QuestionnaireChoices>
+        <QuestionnaireError />
+      </QuestionnaireItem>
+
+      <QuestionnaireItem class={itemClassName} name="delivery" required>
+        <QuestionnaireTitle>
+          How should the result be delivered?
+        </QuestionnaireTitle>
+        <QuestionnaireDescription>
+          Choose the final handoff format.
+        </QuestionnaireDescription>
+        <QuestionnaireChoices>
+          <QuestionnaireChoice value="summary">
+            Concise summary
+          </QuestionnaireChoice>
+          <QuestionnaireChoice value="diff">
+            Summary and changed files
+          </QuestionnaireChoice>
+          <QuestionnaireChoice value="handoff">
+            Detailed review handoff
+          </QuestionnaireChoice>
+        </QuestionnaireChoices>
+        <QuestionnaireError />
+      </QuestionnaireItem>
+
+      <QuestionnaireActions>
+        <QuestionnairePrevious />
+        <QuestionnaireNext>Next</QuestionnaireNext>
+        <QuestionnaireSubmit>Save workflow</QuestionnaireSubmit>
+      </QuestionnaireActions>
+    </Questionnaire>
+  );
+}
+
+export default QuestionnaireAnimated;

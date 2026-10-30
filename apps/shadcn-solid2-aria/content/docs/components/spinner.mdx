@@ -1,0 +1,87 @@
+---
+title: "Spinner"
+description: "An indicator that can be used to show a loading state."
+---
+
+{/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/content/docs/components/aria/spinner.mdx.
+ * Modified for Solid Aria: Solid 2 examples and imports, local installation, supported APIs, and documentation links.
+ * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */}
+
+import { ComponentPreview, Installation } from "#components/docs/mdx";
+
+
+
+<ComponentPreview styleName="aria-nova" name="spinner-demo" />
+
+## Installation
+
+<Installation component="spinner" />
+
+## Usage
+
+```tsx
+import { Spinner } from "#components/ui/spinner";
+```
+
+```tsx
+<Spinner />
+```
+
+## Customization
+
+You can replace the default spinner icon with any other icon by editing the `Spinner` component.
+
+<ComponentPreview styleName="aria-nova" name="spinner-custom" />
+
+```tsx
+import { LoaderIcon } from "@lucide/solid";
+import type { ComponentProps } from "@solidjs/web";
+import { omit } from "solid-js";
+
+export function Spinner(props: ComponentProps<"svg">) {
+  const rest = omit(props, "class");
+  return (
+    <LoaderIcon
+      {...rest}
+      role="status"
+      aria-label="Loading"
+      class={["size-4 animate-spin", props.class]}
+    />
+  );
+}
+```
+
+## Size
+
+Use the `size-*` utility class to change the size of the spinner.
+
+<ComponentPreview styleName="aria-nova" name="spinner-size" />
+
+## Button
+
+Add a spinner to a button to indicate a loading state. Place the `<Spinner />` before the label with `data-icon="inline-start"` for a start position, or after the label with `data-icon="inline-end"` for an end position.
+
+<ComponentPreview styleName="aria-nova" name="spinner-button" />
+
+## Badge
+
+Add a spinner to a badge to indicate a loading state. Place the `<Spinner />` before the label with `data-icon="inline-start"` for a start position, or after the label with `data-icon="inline-end"` for an end position.
+
+<ComponentPreview styleName="aria-nova" name="spinner-badge" />
+
+## Input Group
+
+<ComponentPreview styleName="aria-nova" name="spinner-input-group" />
+
+## Empty
+
+<ComponentPreview styleName="aria-nova" name="spinner-empty" />
+
+## RTL
+
+To configure right-to-left layouts, see the [RTL configuration guide](/docs/accessibility#right-to-left).
+
+<ComponentPreview styleName="aria-nova" name="spinner-rtl" direction="rtl" />

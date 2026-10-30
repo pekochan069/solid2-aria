@@ -1,0 +1,51 @@
+---
+title: Typeset
+description: Style rendered Markdown with a single stylesheet and your own typography settings.
+---
+
+## Add the stylesheet
+
+[Download typeset.css](/typeset.css) and save it beside your application's main CSS file. Import it after Tailwind:
+
+```css
+@import "tailwindcss";
+@import "./typeset.css";
+```
+
+## Wrap rendered content
+
+Apply `typeset` to a container around rendered Markdown or rich text:
+
+```tsx
+export function Article(props: { content: string }) {
+  return <article class="typeset" innerHTML={props.content} />;
+}
+```
+
+Only pass trusted or sanitized HTML to `innerHTML`.
+
+## Customize the typography
+
+Open [Typeset](/typeset) to choose body, heading, and code fonts, font size, line height, paragraph spacing, and line length. The preview updates when you change a setting.
+
+Copy the CSS from the Docs panel and apply the generated class alongside `typeset`:
+
+```html
+<article class="typeset typeset-custom">
+  <!-- Rendered content -->
+</article>
+```
+
+Share copies a URL containing your current settings. Undo, Redo, Reset, and Shuffle change the preview configuration.
+
+## Exclude components
+
+Add `data-not-typeset` to a component that owns its styling:
+
+```tsx
+<div data-not-typeset>
+  <Button>Continue</Button>
+</div>
+```
+
+Nested controls then keep their own spacing, font sizes, and colors.

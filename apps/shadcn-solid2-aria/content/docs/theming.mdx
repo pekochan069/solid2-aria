@@ -1,0 +1,106 @@
+---
+title: Theming
+description: Customize semantic colors, typography, radius, and component styles.
+---
+
+## CSS variables
+
+Components use semantic tokens such as `background`, `foreground`, `primary`, `muted`, and `border`. A token describes a role in the interface. Changing its value updates every component that uses that role.
+
+The background and foreground tokens work in pairs:
+
+```css
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --radius: 0.625rem;
+}
+```
+
+For example, a primary button uses `bg-primary` and `text-primary-foreground`. Set both values when changing the primary color so the label stays readable.
+
+### Tailwind mapping
+
+Map the CSS variables to Tailwind's theme tokens with `@theme inline`:
+
+```css
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+```
+
+Start with the complete mapping in the [component theme](/theme.css). Components also use tokens for cards, popovers, destructive actions, inputs, focus rings, charts, and sidebars.
+
+## Dark mode
+
+Override the same tokens under `.dark` and register Tailwind's dark variant:
+
+```css
+@custom-variant dark (&:is(.dark *));
+
+.dark {
+  color-scheme: dark;
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --border: oklch(1 0 0 / 10%);
+}
+```
+
+Put `.dark` on the root HTML element. Portaled popovers, dialogs, and menus then inherit the same theme as the rest of the page.
+
+Apply the stored or system theme before the first paint to avoid a flash of the wrong colors. The theme control in this site's header persists the selected mode in local storage.
+
+Follow the [dark-mode setup](/docs/dark-mode) for your framework's theme provider and mode toggle. Framework guides cover [Vite](/docs/dark-mode/vite), [Vite with start mode](/docs/dark-mode/vite-start), [TanStack Router](/docs/dark-mode/tanstack-router), and [TanStack Start](/docs/dark-mode/tanstack-start).
+
+## Registry styles
+
+A registry style changes spacing, shape, and component utility classes. Theme tokens supply the colors. You can change either independently.
+
+The source shown in component pages includes Nova's utility classes. Copy the component source, then edit its classes to change spacing or shape.
+
+Use [Create](/create) to explore the available styles: Nova, Vega, Maia, Lyra, Mira, Luma, Rhea, and Sera. The preview shows how the same components look with different tokens and styling.
+
+## Customize a component
+
+Use `class` to adjust one instance:
+
+```tsx
+<Button variant="outline" class="rounded-full px-6">
+  Continue
+</Button>
+```
+
+For an application-wide change, edit your maintained copy of the component or update the semantic tokens. Generated component files retain their source and license notices. Preserve those notices when distributing your modified copy.
+
+## Typography
+
+Components inherit the application's font. Set `--font-sans` and `--font-mono` in your theme mapping, and load the corresponding fonts in your app.
+
+```css
+@theme inline {
+  --font-sans: "Geist", sans-serif;
+  --font-mono: "Geist Mono", monospace;
+}
+```
+
+## Charts and sidebars
+
+Chart configurations reference `--chart-1` through `--chart-5`, or define a color for each data series. See [Chart](/docs/components/chart) for labels, colors, tooltips, and legends.
+
+Sidebars use their own semantic token family, including `--sidebar`, `--sidebar-foreground`, `--sidebar-accent`, and `--sidebar-border`. Change those values to style navigation independently of the main page.

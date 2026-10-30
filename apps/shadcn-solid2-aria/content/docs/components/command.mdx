@@ -1,0 +1,116 @@
+---
+title: "Command"
+description: "Command menu for search and quick actions."
+---
+
+{/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/content/docs/components/aria/command.mdx.
+ * Modified for Solid Aria: Solid 2 examples and imports, local installation, supported APIs, and documentation links.
+ * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */}
+
+import { ComponentPreview, Installation } from "#components/docs/mdx";
+
+
+
+<ComponentPreview
+  styleName="aria-nova"
+  name="command-demo"
+  align="start"
+  previewClassName="h-[24.5rem]"
+/>
+
+## Installation
+
+<Installation component="command" />
+
+## Usage
+
+```tsx showLineNumbers
+import {
+  Command,
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+  CommandShortcut,
+} from "#components/ui/command";
+```
+
+```tsx showLineNumbers
+<Command class="max-w-sm rounded-lg border">
+  <CommandInput placeholder="Type a command or search..." />
+  <CommandList
+    renderEmptyState={() => <CommandEmpty>No results found.</CommandEmpty>}
+  >
+    <CommandGroup heading="Suggestions">
+      <CommandItem>Calendar</CommandItem>
+      <CommandItem>Search Emoji</CommandItem>
+      <CommandItem>Calculator</CommandItem>
+    </CommandGroup>
+    <CommandSeparator />
+    <CommandGroup heading="Settings">
+      <CommandItem>Profile</CommandItem>
+      <CommandItem>Billing</CommandItem>
+      <CommandItem>Settings</CommandItem>
+    </CommandGroup>
+  </CommandList>
+</Command>
+```
+
+## Composition
+
+Use the following composition to build a `Command`:
+
+```text
+Command
+├── CommandInput
+└── CommandList
+    ├── CommandGroup
+    │   ├── CommandItem
+    │   └── CommandItem
+    ├── CommandSeparator
+    └── CommandGroup
+        ├── CommandItem
+        └── CommandItem
+```
+
+## Basic
+
+A simple command menu in a dialog.
+
+<ComponentPreview styleName="aria-nova" name="command-basic" />
+
+## Shortcuts
+
+<ComponentPreview styleName="aria-nova" name="command-shortcuts" />
+
+## Groups
+
+A command menu with groups, icons and separators.
+
+<ComponentPreview styleName="aria-nova" name="command-groups" />
+
+## Scrollable
+
+Scrollable command menu with multiple items.
+
+<ComponentPreview styleName="aria-nova" name="command-scrollable" />
+
+## RTL
+
+To configure right-to-left layouts, see the [RTL configuration guide](/docs/accessibility#right-to-left).
+
+<ComponentPreview
+  styleName="aria-nova"
+  name="command-rtl"
+  direction="rtl"
+  align="start"
+  previewClassName="h-[24.5rem]"
+/>
+
+## API Reference

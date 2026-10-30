@@ -1,0 +1,2231 @@
+{
+  "schemaVersion": "report-1",
+  "run": {
+    "id": "01a18102-28b4-7dab-a133-7c24ad0e7fbb",
+    "specVersion": "0.1",
+    "runner": {
+      "name": "e2e",
+      "version": "0.21.3"
+    },
+    "status": "passed",
+    "exitCode": 0,
+    "startedAt": "2026-10-28T05:36:05.037Z",
+    "finishedAt": "2026-10-28T05:36:32.324Z",
+    "project": {
+      "id": "shadcn-solid2-aria",
+      "configDigest": "6ebb602233d521c8d535524b128718930be52c1b6d7fe2208ed15d6b5deb2f97"
+    },
+    "environment": {
+      "ci": false,
+      "trustNoticeShown": false,
+      "os": "linux 6.12.111+deb13-amd64",
+      "arch": "x64",
+      "runtime": "node v26.12.1"
+    },
+    "targets": [
+      {
+        "id": "web",
+        "index": 0,
+        "platform": "web",
+        "baseOrigin": "http://localhost:5515",
+        "environment": "test",
+        "engine": {
+          "name": "web",
+          "version": "0.15.3",
+          "spiVersion": 1
+        },
+        "capabilities": [
+          "actions",
+          "artifacts",
+          "browser",
+          "keyboard",
+          "location",
+          "observation",
+          "pointer",
+          "state"
+        ],
+        "artifactCapabilities": ["screenshot", "video"],
+        "stateCapability": true
+      }
+    ],
+    "serialGroups": [],
+    "results": [
+      {
+        "id": "8ab296de52f5e172581439b97d310ab6b8168567ffda16a7a46e51cc7f985e85",
+        "testId": "tests/design.e2e.ts::documentation%20keeps%20upstream%20typography%20around%20live%20components",
+        "kind": "test",
+        "declarationIndex": 0,
+        "titlePath": [
+          "documentation keeps upstream typography around live components"
+        ],
+        "file": "tests/design.e2e.ts",
+        "source": {
+          "file": "tests/design.e2e.ts",
+          "line": 6,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "3f2ce0767b807a9629ff873ebcf2971dd4419d7d469e9862c8cc26b9cbfa147d",
+        "testId": "tests/design.e2e.ts::homepage%20preserves%20upstream%20gallery%20breakpoints%20and%20has%20no%20horizontal%20overflow",
+        "kind": "test",
+        "declarationIndex": 1,
+        "titlePath": [
+          "homepage preserves upstream gallery breakpoints and has no horizontal overflow"
+        ],
+        "file": "tests/design.e2e.ts",
+        "source": {
+          "file": "tests/design.e2e.ts",
+          "line": 42,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "22fd4e4b1820ea98a0cc38519a7ab8a9aaa569e9346ad2a32f6c52e092ee82a7",
+        "testId": "tests/design.e2e.ts::chart%20catalog%20starts%20with%20the%20full%20width%20interactive%20example",
+        "kind": "test",
+        "declarationIndex": 2,
+        "titlePath": [
+          "chart catalog starts with the full width interactive example"
+        ],
+        "file": "tests/design.e2e.ts",
+        "source": {
+          "file": "tests/design.e2e.ts",
+          "line": 109,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "5e3e483ebb76f7cc4193a5788c06da1f2a9e2db9806a017624adafca3d4ec218",
+        "testId": "tests/design.e2e.ts::color%20format%20selectors%20share%20the%20selected%20format%20across%20palettes",
+        "kind": "test",
+        "declarationIndex": 3,
+        "titlePath": [
+          "color format selectors share the selected format across palettes"
+        ],
+        "file": "tests/design.e2e.ts",
+        "source": {
+          "file": "tests/design.e2e.ts",
+          "line": 138,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "b70922f3071cc7cd49a8bf9ef510846a8280bb6edc12a87d73ff41224e80999b",
+        "testId": "tests/design.e2e.ts::dashboard%20keeps%20the%20upstream%20initial%20date%20range%20and%20updates%20the%20visitor%20chart",
+        "kind": "test",
+        "declarationIndex": 4,
+        "titlePath": [
+          "dashboard keeps the upstream initial date range and updates the visitor chart"
+        ],
+        "file": "tests/design.e2e.ts",
+        "source": {
+          "file": "tests/design.e2e.ts",
+          "line": 154,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "bebdbf762a5752e6063cba799c576b4fc4708bc1e170958754a068c24375e9a1",
+        "testId": "tests/design.e2e.ts::tasks%20keeps%20upstream%20row%20order%20and%20filters%20the%20visible%20table",
+        "kind": "test",
+        "declarationIndex": 5,
+        "titlePath": [
+          "tasks keeps upstream row order and filters the visible table"
+        ],
+        "file": "tests/design.e2e.ts",
+        "source": {
+          "file": "tests/design.e2e.ts",
+          "line": 174,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "1e184b817a169d3cbad2f4f4fcb8cc571797cca36b6c7c787978c69703c4b93f",
+        "testId": "tests/design.e2e.ts::RTL%20examples%20switch%20language%20and%20keep%20the%20context%20picker%20working",
+        "kind": "test",
+        "declarationIndex": 6,
+        "titlePath": [
+          "RTL examples switch language and keep the context picker working"
+        ],
+        "file": "tests/design.e2e.ts",
+        "source": {
+          "file": "tests/design.e2e.ts",
+          "line": 188,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "637fe294224540d0c1d28e7bf48683e7aa1f6cb4638b484b164dab2ab34129b6",
+        "testId": "tests/design.e2e.ts::Sera%20renders%20its%20editorial%20tables%20and%20updates%20media%20details",
+        "kind": "test",
+        "declarationIndex": 7,
+        "titlePath": [
+          "Sera renders its editorial tables and updates media details"
+        ],
+        "file": "tests/design.e2e.ts",
+        "source": {
+          "file": "tests/design.e2e.ts",
+          "line": 214,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "24c9c9d75d9a82e2b62431d19ed6a2b7a9d6360440ec0cdd6664e9b80f9836ab",
+        "testId": "tests/design.e2e.ts::typeset%20menu%20can%20undo%20a%20typography%20change",
+        "kind": "test",
+        "declarationIndex": 8,
+        "titlePath": ["typeset menu can undo a typography change"],
+        "file": "tests/design.e2e.ts",
+        "source": {
+          "file": "tests/design.e2e.ts",
+          "line": 247,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "b9b8fac985e71a6b8d1fe1121f83227251b39fe701874dd3a380da5ccc0da991",
+        "testId": "tests/design.e2e.ts::create%20welcome%20opens%20a%20working%20preview%20with%20readable%20chart%20labels",
+        "kind": "test",
+        "declarationIndex": 9,
+        "titlePath": [
+          "create welcome opens a working preview with readable chart labels"
+        ],
+        "file": "tests/design.e2e.ts",
+        "source": {
+          "file": "tests/design.e2e.ts",
+          "line": 280,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "6898365e32d11b96836f77b1e14e1271f5d1ae0331257bc948b58c04414b4ed2",
+        "testId": "tests/drawer.e2e.ts::drawer%20stays%20visible%20while%20animating%20closed",
+        "kind": "test",
+        "declarationIndex": 0,
+        "titlePath": ["drawer stays visible while animating closed"],
+        "file": "tests/drawer.e2e.ts",
+        "source": {
+          "file": "tests/drawer.e2e.ts",
+          "line": 6,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "0bf009e2df304f22d6b11d4eb139a9c159461dda9c9f9dc6f72b33e5043edc75",
+        "testId": "tests/drawer.e2e.ts::snap%20drawer%20opens%20directly%20toward%20its%20compact%20snap%20point",
+        "kind": "test",
+        "declarationIndex": 1,
+        "titlePath": [
+          "snap drawer opens directly toward its compact snap point"
+        ],
+        "file": "tests/drawer.e2e.ts",
+        "source": {
+          "file": "tests/drawer.e2e.ts",
+          "line": 72,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "4055405b2318d3f1d28ac526ee0c3ccd6343b043fba61ea79a29761320b5f65b",
+        "testId": "tests/drawer.e2e.ts::drawer%20documentation%20loads%20through%20client%20navigation%20and%20browser%20history",
+        "kind": "test",
+        "declarationIndex": 2,
+        "titlePath": [
+          "drawer documentation loads through client navigation and browser history"
+        ],
+        "file": "tests/drawer.e2e.ts",
+        "source": {
+          "file": "tests/drawer.e2e.ts",
+          "line": 131,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "0366108be3a8d6e72b0c0cde19acb8e09e6a49df97d7cee2ea19e5a7bb287b0f",
+        "testId": "tests/drawer.e2e.ts::controlled%20drawer%20supports%20keyboard%20and%20outside%20dismissal%20with%20focus%20restoration",
+        "kind": "test",
+        "declarationIndex": 3,
+        "titlePath": [
+          "controlled drawer supports keyboard and outside dismissal with focus restoration"
+        ],
+        "file": "tests/drawer.e2e.ts",
+        "source": {
+          "file": "tests/drawer.e2e.ts",
+          "line": 167,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "60aa01c14344c1e1085e4a809a7e64315c8a17510911ee79efccc2fd671e26f6",
+        "testId": "tests/drawer.e2e.ts::drawer%20opens%20against%20the%20top%20viewport%20edge",
+        "kind": "test",
+        "declarationIndex": 4,
+        "titlePath": ["drawer opens against the top viewport edge"],
+        "file": "tests/drawer.e2e.ts",
+        "source": {
+          "file": "tests/drawer.e2e.ts",
+          "line": 219,
+          "column": 3
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "e69331365a50ca3a3c6feca639981eb7b74c27e62a74c79d60bc93f27eb52b22",
+        "testId": "tests/drawer.e2e.ts::drawer%20opens%20against%20the%20right%20viewport%20edge",
+        "kind": "test",
+        "declarationIndex": 5,
+        "titlePath": ["drawer opens against the right viewport edge"],
+        "file": "tests/drawer.e2e.ts",
+        "source": {
+          "file": "tests/drawer.e2e.ts",
+          "line": 219,
+          "column": 3
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "d56de2d98607520d7441a68fbe17aae110f7c394b08871720a084a3be6766c6b",
+        "testId": "tests/drawer.e2e.ts::drawer%20opens%20against%20the%20bottom%20viewport%20edge",
+        "kind": "test",
+        "declarationIndex": 6,
+        "titlePath": ["drawer opens against the bottom viewport edge"],
+        "file": "tests/drawer.e2e.ts",
+        "source": {
+          "file": "tests/drawer.e2e.ts",
+          "line": 219,
+          "column": 3
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "93e49f8e15f2798a3d4ad4bacacdc91f969ea9795db277f22d0033bfc4730425",
+        "testId": "tests/drawer.e2e.ts::drawer%20opens%20against%20the%20left%20viewport%20edge",
+        "kind": "test",
+        "declarationIndex": 7,
+        "titlePath": ["drawer opens against the left viewport edge"],
+        "file": "tests/drawer.e2e.ts",
+        "source": {
+          "file": "tests/drawer.e2e.ts",
+          "line": 219,
+          "column": 3
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "4edd9e674251eea1557b2a222d2e8e277b33007ea37e20217b83e9bc885cf374",
+        "testId": "tests/drawer.e2e.ts::nested%20drawers%20close%20independently%20and%20return%20focus%20to%20their%20parent",
+        "kind": "test",
+        "declarationIndex": 8,
+        "titlePath": [
+          "nested drawers close independently and return focus to their parent"
+        ],
+        "file": "tests/drawer.e2e.ts",
+        "source": {
+          "file": "tests/drawer.e2e.ts",
+          "line": 281,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "62add51142308a62cce9d0f7c31608dd41c69ce93c1d55126ab27b4a777335c8",
+        "testId": "tests/drawer.e2e.ts::handle%20cycles%20controlled%20snap%20points%20and%20then%20dismisses%20the%20drawer",
+        "kind": "test",
+        "declarationIndex": 9,
+        "titlePath": [
+          "handle cycles controlled snap points and then dismisses the drawer"
+        ],
+        "file": "tests/drawer.e2e.ts",
+        "source": {
+          "file": "tests/drawer.e2e.ts",
+          "line": 313,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "167b5082abf6b551f4414bd2f7367d99ae85c4ab30d6382b63e975cf42e10f9f",
+        "testId": "tests/drawer.e2e.ts::handle-only%20drawer%20dismisses%20with%20a%20pointer%20drag",
+        "kind": "test",
+        "declarationIndex": 10,
+        "titlePath": ["handle-only drawer dismisses with a pointer drag"],
+        "file": "tests/drawer.e2e.ts",
+        "source": {
+          "file": "tests/drawer.e2e.ts",
+          "line": 342,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "b7d57535871b62b9504b92cbd13f832eec398a229df1a67dcdf78e376aca9549",
+        "testId": "tests/example.e2e.ts::app%20opens",
+        "kind": "test",
+        "declarationIndex": 0,
+        "titlePath": ["app opens"],
+        "file": "tests/example.e2e.ts",
+        "source": {
+          "file": "tests/example.e2e.ts",
+          "line": 4,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": false,
+        "status": "skipped",
+        "skip": {
+          "cause": "filtered",
+          "reason": "file not selected by a positional argument"
+        },
+        "attempts": []
+      },
+      {
+        "id": "a0298b1cd3842b5f4a6b7c095a8ee8c06efa9f6d127ee81aff280b27451a840e",
+        "testId": "tests/package-manager.e2e.ts::remembers%20bun%20after%20reloading",
+        "kind": "test",
+        "declarationIndex": 0,
+        "titlePath": ["remembers bun after reloading"],
+        "file": "tests/package-manager.e2e.ts",
+        "source": {
+          "file": "tests/package-manager.e2e.ts",
+          "line": 14,
+          "column": 3
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": true,
+        "status": "passed",
+        "attempts": [
+          {
+            "id": "01a18102-2b2d-766d-a9c2-0fa4e4347b3a",
+            "index": 0,
+            "status": "passed",
+            "startedAt": "2026-10-28T05:36:05.421Z",
+            "durationMs": 12738,
+            "artifacts": [],
+            "secondaryErrors": [],
+            "cleanup": "complete",
+            "environment": {
+              "browser": "chromium 156.0.8078.4",
+              "user agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36"
+            },
+            "steps": [
+              {
+                "id": "01a18102-2b2d-766d-a9c2-0fa4e4347b3a:0",
+                "index": 0,
+                "kind": "app",
+                "api": "app.open",
+                "label": "/docs/installation",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:05.466Z",
+                "durationMs": 10264,
+                "events": [],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5515/docs/installation",
+                  "nodes": 358,
+                  "changes": []
+                },
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 19,
+                  "column": 15
+                }
+              },
+              {
+                "id": "01a18102-2b2d-766d-a9c2-0fa4e4347b3a:1",
+                "index": 1,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "getByRole(\"tablist\", name: \"Package manager\").first() >> getByRole(\"tab\", name: \"npm\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:15.733Z",
+                "durationMs": 794,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T05:36:15.733Z",
+                    "durationMs": 794,
+                    "status": "passed",
+                    "detail": "tap tab \"npm\" (appeared after 632ms)"
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5515/docs/installation",
+                  "nodes": 376,
+                  "since": 0,
+                  "changes": [
+                    "added tablist \"Package manager\"",
+                    "added tab \"pnpm\"",
+                    "added tab \"npm\" [selected]",
+                    "added tab \"yarn\"",
+                    "added tab \"bun\"",
+                    "added tabpanel \"npm\"",
+                    "added text=\"npm install solid2-aria-components solid-js@next @solidjs/web@next cn class-variance-authority @lucide/solid\"",
+                    "added tablist \"Package manager\"",
+                    "added tab \"pnpm\"",
+                    "added tab \"npm\" [selected]",
+                    "added tab \"yarn\"",
+                    "added tab \"bun\""
+                  ],
+                  "more": 12
+                },
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 22,
+                  "column": 44
+                }
+              },
+              {
+                "id": "01a18102-2b2d-766d-a9c2-0fa4e4347b3a:2",
+                "index": 2,
+                "kind": "assertion",
+                "api": "expect.toBeSelected",
+                "label": "getByRole(\"tablist\", name: \"Package manager\").first() >> getByRole(\"tab\", name: \"npm\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:16.529Z",
+                "durationMs": 25,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T05:36:16.530Z",
+                    "durationMs": 24,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 23,
+                  "column": 52
+                }
+              },
+              {
+                "id": "01a18102-2b2d-766d-a9c2-0fa4e4347b3a:3",
+                "index": 3,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "getByRole(\"tablist\", name: \"Package manager\").first() >> getByRole(\"tab\", name: \"bun\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:16.554Z",
+                "durationMs": 129,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T05:36:16.554Z",
+                    "durationMs": 129,
+                    "status": "passed",
+                    "detail": "tap tab \"bun\""
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5515/docs/installation",
+                  "nodes": 376,
+                  "since": 1,
+                  "changes": [
+                    "changed tab \"npm\" (was: tab \"npm\" [selected])",
+                    "changed tab \"bun\" [selected] (was: tab \"bun\")",
+                    "added tabpanel \"bun\"",
+                    "added text=\"bun add solid2-aria-components solid-js@next @solidjs/web@next cn class-variance-authority @lucide/solid\"",
+                    "changed tab \"npm\" (was: tab \"npm\" [selected])",
+                    "changed tab \"bun\" [selected] (was: tab \"bun\")",
+                    "added tabpanel \"bun\"",
+                    "added text=\"bun add -d tailwindcss @tailwindcss/vite @solidjs/vite-plugin@next bun add tw-animate-css shadcn\"",
+                    "changed tab \"npm\" (was: tab \"npm\" [selected])",
+                    "changed tab \"bun\" [selected] (was: tab \"bun\")",
+                    "added tabpanel \"bun\"",
+                    "added text=\"bunx --bun shadcn@latest add http://localhost:5500/r/button.json\""
+                  ],
+                  "more": 6
+                },
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 24,
+                  "column": 46
+                }
+              },
+              {
+                "id": "01a18102-2b2d-766d-a9c2-0fa4e4347b3a:4",
+                "index": 4,
+                "kind": "assertion",
+                "api": "expect.toHaveCount",
+                "label": "getByRole(\"tab\", name: \"bun\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:16.684Z",
+                "durationMs": 18,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T05:36:16.684Z",
+                    "durationMs": 18,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 27,
+                  "column": 7
+                }
+              },
+              {
+                "id": "01a18102-2b2d-766d-a9c2-0fa4e4347b3a:5",
+                "index": 5,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:16.703Z",
+                "durationMs": 1,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 31,
+                  "column": 25
+                }
+              },
+              {
+                "id": "01a18102-2b2d-766d-a9c2-0fa4e4347b3a:6",
+                "index": 6,
+                "kind": "resource",
+                "api": "browser.reload",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:16.705Z",
+                "durationMs": 849,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 37,
+                  "column": 19
+                }
+              },
+              {
+                "id": "01a18102-2b2d-766d-a9c2-0fa4e4347b3a:7",
+                "index": 7,
+                "kind": "assertion",
+                "api": "expect.toHaveCount",
+                "label": "getByRole(\"tab\", name: \"bun\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:17.554Z",
+                "durationMs": 579,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T05:36:17.554Z",
+                    "durationMs": 579,
+                    "status": "passed",
+                    "count": 5,
+                    "detail": "count 0 (0 matches) x4 -> at 579ms count 3 (3 matches)"
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 40,
+                  "column": 7
+                }
+              },
+              {
+                "id": "01a18102-2b2d-766d-a9c2-0fa4e4347b3a:8",
+                "index": 8,
+                "kind": "assertion",
+                "api": "expect.toContainText",
+                "label": "getByRole(\"tabpanel\", name: \"bun\").first()",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:18.134Z",
+                "durationMs": 3,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T05:36:18.134Z",
+                    "durationMs": 3,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 41,
+                  "column": 65
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "d631be12dd8a4d69127f8733b553147fc050ccbbbe863e0cd37de25d48d77b24",
+        "testId": "tests/package-manager.e2e.ts::remembers%20npm%20after%20reloading",
+        "kind": "test",
+        "declarationIndex": 1,
+        "titlePath": ["remembers npm after reloading"],
+        "file": "tests/package-manager.e2e.ts",
+        "source": {
+          "file": "tests/package-manager.e2e.ts",
+          "line": 14,
+          "column": 3
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": true,
+        "status": "passed",
+        "attempts": [
+          {
+            "id": "01a18102-5cf0-78f9-8dbe-54813b3ce3d4",
+            "index": 0,
+            "status": "passed",
+            "startedAt": "2026-10-28T05:36:18.160Z",
+            "durationMs": 3447,
+            "artifacts": [],
+            "secondaryErrors": [],
+            "cleanup": "complete",
+            "environment": {
+              "browser": "chromium 156.0.8078.4",
+              "user agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36"
+            },
+            "steps": [
+              {
+                "id": "01a18102-5cf0-78f9-8dbe-54813b3ce3d4:0",
+                "index": 0,
+                "kind": "app",
+                "api": "app.open",
+                "label": "/docs/installation",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:18.163Z",
+                "durationMs": 1113,
+                "events": [],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5515/docs/installation",
+                  "nodes": 358,
+                  "changes": []
+                },
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 19,
+                  "column": 15
+                }
+              },
+              {
+                "id": "01a18102-5cf0-78f9-8dbe-54813b3ce3d4:1",
+                "index": 1,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "getByRole(\"tablist\", name: \"Package manager\").first() >> getByRole(\"tab\", name: \"npm\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:19.278Z",
+                "durationMs": 758,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T05:36:19.278Z",
+                    "durationMs": 758,
+                    "status": "passed",
+                    "detail": "tap tab \"npm\" (appeared after 620ms)"
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5515/docs/installation",
+                  "nodes": 376,
+                  "since": 0,
+                  "changes": [
+                    "added tablist \"Package manager\"",
+                    "added tab \"pnpm\"",
+                    "added tab \"npm\" [selected]",
+                    "added tab \"yarn\"",
+                    "added tab \"bun\"",
+                    "added tabpanel \"npm\"",
+                    "added text=\"npm install solid2-aria-components solid-js@next @solidjs/web@next cn class-variance-authority @lucide/solid\"",
+                    "added tablist \"Package manager\"",
+                    "added tab \"pnpm\"",
+                    "added tab \"npm\" [selected]",
+                    "added tab \"yarn\"",
+                    "added tab \"bun\""
+                  ],
+                  "more": 12
+                },
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 22,
+                  "column": 44
+                }
+              },
+              {
+                "id": "01a18102-5cf0-78f9-8dbe-54813b3ce3d4:2",
+                "index": 2,
+                "kind": "assertion",
+                "api": "expect.toBeSelected",
+                "label": "getByRole(\"tablist\", name: \"Package manager\").first() >> getByRole(\"tab\", name: \"npm\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:20.038Z",
+                "durationMs": 20,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T05:36:20.038Z",
+                    "durationMs": 20,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 23,
+                  "column": 52
+                }
+              },
+              {
+                "id": "01a18102-5cf0-78f9-8dbe-54813b3ce3d4:3",
+                "index": 3,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "getByRole(\"tablist\", name: \"Package manager\").first() >> getByRole(\"tab\", name: \"npm\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:20.058Z",
+                "durationMs": 107,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T05:36:20.058Z",
+                    "durationMs": 106,
+                    "status": "passed",
+                    "detail": "tap tab \"npm\""
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5515/docs/installation",
+                  "nodes": 376,
+                  "since": 1,
+                  "changes": []
+                },
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 24,
+                  "column": 46
+                }
+              },
+              {
+                "id": "01a18102-5cf0-78f9-8dbe-54813b3ce3d4:4",
+                "index": 4,
+                "kind": "assertion",
+                "api": "expect.toHaveCount",
+                "label": "getByRole(\"tab\", name: \"npm\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:20.166Z",
+                "durationMs": 21,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T05:36:20.166Z",
+                    "durationMs": 21,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 27,
+                  "column": 7
+                }
+              },
+              {
+                "id": "01a18102-5cf0-78f9-8dbe-54813b3ce3d4:5",
+                "index": 5,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:20.188Z",
+                "durationMs": 1,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 31,
+                  "column": 25
+                }
+              },
+              {
+                "id": "01a18102-5cf0-78f9-8dbe-54813b3ce3d4:6",
+                "index": 6,
+                "kind": "resource",
+                "api": "browser.reload",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:20.189Z",
+                "durationMs": 814,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 37,
+                  "column": 19
+                }
+              },
+              {
+                "id": "01a18102-5cf0-78f9-8dbe-54813b3ce3d4:7",
+                "index": 7,
+                "kind": "assertion",
+                "api": "expect.toHaveCount",
+                "label": "getByRole(\"tab\", name: \"npm\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:21.003Z",
+                "durationMs": 583,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T05:36:21.003Z",
+                    "durationMs": 583,
+                    "status": "passed",
+                    "count": 5,
+                    "detail": "count 0 (0 matches) x4 -> at 583ms count 3 (3 matches)"
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 40,
+                  "column": 7
+                }
+              },
+              {
+                "id": "01a18102-5cf0-78f9-8dbe-54813b3ce3d4:8",
+                "index": 8,
+                "kind": "assertion",
+                "api": "expect.toContainText",
+                "label": "getByRole(\"tabpanel\", name: \"npm\").first()",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:21.586Z",
+                "durationMs": 3,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T05:36:21.586Z",
+                    "durationMs": 3,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 41,
+                  "column": 65
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "b271697654800e1e5caa2bf71648b7fb126667f46a74218e4adff3cd1a36124f",
+        "testId": "tests/package-manager.e2e.ts::remembers%20pnpm%20after%20reloading",
+        "kind": "test",
+        "declarationIndex": 2,
+        "titlePath": ["remembers pnpm after reloading"],
+        "file": "tests/package-manager.e2e.ts",
+        "source": {
+          "file": "tests/package-manager.e2e.ts",
+          "line": 14,
+          "column": 3
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": true,
+        "status": "passed",
+        "attempts": [
+          {
+            "id": "01a18102-6a68-736f-896c-21a5d9bac13f",
+            "index": 0,
+            "status": "passed",
+            "startedAt": "2026-10-28T05:36:21.608Z",
+            "durationMs": 3437,
+            "artifacts": [],
+            "secondaryErrors": [],
+            "cleanup": "complete",
+            "environment": {
+              "browser": "chromium 156.0.8078.4",
+              "user agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36"
+            },
+            "steps": [
+              {
+                "id": "01a18102-6a68-736f-896c-21a5d9bac13f:0",
+                "index": 0,
+                "kind": "app",
+                "api": "app.open",
+                "label": "/docs/installation",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:21.611Z",
+                "durationMs": 1064,
+                "events": [],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5515/docs/installation",
+                  "nodes": 358,
+                  "changes": []
+                },
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 19,
+                  "column": 15
+                }
+              },
+              {
+                "id": "01a18102-6a68-736f-896c-21a5d9bac13f:1",
+                "index": 1,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "getByRole(\"tablist\", name: \"Package manager\").first() >> getByRole(\"tab\", name: \"npm\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:22.677Z",
+                "durationMs": 755,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T05:36:22.677Z",
+                    "durationMs": 755,
+                    "status": "passed",
+                    "detail": "tap tab \"npm\" (appeared after 630ms)"
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5515/docs/installation",
+                  "nodes": 376,
+                  "since": 0,
+                  "changes": [
+                    "added tablist \"Package manager\"",
+                    "added tab \"pnpm\"",
+                    "added tab \"npm\" [selected]",
+                    "added tab \"yarn\"",
+                    "added tab \"bun\"",
+                    "added tabpanel \"npm\"",
+                    "added text=\"npm install solid2-aria-components solid-js@next @solidjs/web@next cn class-variance-authority @lucide/solid\"",
+                    "added tablist \"Package manager\"",
+                    "added tab \"pnpm\"",
+                    "added tab \"npm\" [selected]",
+                    "added tab \"yarn\"",
+                    "added tab \"bun\""
+                  ],
+                  "more": 12
+                },
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 22,
+                  "column": 44
+                }
+              },
+              {
+                "id": "01a18102-6a68-736f-896c-21a5d9bac13f:2",
+                "index": 2,
+                "kind": "assertion",
+                "api": "expect.toBeSelected",
+                "label": "getByRole(\"tablist\", name: \"Package manager\").first() >> getByRole(\"tab\", name: \"npm\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:23.434Z",
+                "durationMs": 27,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T05:36:23.434Z",
+                    "durationMs": 27,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 23,
+                  "column": 52
+                }
+              },
+              {
+                "id": "01a18102-6a68-736f-896c-21a5d9bac13f:3",
+                "index": 3,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "getByRole(\"tablist\", name: \"Package manager\").first() >> getByRole(\"tab\", name: \"pnpm\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:23.461Z",
+                "durationMs": 156,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T05:36:23.461Z",
+                    "durationMs": 156,
+                    "status": "passed",
+                    "detail": "tap tab \"pnpm\""
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5515/docs/installation",
+                  "nodes": 376,
+                  "since": 1,
+                  "changes": [
+                    "changed tab \"pnpm\" [selected] (was: tab \"pnpm\")",
+                    "changed tab \"npm\" (was: tab \"npm\" [selected])",
+                    "added tabpanel \"pnpm\"",
+                    "added text=\"pnpm add solid2-aria-components solid-js@next @solidjs/web@next cn class-variance-authority @lucide/solid\"",
+                    "changed tab \"pnpm\" [selected] (was: tab \"pnpm\")",
+                    "changed tab \"npm\" (was: tab \"npm\" [selected])",
+                    "added tabpanel \"pnpm\"",
+                    "added text=\"pnpm add --save-dev tailwindcss @tailwindcss/vite @solidjs/vite-plugin@next pnpm add tw-animate-css shadcn\"",
+                    "changed tab \"pnpm\" [selected] (was: tab \"pnpm\")",
+                    "changed tab \"npm\" (was: tab \"npm\" [selected])",
+                    "added tabpanel \"pnpm\"",
+                    "added text=\"pnpm dlx shadcn@latest add http://localhost:5500/r/button.json\""
+                  ],
+                  "more": 6
+                },
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 24,
+                  "column": 46
+                }
+              },
+              {
+                "id": "01a18102-6a68-736f-896c-21a5d9bac13f:4",
+                "index": 4,
+                "kind": "assertion",
+                "api": "expect.toHaveCount",
+                "label": "getByRole(\"tab\", name: \"pnpm\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:23.618Z",
+                "durationMs": 18,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T05:36:23.619Z",
+                    "durationMs": 18,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 27,
+                  "column": 7
+                }
+              },
+              {
+                "id": "01a18102-6a68-736f-896c-21a5d9bac13f:5",
+                "index": 5,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:23.637Z",
+                "durationMs": 1,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 31,
+                  "column": 25
+                }
+              },
+              {
+                "id": "01a18102-6a68-736f-896c-21a5d9bac13f:6",
+                "index": 6,
+                "kind": "resource",
+                "api": "browser.reload",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:23.638Z",
+                "durationMs": 810,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 37,
+                  "column": 19
+                }
+              },
+              {
+                "id": "01a18102-6a68-736f-896c-21a5d9bac13f:7",
+                "index": 7,
+                "kind": "assertion",
+                "api": "expect.toHaveCount",
+                "label": "getByRole(\"tab\", name: \"pnpm\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:24.448Z",
+                "durationMs": 569,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T05:36:24.448Z",
+                    "durationMs": 569,
+                    "status": "passed",
+                    "count": 5,
+                    "detail": "count 0 (0 matches) x4 -> at 569ms count 3 (3 matches)"
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 40,
+                  "column": 7
+                }
+              },
+              {
+                "id": "01a18102-6a68-736f-896c-21a5d9bac13f:8",
+                "index": 8,
+                "kind": "assertion",
+                "api": "expect.toContainText",
+                "label": "getByRole(\"tabpanel\", name: \"pnpm\").first()",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:25.017Z",
+                "durationMs": 2,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T05:36:25.018Z",
+                    "durationMs": 2,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 41,
+                  "column": 65
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "6458dff79fa6a518a187e6954bf7cfd9f6565dd0c3548e1a5aa20ce14095b83a",
+        "testId": "tests/package-manager.e2e.ts::remembers%20yarn%20after%20reloading",
+        "kind": "test",
+        "declarationIndex": 3,
+        "titlePath": ["remembers yarn after reloading"],
+        "file": "tests/package-manager.e2e.ts",
+        "source": {
+          "file": "tests/package-manager.e2e.ts",
+          "line": 14,
+          "column": 3
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": true,
+        "status": "passed",
+        "attempts": [
+          {
+            "id": "01a18102-77d6-7738-ad04-e9c613b7e5d3",
+            "index": 0,
+            "status": "passed",
+            "startedAt": "2026-10-28T05:36:25.046Z",
+            "durationMs": 3486,
+            "artifacts": [],
+            "secondaryErrors": [],
+            "cleanup": "complete",
+            "environment": {
+              "browser": "chromium 156.0.8078.4",
+              "user agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36"
+            },
+            "steps": [
+              {
+                "id": "01a18102-77d6-7738-ad04-e9c613b7e5d3:0",
+                "index": 0,
+                "kind": "app",
+                "api": "app.open",
+                "label": "/docs/installation",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:25.049Z",
+                "durationMs": 1077,
+                "events": [],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5515/docs/installation",
+                  "nodes": 358,
+                  "changes": []
+                },
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 19,
+                  "column": 15
+                }
+              },
+              {
+                "id": "01a18102-77d6-7738-ad04-e9c613b7e5d3:1",
+                "index": 1,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "getByRole(\"tablist\", name: \"Package manager\").first() >> getByRole(\"tab\", name: \"npm\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:26.128Z",
+                "durationMs": 790,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T05:36:26.128Z",
+                    "durationMs": 790,
+                    "status": "passed",
+                    "detail": "tap tab \"npm\" (appeared after 636ms)"
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5515/docs/installation",
+                  "nodes": 376,
+                  "since": 0,
+                  "changes": [
+                    "added tablist \"Package manager\"",
+                    "added tab \"pnpm\"",
+                    "added tab \"npm\" [selected]",
+                    "added tab \"yarn\"",
+                    "added tab \"bun\"",
+                    "added tabpanel \"npm\"",
+                    "added text=\"npm install solid2-aria-components solid-js@next @solidjs/web@next cn class-variance-authority @lucide/solid\"",
+                    "added tablist \"Package manager\"",
+                    "added tab \"pnpm\"",
+                    "added tab \"npm\" [selected]",
+                    "added tab \"yarn\"",
+                    "added tab \"bun\""
+                  ],
+                  "more": 12
+                },
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 22,
+                  "column": 44
+                }
+              },
+              {
+                "id": "01a18102-77d6-7738-ad04-e9c613b7e5d3:2",
+                "index": 2,
+                "kind": "assertion",
+                "api": "expect.toBeSelected",
+                "label": "getByRole(\"tablist\", name: \"Package manager\").first() >> getByRole(\"tab\", name: \"npm\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:26.919Z",
+                "durationMs": 24,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T05:36:26.919Z",
+                    "durationMs": 24,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 23,
+                  "column": 52
+                }
+              },
+              {
+                "id": "01a18102-77d6-7738-ad04-e9c613b7e5d3:3",
+                "index": 3,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "getByRole(\"tablist\", name: \"Package manager\").first() >> getByRole(\"tab\", name: \"yarn\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:26.943Z",
+                "durationMs": 157,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T05:36:26.943Z",
+                    "durationMs": 157,
+                    "status": "passed",
+                    "detail": "tap tab \"yarn\""
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5515/docs/installation",
+                  "nodes": 376,
+                  "since": 1,
+                  "changes": [
+                    "changed tab \"npm\" (was: tab \"npm\" [selected])",
+                    "changed tab \"yarn\" [selected] (was: tab \"yarn\")",
+                    "added tabpanel \"yarn\"",
+                    "added text=\"yarn add solid2-aria-components solid-js@next @solidjs/web@next cn class-variance-authority @lucide/solid\"",
+                    "changed tab \"npm\" (was: tab \"npm\" [selected])",
+                    "changed tab \"yarn\" [selected] (was: tab \"yarn\")",
+                    "added tabpanel \"yarn\"",
+                    "added text=\"yarn add --save-dev tailwindcss @tailwindcss/vite @solidjs/vite-plugin@next yarn add tw-animate-css shadcn\"",
+                    "changed tab \"npm\" (was: tab \"npm\" [selected])",
+                    "changed tab \"yarn\" [selected] (was: tab \"yarn\")",
+                    "added tabpanel \"yarn\"",
+                    "added text=\"yarn dlx shadcn@latest add http://localhost:5500/r/button.json\""
+                  ],
+                  "more": 6
+                },
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 24,
+                  "column": 46
+                }
+              },
+              {
+                "id": "01a18102-77d6-7738-ad04-e9c613b7e5d3:4",
+                "index": 4,
+                "kind": "assertion",
+                "api": "expect.toHaveCount",
+                "label": "getByRole(\"tab\", name: \"yarn\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:27.101Z",
+                "durationMs": 25,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T05:36:27.101Z",
+                    "durationMs": 25,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 27,
+                  "column": 7
+                }
+              },
+              {
+                "id": "01a18102-77d6-7738-ad04-e9c613b7e5d3:5",
+                "index": 5,
+                "kind": "resource",
+                "api": "browser.evaluate",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:27.126Z",
+                "durationMs": 1,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 31,
+                  "column": 25
+                }
+              },
+              {
+                "id": "01a18102-77d6-7738-ad04-e9c613b7e5d3:6",
+                "index": 6,
+                "kind": "resource",
+                "api": "browser.reload",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:27.127Z",
+                "durationMs": 843,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 37,
+                  "column": 19
+                }
+              },
+              {
+                "id": "01a18102-77d6-7738-ad04-e9c613b7e5d3:7",
+                "index": 7,
+                "kind": "assertion",
+                "api": "expect.toHaveCount",
+                "label": "getByRole(\"tab\", name: \"yarn\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:27.970Z",
+                "durationMs": 541,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T05:36:27.970Z",
+                    "durationMs": 541,
+                    "status": "passed",
+                    "count": 5,
+                    "detail": "count 0 (0 matches) x4 -> at 541ms count 3 (3 matches)"
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 40,
+                  "column": 7
+                }
+              },
+              {
+                "id": "01a18102-77d6-7738-ad04-e9c613b7e5d3:8",
+                "index": 8,
+                "kind": "assertion",
+                "api": "expect.toContainText",
+                "label": "getByRole(\"tabpanel\", name: \"yarn\").first()",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:28.511Z",
+                "durationMs": 3,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T05:36:28.511Z",
+                    "durationMs": 3,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 41,
+                  "column": 65
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "1f53b30582ef5b4c18de8da36d187ac86aa383aa0a8e12b26220a460de5c5004",
+        "testId": "tests/package-manager.e2e.ts::shares%20the%20package%20manager%20across%20documentation%20pages",
+        "kind": "test",
+        "declarationIndex": 4,
+        "titlePath": ["shares the package manager across documentation pages"],
+        "file": "tests/package-manager.e2e.ts",
+        "source": {
+          "file": "tests/package-manager.e2e.ts",
+          "line": 47,
+          "column": 1
+        },
+        "targetId": "web",
+        "platform": "web",
+        "agent": "default",
+        "repeat": 0,
+        "tags": [],
+        "selected": true,
+        "status": "passed",
+        "attempts": [
+          {
+            "id": "01a18102-8575-7a2e-9c01-90a96328981f",
+            "index": 0,
+            "status": "passed",
+            "startedAt": "2026-10-28T05:36:28.533Z",
+            "durationMs": 3731,
+            "artifacts": [],
+            "secondaryErrors": [],
+            "cleanup": "complete",
+            "environment": {
+              "browser": "chromium 156.0.8078.4",
+              "user agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36"
+            },
+            "steps": [
+              {
+                "id": "01a18102-8575-7a2e-9c01-90a96328981f:0",
+                "index": 0,
+                "kind": "app",
+                "api": "app.open",
+                "label": "/docs/installation",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:28.536Z",
+                "durationMs": 1101,
+                "events": [],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5515/docs/installation",
+                  "nodes": 358,
+                  "changes": []
+                },
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 52,
+                  "column": 13
+                }
+              },
+              {
+                "id": "01a18102-8575-7a2e-9c01-90a96328981f:1",
+                "index": 1,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "getByRole(\"tablist\", name: \"Package manager\").first() >> getByRole(\"tab\", name: \"pnpm\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:29.638Z",
+                "durationMs": 763,
+                "events": [
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T05:36:29.638Z",
+                    "durationMs": 763,
+                    "status": "passed",
+                    "detail": "tap tab \"pnpm\" (appeared after 634ms)"
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5515/docs/installation",
+                  "nodes": 376,
+                  "since": 0,
+                  "changes": [
+                    "added tablist \"Package manager\"",
+                    "added tab \"pnpm\" [selected]",
+                    "added tab \"npm\"",
+                    "added tab \"yarn\"",
+                    "added tab \"bun\"",
+                    "added tabpanel \"pnpm\"",
+                    "added text=\"pnpm add solid2-aria-components solid-js@next @solidjs/web@next cn class-variance-authority @lucide/solid\"",
+                    "added tablist \"Package manager\"",
+                    "added tab \"pnpm\" [selected]",
+                    "added tab \"npm\"",
+                    "added tab \"yarn\"",
+                    "added tab \"bun\""
+                  ],
+                  "more": 12
+                },
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 61,
+                  "column": 43
+                }
+              },
+              {
+                "id": "01a18102-8575-7a2e-9c01-90a96328981f:2",
+                "index": 2,
+                "kind": "assertion",
+                "api": "expect.toBeSelected",
+                "label": "getByRole(\"tablist\", name: \"Package manager\").first() >> getByRole(\"tab\", name: \"pnpm\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:30.403Z",
+                "durationMs": 23,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T05:36:30.403Z",
+                    "durationMs": 23,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 62,
+                  "column": 51
+                }
+              },
+              {
+                "id": "01a18102-8575-7a2e-9c01-90a96328981f:3",
+                "index": 3,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "getByRole(\"complementary\", name: \"Documentation navigation\") >> getByRole(\"link\", name: \"Theming\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:30.426Z",
+                "durationMs": 152,
+                "events": [
+                  {
+                    "kind": "navigation",
+                    "startedAt": "2026-10-28T05:36:30.489Z",
+                    "durationMs": 0,
+                    "status": "passed",
+                    "detail": "navigated to http://localhost:5515/docs/theming"
+                  },
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T05:36:30.426Z",
+                    "durationMs": 152,
+                    "status": "passed",
+                    "detail": "tap link \"Theming\""
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5515/docs/theming",
+                  "nodes": 376,
+                  "since": 1,
+                  "changes": [
+                    "changed link \"Skip to content\" href=\"/docs/theming#…\" (was: link \"Skip to content\" href=\"/docs/installation#…\")",
+                    "changed link \"#\" href=\"/docs/theming#…\" (was: link \"#\" href=\"/docs/installation#…\")",
+                    "changed link \"#\" href=\"/docs/theming#…\" (was: link \"#\" href=\"/docs/installation#…\")",
+                    "changed link \"#\" href=\"/docs/theming#…\" (was: link \"#\" href=\"/docs/installation#…\")",
+                    "changed link \"#\" href=\"/docs/theming#…\" (was: link \"#\" href=\"/docs/installation#…\")",
+                    "changed link \"#\" href=\"/docs/theming#…\" (was: link \"#\" href=\"/docs/installation#…\")",
+                    "changed link \"#\" href=\"/docs/theming#…\" (was: link \"#\" href=\"/docs/installation#…\")",
+                    "changed link \"Install the dependencies\" href=\"/docs/theming#…\" (was: link \"Install the dependencies\" href=\"/docs/installation#…\")",
+                    "changed link \"Configure Solid 2\" href=\"/docs/theming#…\" (was: link \"Configure Solid 2\" href=\"/docs/installation#…\")",
+                    "changed link \"Add the theme\" href=\"/docs/theming#…\" (was: link \"Add the theme\" href=\"/docs/installation#…\")",
+                    "changed link \"Component dependencies\" href=\"/docs/theming#…\" (was: link \"Component dependencies\" href=\"/docs/installation#…\")"
+                  ]
+                },
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 64,
+                  "column": 66
+                }
+              },
+              {
+                "id": "01a18102-8575-7a2e-9c01-90a96328981f:4",
+                "index": 4,
+                "kind": "assertion",
+                "api": "expect.toHaveURL",
+                "label": "/docs/theming",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:30.579Z",
+                "durationMs": 1,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 65,
+                  "column": 25
+                }
+              },
+              {
+                "id": "01a18102-8575-7a2e-9c01-90a96328981f:5",
+                "index": 5,
+                "kind": "assertion",
+                "api": "expect.toBeVisible",
+                "label": "getByRole(\"heading\", name: \"Theming\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:30.580Z",
+                "durationMs": 87,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T05:36:30.580Z",
+                    "durationMs": 87,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 68,
+                  "column": 5
+                }
+              },
+              {
+                "id": "01a18102-8575-7a2e-9c01-90a96328981f:6",
+                "index": 6,
+                "kind": "locator",
+                "api": "locator.tap",
+                "label": "getByRole(\"complementary\", name: \"Documentation navigation\") >> getByRole(\"link\", name: \"Installation\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:30.667Z",
+                "durationMs": 154,
+                "events": [
+                  {
+                    "kind": "navigation",
+                    "startedAt": "2026-10-28T05:36:30.686Z",
+                    "durationMs": 0,
+                    "status": "passed",
+                    "detail": "navigated to http://localhost:5515/docs/installation"
+                  },
+                  {
+                    "kind": "engine",
+                    "name": "tap",
+                    "startedAt": "2026-10-28T05:36:30.667Z",
+                    "durationMs": 154,
+                    "status": "passed",
+                    "detail": "tap link \"Installation\""
+                  }
+                ],
+                "artifacts": [],
+                "screen": {
+                  "location": "http://localhost:5515/docs/installation",
+                  "nodes": 376,
+                  "since": 3,
+                  "changes": [
+                    "changed link \"Skip to content\" href=\"/docs/installation#…\" (was: link \"Skip to content\" href=\"/docs/theming#…\")",
+                    "added link \"#\" href=\"/docs/installation#…\"",
+                    "added link \"#\" href=\"/docs/installation#…\"",
+                    "added link \"#\" href=\"/docs/installation#…\"",
+                    "added link \"#\" href=\"/docs/installation#…\"",
+                    "added link \"#\" href=\"/docs/installation#…\"",
+                    "added link \"#\" href=\"/docs/installation#…\"",
+                    "added link \"Install the dependencies\" href=\"/docs/installation#…\"",
+                    "added link \"Configure Solid 2\" href=\"/docs/installation#…\"",
+                    "added link \"Add the theme\" href=\"/docs/installation#…\"",
+                    "added link \"Component dependencies\" href=\"/docs/installation#…\"",
+                    "removed link \"#\" href=\"/docs/theming#…\""
+                  ],
+                  "more": 9
+                },
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 69,
+                  "column": 71
+                }
+              },
+              {
+                "id": "01a18102-8575-7a2e-9c01-90a96328981f:7",
+                "index": 7,
+                "kind": "assertion",
+                "api": "expect.toHaveURL",
+                "label": "/docs/installation",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:30.823Z",
+                "durationMs": 0,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 70,
+                  "column": 25
+                }
+              },
+              {
+                "id": "01a18102-8575-7a2e-9c01-90a96328981f:8",
+                "index": 8,
+                "kind": "assertion",
+                "api": "expect.toBeVisible",
+                "label": "getByRole(\"heading\", name: \"Installation\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:30.823Z",
+                "durationMs": 20,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T05:36:30.823Z",
+                    "durationMs": 20,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 73,
+                  "column": 5
+                }
+              },
+              {
+                "id": "01a18102-8575-7a2e-9c01-90a96328981f:9",
+                "index": 9,
+                "kind": "assertion",
+                "api": "expect.toBeSelected",
+                "label": "getByRole(\"tablist\", name: \"Package manager\").first() >> getByRole(\"tab\", name: \"pnpm\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:30.843Z",
+                "durationMs": 2,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T05:36:30.844Z",
+                    "durationMs": 2,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 74,
+                  "column": 51
+                }
+              },
+              {
+                "id": "01a18102-8575-7a2e-9c01-90a96328981f:10",
+                "index": 10,
+                "kind": "assertion",
+                "api": "expect.toContainText",
+                "label": "getByRole(\"tabpanel\", name: \"pnpm\").first()",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:30.846Z",
+                "durationMs": 3,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T05:36:30.846Z",
+                    "durationMs": 3,
+                    "status": "passed",
+                    "count": 1
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 75,
+                  "column": 62
+                }
+              },
+              {
+                "id": "01a18102-8575-7a2e-9c01-90a96328981f:11",
+                "index": 11,
+                "kind": "resource",
+                "api": "browser.reload",
+                "label": "",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:30.849Z",
+                "durationMs": 857,
+                "events": [],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 79,
+                  "column": 17
+                }
+              },
+              {
+                "id": "01a18102-8575-7a2e-9c01-90a96328981f:12",
+                "index": 12,
+                "kind": "assertion",
+                "api": "expect.toBeSelected",
+                "label": "getByRole(\"tablist\", name: \"Package manager\").first() >> getByRole(\"tab\", name: \"pnpm\")",
+                "status": "passed",
+                "startedAt": "2026-10-28T05:36:31.706Z",
+                "durationMs": 539,
+                "events": [
+                  {
+                    "kind": "poll",
+                    "name": "expect",
+                    "startedAt": "2026-10-28T05:36:31.707Z",
+                    "durationMs": 539,
+                    "status": "passed",
+                    "count": 5,
+                    "detail": "no node (0 matches) x4 -> at 539ms states: selected (1 match)"
+                  }
+                ],
+                "artifacts": [],
+                "source": {
+                  "file": "tests/package-manager.e2e.ts",
+                  "line": 80,
+                  "column": 51
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "errors": [],
+    "summary": {
+      "discovered": 27,
+      "selected": 5,
+      "executed": 5,
+      "passed": 5,
+      "failed": 0,
+      "interrupted": 0,
+      "flaky": 0,
+      "skipped": 0
+    },
+    "limits": {
+      "maxAgentContextBytes": 16384,
+      "maxLedgerBytes": 8192,
+      "maxObservationBytes": 262144,
+      "maxEventsPerStep": 1000,
+      "maxModelTokensPerCall": 64000
+    },
+    "usage": {
+      "discoveredResults": 27,
+      "maxAgentContextBytes": 0,
+      "maxLedgerBytes": 0,
+      "maxObservationBytes": 0,
+      "artifactBytes": 0,
+      "downloads": 0,
+      "events": 35,
+      "modelTokens": 0,
+      "maxModelCallsInStep": 0,
+      "maxActionStepsInStep": 0
+    }
+  }
+}

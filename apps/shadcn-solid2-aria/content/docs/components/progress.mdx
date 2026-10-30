@@ -1,0 +1,78 @@
+---
+title: "Progress"
+description: "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar."
+---
+
+{/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/content/docs/components/aria/progress.mdx.
+ * Modified for Solid Aria: Solid 2 examples and imports, local installation, supported APIs, and documentation links.
+ * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */}
+
+import { ComponentPreview, Installation } from "#components/docs/mdx";
+
+
+
+<ComponentPreview styleName="aria-nova" name="progress-demo" />
+
+## Installation
+
+<Installation component="progress" />
+
+## Usage
+
+```tsx showLineNumbers
+import { Progress } from "#components/ui/progress";
+```
+
+```tsx showLineNumbers
+<Progress aria-label="Loading" value={33} />
+```
+
+## Composition
+
+### With label and value
+
+Use `ProgressLabel` and `ProgressValue` to add a label and value display.
+
+```tsx showLineNumbers
+import {
+  Progress,
+  ProgressLabel,
+  ProgressValue,
+} from "#components/ui/progress";
+
+<Progress value={56} class="w-full max-w-sm">
+  <ProgressLabel>Upload progress</ProgressLabel>
+  <ProgressValue />
+</Progress>;
+```
+
+```text
+Progress
+├── ProgressLabel
+├── ProgressValue
+└── ProgressTrack
+    └── ProgressIndicator
+```
+
+## Label
+
+Use `ProgressLabel` and `ProgressValue` to add a label and value display.
+
+<ComponentPreview styleName="aria-nova" name="progress-label" />
+
+## Controlled
+
+A progress bar that can be controlled by a slider.
+
+<ComponentPreview styleName="aria-nova" name="progress-controlled" />
+
+## RTL
+
+To configure right-to-left layouts, see the [RTL configuration guide](/docs/accessibility#right-to-left).
+
+<ComponentPreview styleName="aria-nova" name="progress-rtl" direction="rtl" />
+
+## API Reference

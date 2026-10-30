@@ -1,0 +1,92 @@
+---
+title: Accessibility
+description: Accessible names, keyboard interaction, focus management, and right-to-left layouts.
+---
+
+## Accessible foundations
+
+The interactive controls use Solid2 Aria to provide keyboard behavior, ARIA semantics, and focus management. The component composition in each example connects the trigger, content, label, and description.
+
+Keep those parts together when adapting an example. Replacing a trigger with an unrelated element can break keyboard activation, focus return, or the relationship to a popup.
+
+## Accessible names
+
+Every control needs a name that describes its action or value. Visible text supplies the name for a button:
+
+```tsx
+<Button onPress={save}>Save changes</Button>
+```
+
+An icon-only button needs an explicit name:
+
+```tsx
+<Button size="icon" aria-label="Open settings">
+  <SettingsIcon />
+</Button>
+```
+
+Use a visible field label when possible. Connect plain inputs with `for` and `id`. For controls without a visible label, pass `aria-label` or `aria-labelledby`.
+
+```tsx
+<Label for="email">Email address</Label>
+<Input id="email" type="email" autocomplete="email" />
+```
+
+Keep helper text and validation errors associated with the field. Use the Field components for layout, and pass the appropriate description and error relationships to the underlying control.
+
+## Keyboard and focus
+
+Use Tab and Shift+Tab to move between controls. Menus, listboxes, tabs, and radio groups also support their component-specific arrow key behavior.
+
+Use `onPress` for Solid2 Aria buttons and triggers. It handles keyboard and pointer activation through one API. Keep native event handlers such as `onInput` for plain HTML inputs.
+
+Dialog and sheet compositions manage focus while open and return it to the trigger when they close. Give the popup an accessible title and a clear close action. Avoid creating another competing focus trap around it.
+
+Keep focus rings visible. A style that removes the outline needs an equally visible replacement with sufficient contrast.
+
+## Disabled and invalid state
+
+Use `isDisabled` on Solid2 Aria controls. Native HTML controls use `disabled`.
+
+Use `isInvalid` on controls that support it, and display a useful error message next to the field. Color alone does not communicate an error. State what needs to change and preserve the value the user entered.
+
+## Right-to-left
+
+Set the document's language and text direction for your content. Wrap controls in `I18nProvider` when their locale differs from the document's locale:
+
+```tsx
+import { I18nProvider } from "@solid2-aria/components";
+import { Button } from "#components/ui/button";
+
+export function ArabicActions() {
+  return (
+    <I18nProvider locale="ar-AE">
+      <div dir="rtl">
+        <Button>متابعة</Button>
+      </div>
+    </I18nProvider>
+  );
+}
+```
+
+Use logical spacing utilities such as `ms-*`, `me-*`, `ps-*`, and `pe-*` when spacing follows reading direction. Keep directional icons consistent with the action. Component pages include RTL previews for the relevant compositions.
+
+## Reduced motion
+
+Respect `prefers-reduced-motion` when adding transitions or message animations. Preserve the same interaction and focus behavior when motion is reduced.
+
+```css
+@media (prefers-reduced-motion: reduce) {
+  .message-enter {
+    animation: none;
+  }
+}
+```
+
+## Verify your interface
+
+Test the completed composition with a keyboard. Confirm that controls have visible focus, popup triggers open with the expected keys, Escape dismisses overlays, and focus returns to the trigger.
+
+Inspect accessible names and states with your browser's accessibility tree. Test with a screen reader for the browsers and operating systems your application supports. Check text contrast, zoom, narrow layouts, reduced motion, and right-to-left content.
+
+A component's behavior does not cover every application requirement. Labels, instructions, reading order, content, and validation remain part of the interface you build.

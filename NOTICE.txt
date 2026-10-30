@@ -439,10 +439,16 @@ independently authored.
 The installable registry serves the existing shadcn-derived Solid component
 sources with Nova classes and omits inline license headers from installed code.
 Repository sources retain their copyright years, upstream paths, and modification
-notices. The shared theme dependency distributes the original shadcn MIT license
-verbatim and a registry-specific provenance notice containing the original
-per-file attribution headers. Theme metadata uses the existing
-apps/v4/app/globals.css-derived component theme and Solid animation adaptations.
+notices. Registry installation does not create separate license or notice files.
+The original shadcn MIT license remains in the repository's
+apps/shadcn-solid2-aria/LICENSES/shadcn-ui-MIT.txt. The registry snapshot in
+apps/shadcn-solid2-aria/src/registry/theme.json copies ARIA_STYLE.css from
+apps/v4/registry/bases/aria/registry.ts and neutral.cssVars from
+apps/v4/registry/themes.ts at the shadcn/ui revision above. Their keys, values,
+and declaration order are unchanged. The downloadable public/theme.css is
+rendered from this data using the shadcn CLI CSS transforms. It retains the
+original Copyright (c) 2023 shadcn and MIT attribution. Shared variants,
+animations, and utilities use the unmodified shadcn/tailwind.css import.
 Registry HTTP handlers and dependency discovery are independently authored.
 
 Drawer composition in the existing shadcn-derived wrappers preserves the
@@ -599,9 +605,11 @@ content/docs/{installation,dark-mode}/*.mdx adapts shadcn/ui at revision
 481d523374745e77d0cf9c53a4115ab5dd7c8481. Upstream sources are
 apps/v4/content/docs/installation/{index,vite,tanstack-router,tanstack}.mdx
 and apps/v4/content/docs/dark-mode/{index,vite,tanstack-start}.mdx.
-The overview cards, framework SVG paths, setup choices, numbered steps,
-Card and Button examples, and sun/moon mode-toggle layout retain the
-upstream structure. Commands use the local Solid component registry;
+The overview cards, framework SVG paths, numbered steps, and sun/moon
+mode-toggle layout retain the upstream structure. Framework installation
+walkthroughs add official CLI scaffolding, Solid 2 migration, package imports,
+Vite aliases, separate theme setup, and component installation.
+Commands use the local Solid component registry;
 framework entries, providers, lifecycle, icons, and menus use Solid 2 APIs.
 The linked-card component in src/components/docs/linked-card.tsx and the
 responsive documentation steps also adapt apps/v4/mdx-components.tsx.

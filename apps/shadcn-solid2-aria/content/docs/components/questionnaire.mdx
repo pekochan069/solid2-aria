@@ -1,0 +1,321 @@
+---
+title: "Questionnaire"
+description: "A multi-step questionnaire with single-choice, multiple-choice, freeform, and skippable questions."
+---
+
+{/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/content/docs/components/aria/questionnaire.mdx.
+ * Modified for Solid Aria: Solid 2 examples and imports, local installation, supported APIs, and documentation links.
+ * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */}
+
+import { ComponentPreview, Installation } from "#components/docs/mdx";
+
+
+
+<ComponentPreview
+  align="end"
+  styleName="aria-nova"
+  name="questionnaire-demo"
+  previewClassName="min-h-[560px] p-4 sm:p-8"
+/>
+
+## Installation
+
+<Installation component="questionnaire" />
+
+## Usage
+
+```tsx
+import {
+  Questionnaire,
+  QuestionnaireActions,
+  QuestionnaireChoice,
+  QuestionnaireChoices,
+  QuestionnaireDescription,
+  QuestionnaireError,
+  QuestionnaireInput,
+  QuestionnaireItem,
+  QuestionnaireNext,
+  QuestionnairePrevious,
+  QuestionnaireProgress,
+  QuestionnaireSkip,
+  QuestionnaireSubmit,
+  QuestionnaireTitle,
+} from "#components/ui/questionnaire";
+```
+
+```tsx
+const items = [
+  {
+    name: "direction",
+    required: true,
+    prompt: "What should we prototype next?",
+    description: "Choose a direction or write your own.",
+    choices: [
+      {
+        value: "delegation",
+        label: "Delegation",
+        description: "Show how work moves to a specialist.",
+      },
+      {
+        value: "questions",
+        label: "Question prompts",
+        description: "Show choices while the interface waits.",
+      },
+      { value: "both", label: "Both together" },
+    ],
+    input: { label: "Another answer", placeholder: "Type another answer…" },
+  },
+  {
+    name: "detail",
+    required: false,
+    prompt: "How much detail should it include?",
+    description: "Skip this if you are not sure yet.",
+    choices: [
+      { value: "focused", label: "Focused" },
+      { value: "complete", label: "Complete flow" },
+    ],
+  },
+] as const;
+```
+
+Define the collection once: pass it to `Questionnaire` for server-rendered progress, actions, and shortcuts, then map it into the parts.
+
+```tsx
+<Questionnaire items={items} onSubmit={handleSubmit}>
+  <QuestionnaireProgress />
+  {items.map((question) => (
+    <QuestionnaireItem name={question.name} required={question.required}>
+      <QuestionnaireTitle>{question.prompt}</QuestionnaireTitle>
+      <QuestionnaireDescription>
+        {question.description}
+      </QuestionnaireDescription>
+      <QuestionnaireChoices>
+        {question.choices.map((choice) => (
+          <QuestionnaireChoice value={choice.value}>
+            <span class="font-medium">{choice.label}</span>
+            {"description" in choice ? (
+              <span class="text-muted-foreground">{choice.description}</span>
+            ) : null}
+          </QuestionnaireChoice>
+        ))}
+        {"input" in question ? (
+          <QuestionnaireInput
+            aria-label={question.input.label}
+            placeholder={question.input.placeholder}
+          />
+        ) : null}
+      </QuestionnaireChoices>
+      <QuestionnaireError />
+    </QuestionnaireItem>
+  ))}
+  <QuestionnaireActions>
+    <QuestionnairePrevious />
+    <QuestionnaireSkip />
+    <QuestionnaireNext />
+    <QuestionnaireSubmit />
+  </QuestionnaireActions>
+</Questionnaire>
+```
+
+```tsx
+function handleSubmit(event: SubmitEvent & { currentTarget: HTMLFormElement }) {
+  event.preventDefault();
+  const answers = new FormData(event.currentTarget);
+  // answers.get("direction"), answers.getAll(...) for multiple items.
+}
+```
+
+## Composition
+
+```text
+Questionnaire
+├── QuestionnaireProgress
+├── QuestionnaireItem
+│   ├── QuestionnaireTitle
+│   ├── QuestionnaireDescription
+│   ├── QuestionnaireChoices
+│   │   ├── QuestionnaireChoice
+│   │   └── QuestionnaireInput
+│   └── QuestionnaireError
+└── QuestionnaireActions
+    ├── QuestionnairePrevious
+    ├── QuestionnaireSkip
+    ├── QuestionnaireNext
+    └── QuestionnaireSubmit
+```
+
+Questionnaire owns the ordered items, active item, answer state, validation, progress, and navigation. The containing page, card, dialog, or drawer owns close and cancellation behavior, persistence, transport, and branching.
+
+## Server Rendering
+
+Pass the ordered `items` collection to `Questionnaire`. The initial item and controls render on the server. Keep the collection consistent with the mounted `QuestionnaireItem` elements. State belongs to each form instance.
+
+## Multiple Selection
+
+Use `multiple` for an item that accepts more than one fixed answer.
+
+<ComponentPreview
+  align="end"
+  styleName="aria-nova"
+  name="questionnaire-multiple"
+  previewClassName="min-h-[420px] p-4 sm:p-8"
+/>
+
+## Freeform Answer
+
+Compose `QuestionnaireInput` with fixed choices when the user can provide another answer.
+
+<ComponentPreview
+  align="end"
+  styleName="aria-nova"
+  name="questionnaire-freeform"
+  previewClassName="min-h-[420px] p-4 sm:p-8"
+/>
+
+## Explicit Skip
+
+Add `QuestionnaireSkip` when an optional item may be intentionally left unanswered.
+
+<ComponentPreview
+  align="end"
+  styleName="aria-nova"
+  name="questionnaire-skip"
+  previewClassName="min-h-[520px] p-4 sm:p-8"
+/>
+
+## Shortcuts
+
+Assign a letter or number key to each answer with `shortcuts`.
+
+<ComponentPreview
+  align="end"
+  styleName="aria-nova"
+  name="questionnaire-shortcuts"
+  previewClassName="min-h-[480px] p-4 sm:p-8"
+/>
+
+## Custom Validation
+
+Combine controlled navigation with an external schema such as Zod to return to an invalid item and present its error.
+
+<ComponentPreview
+  align="end"
+  styleName="aria-nova"
+  name="questionnaire-validation"
+  previewClassName="min-h-[520px] p-4 sm:p-8"
+/>
+
+## Controlled
+
+Control the active item from host state, such as returning to an invalid step.
+
+<ComponentPreview
+  align="end"
+  styleName="aria-nova"
+  name="questionnaire-controlled"
+  previewClassName="min-h-[520px] p-4 sm:p-8"
+/>
+
+## Resume
+
+Use `defaultItem` or controlled `item` to restore the active step. Restore freeform values with native input `defaultValue`. The application owns persistence and can repopulate values from its saved answers.
+
+<ComponentPreview
+  align="end"
+  styleName="aria-nova"
+  name="questionnaire-resume"
+  previewClassName="min-h-[520px] p-4 sm:p-8"
+/>
+
+## Conditional Items
+
+Disable items that do not apply to the user's earlier answers.
+
+<ComponentPreview
+  align="end"
+  styleName="aria-nova"
+  name="questionnaire-conditional"
+  previewClassName="min-h-[520px] p-4 sm:p-8"
+/>
+
+## Navigation State
+
+Control `item` and handle `onItemChange` in the host component to track the active step. Style or disable custom actions from that state. Built-in actions handle the form's required-answer validation.
+
+<ComponentPreview
+  align="end"
+  styleName="aria-nova"
+  name="questionnaire-navigation-state"
+  previewClassName="min-h-[480px] p-4 sm:p-8"
+/>
+
+## Custom Progress
+
+Use `QuestionnaireProgress` for the built-in indicator, or render a native `progress` element from your controlled item index.
+
+<ComponentPreview
+  align="end"
+  styleName="aria-nova"
+  name="questionnaire-progress"
+  previewClassName="min-h-[520px] p-4 sm:p-8"
+/>
+
+## Animated Items
+
+Animate the active item while keeping progress and navigation stationary.
+
+<ComponentPreview
+  align="end"
+  styleName="aria-nova"
+  name="questionnaire-animated"
+  previewClassName="min-h-[520px] p-4 sm:p-8"
+/>
+
+## Card
+
+Compose Questionnaire with Card slots while keeping the question title and description semantic.
+
+<ComponentPreview
+  align="end"
+  styleName="aria-nova"
+  name="questionnaire-card"
+  previewClassName="min-h-[560px] p-4 sm:p-8"
+/>
+
+## Dialog
+
+Compose Questionnaire inside a Dialog while keeping cancellation and dismissal host-owned.
+
+<ComponentPreview
+  align="end"
+  styleName="aria-nova"
+  name="questionnaire-dialog"
+  previewClassName="min-h-[320px] p-4 sm:p-8"
+/>
+
+## Accessibility
+
+`QuestionnaireItem` renders a `fieldset`, and `QuestionnaireTitle` renders its `legend`. Descriptions and active errors are associated with the current item, and invalid items and answer controls expose `aria-invalid`.
+
+Fixed choices preserve native radio and checkbox behavior. Progress is exposed as a named progressbar, navigation uses real buttons, and inactive items and actions are hidden and inert. Successful navigation focuses the newly active item; failed validation focuses an available answer control.
+
+Always give `QuestionnaireInput` an accessible name with a visible label, `aria-label`, or `aria-labelledby`. A placeholder is not a label. See the [Questionnaire accessibility guide](/docs/accessibility) for labeling custom compositions and the complete keyboard behavior.
+
+## Unstyled
+
+The local implementation uses native form controls and maintains answers while moving between items. Customize the generated source to change markup or styling.
+
+## API Reference
+
+| Component | Main props |
+| --- | --- |
+| `Questionnaire` | `items`, `defaultItem`, `item`, `onItemChange`, `shortcuts`, native form props |
+| `QuestionnaireItem` | `name`, `required`, `disabled`, `multiple` |
+| `QuestionnaireChoice` | `value`, `disabled` |
+| `QuestionnaireInput` | Native input props |
+| `QuestionnaireNext`, `QuestionnairePrevious`, `QuestionnaireSkip`, `QuestionnaireSubmit` | Button props |
+
+Use `onSubmit` with `FormData` to collect the answers. Each form owns its state and validation.

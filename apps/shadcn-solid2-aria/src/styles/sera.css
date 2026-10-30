@@ -1,0 +1,147 @@
+/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/app/(app)/(styles)/sera/{page.tsx,style.css}.
+ * Modified for Solid Aria: local font files, Solid 2 preview boundaries, and responsive editorial layouts.
+ * Licensed under MIT. See ../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("/fonts/playfair-display-latin.woff2") format("woff2");
+  font-weight: 400 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Sans";
+  src: url("/fonts/noto-sans-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+.showcase-sera-content {
+  --radius: 0;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.147 0.004 49.3);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.147 0.004 49.3);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.147 0.004 49.3);
+  --primary: oklch(0.214 0.009 43.1);
+  --primary-foreground: oklch(0.986 0.002 67.8);
+  --secondary: oklch(0.96 0.002 17.2);
+  --secondary-foreground: oklch(0.214 0.009 43.1);
+  --muted: oklch(0.96 0.002 17.2);
+  --muted-foreground: oklch(0.547 0.021 43.1);
+  --accent: oklch(0.96 0.002 17.2);
+  --accent-foreground: oklch(0.214 0.009 43.1);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0.005 34.3);
+  --input: oklch(0.922 0.005 34.3);
+  --ring: oklch(0.714 0.014 41.2);
+  --chart-1: oklch(0.868 0.007 39.5);
+  --chart-2: oklch(0.547 0.021 43.1);
+  --chart-3: oklch(0.438 0.017 39.3);
+  --chart-4: oklch(0.367 0.016 35.7);
+  --chart-5: oklch(0.268 0.011 36.5);
+  --sidebar: oklch(0.986 0.002 67.8);
+  --sidebar-foreground: oklch(0.147 0.004 49.3);
+  --sidebar-primary: oklch(0.214 0.009 43.1);
+  --sidebar-primary-foreground: oklch(0.986 0.002 67.8);
+  --sidebar-accent: oklch(0.96 0.002 17.2);
+  --sidebar-accent-foreground: oklch(0.214 0.009 43.1);
+  --sidebar-border: oklch(0.922 0.005 34.3);
+  --sidebar-ring: oklch(0.714 0.014 41.2);
+
+  .dark & {
+    --background: oklch(0.147 0.004 49.3);
+    --foreground: oklch(0.986 0.002 67.8);
+    --card: oklch(0.214 0.009 43.1);
+    --card-foreground: oklch(0.986 0.002 67.8);
+    --popover: oklch(0.214 0.009 43.1);
+    --popover-foreground: oklch(0.986 0.002 67.8);
+    --primary: oklch(0.922 0.005 34.3);
+    --primary-foreground: oklch(0.214 0.009 43.1);
+    --secondary: oklch(0.268 0.011 36.5);
+    --secondary-foreground: oklch(0.986 0.002 67.8);
+    --muted: oklch(0.268 0.011 36.5);
+    --muted-foreground: oklch(0.714 0.014 41.2);
+    --accent: oklch(0.268 0.011 36.5);
+    --accent-foreground: oklch(0.986 0.002 67.8);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.547 0.021 43.1);
+    --chart-1: oklch(0.868 0.007 39.5);
+    --chart-2: oklch(0.547 0.021 43.1);
+    --chart-3: oklch(0.438 0.017 39.3);
+    --chart-4: oklch(0.367 0.016 35.7);
+    --chart-5: oklch(0.268 0.011 36.5);
+    --sidebar: oklch(0.214 0.009 43.1);
+    --sidebar-foreground: oklch(0.986 0.002 67.8);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.986 0.002 67.8);
+    --sidebar-accent: oklch(0.268 0.011 36.5);
+    --sidebar-accent-foreground: oklch(0.986 0.002 67.8);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.547 0.021 43.1);
+  }
+}
+.showcase-sera {
+  padding-block: 0;
+  font-family: var(--font-sans);
+}
+.showcase-sera .sera-page-header h1 {
+  font-family: var(--font-sans);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+.sera-page-header p {
+  max-width: 672px;
+}
+.sera-create-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 36px;
+  padding-inline: 14px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.showcase-sera-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 48px 24px;
+  font-family: var(--font-sans);
+}
+.sera-traffic-chart .timeline-chart {
+  margin-top: 0;
+}
+.showcase-sera-content [data-slot="card-description"].text-xs {
+  line-height: 16px;
+}
+.sera-mobile-preview {
+  display: none;
+}
+@media (max-width: 767px) {
+  .sera-desktop-previews {
+    display: none;
+  }
+  .sera-mobile-preview {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-top: 32px;
+    padding-block: 8px;
+    background: var(--muted);
+  }
+  .sera-mobile-preview > div {
+    padding: 8px 16px;
+  }
+}

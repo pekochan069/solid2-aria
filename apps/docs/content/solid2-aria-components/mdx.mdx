@@ -1,0 +1,152 @@
+---
+title: MDX with Solid 2
+description: Render Markdown and interactive Solid components with Satteri.
+---
+
+import { CodeGroup } from "../../src/components/markdown/code-group";
+import { MDXCounter } from "../../src/components/mdx-counter";
+
+# MDX with Solid 2
+
+Satteri compiles this document to JSX. The Solid 2 compiler turns that JSX into components for server rendering and browser hydration.
+
+## Interactive components
+
+Import Solid components directly into an MDX document, then use them alongside Markdown. This counter starts at two and updates when you press it.
+
+<div class="not-prose">
+  <MDXCounter initialCount={2} />
+</div>
+
+## Component and styles
+
+Keep related files in one code example. Select a filename to switch files, or use the arrow keys while a tab is focused.
+
+<CodeGroup labels={["Counter.tsx", "counter.css"]} label="Counter example files">
+
+```tsx title="Counter.tsx"
+import { createSignal } from "solid-js";
+import "./counter.css";
+
+export function Counter() {
+  const [count, setCount] = createSignal(0);
+
+  return (
+    <button class="counter" onClick={() => setCount((value) => value + 1)}>
+      Count: {count()}
+    </button>
+  );
+}
+```
+
+```css title="counter.css"
+.counter {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid currentColor;
+  border-radius: 0.375rem;
+  cursor: pointer;
+}
+
+.counter:hover {
+  background: color-mix(in srgb, currentColor 10%, transparent);
+}
+
+.counter:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+```
+
+</CodeGroup>
+
+# Heading1
+
+## Heading2
+
+### Heading3
+
+#### Heading4
+
+##### Heading5
+
+###### Heading6
+
+paragraph
+
+Use `createSignal` for local state. Press <kbd>Tab</kbd> to focus a link or a heading anchor.
+
+- item1
+- item2
+- item3
+
+1. ordered1
+2. ordered2
+3. ordered3
+
+## Nested lists
+
+1. Install the packages.
+   - Choose a package manager.
+   - Install the dependencies.
+     1. Add `@solid2-aria/core`.
+     2. Add `@solid2-aria/components`.
+2. Create a component.
+
+- Unordered list
+  - Nested list
+    - Third level
+  - Another nested item
+- Ordered steps inside a bullet
+  1. First step
+  2. Second step
+
+- A list item with multiple paragraphs.
+
+  The second paragraph stays aligned with the item text.
+
+- The next item keeps its own spacing.
+
+## Blockquotes and separators
+
+> Build accessible interactions first.
+>
+> Add visual styles that fit your application.
+
+---
+
+Callout
+
+> [!note]
+>
+> Note
+
+Code Block
+
+```js
+// hello.js
+const a = () => {};
+```
+
+Shell
+
+```sh
+npm install @solid2-aria/core
+```
+
+[Link](https://www.google.com)
+
+Table
+
+| item1 | item2 | item3 |
+| :---- | :---: | ----: |
+| 1     |   2   |     3 |
+| 4     |   5   |     6 |
+| 7     |   8   |     9 |
+
+**bold** **bold**
+
+_italic_ _italic_
+
+## Long links
+
+[https://example.com/documentation/components/accessible-interactions/keyboard-navigation-and-focus-management](https://example.com/documentation/components/accessible-interactions/keyboard-navigation-and-focus-management)

@@ -1,0 +1,141 @@
+---
+title: "Input OTP"
+description: "Accessible one-time password component with copy paste functionality."
+---
+
+{/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/content/docs/components/aria/input-otp.mdx.
+ * Modified for Solid Aria: Solid 2 examples and imports, local installation, supported APIs, and documentation links.
+ * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */}
+
+import { ComponentPreview, Installation } from "#components/docs/mdx";
+
+
+
+<ComponentPreview styleName="aria-nova" name="input-otp-demo" />
+
+## About
+
+Input OTP is built on top of [input-otp](https://github.com/guilhermerodz/input-otp) by [@guilherme_rodz](https://twitter.com/guilherme_rodz).
+
+## Installation
+
+<Installation component="input-otp" />
+
+## Usage
+
+```tsx showLineNumbers
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSeparator,
+  InputOTPSlot,
+} from "#components/ui/input-otp";
+```
+
+```tsx showLineNumbers
+<InputOTP maxLength={6}>
+  <InputOTPGroup>
+    <InputOTPSlot index={0} />
+    <InputOTPSlot index={1} />
+    <InputOTPSlot index={2} />
+  </InputOTPGroup>
+  <InputOTPSeparator />
+  <InputOTPGroup>
+    <InputOTPSlot index={3} />
+    <InputOTPSlot index={4} />
+    <InputOTPSlot index={5} />
+  </InputOTPGroup>
+</InputOTP>
+```
+
+## Composition
+
+Use the following composition to build an `InputOTP`:
+
+```text
+InputOTP
+├── InputOTPGroup
+│   ├── InputOTPSlot
+│   ├── InputOTPSlot
+│   └── InputOTPSlot
+├── InputOTPSeparator
+├── InputOTPGroup
+│   ├── InputOTPSlot
+│   ├── InputOTPSlot
+│   └── InputOTPSlot
+├── InputOTPSeparator
+└── InputOTPGroup
+    ├── InputOTPSlot
+    └── InputOTPSlot
+```
+
+## Pattern
+
+Use the `pattern` prop to define a custom pattern for the OTP input.
+
+```tsx showLineNumbers {1,5}
+import { REGEXP_ONLY_DIGITS_AND_CHARS } from "input-otp";
+
+<InputOTP maxLength={6} pattern={REGEXP_ONLY_DIGITS_AND_CHARS}>
+  ...
+</InputOTP>;
+```
+
+<ComponentPreview styleName="aria-nova" name="input-otp-pattern" />
+
+## Separator
+
+Use the `<InputOTPSeparator />` component to add a separator between input groups.
+
+<ComponentPreview styleName="aria-nova" name="input-otp-separator" />
+
+## Disabled
+
+Use the `disabled` prop to disable the input.
+
+<ComponentPreview styleName="aria-nova" name="input-otp-disabled" />
+
+## Controlled
+
+Use the `value` and `onChange` props to control the input value.
+
+<ComponentPreview styleName="aria-nova" name="input-otp-controlled" />
+
+## Invalid
+
+Use `aria-invalid` on the slots to show an error state.
+
+<ComponentPreview styleName="aria-nova" name="input-otp-invalid" />
+
+## Four Digits
+
+A common pattern for PIN codes. This uses the `pattern={REGEXP_ONLY_DIGITS}` prop.
+
+<ComponentPreview styleName="aria-nova" name="input-otp-four-digits" />
+
+## Alphanumeric
+
+Use `REGEXP_ONLY_DIGITS_AND_CHARS` to accept both letters and numbers.
+
+<ComponentPreview styleName="aria-nova" name="input-otp-alphanumeric" />
+
+## Form
+
+<ComponentPreview
+  styleName="aria-nova"
+  name="input-otp-form"
+  previewClassName="h-[30rem]"
+/>
+
+## RTL
+
+To configure right-to-left layouts, see the [RTL configuration guide](/docs/accessibility#right-to-left).
+
+<ComponentPreview styleName="aria-nova" name="input-otp-rtl" direction="rtl" />
+
+## API Reference
+
+See the [input-otp](https://input-otp.rodz.dev) documentation for more information.

@@ -1,0 +1,86 @@
+---
+title: "Resizable"
+description: "Accessible resizable panel groups and layouts with keyboard support."
+---
+
+{/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/content/docs/components/aria/resizable.mdx.
+ * Modified for Solid Aria: Solid 2 examples and imports, local installation, supported APIs, and documentation links.
+ * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */}
+
+import { ComponentPreview, Installation } from "#components/docs/mdx";
+
+
+
+<ComponentPreview
+  styleName="aria-nova"
+  name="resizable-demo"
+  previewClassName="h-80"
+/>
+
+## About
+
+Resizable panels use native pointer capture and keyboard separators. Panel sizes are numeric percentages. Drag a handle or focus it and use the arrow keys.
+
+## Installation
+
+<Installation component="resizable" />
+
+## Usage
+
+```tsx showLineNumbers
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "#components/ui/resizable";
+```
+
+```tsx showLineNumbers
+<ResizablePanelGroup orientation="horizontal">
+  <ResizablePanel>One</ResizablePanel>
+  <ResizableHandle />
+  <ResizablePanel>Two</ResizablePanel>
+</ResizablePanelGroup>
+```
+
+## Composition
+
+Use the following composition to build a `ResizablePanelGroup`:
+
+```text
+ResizablePanelGroup
+├── ResizablePanel
+├── ResizableHandle
+└── ResizablePanel
+```
+
+## Vertical
+
+Use `orientation="vertical"` for vertical resizing.
+
+<ComponentPreview styleName="aria-nova" name="resizable-vertical" />
+
+## Handle
+
+Use the `withHandle` prop on `ResizableHandle` to show a visible handle.
+
+<ComponentPreview styleName="aria-nova" name="resizable-handle" />
+
+## RTL
+
+To configure right-to-left layouts, see the [RTL configuration guide](/docs/accessibility#right-to-left).
+
+<ComponentPreview styleName="aria-nova" name="resizable-rtl" direction="rtl" />
+
+## API Reference
+
+| Component             | Props                                        |
+| --------------------- | -------------------------------------------- |
+| `ResizablePanelGroup` | `orientation`, `onLayoutChanged`             |
+| `ResizablePanel`      | `defaultSize`, `minSize`, `maxSize`, `class` |
+| `ResizableHandle`     | `withHandle`, native separator attributes    |
+
+Set sizes as numbers such as `defaultSize={50}`, not percentage strings. Pointer dragging and keyboard resizing respect each panel's minimum and maximum size.

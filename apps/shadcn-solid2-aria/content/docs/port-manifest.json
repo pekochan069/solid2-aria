@@ -1,0 +1,681 @@
+{
+  "pages": [
+    {
+      "slug": "introduction",
+      "title": "Introduction",
+      "description": "shadcn/ui is a set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks and AI models. Open Source. Open Code.",
+      "href": "/docs",
+      "source": "apps/v4/content/docs/(root)/index.mdx"
+    },
+    {
+      "slug": "theming",
+      "title": "Theming",
+      "description": "Using CSS variables and theme tokens.",
+      "href": "/docs/theming",
+      "source": "apps/v4/content/docs/(root)/theming.mdx"
+    },
+    {
+      "slug": "installation",
+      "title": "Installation",
+      "description": "How to install dependencies and structure your app.",
+      "href": "/docs/installation",
+      "source": "apps/v4/content/docs/installation/index.mdx"
+    },
+    {
+      "slug": "dark-mode",
+      "title": "Dark Mode",
+      "description": "Adding dark mode to your site.",
+      "href": "/docs/dark-mode",
+      "source": "apps/v4/content/docs/dark-mode/index.mdx"
+    },
+    {
+      "slug": "installation/vite",
+      "title": "Vite",
+      "description": "Install and configure shadcn/solid for Vite.",
+      "href": "/docs/installation/vite",
+      "source": "apps/v4/content/docs/installation/vite.mdx"
+    },
+    {
+      "slug": "installation/vite-start",
+      "title": "Vite with start mode",
+      "description": "Install and configure shadcn/solid for Vite with start mode.",
+      "href": "/docs/installation/vite-start",
+      "source": "apps/v4/content/docs/installation/vite.mdx"
+    },
+    {
+      "slug": "installation/tanstack-router",
+      "title": "TanStack Router",
+      "description": "Install and configure shadcn/solid for TanStack Router.",
+      "href": "/docs/installation/tanstack-router",
+      "source": "apps/v4/content/docs/installation/tanstack-router.mdx"
+    },
+    {
+      "slug": "installation/tanstack-start",
+      "title": "TanStack Start",
+      "description": "Install and configure shadcn/solid for TanStack Start.",
+      "href": "/docs/installation/tanstack-start",
+      "source": "apps/v4/content/docs/installation/tanstack.mdx"
+    },
+    {
+      "slug": "dark-mode/vite",
+      "title": "Vite",
+      "description": "Adding dark mode to your Vite app.",
+      "href": "/docs/dark-mode/vite",
+      "source": "apps/v4/content/docs/dark-mode/vite.mdx"
+    },
+    {
+      "slug": "dark-mode/vite-start",
+      "title": "Vite with start mode",
+      "description": "Adding dark mode to your Vite with start mode app.",
+      "href": "/docs/dark-mode/vite-start",
+      "source": "apps/v4/content/docs/dark-mode/tanstack-start.mdx"
+    },
+    {
+      "slug": "dark-mode/tanstack-router",
+      "title": "TanStack Router",
+      "description": "Adding dark mode to your TanStack Router app.",
+      "href": "/docs/dark-mode/tanstack-router",
+      "source": "apps/v4/content/docs/dark-mode/vite.mdx"
+    },
+    {
+      "slug": "dark-mode/tanstack-start",
+      "title": "TanStack Start",
+      "description": "Adding dark mode to your TanStack Start app.",
+      "href": "/docs/dark-mode/tanstack-start",
+      "source": "apps/v4/content/docs/dark-mode/tanstack-start.mdx"
+    }
+  ],
+  "excluded": [
+    {
+      "source": "apps/v4/content/docs/(root)/javascript.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/(root)/legacy.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/(root)/monorepo.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/(root)/react-19.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/(root)/tailwind-v4.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2024-10-react-19.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2024-12-monorepo.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2025-02-tailwind-v4.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2025-06-radix-ui.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-01-base-ui.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-02-radix-ui.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-07-base-ui-default.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-07-react-aria.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/components/aria/data-table.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/components/base/menubar.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/components/base/navigation-menu.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/dark-mode/astro.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/dark-mode/next.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/dark-mode/remix.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/forms/formisch.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/forms/index.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/forms/next.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/forms/react-hook-form.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/forms/tanstack-form.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/helpers/ai-sdk.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/helpers/tanstack-ai.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/installation/astro.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/installation/gatsby.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/installation/laravel.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/installation/manual.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/installation/next.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/installation/react-router.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/installation/remix.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/react/message-scroller.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/react/questionnaire.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/rtl/next.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/rtl/start.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/rtl/vite.mdx",
+      "reason": "React-specific integration documentation reserved for future Solid 2 documentation."
+    },
+    {
+      "source": "apps/v4/content/docs/(root)/cli.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/(root)/components-json.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/(root)/directory.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/(root)/figma.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/(root)/mcp.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/(root)/new.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/(root)/official.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/(root)/package-imports.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/(root)/skills.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/(root)/typeset.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/ai-elements/aria/chain-of-thought.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/ai-elements/aria/chat.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/ai-elements/aria/checkpoint.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/ai-elements/aria/confirmation.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/ai-elements/aria/context.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/ai-elements/aria/file-tree.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/ai-elements/aria/inline-citation.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/ai-elements/aria/message.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/ai-elements/aria/model-selector.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/ai-elements/aria/plan.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/ai-elements/aria/prompt-input.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/ai-elements/aria/queue.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/ai-elements/aria/reasoning.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/ai-elements/aria/sources.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/ai-elements/aria/stack-trace.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/ai-elements/aria/subagent.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/ai-elements/aria/suggestion.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/ai-elements/aria/task.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/ai-elements/aria/terminal.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/ai-elements/aria/test-results.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/ai-elements/aria/tool.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/ai-elements/index.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2023-06-new-cli.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2023-07-javascript.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2023-12-new-components.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2024-03-blocks.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2024-03-breadcrumb-otp.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2024-04-lift-mode.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2024-08-npx-shadcn-init.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2024-10-sidebar.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2024-11-icons.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2025-01-blocks.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2025-02-registry-schema.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2025-04-cross-framework.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2025-04-mcp.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2025-04-shadcn-2-5.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2025-05-new-site.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2025-06-calendar.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2025-07-local-file-support.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2025-07-universal-registry.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2025-08-cli-3-mcp.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2025-09-registry-index.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2025-10-new-components.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2025-10-registry-directory.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2025-12-shadcn-create.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-01-inline-side-styles.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-01-rtl.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-02-blocks.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-03-cli-v4.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-03-luma.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-04-component-composition.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-04-partial-preset-apply.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-04-pointer-cursor.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-04-preset-commands.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-04-sera.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-04-shadcn-apply.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-05-package-imports-target-aliases.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-05-registry-include.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-05-rhea.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-05-shadcn-eject.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-06-chat-components.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-06-github-registries.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-07-dynamic-search.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-07-helpers.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-07-toast.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-07-typeset.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-08-helpers-human-in-the-loop.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-08-private-github-registries.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-08-questionnaire.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-09-cn.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/2026-10-ai-elements.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/changelog/index.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/components/aria/date-picker.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/components/aria/toast.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/components/aria/typography.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/registry/api-reference.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/registry/authentication.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/registry/dynamic-search.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/registry/examples.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/registry/faq.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/registry/getting-started.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/registry/github.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/registry/health.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/registry/index.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/registry/mcp.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/registry/namespace.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/registry/open-in-v0.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/registry/registry-index.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/registry/registry-item-json.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/registry/registry-json.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/rtl/index.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/utils/scroll-fade.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/content/docs/utils/shimmer.mdx",
+      "reason": "Excluded from the Solid site: upstream integration, service, release history, or composition is outside the implemented Solid2 Aria registry."
+    },
+    {
+      "source": "apps/v4/examples/aria/drawer-non-modal.tsx",
+      "reason": "The Solid drawer wrapper implements modal sheets and does not support this demo."
+    }
+  ],
+  "previewSources": [],
+  "assets": [
+    "/images/style.jpg",
+    "/images/style-with-theming.jpg",
+    "/images/dashboard-1.jpg",
+    "/images/dashboard-1-dark.jpg",
+    "/images/dashboard-2.jpg",
+    "/images/dashboard-2-dark.jpg",
+    "/images/dashboard-3.jpg",
+    "/images/dashboard-3-dark.jpg",
+    "/images/lift-mode-light.png",
+    "/images/lift-mode-dark.png",
+    "/images/mcp.jpeg",
+    "/images/calendar-2.png",
+    "/images/luma-light.png",
+    "/images/luma-dark.png",
+    "/images/sera-01-light.png",
+    "/images/sera-01-dark.png",
+    "/images/rhea-light.png",
+    "/images/rhea-dark.png",
+    "/images/registry-light.png",
+    "/images/registry-dark.png"
+  ]
+}

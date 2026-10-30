@@ -32,9 +32,7 @@ const svgPaths = (svg: string) =>
     (match) => match.groups?.path
   );
 
-assert.match(localDoc("installation"), /<Steps>/u);
-
-assert.match(localDoc("installation"), /<RegistryCommand name="button"/u);
+assert.doesNotMatch(localDoc("installation"), /<Steps>/u);
 
 assert.match(
   localDoc("installation"),
@@ -63,13 +61,10 @@ for (const framework of frameworks) {
   assert.match(darkMode, /showLineNumbers/u);
   assert.equal(darkMode.includes("<Steps>"), isServer);
 
-  if (framework !== "tanstack-router") {
-    assert.deepEqual(headings(installation), [
-      "Use shadcn/create",
-      "Use the CLI",
-      "Existing Project",
-    ]);
-  }
+  assert.match(installation, /bunx (?:create-solid|@tanstack\/cli)@latest/u);
+  assert.match(installation, /## Create a project/u);
+  assert.match(installation, /## Add a component/u);
+  assert.match(installation, /<RegistryCommand name="theme"/u);
 
   for (const document of [installation, darkMode]) {
     assert.match(document, /Copyright \(c\) 2023 shadcn/u);
@@ -183,5 +178,5 @@ if (origin !== undefined) {
 }
 
 console.info(
-  "Framework documentation matches upstream cards, SVGs, headings, steps, and attribution."
+  "Framework setup guides, cards, SVGs, steps, and attribution verified."
 );

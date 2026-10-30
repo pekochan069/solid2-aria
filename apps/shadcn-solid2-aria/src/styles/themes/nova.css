@@ -1,0 +1,2 @@
+@reference "../global.css";
+@import "../../registry/styles/style-nova.css" layer(components);

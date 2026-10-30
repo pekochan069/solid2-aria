@@ -1,0 +1,101 @@
+---
+title: "Hover Card"
+description: "A popover that appears on hover, focus, or long press to preview content available behind a link."
+---
+
+{/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/content/docs/components/aria/hover-card.mdx.
+ * Modified for Solid Aria: Solid 2 examples and imports, local installation, supported APIs, and documentation links.
+ * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */}
+
+import { ComponentPreview, Installation } from "#components/docs/mdx";
+
+
+
+<ComponentPreview
+  styleName="aria-nova"
+  name="hover-card-demo"
+  previewClassName="h-80"
+/>
+
+## Installation
+
+<Installation component="hover-card" />
+
+## Usage
+
+```tsx showLineNumbers
+import { HoverCard, HoverCardTrigger } from "#components/ui/hover-card";
+```
+
+```tsx showLineNumbers
+<HoverCardTrigger>
+  <Button variant="link">Hover</Button>
+  <HoverCard>
+    A reactive JavaScript library for building user interfaces.
+  </HoverCard>
+</HoverCardTrigger>
+```
+
+## Composition
+
+Use the following composition to build a `HoverCard`:
+
+```text
+HoverCardTrigger
+├── Button
+└── HoverCard
+```
+
+## Trigger Delays
+
+Use `delay` and `closeDelay` on the `HoverCardTrigger` to control when the card opens and closes.
+
+```tsx showLineNumbers
+<HoverCardTrigger delay={100} closeDelay={200}>
+  <Button variant="link">Hover</Button>
+  <HoverCard>Content</HoverCard>
+</HoverCardTrigger>
+```
+
+## Positioning
+
+Use the `placement` prop on `HoverCard` to control placement.
+
+```tsx showLineNumbers
+<HoverCardTrigger>
+  <Button variant="link">Hover</Button>
+  <HoverCard placement="top">Content</HoverCard>
+</HoverCardTrigger>
+```
+
+## Basic
+
+<ComponentPreview
+  styleName="aria-nova"
+  name="hover-card-demo"
+  previewClassName="h-80"
+/>
+
+## Sides
+
+<ComponentPreview
+  styleName="aria-nova"
+  name="hover-card-sides"
+  previewClassName="h-[22rem]"
+/>
+
+## RTL
+
+To configure right-to-left layouts, see the [RTL configuration guide](/docs/accessibility#right-to-left).
+
+<ComponentPreview
+  styleName="aria-nova"
+  name="hover-card-rtl"
+  direction="rtl"
+  previewClassName="h-80"
+/>
+
+## API Reference

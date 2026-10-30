@@ -1,0 +1,480 @@
+---
+title: "Code Block"
+description: "Displays code, terminal output and diffs with an optional header, line numbers and a copy button."
+---
+
+{/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/content/docs/components/aria/code-block.mdx.
+ * Modified for Solid Aria: Solid 2 examples and imports, local installation, supported APIs, and documentation links.
+ * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */}
+
+import { ComponentPreview, Installation } from "#components/docs/mdx";
+
+
+
+<ComponentPreview
+  styleName="aria-rhea"
+  name="code-block-demo"
+  previewClassName="h-auto"
+/>
+
+`CodeBlock` displays code, terminal output, logs and diffs. It has a header with a title and actions, line numbers, wrapping, diff and highlighted lines, and a small size for tool output in a [Trace](/docs/components/trace).
+
+Syntax highlighting is optional. Plain output uses the presentation components directly.
+
+## Installation
+
+<Installation component="code-block" />
+
+Connect a Solid-compatible highlighter when you need [syntax highlighting](#syntax-highlighting).
+
+## Usage
+
+```tsx showLineNumbers
+import {
+  CodeBlock,
+  CodeBlockActions,
+  CodeBlockContent,
+  CodeBlockCopyButton,
+  CodeBlockFooter,
+  CodeBlockHeader,
+  CodeBlockLine,
+  CodeBlockTitle,
+} from "#components/ui/code-block";
+```
+
+```tsx showLineNumbers
+<CodeBlock>
+  <CodeBlockHeader>
+    <CodeBlockTitle>Terminal</CodeBlockTitle>
+    <CodeBlockActions>
+      <CodeBlockCopyButton value={output} />
+    </CodeBlockActions>
+  </CodeBlockHeader>
+  <CodeBlockContent>{output}</CodeBlockContent>
+</CodeBlock>
+```
+
+## Composition
+
+```text
+CodeBlock
+├── CodeBlockHeader
+│   ├── CodeBlockTitle
+│   └── CodeBlockActions
+│       └── CodeBlockCopyButton
+├── CodeBlockActions (floating, when there is no header)
+├── CodeBlockContent
+│   └── CodeBlockLine
+└── CodeBlockFooter
+```
+
+`CodeBlockContent` takes a string or a list of `CodeBlockLine`. Use lines when you need line variants or highlighted tokens.
+
+## Features
+
+- **It streams cheaply.** A string child renders as one text node, and the highlighter tokenizes only the new lines as code arrives.
+- **It copies cleanly.** Line numbers and diff markers are left out of a selection, and blank lines survive the copy.
+- **It reads left to right.** The content is always `dir="ltr"`. The header follows the page direction.
+- **Highlighting stays separate.** Connect your application's highlighter to the code presentation components.
+- **It fits where code shows up.** Use it in a message, a Markdown fence, a Trace line, Tabs, a Dialog or a `typeset` container.
+- **It scrolls by keyboard.** The content is focusable, and floating actions show on focus as well as on hover.
+
+## Basic
+
+Pass a string to `CodeBlockContent`. It renders as one text node, so it stays cheap while output streams.
+
+<ComponentPreview
+  styleName="aria-rhea"
+  name="code-block-basic"
+  previewClassName="h-auto"
+/>
+
+## Header
+
+`CodeBlockHeader` holds a `CodeBlockTitle` and `CodeBlockActions`. `CodeBlockCopyButton` copies its `value`.
+
+<ComponentPreview
+  styleName="aria-rhea"
+  name="code-block-header"
+  previewClassName="h-auto"
+/>
+
+A long title truncates. To link the title to a file, wrap `CodeBlockTitle` in an anchor.
+
+```tsx showLineNumbers
+<CodeBlockHeader>
+  <a href="/files/route.ts">
+    <CodeBlockTitle>app/api/chat/route.ts</CodeBlockTitle>
+  </a>
+</CodeBlockHeader>
+```
+
+## Actions
+
+`CodeBlockActions` holds any number of buttons. For a wrap toggle, keep the state yourself and pass it to `wrap`.
+
+<ComponentPreview
+  styleName="aria-rhea"
+  name="code-block-actions"
+  previewClassName="h-auto"
+/>
+
+```tsx showLineNumbers
+import { createSignal } from "solid-js"
+
+const [wrap, setWrap] = createSignal(false)
+
+<CodeBlockActions>
+  <Button
+    variant="ghost"
+    size="icon-xs"
+    aria-label="Wrap lines"
+    aria-pressed={wrap()}
+    onPress={() => setWrap(!wrap())}
+  >
+    <WrapTextIcon />
+  </Button>
+  <CodeBlockCopyButton value={output} />
+</CodeBlockActions>
+<CodeBlockContent wrap()={wrap()}>{output}</CodeBlockContent>
+```
+
+## Floating Actions
+
+Without a header, put `CodeBlockActions` directly inside `CodeBlock`. The actions float at the top end and stay hidden until the block is hovered or focused. They always show on touch screens.
+
+<ComponentPreview
+  styleName="aria-rhea"
+  name="code-block-floating-actions"
+  previewClassName="h-auto"
+/>
+
+## Line Numbers
+
+Add `lineNumbers` to `CodeBlockContent`. A string child is split into lines, and the numbers are not copied with a selection.
+
+<ComponentPreview
+  styleName="aria-rhea"
+  name="code-block-line-numbers"
+  previewClassName="h-auto"
+/>
+
+## Start Line
+
+Set `startLine` to number lines from a given line, for a snippet from the middle of a file. The gutter grows to fit the widest number.
+
+<ComponentPreview
+  styleName="aria-rhea"
+  name="code-block-start-line"
+  previewClassName="h-auto"
+/>
+
+## Wrap
+
+Long lines scroll by default. Add `wrap` to wrap them, which suits tool output and error messages. To let the reader toggle it, see [Actions](#actions).
+
+<ComponentPreview
+  styleName="aria-rhea"
+  name="code-block-wrap"
+  previewClassName="h-auto"
+/>
+
+## Highlighted Lines
+
+Render each line as a `CodeBlockLine` and set `variant="highlighted"` on the lines to call out.
+
+<ComponentPreview
+  styleName="aria-rhea"
+  name="code-block-highlighted-lines"
+  previewClassName="h-auto"
+/>
+
+## Diff
+
+Set `variant="added"` or `variant="removed"` on a `CodeBlockLine`. Each one adds a `+` or `−` marker.
+
+<ComponentPreview
+  styleName="aria-rhea"
+  name="code-block-diff"
+  previewClassName="h-auto"
+/>
+
+## Height
+
+Cap the height with a `max-h-*` class on `CodeBlockContent`. The content scrolls inside the block.
+
+<ComponentPreview
+  styleName="aria-rhea"
+  name="code-block-height"
+  previewClassName="h-auto"
+/>
+
+`CodeBlockContent` fades its edges with [`scroll-fade`](https://ui.shadcn.com/docs/utils/scroll-fade) as it scrolls: left and right by default, top and bottom when it wraps. Add `scroll-fade-y` to a capped block that does not wrap.
+
+## Show More
+
+`CodeBlockFooter` is a slot below the content. For Show More, cap the content while it is collapsed and put a ghost `xs` `Button` in the footer.
+
+<ComponentPreview
+  styleName="aria-rhea"
+  name="code-block-show-more"
+  previewClassName="h-auto"
+/>
+
+```tsx showLineNumbers
+import { createUniqueId } from "solid-js"
+
+import { createSignal } from "solid-js"
+
+const [expanded, setExpanded] = createSignal(false)
+const id = createUniqueId()
+
+<CodeBlockContent
+  id={id}
+  class={expanded() ? undefined : "max-h-64 overflow-y-hidden scroll-fade-y"}
+>
+  {code}
+</CodeBlockContent>
+<CodeBlockFooter class="justify-center">
+  <Button
+    variant="ghost"
+    size="xs"
+    aria-expanded={expanded()}
+    aria-controls={id}
+    onPress={() => setExpanded(!expanded())}
+  >
+    {expanded() ? "Show less" : "Show more"}
+  </Button>
+</CodeBlockFooter>
+```
+
+### Max Height
+
+To keep a long block from taking over the page, raise the cap instead of removing it. The expanded content scrolls, and the edges fade as you scroll.
+
+<ComponentPreview
+  styleName="aria-rhea"
+  name="code-block-show-more-scroll"
+  previewClassName="h-auto"
+/>
+
+## Size
+
+Use `size="sm"` for tool and [Trace](#trace) output. It has tighter padding and `text-xs` text.
+
+<ComponentPreview
+  styleName="aria-rhea"
+  name="code-block-size"
+  previewClassName="h-auto"
+/>
+
+## Destructive
+
+Use `variant="destructive"` for errors and failed output.
+
+<ComponentPreview
+  styleName="aria-rhea"
+  name="code-block-destructive"
+  previewClassName="h-auto"
+/>
+
+## Trace
+
+Put a `CodeBlock` with `size="sm"` in `TraceCollapsibleContent` for tool and terminal output. Add `wrap` and a `max-h-64` class to `CodeBlockContent` so long output wraps and scrolls inside the trace. The block sets its own text color, so `TraceCollapsibleContent` does not mute it.
+
+<ComponentPreview
+  styleName="aria-rhea"
+  name="code-block-trace"
+  previewClassName="h-auto"
+/>
+
+## Tabs
+
+Show several files with [Tabs](/docs/components/tabs), one `CodeBlock` in each `TabsContent`.
+
+<ComponentPreview
+  styleName="aria-rhea"
+  name="code-block-tabs"
+  previewClassName="h-auto"
+/>
+
+## Message
+
+Put a `CodeBlock` between paragraphs inside a [Message](/docs/components/message).
+
+<ComponentPreview
+  styleName="aria-rhea"
+  name="code-block-chat"
+  previewClassName="h-auto"
+/>
+
+## Typeset
+
+A `CodeBlock` inside a [`typeset`](/typeset) container keeps its own styles and gets the same space above as a paragraph.
+
+<ComponentPreview
+  styleName="aria-rhea"
+  name="code-block-typeset"
+  previewClassName="h-auto"
+/>
+
+## RTL
+
+To configure right-to-left layouts, see the [RTL configuration guide](/docs/accessibility#right-to-left). Code always reads left to right. The header follows the page direction.
+
+<ComponentPreview styleName="aria-nova" name="code-block-rtl" direction="rtl" />
+
+## Syntax Highlighting
+
+The presentation components accept plain text or a list of `CodeBlockLine` children. Supply highlighted Solid JSX from a renderer you own.
+
+<ComponentPreview
+  styleName="aria-rhea"
+  name="code-block-highlighting"
+  previewClassName="h-auto"
+/>
+
+### Languages
+
+Choose the languages in the syntax highlighter used by your application. Plain strings work without a highlighter. Loading only the languages you need keeps the client bundle smaller.
+
+<ComponentPreview
+  styleName="aria-rhea"
+  name="code-block-languages"
+  previewClassName="h-auto"
+/>
+
+### Terminal Output
+
+Decode terminal escape sequences with a Solid-compatible ANSI renderer before passing its output to `CodeBlockContent`. A plain string preserves escape sequences as text.
+
+<ComponentPreview
+  styleName="aria-rhea"
+  name="code-block-ansi"
+  previewClassName="h-auto"
+/>
+
+### Server Rendering
+
+Plain code renders on the server without browser APIs. If you highlight on the server, pass the resulting data to a Solid component.
+
+```tsx
+import { CodeBlock, CodeBlockContent } from "#components/ui/code-block";
+
+export function SourceCode(props: { code: string }) {
+  return (
+    <CodeBlock>
+      <CodeBlockContent lineNumbers>{props.code}</CodeBlockContent>
+    </CodeBlock>
+  );
+}
+```
+
+### Streaming
+
+Pass the current string from a signal to `CodeBlockContent`. The code updates when the signal changes. If you add tokenization, cache unchanged lines in your highlighter rather than recreating the whole transcript.
+
+<ComponentPreview
+  styleName="aria-rhea"
+  name="code-block-streaming"
+  previewClassName="h-auto"
+/>
+
+### Markdown
+
+Connect fenced code blocks from your Solid Markdown renderer to `CodeBlock` and `CodeBlockContent`. Keep inline code separate.
+
+<ComponentPreview
+  styleName="aria-rhea"
+  name="code-block-markdown"
+  previewClassName="h-auto"
+/>
+
+## Accessibility
+
+- `CodeBlockContent` is a `pre` with a `code` element and always sets `dir="ltr"`, so code reads left to right on an RTL page.
+- `CodeBlockContent` has `tabindex={0}`, so keyboard users can focus it and scroll it. Pass `tabindex={-1}` to remove the tab stop.
+- Floating actions show when focus is inside the block, not only on hover, so keyboard users can reach them.
+- Line numbers are hidden from screen readers.
+- Diff lines carry a `+` or `−` marker as well as a tint, so the change does not rely on color.
+- `CodeBlockCopyButton` is labelled "Copy", and a polite live region announces "Copied" after a successful copy.
+- Give a wrap toggle `aria-pressed` so its state is announced.
+- Give a Show More button `aria-expanded` and point `aria-controls` at the `id` of `CodeBlockContent`.
+
+## API Reference
+
+### CodeBlock
+
+The surface that holds the header, the content and the footer.
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `variant` | `"default" \| "destructive"` | `"default"` | The tone of the block. |
+| `size` | `"default" \| "sm"` | `"default"` | `"sm"` has tighter padding and `text-xs` code, for tool output. |
+| `class` | `string` | - | Additional classes to apply to the block. |
+
+### CodeBlockHeader
+
+A row above the content for a title and actions.
+
+| Prop    | Type     | Default | Description                                |
+| ------- | -------- | ------- | ------------------------------------------ |
+| `class` | `string` | -       | Additional classes to apply to the header. |
+
+### CodeBlockTitle
+
+A filename or a label, with an optional icon. It truncates.
+
+| Prop    | Type     | Default | Description                               |
+| ------- | -------- | ------- | ----------------------------------------- |
+| `class` | `string` | -       | Additional classes to apply to the title. |
+
+### CodeBlockActions
+
+Holds buttons at the end of the header. As a direct child of `CodeBlock`, it floats.
+
+| Prop    | Type     | Default | Description                                 |
+| ------- | -------- | ------- | ------------------------------------------- |
+| `class` | `string` | -       | Additional classes to apply to the actions. |
+
+### CodeBlockCopyButton
+
+A ghost icon button that copies `value` to the clipboard. It accepts the props of [`Button`](/docs/components/button).
+
+| Prop    | Type     | Default | Description                                |
+| ------- | -------- | ------- | ------------------------------------------ |
+| `value` | `string` | -       | Required. The text to copy.                |
+| `class` | `string` | -       | Additional classes to apply to the button. |
+
+### CodeBlockContent
+
+The `pre` that scrolls or wraps.
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `children` | `JSX.Element` | - | A string, or a list of `CodeBlockLine`. |
+| `wrap` | `boolean` | `false` | Wrap long lines instead of scrolling. |
+| `lineNumbers` | `boolean` | `false` | Number each line. A string child is split into lines. |
+| `startLine` | `number` | `1` | The number of the first line, when `lineNumbers` is set. |
+| `tabindex` | `number` | `0` | Makes the content focusable so it can be scrolled by keyboard. |
+| `class` | `string` | - | Additional classes to apply to the content, such as `max-h-72`. |
+
+### CodeBlockLine
+
+One line of code.
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `variant` | `"default" \| "added" \| "removed" \| "highlighted"` | `"default"` | The state of the line. |
+| `class` | `string` | - | Additional classes to apply to the line. |
+
+### CodeBlockFooter
+
+A row below the content, such as for a Show More button.
+
+| Prop    | Type     | Default | Description                                |
+| ------- | -------- | ------- | ------------------------------------------ |
+| `class` | `string` | -       | Additional classes to apply to the footer. |

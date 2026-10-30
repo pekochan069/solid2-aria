@@ -1,0 +1,107 @@
+---
+title: "Collapsible"
+description: "An interactive component which expands/collapses a panel."
+---
+
+{/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/content/docs/components/aria/collapsible.mdx.
+ * Modified for Solid Aria: Solid 2 examples and imports, local installation, supported APIs, and documentation links.
+ * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */}
+
+import { ComponentPreview, Installation } from "#components/docs/mdx";
+
+
+
+<ComponentPreview styleName="aria-nova" name="collapsible-demo" align="start" />
+
+## Installation
+
+<Installation component="collapsible" />
+
+## Usage
+
+```tsx showLineNumbers
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "#components/ui/collapsible";
+```
+
+```tsx showLineNumbers
+<Collapsible>
+  <CollapsibleTrigger>Can I use this in my project?</CollapsibleTrigger>
+  <CollapsibleContent>
+    Yes. Free to use for personal and commercial projects. No attribution
+    required.
+  </CollapsibleContent>
+</Collapsible>
+```
+
+## Composition
+
+Use the following composition to build a `Collapsible`:
+
+```text
+Collapsible
+├── CollapsibleTrigger
+└── CollapsibleContent
+```
+
+## Controlled State
+
+Use the `isExpanded` and `onExpandedChange` props to control the state.
+
+```tsx showLineNumbers
+import { createSignal } from "solid-js";
+
+export function Example() {
+  const [open, setOpen] = createSignal(false);
+
+  return (
+    <Collapsible isExpanded={open()} onExpandedChange={setOpen}>
+      <CollapsibleTrigger>Toggle</CollapsibleTrigger>
+      <CollapsibleContent>Content</CollapsibleContent>
+    </Collapsible>
+  );
+}
+```
+
+## Basic
+
+<ComponentPreview
+  styleName="aria-nova"
+  name="collapsible-basic"
+  align="start"
+/>
+
+## Settings Panel
+
+Use a trigger button to reveal additional settings.
+
+<ComponentPreview styleName="aria-nova" name="collapsible-settings" />
+
+## File Tree
+
+Use nested collapsibles to build a file tree.
+
+<ComponentPreview
+  styleName="aria-nova"
+  name="collapsible-file-tree"
+  previewClassName="h-[36rem]"
+/>
+
+## RTL
+
+To configure right-to-left layouts, see the [RTL configuration guide](/docs/accessibility#right-to-left).
+
+<ComponentPreview
+  styleName="aria-nova"
+  name="collapsible-rtl"
+  direction="rtl"
+  align="start"
+/>
+
+## API Reference

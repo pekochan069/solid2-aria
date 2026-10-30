@@ -1,0 +1,237 @@
+---
+title: TanStack Start
+description: Install and configure shadcn/solid for TanStack Start.
+---
+
+{/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/content/docs/installation/tanstack.mdx.
+ * Modified for Solid Aria: official project scaffolding, Solid 2 setup, package imports and Vite aliases, and registry installation.
+ * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */}
+
+import { Callout } from "#components/docs/callout";
+import { RegistryCommand, Steps } from "#components/docs/mdx";
+
+Create a TanStack Start app with the official TanStack CLI, update the scaffold to Solid 2, and configure shadcn/solid.
+
+If you already have a Solid 2 app with Tailwind CSS 4, check the [prerequisites](#before-you-start) and continue at [Configure shadcn](#configure-shadcn).
+
+## Before you start
+
+<Callout>
+
+These components require Solid 2. The setup below upgrades the generated app to Solid 2. If you have a Solid 1 app, migrate it before installing these components.
+
+</Callout>
+
+Install Node.js 22.12 or later and a package manager. The commands default to Bun. Use the package manager tabs for npm, pnpm, or Yarn.
+
+The accessibility package is available on npm. You can create the app in any directory, without cloning the Solid Aria repository.
+
+## Create a project
+
+This follows the [official TanStack Start setup](https://tanstack.com/start/latest/docs/framework/solid/getting-started), with the runtime and compiler updated for Solid 2.
+
+<Steps>
+
+### Generate the app
+
+Run these commands in the directory where you keep your projects. Replace `my-app` with your application name:
+
+```bash
+bunx @tanstack/cli@latest create my-app --framework solid --deployment nitro --no-install --no-git --no-intent --no-toolchain --no-examples --yes
+cd my-app
+```
+
+The flags create a TypeScript app with TanStack Start, Tailwind CSS, and Nitro without interactive prompts. Install and upgrade the dependencies in the next step.
+
+</Steps>
+
+## Configure shadcn
+
+<Steps>
+
+### Install dependencies
+
+The TanStack CLI currently generates a Solid 1 scaffold. Replace its runtime and compiler dependencies before starting the app:
+
+```bash
+bun remove vite-plugin-solid @tanstack/solid-router-devtools @tanstack/devtools-vite
+bun add solid-js@next @solidjs/web@next @tanstack/solid-router@rc @tanstack/solid-start@rc nitro@latest
+bun add @solid2-aria/components shadcn class-variance-authority cn tw-animate-css @lucide/solid
+bun add -d @solidjs/vite-plugin@next
+```
+
+### Configure import alias
+
+Add `imports` entry to `package.json`. Keep the generated scripts and dependencies:
+
+```json title="package.json" showLineNumbers
+{
+  "imports": {
+    "#*": "./src/*"
+  }
+}
+```
+
+These aliases are shared by TypeScript and the component installer. Keep `moduleResolution: "bundler"` in `tsconfig.json` and set `resolvePackageJsonImports` to `true`.
+
+```json title="tsconfig.json" showLineNumbers
+{
+  "compilerOptions": {
+    "moduleResolution": "bundler",
+    "resolvePackageJsonImports": true,
+  }
+}
+```
+
+### Configure Vite
+
+Enable `resolve.tsconfigPaths` in `vite.config.ts`. Keep the generated server, build, and other options. The configuration below includes the required framework plugins:
+
+```ts title="vite.config.ts" showLineNumbers
+import solid from "@solidjs/vite-plugin";
+import tailwindcss from "@tailwindcss/vite";
+import { tanstackStart } from "@tanstack/solid-start/plugin/vite";
+import { nitro } from "nitro/vite";
+import { defineConfig } from "vite";
+
+export default defineConfig({
+  plugins: [
+    tailwindcss(),
+    tanstackStart(),
+    nitro(),
+    solid({ ssr: true }),
+  ],
+  resolve: {
+    tsconfigPaths: true,
+  },
+});
+```
+
+### Update the scaffold to Solid 2
+
+In `tsconfig.json`, change `compilerOptions.jsxImportSource` to `@solidjs/web`. Keep the other generated settings:
+
+```json title="tsconfig.json" showLineNumbers
+{
+  "compilerOptions": {
+    "jsxImportSource": "@solidjs/web"
+  }
+}
+```
+
+Replace `src/routes/__root.tsx` to use the Solid 2 document APIs. Keep the generated router in `src/router.tsx`:
+
+```tsx title="src/routes/__root.tsx" showLineNumbers
+import {
+  createRootRoute,
+  HeadContent,
+  Outlet,
+  Scripts,
+} from "@tanstack/solid-router";
+import stylesheet from "../styles.css?url";
+
+export const Route = createRootRoute({
+  head: () => ({
+    meta: [
+      { charSet: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { title: "My Solid Aria app" },
+    ],
+    links: [{ rel: "stylesheet", href: stylesheet }],
+  }),
+  component: RootDocument,
+});
+
+function RootDocument() {
+  return (
+    <html lang="en">
+      <head><HeadContent /></head>
+      <body><Outlet /><Scripts /></body>
+    </html>
+  );
+}
+```
+
+### Configure the shadcn CLI
+
+Create `components.json` beside `package.json`. For the generated template, point `tailwind.css` to `src/styles.css`:
+
+```json title="components.json" showLineNumbers
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "new-york",
+  "rsc": false,
+  "tsx": true,
+  "tailwind": {
+    "css": "src/styles.css",
+    "baseColor": "neutral",
+    "cssVariables": true
+  },
+  "aliases": {
+    "components": "#components",
+    "ui": "#components/ui",
+    "lib": "#lib",
+    "utils": "#lib/utils",
+    "hooks": "#hooks"
+  }
+}
+```
+
+The `style` field configures the CLI. Components from this registry contain Nova styling. You do not need to run `shadcn init` for this setup.
+
+For an existing app, use the stylesheet that your application imports and aliases that match your own configuration.
+
+### Set up the theme
+
+If your app already has a theme you want to keep, skip this step. Review and merge the required utilities from [the component stylesheet](/theme.css) instead.
+
+For a new app, install the shared theme once before adding components:
+
+<RegistryCommand name="theme" />
+
+This command applies the default theme tokens and adds Solid data variants and shared animations to the stylesheet configured in `components.json`.
+
+</Steps>
+
+## Add a component
+
+Run this command from your application directory. Use the full registry URL shown here to install the Solid implementation.
+
+<RegistryCommand name="button" />
+
+The CLI creates `src/components/ui/button.tsx` and installs its npm dependencies. Components that use other components install those files too. Adding a component does not change your stylesheet or theme tokens.
+
+## Customize the theme
+
+Open [Create](/create) to preview colors, fonts, and radius settings. Use **Get Code** to copy the theme settings into your app. Create customizes an application you have already set up.
+
+Continue with [theming](/docs/theming), add [dark mode](/docs/dark-mode/tanstack-start), or install another [component](/docs/components).
+
+## Troubleshooting
+
+### The package manager cannot find @solid2-aria/components
+
+Run `bun add @solid2-aria/components` from the directory containing your application's `package.json`. Check that your package manager can reach the public npm registry.
+
+### The component cannot resolve its accessibility package
+
+Check that `@solid2-aria/components`, `solid-js`, and `@solidjs/web` are installed in your app. Keep both Solid packages on compatible Solid 2 versions. Complete the Solid 2 dependency upgrade above before installing components.
+
+### The button renders without styles
+
+Check that `src/routes/__root.tsx` links to `src/styles.css`, that `components.json` points to `src/styles.css`, and that the Tailwind Vite plugin is enabled. The stylesheet needs both `@import "tailwindcss"` and theme tokens. For a new app, complete [Set up the theme](#set-up-the-theme) before installing components.
+
+### Imports starting with #components fail
+
+Check that `package.json` includes the `imports` entries, that `vite.config.ts` enables `resolve.tsconfigPaths`, and that `components.json` uses the same alias roots. Keep `moduleResolution: "bundler"` in `tsconfig.json`. Restart the development server after changing the Vite configuration.
+
+### JSX types or Solid runtime imports fail
+
+Use Solid 2 versions of both `solid-js` and `@solidjs/web`, set `jsxImportSource` to `@solidjs/web`, and use `@solidjs/vite-plugin`. Import browser APIs such as `render` from `@solidjs/web`.
+
+### The registry command cannot connect
+
+Open the command's `/r/button.json` URL in your browser. For a local registry, keep the documentation server running and set its `VITE_PUBLIC_URL` to the origin you can reach. Restart the server after changing that environment variable.

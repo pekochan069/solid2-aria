@@ -1,0 +1,83 @@
+---
+title: "Sonner"
+description: "Toast notifications for Solid 2, built with @solid2-aria/sonner."
+---
+
+{/*
+ * Copyright (c) 2023 shadcn
+ * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/content/docs/components/aria/sonner.mdx.
+ * Modified for Solid Aria: Solid 2 examples and imports, local installation, supported APIs, and documentation links.
+ * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
+ */}
+
+import { ComponentPreview, Installation } from "#components/docs/mdx";
+
+
+
+<ComponentPreview styleName="aria-nova" name="sonner-demo" />
+
+## About
+
+Sonner is built and maintained by [Emil Kowalski](https://sonner.emilkowal.ski). This wrapper uses `@solid2-aria/sonner` for Solid 2 and applies the shared component theme.
+
+## Installation
+
+<Installation component="sonner" />
+
+The command installs `@solid2-aria/sonner` automatically, along with the toast component and its other dependencies. The component imports `@solid2-aria/sonner/styles.css` for toast styling and animations.
+
+## Usage
+
+Render `Toaster` once near your application root. Import `toast` from the same local module and call it from event handlers.
+
+```tsx
+import { Button } from "#components/ui/button";
+import { toast, Toaster } from "#components/ui/sonner";
+
+export function Notifications() {
+  return (
+    <>
+      <Button onPress={() => toast("Event has been created.")}>
+        Show toast
+      </Button>
+      <Toaster />
+    </>
+  );
+}
+```
+
+## Types
+
+Use `toast.success`, `toast.info`, `toast.warning`, `toast.error`, or `toast.loading` for a specific message type. Use `toast.promise` to update a toast as asynchronous work completes.
+
+<ComponentPreview styleName="aria-nova" name="sonner-types" />
+
+## Description
+
+Pass a `description` in the toast options for supporting text.
+
+```tsx
+toast("Event has been created.", {
+  description: "Monday, December 2 at 9:00 AM",
+});
+```
+
+<ComponentPreview styleName="aria-nova" name="sonner-description" />
+
+## Position
+
+Set `position` on `Toaster`, or pass a `position` in the options for one toast. Available positions are `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, and `bottom-right`.
+
+<ComponentPreview styleName="aria-nova" name="sonner-position" />
+
+## API Reference
+
+| API | Description |
+| --- | --- |
+| `toast(message, options)` | Adds a message and returns its id. |
+| `toast.success`, `toast.info`, `toast.warning`, `toast.error`, `toast.loading` | Adds a toast with the selected type. |
+| `toast.promise(promise, options)` | Updates a toast for pending, successful, and failed work. |
+| `toast.dismiss(id)` | Closes a toast. Omit the id to dismiss all toasts. |
+| `Toaster` | Renders notifications and accepts `position`, `theme`, `duration`, `richColors`, `closeButton`, and `toastOptions`. |
+
+Toast options include `description`, `duration`, `action`, `cancel`, and `position`. See the local `ToasterProps` and `@solid2-aria/sonner` types for the complete Solid signatures.
