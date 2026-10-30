@@ -1,0 +1,11 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    "build": {
+      "env": ["VITE_PUBLIC_URL"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": [".output/**", ".vercel/output/**"]
+    }
+  }
+}
