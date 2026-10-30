@@ -32,6 +32,7 @@
     "@tanstack/solid-router": "^2.0.0-rc.9",
     "@tanstack/solid-router-devtools": "^2.0.0-rc.6",
     "@tanstack/solid-start": "2.0.0-rc.9",
+    "@tanstack/start-server-core": "^1.169.45",
     "class-variance-authority": "^0.7.1",
     "cn": "^0.5.0",
     "d3-shape": "3.2.0",
