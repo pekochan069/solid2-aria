@@ -1,14 +1,21 @@
 /*
  * Copyright (c) 2023 shadcn
  * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/app/(app)/(typeset)/typeset/page.tsx, components/{customizer,docs-panel,preview,toolbar}.tsx and lib/search-params.ts.
- * Modified for Solid Aria: Solid 2 typography state, history, URL sharing, native controls, and local fixture previews.
+ * Modified for Solid Aria: Solid 2 typography state, history, URL sharing, accessible picker menus, locks, and transient fixture previews.
  * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
  */
 
 import ArrowHorizontalIcon from "@hugeicons/core-free-icons/ArrowHorizontalIcon";
 import ParagraphSpacingIcon from "@hugeicons/core-free-icons/ParagraphSpacingIcon";
 import TextSmallcapsIcon from "@hugeicons/core-free-icons/TextSmallcapsIcon";
-import { For, Show, createSignal, untrack } from "solid-js";
+import {
+  For,
+  Show,
+  createMemo,
+  createSignal,
+  onSettled,
+  untrack,
+} from "solid-js";
 
 import { absoluteUrl } from "../../lib/site";
 import { FIXTURES } from "../../lib/tool-data/typeset";
@@ -20,10 +27,10 @@ import {
 } from "../../lib/tool-state";
 import type { TypesetConfig } from "../../lib/tool-state";
 import { Button } from "../../registry/ui/button";
-import { Code } from "../docs/code";
 import { HugeIcon } from "../huge-icon";
 import { DesignerMenu } from "./designer-menu";
-import { CopyAction, Picker } from "./shared";
+import { DesignerPicker } from "./designer-picker";
+import { TypesetCodeDrawer, TypesetDocsContent } from "./typeset-docs";
 
 import "../../styles/tools.css";
 
@@ -34,7 +41,9 @@ const measureWidths = {
   "90": "42em",
 } satisfies Record<TypesetConfig["measure"], string>;
 
-function optionLabel(key: keyof TypesetConfig, value: string) {
+type TypesetPickerField = Exclude<keyof TypesetConfig, "item">;
+
+function optionLabel(key: TypesetPickerField, value: string) {
   switch (key) {
     case "measure": {
       return `${value}ch`;
@@ -54,7 +63,7 @@ function optionLabel(key: keyof TypesetConfig, value: string) {
           return "Tight";
         }
 
-        return "Relaxed";
+        return "Loose";
       })();
 
       return `${label} (${value})`;
@@ -70,29 +79,15 @@ function optionLabel(key: keyof TypesetConfig, value: string) {
           return "Compact";
         }
 
-        return "Loose";
+        return "Airy";
       })();
 
       return `${label} (${value})`;
     }
 
-    case "body": {
-      throw new Error('Not implemented yet: "body" case');
-    }
-
-    case "heading": {
-      throw new Error('Not implemented yet: "heading" case');
-    }
-
-    case "item": {
-      throw new Error('Not implemented yet: "item" case');
-    }
-
+    case "body":
+    case "heading":
     case "mono": {
-      throw new Error('Not implemented yet: "mono" case');
-    }
-
-    default: {
       switch (value) {
         case "inherit":
         case "geist": {
@@ -120,10 +115,15 @@ function optionLabel(key: keyof TypesetConfig, value: string) {
         }
       }
     }
+
+    default: {
+      const exhaustive: never = key;
+      throw new Error("Unknown typeset picker", { cause: exhaustive });
+    }
   }
 }
 
-function pickerIcon(field: keyof TypesetConfig) {
+function pickerIcon(field: TypesetPickerField, config: TypesetConfig) {
   switch (field) {
     case "measure": {
       return <HugeIcon icon={ArrowHorizontalIcon} size={16} />;
@@ -138,27 +138,39 @@ function pickerIcon(field: keyof TypesetConfig) {
     }
 
     case "leading": {
-      return <span class="leading-picker-icon">A̅</span>;
+      return (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M4.5 3.5H19.5M4.5 20.5H19.5M17 17L14.8905 11.4741C13.9109 8.90801 13.4211 7.625 12.625 7.625C11.8289 7.625 11.3391 8.90801 10.3595 11.4741L8.25 17M9.5 13H15.75"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="1.5"
+          />
+        </svg>
+      );
     }
 
-    case "body": {
-      throw new Error('Not implemented yet: "body" case');
-    }
-
-    case "heading": {
-      throw new Error('Not implemented yet: "heading" case');
-    }
-
-    case "item": {
-      throw new Error('Not implemented yet: "item" case');
-    }
-
+    case "body":
+    case "heading":
     case "mono": {
-      throw new Error('Not implemented yet: "mono" case');
+      const font = config[field];
+
+      return (
+        <span
+          class="font-picker-icon"
+          style={{
+            "font-family":
+              fontFamilies[font === "inherit" ? config.body : font],
+          }}
+        >
+          Aa
+        </span>
+      );
     }
 
     default: {
-      return <span class="font-picker-icon">Aa</span>;
+      const exhaustive: never = field;
+      throw new Error("Unknown typeset picker", { cause: exhaustive });
     }
   }
 }
@@ -180,22 +192,91 @@ export function TypesetFixture(props: { name: keyof typeof FIXTURES }) {
 }
 
 export function TypesetPage(props: { initial: TypesetConfig }) {
-  const [docsTab, setDocsTab] = createSignal("docs");
-
   const state = createToolState(
     typesetSchema,
     untrack(() => props.initial)
   );
 
-  const pick = (key: keyof TypesetConfig, label: string) => (
-    <Picker
+  const [mobile, setMobile] = createSignal(false);
+
+  const [locks, setLocks] = createSignal<ReadonlySet<TypesetPickerField>>(
+    new Set()
+  );
+
+  const [previewOverride, setPreviewOverride] = createSignal<
+    Partial<TypesetConfig>
+  >({});
+
+  let previewTimer: ReturnType<typeof setTimeout> | undefined;
+
+  const previewConfig = createMemo(() =>
+    typesetSchema.parse({ ...state.value(), ...previewOverride() })
+  );
+
+  onSettled(() => {
+    const media = window.matchMedia("(max-width: 767px)");
+
+    const updateMobile = () => {
+      setMobile(media.matches);
+    };
+
+    updateMobile();
+    media.addEventListener("change", updateMobile);
+
+    return () => {
+      media.removeEventListener("change", updateMobile);
+      clearTimeout(previewTimer);
+    };
+  });
+
+  function preview(key: TypesetPickerField, value?: string) {
+    clearTimeout(previewTimer);
+
+    if (value === undefined) {
+      setPreviewOverride({});
+
+      return;
+    }
+
+    const next = typesetSchema.parse({ ...state.value(), [key]: value });
+    previewTimer = setTimeout(() => {
+      setPreviewOverride({ [key]: next[key] });
+    }, 50);
+  }
+
+  const pick = (key: TypesetPickerField, label: string) => (
+    <DesignerPicker
       label={label}
+      mobile={mobile()}
       value={state.value()[key]}
-      options={typesetSchema.shape[key].unwrap().options.map((value) => ({
-        label: optionLabel(key, value),
-        value,
-      }))}
-      icon={pickerIcon(key)}
+      options={typesetSchema.shape[key]
+        .unwrap()
+        .options.map((value: string) => ({
+          label: optionLabel(
+            key,
+            value === "inherit" ? state.value().body : value
+          ),
+          separator: key === "heading" && value === "geist",
+          value,
+        }))}
+      icon={pickerIcon(key, state.value())}
+      isLocked={locks().has(key)}
+      onToggleLock={() => {
+        setLocks((current) => {
+          const next = new Set(current);
+
+          if (next.has(key)) {
+            next.delete(key);
+          } else {
+            next.add(key);
+          }
+
+          return next;
+        });
+      }}
+      onPreview={(value) => {
+        preview(key, value);
+      }}
       onChange={(value) => {
         const parsed = typesetSchema.shape[key].safeParse(value);
 
@@ -209,7 +290,7 @@ export function TypesetPage(props: { initial: TypesetConfig }) {
   );
 
   const headingFamily = () => {
-    const config = state.value();
+    const config = previewConfig();
 
     return config.heading === "inherit"
       ? fontFamilies[config.body]
@@ -217,14 +298,25 @@ export function TypesetPage(props: { initial: TypesetConfig }) {
   };
 
   function randomize() {
-    const fields = Object.entries(typesetSchema.shape).map(([key, schema]) => [
-      key,
-      schema.unwrap().options[
-        Math.floor(Math.random() * schema.unwrap().options.length)
-      ],
-    ]);
+    const config = state.value();
 
-    state.change(typesetSchema.parse(Object.fromEntries(fields)));
+    const fields = typesetSchema
+      .omit({ item: true })
+      .keyof()
+      .options.filter((key) => !locks().has(key))
+      .map((key) => {
+        const { options } = typesetSchema.shape[key].unwrap();
+
+        const candidates = options.filter((value) =>
+          key === "mono" ? value === "mono" : value !== "mono"
+        );
+
+        return [key, candidates[Math.floor(Math.random() * candidates.length)]];
+      });
+
+    state.change(
+      typesetSchema.parse({ ...config, ...Object.fromEntries(fields) })
+    );
   }
 
   return (
@@ -234,19 +326,24 @@ export function TypesetPage(props: { initial: TypesetConfig }) {
       data-slot="designer"
     >
       <div class="designer-layout">
-        <aside class="tool-panel designer-customizer dark">
+        <aside
+          class="tool-panel designer-customizer dark"
+          aria-label="Typography settings"
+        >
           <h1 class="sr-only">Typeset</h1>
-          <DesignerMenu
-            canUndo={state.canUndo()}
-            canRedo={state.canRedo()}
-            undo={state.undo}
-            redo={state.redo}
-            reset={state.reset}
-            shuffle={randomize}
-            shareUrl={absoluteUrl(
-              `/typeset?${new URLSearchParams(Object.entries(state.value())).toString()}`
-            )}
-          />
+          <div class="typeset-customizer-header">
+            <DesignerMenu
+              canUndo={state.canUndo()}
+              canRedo={state.canRedo()}
+              undo={state.undo}
+              redo={state.redo}
+              reset={state.reset}
+              shuffle={randomize}
+              shareUrl={absoluteUrl(
+                `/typeset?${new URLSearchParams(Object.entries(state.value())).toString()}`
+              )}
+            />
+          </div>
           <div class="designer-fields">
             {pick("measure", "Measure")}
             <div class="designer-field-separator" />
@@ -264,7 +361,8 @@ export function TypesetPage(props: { initial: TypesetConfig }) {
               )}
               px /{" "}
               {Math.round(
-                Number(state.value().scale) * Number(state.value().flow)
+                Number(state.value().scale) *
+                  Number(state.value().flow.slice(0, -2))
               )}
               px
             </div>
@@ -273,19 +371,23 @@ export function TypesetPage(props: { initial: TypesetConfig }) {
             <Button variant="outline" onPress={randomize}>
               Shuffle
             </Button>
+            <TypesetCodeDrawer
+              css={typesetCss(state.value())}
+              mobile={mobile()}
+            />
           </div>
         </aside>
         <section
           aria-label="Typography preview"
           class="tool-preview typeset-preview"
           style={{
-            "--typeset-flow": state.value().flow,
-            "--typeset-font-body": fontFamilies[state.value().body],
+            "--typeset-flow": previewConfig().flow,
+            "--typeset-font-body": fontFamilies[previewConfig().body],
             "--typeset-font-heading": headingFamily(),
-            "--typeset-font-mono": fontFamilies[state.value().mono],
-            "--typeset-leading": state.value().leading,
-            "--typeset-measure": measureWidths[state.value().measure],
-            "--typeset-size": `${state.value().scale}px`,
+            "--typeset-font-mono": fontFamilies[previewConfig().mono],
+            "--typeset-leading": previewConfig().leading,
+            "--typeset-measure": measureWidths[previewConfig().measure],
+            "--typeset-size": `${previewConfig().scale}px`,
           }}
         >
           <div class="typeset-preview-scroll">
@@ -320,100 +422,7 @@ export function TypesetPage(props: { initial: TypesetConfig }) {
           </div>
         </section>
         <aside class="typeset-docs-panel">
-          <div class="tool-panel tool-code-panel">
-            <div
-              class="typeset-docs-tabs"
-              role="tablist"
-              aria-label="Typeset setup"
-            >
-              <button
-                type="button"
-                role="tab"
-                aria-selected={docsTab() === "docs" ? "true" : "false"}
-                onClick={() => {
-                  setDocsTab("docs");
-                }}
-              >
-                Docs
-              </button>
-              <button
-                type="button"
-                role="tab"
-                aria-selected={docsTab() === "prompt" ? "true" : "false"}
-                onClick={() => {
-                  setDocsTab("prompt");
-                }}
-              >
-                Prompt
-              </button>
-              <span>Solid 2</span>
-            </div>
-            <div class="typeset-docs-content" role="tabpanel">
-              <Show
-                when={docsTab() === "docs"}
-                fallback={
-                  <>
-                    <p>Copy these settings into your Solid 2 project.</p>
-                    <Code code={typesetCss(state.value())} language="css" />
-                    <CopyAction value={typesetCss(state.value())}>
-                      Copy CSS
-                    </CopyAction>
-                  </>
-                }
-              >
-                <section>
-                  <h2>1. Create typeset.css</h2>
-                  <p>
-                    Copy the stylesheet into a <code>typeset.css</code> file
-                    next to your main CSS file, then import it:
-                  </p>
-                  <a
-                    href="/typeset.css"
-                    download="typeset.css"
-                    class="typeset-download"
-                  >
-                    Copy typeset.css
-                  </a>
-                  <Code
-                    code={'@import "tailwindcss";\n@import "./typeset.css";'}
-                    language="css"
-                  />
-                </section>
-                <section>
-                  <h2>2. Add the fonts</h2>
-                  <p>
-                    Load your fonts in the main stylesheet and use their font
-                    family names in your preset.
-                  </p>
-                  <Code
-                    code={
-                      '@font-face {\n  font-family: "Geist";\n  src: url("/fonts/geist-latin.woff2");\n  font-weight: 100 900;\n  font-display: swap;\n}'
-                    }
-                    language="css"
-                  />
-                </section>
-                <section>
-                  <h2>3. Create your custom typeset</h2>
-                  <Code code={typesetCss(state.value())} language="css" />
-                  <CopyAction value={typesetCss(state.value())}>
-                    Copy CSS
-                  </CopyAction>
-                </section>
-                <section>
-                  <h2>4. Wrap your content</h2>
-                  <Code
-                    code={
-                      '<article class="typeset typeset-custom">\n  {content}\n</article>'
-                    }
-                    language="tsx"
-                  />
-                </section>
-              </Show>
-            </div>
-          </div>
-          <a class="typeset-read-docs" href="/docs/typeset">
-            Read the docs
-          </a>
+          <TypesetDocsContent css={typesetCss(state.value())} />
         </aside>
       </div>
     </main>

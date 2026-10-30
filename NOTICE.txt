@@ -345,6 +345,13 @@ The downloadable public/typeset.css retains the rules and original
 shadcn/typeset notice from apps/v4/app/(app)/(typeset)/typeset.css, with a source
 and modification header added. These files retain the shadcn/ui MIT license.
 
+The Typeset customizer and src/components/tools/typeset-docs.tsx also adapt
+apps/v4/app/(app)/(typeset)/components/{customizer,font-picker,option-picker,
+main-menu,docs-panel,get-code-drawer}.tsx at the same revision. Solid 2 menus
+provide transient previews, configuration locks, keyboard shortcuts, and a
+responsive Vaul code drawer. Copyright (c) 2023 shadcn and the existing
+shadcn/ui MIT license are retained.
+
 The JSON task and dashboard fixtures in
 apps/shadcn-solid2-aria/src/components/showcase/{tasks,dashboard}.json are copied
 from apps/v4/app/(app)/examples/tasks/data/tasks.json and

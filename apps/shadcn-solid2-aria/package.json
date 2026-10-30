@@ -14,6 +14,7 @@
     "check": "ultracite check",
     "fix": "ultracite fix",
     "test": "bun run test",
+    "test:build-env": "node --test scripts/check-build-env.test.mjs",
     "test:registry": "node scripts/check-registry-install.mjs && bun scripts/check-registry-css.ts",
     "test:e2e": "e2e run"
   },

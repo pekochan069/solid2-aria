@@ -26,6 +26,20 @@ bun run build
 
 Use the URL printed by Vite for local development. To serve a production build, run `bun run start`.
 
+## Deploy to Vercel
+
+In the project's **Settings → Environment Variables**, add this variable for **Production** and any **Preview** deployments:
+
+```dotenv
+VITE_PUBLIC_URL=https://shadcn-solid2-aria.vercel.app
+```
+
+Redeploy after saving the variable. Vite embeds this value during the build, so changing the runtime environment alone does not update an existing deployment.
+
+This app's `turbo.json` passes `VITE_PUBLIC_URL` through Turbo's strict environment filter and includes its value in the build cache key. Turbo detects the app as Nitro, whose inferred environment variables exclude `VITE_*`. The app configuration also caches Nitro's `.output` and `.vercel/output` directories.
+
+The Vite configuration rejects a missing or invalid HTTP or HTTPS URL before building. Without that check, URL validation fails when the server loads the router, and requests return HTTP 500. When replacing a deployment built without the variable, redeploy with **Use existing Build Cache** disabled.
+
 ## Use components
 
 Use the Command tab on a component page to install its Solid 2 source through the shadcn CLI. The registry resolves sibling components and versioned npm dependencies. Component installation preserves your stylesheet. New apps install the shared theme separately, as described in the site's [installation guide](./content/docs/installation.mdx). Manual source copying remains available.
@@ -50,6 +64,7 @@ Use `class`, callback refs, lowercase native attributes, and Solid2 Aria props s
 ## Verify changes
 
 ```sh
+bun run test:build-env
 bun run check-types
 bun run build
 bun run test:registry

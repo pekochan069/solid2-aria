@@ -252,9 +252,9 @@ test("typeset menu can undo a typography change", async ({
   await browser.goto(new URL("/typeset", app.baseUrl).href, {
     waitUntil: "networkidle",
   });
-  await browser
-    .locator('select[aria-label="Size"]')
-    .selectOption({ label: "18px" });
+  await screen.getByRole("button", "Size", { exact: true }).tap();
+  await screen.getByRole("menuitemradio", "18px", { exact: true }).tap();
+  await browser.keyboard.press("Escape");
   assert.equal(
     await browser.evaluate(
       () =>
@@ -265,7 +265,7 @@ test("typeset menu can undo a typography change", async ({
     "18px"
   );
   await screen.getByRole("button", "Menu", { exact: true }).tap();
-  await screen.getByRole("menuitem", "Undo", { exact: true }).tap();
+  await screen.getByRole("menuitem", /^Undo/u).tap();
   assert.equal(
     await browser.evaluate(
       () =>

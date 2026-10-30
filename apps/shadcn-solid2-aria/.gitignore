@@ -5,6 +5,7 @@ dist
 .tanstack
 .nitro
 .output
+.vercel
 node_modules/
 .e2e/results/
 .e2e/cache/

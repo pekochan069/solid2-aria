@@ -850,7 +850,7 @@
 .create-page .designer-main-actions > [data-slot="button"]:last-child {
   width: 100%;
 }
-.create-page .designer-main-actions > [data-slot="button"] {
+:is(.create-page, .typeset-page) .designer-main-actions > [data-slot="button"] {
   width: 100%;
   height: 32px;
   font-size: 14px;
@@ -940,7 +940,7 @@
   }
 }
 
-.create-page .designer-customizer {
+:is(.create-page, .typeset-page) .designer-customizer {
   gap: 12px;
   padding: 12px 0 0;
   border: 0;
@@ -949,13 +949,14 @@
   font-size: 14px;
   line-height: 20px;
 }
-.create-customizer-header {
+:is(.create-customizer-header, .typeset-customizer-header) {
   flex: none;
   width: 100%;
   padding: 0 12px 12px;
   border-bottom: 1px solid var(--border);
 }
-.create-customizer-header .designer-customizer-heading {
+:is(.create-customizer-header, .typeset-customizer-header)
+  .designer-customizer-heading {
   height: 36px;
   margin: 0;
   padding: 8px 10px;
@@ -964,20 +965,21 @@
   background: transparent;
   box-shadow: 0 0 0 1px color-mix(in oklab, var(--foreground) 10%, transparent);
 }
-.create-customizer-header .designer-customizer-heading:hover {
+:is(.create-customizer-header, .typeset-customizer-header)
+  .designer-customizer-heading:hover {
   background: var(--muted);
 }
-.create-page .designer-fields {
+:is(.create-page, .typeset-page) .designer-fields {
   padding: 1px 12px;
   gap: 13px;
 }
-.create-page .designer-field-separator {
+:is(.create-page, .typeset-page) .designer-field-separator {
   position: relative;
   height: 20px;
   margin: -8px -16px;
   background: transparent;
 }
-.create-page .designer-field-separator::before {
+:is(.create-page, .typeset-page) .designer-field-separator::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -1081,7 +1083,7 @@
   outline: 1px solid currentColor;
   outline-offset: 0;
 }
-.create-page .designer-main-actions,
+:is(.create-page, .typeset-page) .designer-main-actions,
 .create-customizer-code {
   flex: none;
   display: flex;
@@ -1093,10 +1095,12 @@
   border-top: 1px solid var(--border);
   background: color-mix(in oklab, var(--muted) 50%, transparent);
 }
-.create-page .designer-main-actions > [data-slot="button"] {
+:is(.create-page, .typeset-page) .designer-main-actions > [data-slot="button"] {
   background: transparent;
 }
-.create-page .designer-main-actions > [data-slot="button"]:hover {
+:is(.create-page, .typeset-page)
+  .designer-main-actions
+  > [data-slot="button"]:hover {
   background: var(--muted);
 }
 .create-customizer-code {
@@ -1166,13 +1170,14 @@
 }
 @media (max-width: 767px) {
   .create-customizer-header,
+  .typeset-customizer-header,
   .create-customizer-code {
     display: none;
   }
-  .create-page .designer-customizer {
+  :is(.create-page, .typeset-page) .designer-customizer {
     min-height: 151px;
   }
-  .create-page .designer-fields {
+  :is(.create-page, .typeset-page) .designer-fields {
     gap: 10px;
     overflow-y: hidden;
   }
@@ -1187,13 +1192,15 @@
   .designer-picker-icon {
     right: 16px;
   }
-  .create-page .designer-main-actions {
+  :is(.create-page, .typeset-page) .designer-main-actions {
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 8px;
     padding: 12px;
   }
-  .create-page .designer-main-actions > [data-slot="button"] {
+  :is(.create-page, .typeset-page)
+    .designer-main-actions
+    > [data-slot="button"] {
     flex: 1;
     min-width: 0;
     width: auto;
@@ -1223,4 +1230,61 @@
 .designer-picker-menu > [role="menu"] {
   max-height: 356px;
   scrollbar-width: none;
+}
+
+.typeset-get-code {
+  display: none;
+  width: 100%;
+  height: 32px;
+  padding: 0 8px;
+  border-radius: 10px;
+  background: transparent;
+  font-size: 14px;
+}
+.typeset-code-drawer-content {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0 16px;
+}
+.typeset-code-drawer .tool-code-panel {
+  display: flex;
+  max-height: none;
+  overflow: visible;
+  padding: 0;
+  border: 0;
+}
+.typeset-code-drawer[data-position="right"] {
+  width: min(448px, 100vw - 24px);
+  max-width: none;
+}
+.typeset-code-drawer[data-position="bottom"] {
+  height: 85svh;
+  max-height: 85svh;
+}
+@media (max-width: 1279px) {
+  .typeset-get-code {
+    display: inline-flex;
+  }
+}
+@media (max-width: 767px) {
+  .typeset-page .designer-main-actions {
+    flex-direction: row-reverse;
+  }
+  .typeset-page .designer-main-actions > .typeset-get-code {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+  }
+  .typeset-rhythm {
+    display: none;
+  }
+  .typeset-page .designer-picker-lock {
+    display: none;
+  }
+}
+@media (max-width: 447px) {
+  .typeset-page .designer-picker:first-child {
+    display: none;
+  }
 }

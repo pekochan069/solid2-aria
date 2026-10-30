@@ -44,7 +44,6 @@ export function DesignerMenu(props: {
 
   const shortcuts = (event: KeyboardEvent) => {
     if (
-      !props.onNavigate ||
       event.defaultPrevented ||
       event.altKey ||
       event.target instanceof HTMLInputElement ||
@@ -68,7 +67,7 @@ export function DesignerMenu(props: {
         } else {
           props.undo();
         }
-      } else if (key === "p") {
+      } else if (key === "p" && props.onNavigate) {
         event.preventDefault();
         props.onNavigate();
       }
@@ -76,20 +75,37 @@ export function DesignerMenu(props: {
       return;
     }
 
-    if (key === "r") {
-      event.preventDefault();
+    switch (key) {
+      case "r": {
+        event.preventDefault();
 
-      if (event.shiftKey) {
-        props.reset();
-      } else {
-        props.shuffle();
+        if (event.shiftKey) {
+          props.reset();
+        } else {
+          props.shuffle();
+        }
+
+        break;
       }
-    } else if (key === "d") {
-      event.preventDefault();
-      toggleTheme();
-    } else if (key === "o") {
-      event.preventDefault();
-      props.onOpenPreset?.();
+
+      case "d": {
+        event.preventDefault();
+        toggleTheme();
+        break;
+      }
+
+      case "o": {
+        if (props.onOpenPreset) {
+          event.preventDefault();
+          props.onOpenPreset();
+        }
+
+        break;
+      }
+
+      default: {
+        break;
+      }
     }
   };
 
@@ -112,10 +128,10 @@ export function DesignerMenu(props: {
         <HugeIcon icon={Menu09Icon} size={20} />
       </Button>
       <DropdownMenu
-        class={props.onNavigate ? "designer-main-menu" : "dark w-52"}
+        class="designer-main-menu"
         placement="right top"
-        offset={props.onNavigate ? 20 : 4}
-        crossOffset={props.onNavigate ? -8 : 0}
+        offset={20}
+        crossOffset={-8}
       >
         <DropdownMenuGroup>
           <Show when={props.onNavigate}>
@@ -138,16 +154,10 @@ export function DesignerMenu(props: {
             </DropdownMenuItem>
           </Show>
           <DropdownMenuItem id="shuffle" onAction={props.shuffle}>
-            Shuffle{" "}
-            <Show when={props.onNavigate}>
-              <DropdownMenuShortcut>R</DropdownMenuShortcut>
-            </Show>
+            Shuffle <DropdownMenuShortcut>R</DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuItem id="theme" onAction={toggleTheme}>
-            Light/Dark{" "}
-            <Show when={props.onNavigate}>
-              <DropdownMenuShortcut>D</DropdownMenuShortcut>
-            </Show>
+            Light/Dark <DropdownMenuShortcut>D</DropdownMenuShortcut>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
@@ -158,11 +168,9 @@ export function DesignerMenu(props: {
             onAction={props.undo}
           >
             Undo{" "}
-            <Show when={props.onNavigate}>
-              <DropdownMenuShortcut>
-                {isMac() ? "⌘Z" : "Ctrl+Z"}
-              </DropdownMenuShortcut>
-            </Show>
+            <DropdownMenuShortcut>
+              {isMac() ? "⌘Z" : "Ctrl+Z"}
+            </DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuItem
             id="redo"
@@ -170,20 +178,13 @@ export function DesignerMenu(props: {
             onAction={props.redo}
           >
             Redo{" "}
-            <Show when={props.onNavigate}>
-              <DropdownMenuShortcut>
-                {isMac() ? "⇧⌘Z" : "Ctrl+Shift+Z"}
-              </DropdownMenuShortcut>
-            </Show>
+            <DropdownMenuShortcut>
+              {isMac() ? "⇧⌘Z" : "Ctrl+Shift+Z"}
+            </DropdownMenuShortcut>
           </DropdownMenuItem>
-          <Show when={props.onNavigate}>
-            <DropdownMenuSeparator />
-          </Show>
+          <DropdownMenuSeparator />
           <DropdownMenuItem id="reset" onAction={props.reset}>
-            Reset{" "}
-            <Show when={props.onNavigate}>
-              <DropdownMenuShortcut>⇧R</DropdownMenuShortcut>
-            </Show>
+            Reset <DropdownMenuShortcut>⇧R</DropdownMenuShortcut>
           </DropdownMenuItem>
           <Show when={!props.onNavigate}>
             <DropdownMenuItem
