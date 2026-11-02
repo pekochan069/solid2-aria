@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2023 shadcn
  * Derived from shadcn/ui (https://github.com/shadcn-ui/ui): apps/v4/components/site-header.tsx, apps/v4/components/main-nav.tsx, apps/v4/components/mobile-nav.tsx, and apps/v4/components/mode-switcher.tsx.
- * Modified for Solid Aria: Solid 2 navigation, native search dialog, local component search, and persistent color mode.
+ * Modified for Solid Aria: Solid 2 navigation, native search dialog, local component search, persistent color mode, and the shared S brand icon.
  * Licensed under MIT. See ../../../LICENSES/shadcn-ui-MIT.txt and NOTICE.txt at the repository root.
  */
 
@@ -19,15 +19,7 @@ import { components, guides, pages } from "../../lib/docs";
 
 export function Logo() {
   return (
-    <svg
-      width="22"
-      height="22"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path d="m5 12 7-7m-4 14L19 8" stroke="currentColor" stroke-width="2" />
-    </svg>
+    <img src="/favicon.svg" alt="" width="22" height="22" aria-hidden="true" />
   );
 }
 
