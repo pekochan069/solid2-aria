@@ -37,6 +37,7 @@ import {
 import {
   getActiveElement,
   getEventTarget,
+  getParentElement,
 } from "../utils/shadowdom/dom-functions";
 import { getTruthyValue, isTruthy, whenTruthy } from "../utils/truthy";
 
@@ -285,7 +286,7 @@ const onBlur = (e: FocusEvent) => {
     // resulting in the flow above never running and Safari's native scrolling occurring.
     // Instead, move focus to the parent focusable element (e.g. the dialog).
     const focusable = htmlElementOrNull(
-      target.parentElement?.closest("[tabindex]")
+      getParentElement(target)?.closest("[tabindex]")
     );
 
     focusable?.focus({ preventScroll: true });
@@ -387,6 +388,6 @@ function scrollIntoView(target: Element) {
       }
     }
 
-    nextTarget = scrollable.parentElement;
+    nextTarget = getParentElement(scrollable);
   }
 }

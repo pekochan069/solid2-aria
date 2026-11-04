@@ -44,13 +44,13 @@ import type { FocusEvent } from "../types";
 import { ariaValue } from "../utils/aria-value";
 import { chain } from "../utils/chain";
 import { createId } from "../utils/create-id";
-import { isNode } from "../utils/dom-helpers";
 import { filterDOMProps } from "../utils/filter-dom-props";
 import { isPresent } from "../utils/is-present";
 import { getLegacyOption } from "../utils/legacy-option";
 import { mergeProps } from "../utils/merge-props";
 import { nodeContains } from "../utils/shadowdom/dom-functions";
 import { getTruthyValue, isTruthy } from "../utils/truthy";
+import { isNode } from "../utils/type-helpers";
 import type { HiddenSelectProps } from "./hidden-select";
 
 export interface AriaSelectProps<T, M extends SelectionMode = "single">

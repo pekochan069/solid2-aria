@@ -53,6 +53,7 @@ import {
   getEventTarget,
   isFocusWithin,
   nodeContains,
+  getParentElement,
 } from "../utils/shadowdom/dom-functions";
 import { getTruthyValue, isTruthy } from "../utils/truthy";
 import { getRowId, listMap } from "./utils";
@@ -382,7 +383,9 @@ export function createGridListItem<T>(
         if (!e.altKey && nodeContains(refElement, getEventTarget(e))) {
           e.stopPropagation();
           e.preventDefault();
-          refElement.parentElement?.dispatchEvent(new KeyboardEvent(e.type, e));
+          getParentElement(refElement)?.dispatchEvent(
+            new KeyboardEvent(e.type, e)
+          );
         }
 
         break;
@@ -556,7 +559,7 @@ export function createGridListItem<T>(
           : undefined
       ),
       id: getRowId(state, _result0.node.key),
-      onFocus,
+      onFocusIn: onFocus,
       role: "row",
     });
 

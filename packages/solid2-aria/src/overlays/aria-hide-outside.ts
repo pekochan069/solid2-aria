@@ -17,16 +17,16 @@
 
 import { shadowDOM } from "@solid2-aria/stately/flags/flags";
 
-import {
-  getOwnerDocument,
-  getOwnerWindow,
-  isShadowRoot,
-} from "../utils/dom-helpers";
+import { getOwnerDocument, getOwnerWindow } from "../utils/dom-helpers";
 import { elementOrNull } from "../utils/dom-value";
 import { isPresent } from "../utils/is-present";
-import { nodeContains } from "../utils/shadowdom/dom-functions";
+import {
+  nodeContains,
+  getParentElement,
+} from "../utils/shadowdom/dom-functions";
 import { createShadowTreeWalker } from "../utils/shadowdom/shadow-tree-walker";
 import { isTruthy, whenTruthy } from "../utils/truthy";
+import { isShadowRoot } from "../utils/type-helpers";
 
 const supportsInert =
   typeof HTMLElement !== "undefined" && "inert" in HTMLElement.prototype;
@@ -127,12 +127,14 @@ export function ariaHideOutside(
     // Also skip children of already hidden nodes, as aria-hidden is recursive. An exception is
     // made for elements with role="row" since VoiceOver on iOS has issues hiding elements with role="row".
     // For that case we want to hide the cells inside as well (https://bugs.webkit.org/show_bug.cgi?id=222623).
+    const parentElement = getParentElement(node);
+
     if (
       hiddenNodes.has(node) ||
       visibleNodes.has(node) ||
-      (node.parentElement &&
-        hiddenNodes.has(node.parentElement) &&
-        node.parentElement.getAttribute("role") !== "row")
+      (parentElement &&
+        hiddenNodes.has(parentElement) &&
+        parentElement.getAttribute("role") !== "row")
     ) {
       return NodeFilter.FILTER_REJECT;
     }

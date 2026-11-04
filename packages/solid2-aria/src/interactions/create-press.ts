@@ -607,7 +607,7 @@ export function createPress(props: PressHookProps): PressResult {
         isValidKeyboardEvent(e, e.currentTarget) &&
         nodeContains(e.currentTarget, getEventTarget(e))
       ) {
-        if (shouldPreventDefaultKeyboard(getEventTarget(e), e.key)) {
+        if (shouldPreventDefaultKeyboard(getEventTarget(e), e)) {
           e.preventDefault();
         }
 
@@ -675,9 +675,7 @@ export function createPress(props: PressHookProps): PressResult {
       state.target &&
       isValidKeyboardEvent(e, state.target)
     ) {
-      if (
-        shouldPreventDefaultKeyboard(requireElement(getEventTarget(e)), e.key)
-      ) {
+      if (shouldPreventDefaultKeyboard(requireElement(getEventTarget(e)), e)) {
         e.preventDefault();
       }
 
@@ -1431,9 +1429,14 @@ function shouldPreventDefaultUp(target: Element) {
   return true;
 }
 
-function shouldPreventDefaultKeyboard(target: Element, key: string) {
-  // Don't prevent the contextmenu shortcut on mac.
-  if (isMac() && key === "Enter") {
+function shouldPreventDefaultKeyboard(
+  target: Element,
+  event: Pick<KeyboardEvent, "key" | "ctrlKey">
+) {
+  const { key } = event;
+
+  // Don't prevent the contextmenu shortcut (Control + Enter) on mac.
+  if (isMac() && key === "Enter" && event.ctrlKey) {
     return false;
   }
 

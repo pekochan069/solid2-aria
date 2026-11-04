@@ -4,6 +4,7 @@
  * Licensed under Apache-2.0. See LICENSES/Apache-2.0.txt and NOTICE.txt at the repository root.
  */
 
+import { shadowDOM } from "@solid2-aria/stately/flags/flags";
 import { untrack } from "solid-js";
 
 import { getOwnerDocument } from "../utils/dom-helpers";
@@ -26,18 +27,18 @@ export function moveVirtualFocus(to: Element | null): void {
 
 export function dispatchVirtualBlur(from: Element, to: Element | null): void {
   untrack(() => {
-    from.dispatchEvent(new FocusEvent("blur", { relatedTarget: to }));
+    from.dispatchEvent(createFocusEvent("blur", { relatedTarget: to }));
     from.dispatchEvent(
-      new FocusEvent("focusout", { bubbles: true, relatedTarget: to })
+      createFocusEvent("focusout", { bubbles: true, relatedTarget: to })
     );
   });
 }
 
 export function dispatchVirtualFocus(to: Element, from: Element | null): void {
   untrack(() => {
-    to.dispatchEvent(new FocusEvent("focus", { relatedTarget: from }));
+    to.dispatchEvent(createFocusEvent("focus", { relatedTarget: from }));
     to.dispatchEvent(
-      new FocusEvent("focusin", { bubbles: true, relatedTarget: from })
+      createFocusEvent("focusin", { bubbles: true, relatedTarget: from })
     );
   });
 }
@@ -54,4 +55,31 @@ export function getVirtuallyFocusedElement(document: Document): Element | null {
   }
 
   return activeElement;
+}
+
+let originalRelatedTargetMap: WeakMap<FocusEvent, EventTarget> | null = null;
+
+function createFocusEvent(type: string, eventInitDict?: FocusEventInit) {
+  const event = new FocusEvent(type, eventInitDict);
+
+  if (shadowDOM()) {
+    originalRelatedTargetMap ??= new WeakMap();
+    const { relatedTarget } = event;
+
+    if (relatedTarget !== null) {
+      originalRelatedTargetMap.set(event, relatedTarget);
+    }
+  }
+
+  return event;
+}
+
+export function getOriginalRelatedTarget(
+  event: FocusEvent
+): EventTarget | null {
+  if (!shadowDOM()) {
+    return event.relatedTarget;
+  }
+
+  return originalRelatedTargetMap?.get(event) ?? event.relatedTarget;
 }

@@ -24,6 +24,7 @@
  */
 
 import { getOwnerWindow } from "./dom-helpers";
+import { getParentElement } from "./shadowdom/dom-functions";
 
 const supportsCheckVisibility =
   typeof Element !== "undefined" && "checkVisibility" in Element.prototype;
@@ -80,10 +81,12 @@ export function isElementVisible(
     );
   }
 
+  const parentElement = getParentElement(element);
+
   return (
     element.nodeName !== "#comment" &&
     isStyleVisible(element) &&
     isAttributeVisible(element, childElement) &&
-    (!element.parentElement || isElementVisible(element.parentElement, element))
+    (!parentElement || isElementVisible(parentElement, element))
   );
 }

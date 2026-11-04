@@ -7,10 +7,61 @@
 import { shadowDOM } from "@solid2-aria/stately/flags/flags";
 import type { EventTargetType } from "@solid2-aria/types-shared";
 
-import { getOwnerWindow, isShadowRoot, isNode } from "../dom-helpers";
+import { getOwnerWindow } from "../dom-helpers";
 import { isPresent } from "../is-present";
+import { isElement, isShadowRoot, isNode } from "../type-helpers";
 
 // Source: https://github.com/microsoft/tabster/blob/a89fc5d7e332d48f68d03b1ca6e344489d1c3898/src/Shadowdomize/DOMFunctions.ts#L16
+
+/**
+ * ShadowDOM safe version of Node.parentNode.
+ */
+export function getParentNode(node: Node | null | undefined): Node | null {
+  if (!shadowDOM()) {
+    return node?.parentNode ?? null;
+  }
+
+  if (!node) {
+    return null;
+  }
+
+  let currentNode: Node | null = node;
+
+  const assignedSlot: unknown =
+    "assignedSlot" in currentNode ? currentNode.assignedSlot : null;
+
+  if (
+    (!("assignedElements" in currentNode) ||
+      typeof currentNode.assignedElements !== "function") &&
+    assignedSlot instanceof getOwnerWindow(currentNode).HTMLSlotElement &&
+    assignedSlot.parentNode
+  ) {
+    // Element is slotted.
+    currentNode = assignedSlot.parentNode;
+  } else if (isShadowRoot(currentNode)) {
+    // Element is in shadow root
+    currentNode = currentNode.host;
+  } else {
+    currentNode = currentNode.parentNode;
+  }
+
+  return currentNode;
+}
+
+/**
+ * ShadowDOM safe version of element.parentElement.
+ */
+export function getParentElement(
+  node: Node | null | undefined
+): Element | null {
+  let parentNode = getParentNode(node);
+
+  while (parentNode && !isElement(parentNode)) {
+    parentNode = getParentNode(parentNode);
+  }
+
+  return parentNode;
+}
 
 /**
  * ShadowDOM safe version of Node.contains.
@@ -27,30 +78,14 @@ export function nodeContains(
     return node.contains(otherNode);
   }
 
-  let currentNode: HTMLElement | Node | null | undefined = otherNode;
+  let currentNode: Node | null = otherNode;
 
-  while (isPresent(currentNode)) {
+  while (currentNode) {
     if (currentNode === node) {
       return true;
     }
 
-    const assignedSlot: unknown =
-      "assignedSlot" in currentNode ? currentNode.assignedSlot : null;
-
-    if (
-      (!("assignedElements" in currentNode) ||
-        typeof currentNode.assignedElements !== "function") &&
-      assignedSlot instanceof getOwnerWindow(currentNode).HTMLSlotElement &&
-      assignedSlot.parentNode
-    ) {
-      // Element is slotted.
-      currentNode = assignedSlot.parentNode;
-    } else if (isShadowRoot(currentNode)) {
-      // Element is in shadow root
-      currentNode = currentNode.host;
-    } else {
-      currentNode = currentNode.parentNode;
-    }
+    currentNode = getParentNode(currentNode);
   }
 
   return false;

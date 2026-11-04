@@ -36,7 +36,11 @@ import {
   requireFocusableElement,
 } from "../utils/dom-value";
 import { requireValue } from "../utils/require-value";
-import { getEventTarget, nodeContains } from "../utils/shadowdom/dom-functions";
+import {
+  getEventTarget,
+  nodeContains,
+  getParentElement,
+} from "../utils/shadowdom/dom-functions";
 import { getTruthyValue, isTruthy } from "../utils/truthy";
 
 export type AriaLandmarkRole =
@@ -338,15 +342,15 @@ class LandmarkManager implements LandmarkManagerApi {
    */
   private closestLandmark(element: FocusableElement) {
     const landmarkMap = new Map(this.landmarks.map((l) => [l.ref(), l]));
-    let currentElement = element;
+    let currentElement: FocusableElement | null = element;
 
     while (
       isTruthy(currentElement) &&
       !landmarkMap.has(currentElement) &&
       currentElement !== document.body &&
-      currentElement.parentElement
+      getParentElement(currentElement)
     ) {
-      currentElement = currentElement.parentElement;
+      currentElement = focusableElementOrNull(getParentElement(currentElement));
     }
 
     return landmarkMap.get(currentElement);

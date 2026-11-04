@@ -35,6 +35,7 @@ import { createLocale } from "../i18n/i18n-provider";
 import { createKeyboard } from "../interactions/create-keyboard";
 import { ariaValue } from "../utils/aria-value";
 import { filterDOMProps } from "../utils/filter-dom-props";
+import { getParentElement } from "../utils/shadowdom/dom-functions";
 import { getTruthyValue } from "../utils/truthy";
 
 const BUTTON_GROUP_ROLES = {
@@ -90,7 +91,10 @@ export function createActionGroup<T>(
     ({ element }) => {
       const refElement = element;
       setInToolbar(
-        !!(refElement && refElement.parentElement?.closest('[role="toolbar"]'))
+        !!(
+          refElement &&
+          getParentElement(refElement)?.closest('[role="toolbar"]')
+        )
       );
     },
     { ssrSource: "client" }

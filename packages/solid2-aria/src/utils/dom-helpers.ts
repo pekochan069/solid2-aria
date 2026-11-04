@@ -19,6 +19,9 @@ import type { EventMapType } from "@solid2-aria/types-shared";
 
 import { isPresent } from "./is-present";
 import { noop } from "./noop";
+import { isDocument, isNode, isWindow } from "./type-helpers";
+
+export { isDocument, isShadowRoot } from "./type-helpers";
 
 export const getOwnerDocument = (target?: EventTarget | null): Document => {
   if (isWindow(target)) {
@@ -47,50 +50,6 @@ export const getOwnerWindow = (
     (typeof window === "undefined" ? undefined : window)
   );
 };
-
-/**
- * Type guard that checks if a value is a Node. Verifies the presence and type of the nodeType
- * property.
- */
-export function isNode<T>(value: T): value is T & Node {
-  return (
-    value !== null &&
-    typeof value === "object" &&
-    "nodeType" in value &&
-    typeof value.nodeType === "number"
-  );
-}
-
-/**
- * Type guard that checks if a value is a Window. Uses window self reference checks to
- * distinguish Window from other values.
- */
-function isWindow<T>(value: T): value is T & Window & typeof globalThis {
-  return (
-    typeof value === "object" &&
-    value !== null &&
-    value !== undefined &&
-    "window" in value &&
-    value.window === value
-  );
-}
-
-/**
- * Type guard that checks if a value is a Document. Uses nodeType and host property checks to
- * distinguish Document from other values.
- */
-export function isDocument<T>(value: T): value is T & Document {
-  return isNode(value) && value.nodeType === 9;
-}
-
-/**
- * Type guard that checks if a value is a ShadowRoot. Uses nodeType and host property checks to
- * distinguish ShadowRoot from other values.
- */
-export function isShadowRoot<T>(value: T): value is T & ShadowRoot {
-  // 11 = DOCUMENT_FRAGMENT_NODE
-  return isNode(value) && value.nodeType === 11 && "host" in value;
-}
 
 /**
  * Attaches an event listener on target(s) and returns a cleanup function.
