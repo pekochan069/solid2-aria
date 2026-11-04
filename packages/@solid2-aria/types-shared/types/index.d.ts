@@ -39,4 +39,6 @@ export type * from "./locale.js";
 
 export type * from "./key.js";
 
+export type * from "./layout.js";
+
 export type * from "./platform.js";
