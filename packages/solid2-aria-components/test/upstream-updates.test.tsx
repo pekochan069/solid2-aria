@@ -81,8 +81,8 @@ test.each([undefined, "red"] as const)(
 
 test("grid list reports direct row focus once and ignores descendant focus", () => {
   const changes: boolean[] = [];
-  const focused: EventTarget[] = [];
-  const blurred: EventTarget[] = [];
+  const focused: (EventTarget | null)[] = [];
+  const blurred: (EventTarget | null)[] = [];
   const [label, setLabel] = createSignal("Cat");
 
   const host = mount(() => (
@@ -130,8 +130,8 @@ test("grid list reports direct row focus once and ignores descendant focus", () 
 
 test("table reports row focus once and ignores cells and descendant controls", () => {
   const changes: boolean[] = [];
-  const focused: EventTarget[] = [];
-  const blurred: EventTarget[] = [];
+  const focused: (EventTarget | null)[] = [];
+  const blurred: (EventTarget | null)[] = [];
   const [label, setLabel] = createSignal("Cat");
 
   const host = mount(() => (
@@ -258,20 +258,22 @@ test("tree expands an empty parent and navigates into children added on expansio
 
   expect(parent.getAttribute("aria-expanded")).toBe("false");
   parent.focus();
+  flush();
   parent.dispatchEvent(
     new KeyboardEvent("keydown", { bubbles: true, key: "ArrowRight" })
   );
   flush();
-  expect(parent.getAttribute("aria-expanded")).toBe("true");
   const rows = host.querySelectorAll<HTMLElement>('[role="row"]');
+  const expandedParent = requireValue(rows[0], "Expected expanded parent");
+  expect(expandedParent.getAttribute("aria-expanded")).toBe("true");
   expect(rows.length).toBe(2);
-  expect(document.activeElement).toBe(parent);
-  parent.dispatchEvent(
+  expect(document.activeElement === expandedParent).toBe(true);
+  expandedParent.dispatchEvent(
     new KeyboardEvent("keydown", { bubbles: true, key: "ArrowDown" })
   );
   flush();
   const child = requireValue(rows[1], "Expected lazy child");
-  expect(document.activeElement).toBe(child);
+  expect(document.activeElement === child).toBe(true);
   expect(child.getAttribute("aria-level")).toBe("2");
 });
 
@@ -529,30 +531,37 @@ test.each(["bottom", "left"] as const)(
 
 test("drop zone preserves focus on a shadow button containing slotted content", () => {
   enableShadowDOM();
-  let shadowButton: HTMLButtonElement | undefined;
 
   const host = mount(() => (
     <DropZone aria-label="Upload">
-      <div
-        ref={(element) => {
-          const root = element.attachShadow({ mode: "open" });
-          const button = document.createElement("button");
-          button.append(document.createElement("slot"));
-          root.append(button);
-          shadowButton = button;
-        }}
-      >
+      <div data-shadow-host>
         <span data-slotted>Choose file</span>
       </div>
     </DropZone>
   ));
 
-  const button = requireValue(shadowButton, "Expected shadow button");
-  button.focus();
-  requireValue(
+  const shadowHost = requireValue(
+    host.querySelector<HTMLElement>("[data-shadow-host]"),
+    "Expected shadow host"
+  );
+
+  const root = shadowHost.attachShadow({ mode: "open" });
+  const button = document.createElement("button");
+  const slot = document.createElement("slot");
+  button.append(slot);
+  root.append(button);
+
+  const slotted = requireValue(
     host.querySelector("[data-slotted]"),
     "Expected slotted content"
-  ).dispatchEvent(new MouseEvent("click", { bubbles: true, composed: true }));
+  );
+
+  // Happy DOM does not expose assignedSlot for the rendered light DOM child.
+  Object.defineProperty(slotted, "assignedSlot", { value: slot });
+  button.focus();
+  slotted.dispatchEvent(
+    new MouseEvent("click", { bubbles: true, composed: true })
+  );
   flush();
   expect(getActiveElement() === button).toBe(true);
 });

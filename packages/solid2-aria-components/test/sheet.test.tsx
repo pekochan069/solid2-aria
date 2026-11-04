@@ -17,7 +17,7 @@ afterEach(() => {
   cleanups.clear();
 });
 
-function mount(view: () => JSX.Element) {
+async function mount(view: () => JSX.Element) {
   const host = document.createElement("div");
   document.body.append(host);
   const dispose = render(view, host);
@@ -36,6 +36,27 @@ function mount(view: () => JSX.Element) {
   };
 
   cleanups.add(cleanup);
+
+  const scroller = document.querySelector<HTMLElement>("[data-sheet-scroll]");
+
+  if (scroller) {
+    Object.defineProperty(scroller, "scrollTo", {
+      value: (options: ScrollToOptions) => {
+        scroller.scrollTop = options.top ?? scroller.scrollTop;
+        scroller.scrollLeft = options.left ?? scroller.scrollLeft;
+      },
+    });
+    // Gesture checks begin after the separate entry-scroll transition completes.
+    await Promise.resolve();
+    const nextFrame = Promise.withResolvers<undefined>();
+    requestAnimationFrame(() => {
+      nextFrame.resolve();
+    });
+    await nextFrame.promise;
+    scroller.dispatchEvent(new Event("scrollend"));
+    await Bun.sleep(0);
+    flush();
+  }
 
   return { dispose: cleanup, host };
 }
@@ -94,10 +115,10 @@ function scroll() {
   return query("[data-sheet-scroll]");
 }
 
-test("sheet snap points initialize in supplied order, expand and swipe to dismiss", () => {
+test("sheet snap points initialize in supplied order, expand and swipe to dismiss", async () => {
   const [open, setOpen] = createSignal(true);
 
-  const app = mount(() => (
+  const app = await mount(() => (
     <SheetOverlay
       isOpen={open()}
       onOpenChange={(value) => {
@@ -133,8 +154,8 @@ test("sheet snap points initialize in supplied order, expand and swipe to dismis
   app.dispose();
 });
 
-test("touch dragging a handle dismisses while content retains native scrolling", () => {
-  mount(() => (
+test("touch dragging a handle dismisses while content retains native scrolling", async () => {
+  await mount(() => (
     <SheetOverlay defaultOpen>
       <Sheet
         ref={(element) => {
@@ -157,8 +178,8 @@ test("touch dragging a handle dismisses while content retains native scrolling",
   expect(document.querySelector('[role="dialog"]')).toBeNull();
 });
 
-test("a handle continues expanding when the pointer leaves the sheet", () => {
-  mount(() => (
+test("a handle continues expanding when the pointer leaves the sheet", async () => {
+  await mount(() => (
     <SheetOverlay defaultOpen snapPoints={[100, 400]}>
       <Sheet
         ref={(element) => {
@@ -194,8 +215,8 @@ test("a handle continues expanding when the pointer leaves the sheet", () => {
 
 test.each(["mouse", "touch"])(
   "%s handle dragging ignores scrollend until the pointer is released",
-  (pointerType) => {
-    mount(() => (
+  async (pointerType) => {
+    await mount(() => (
       <SheetOverlay defaultOpen>
         <Sheet
           ref={(element) => {
@@ -250,10 +271,10 @@ test.each(["mouse", "touch"])(
   }
 );
 
-test("preventDismissal clamps at the smallest snap while allowing expansion", () => {
+test("preventDismissal clamps at the smallest snap while allowing expansion", async () => {
   const [open, setOpen] = createSignal(true);
 
-  const app = mount(() => (
+  const app = await mount(() => (
     <SheetOverlay
       isOpen={open()}
       onOpenChange={(value) => {
@@ -289,8 +310,8 @@ test("preventDismissal clamps at the smallest snap while allowing expansion", ()
   app.dispose();
 });
 
-test("sheet yields a pointer gesture to scrollable descendants", () => {
-  const app = mount(() => (
+test("sheet yields a pointer gesture to scrollable descendants", async () => {
+  const app = await mount(() => (
     <SheetOverlay defaultOpen snapPoints={[400]}>
       <Sheet
         ref={(element) => {
@@ -326,8 +347,8 @@ test("sheet yields a pointer gesture to scrollable descendants", () => {
   app.dispose();
 });
 
-test("logical placement mirrors in RTL and content defines the physical swipe timeline", () => {
-  const app = mount(() => (
+test("logical placement mirrors in RTL and content defines the physical swipe timeline", async () => {
+  const app = await mount(() => (
     <I18nProvider locale="ar-AE">
       <SheetOverlay defaultOpen position="start" swipeDirection="end">
         <Sheet
@@ -351,8 +372,8 @@ test("logical placement mirrors in RTL and content defines the physical swipe ti
   app.dispose();
 });
 
-test("sheet snap geometry follows scroll events and preserves the first configured detent", () => {
-  const app = mount(() => (
+test("sheet snap geometry follows scroll events and preserves the first configured detent", async () => {
+  const app = await mount(() => (
     <SheetOverlay defaultOpen snapPoints={[300, 100, 400]}>
       <Sheet
         ref={(element) => {
@@ -373,7 +394,7 @@ test("sheet snap geometry follows scroll events and preserves the first configur
   app.dispose();
 });
 
-test("stacked sheets expose descendant state and compose timeline-driven animations", () => {
+test("stacked sheets expose descendant state and compose timeline-driven animations", async () => {
   const originalSupports = CSS.supports;
   Object.defineProperty(CSS, "supports", {
     configurable: true,
@@ -391,7 +412,7 @@ test("stacked sheets expose descendant state and compose timeline-driven animati
   });
   const [childOpen, setChildOpen] = createSignal(true);
 
-  const app = mount(() => (
+  const app = await mount(() => (
     <SheetOverlay defaultOpen>
       <Sheet
         data-testid="parent"
