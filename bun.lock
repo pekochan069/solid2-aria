@@ -186,6 +186,7 @@
         "@solid2-aria/types-shared-web": "^0.0.1",
       },
       "devDependencies": {
+        "@playwright/test": "^1.64.1",
         "@solidjs/compiler": "^2.0.0-rc.17",
         "@solidjs/web": "^2.0.0-rc.17",
         "@types/bun": "^1.4.4",
@@ -195,6 +196,7 @@
         "tsdown": "^0.23.2",
         "tsrs": "^0.20.0-ts7.1.0-beta",
         "typescript": "^7.1.0-beta",
+        "vite": "^8.3.5",
       },
       "peerDependencies": {
         "@solidjs/web": "^2.0.0-rc.17",
