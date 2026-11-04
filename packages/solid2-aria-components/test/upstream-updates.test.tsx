@@ -1,12 +1,15 @@
 import { afterEach, expect, test } from "bun:test";
 
 import { requireValue } from "@solid2-aria/core/utils/require-value";
+import { getActiveElement } from "@solid2-aria/core/utils/shadowdom/dom-functions";
+import { enableShadowDOM } from "@solid2-aria/stately/flags/flags";
 import { render } from "@solidjs/web";
 import type { JSX } from "@solidjs/web";
 import { createSignal, flush } from "solid-js";
 
 import { Button } from "../src/button";
 import { ColorField } from "../src/color-field";
+import { DropZone } from "../src/drop-zone";
 import { Form } from "../src/form";
 import { GridList, GridListItem } from "../src/grid-list";
 import { Input } from "../src/input";
@@ -477,6 +480,9 @@ test.each(["bottom", "left"] as const)(
       </SheetOverlay>
     ));
 
+    await Promise.resolve();
+    flush();
+
     const scroller = requireValue(
       document.querySelector<HTMLElement>("[data-sheet-scroll]"),
       "Expected sheet scroller"
@@ -494,7 +500,14 @@ test.each(["bottom", "left"] as const)(
     scroller.dispatchEvent(new Event("scrollend"));
     await Promise.resolve();
     flush();
-    expect(Object.hasOwn(overlay.dataset, "entering")).toBe(true);
+    expect(overlay.dataset.entering !== undefined).toBe(true);
+
+    Object.defineProperty(scroller, "scrollTo", {
+      value: (options: ScrollToOptions) => {
+        scroller.scrollTop = options.top ?? scroller.scrollTop;
+        scroller.scrollLeft = options.left ?? scroller.scrollLeft;
+      },
+    });
 
     for (const [id, frame] of frames) {
       frames.delete(id);
@@ -507,9 +520,39 @@ test.each(["bottom", "left"] as const)(
     scroller.dispatchEvent(new Event("scrollend"));
     await Bun.sleep(0);
     flush();
-    expect(Object.hasOwn(overlay.dataset, "entering")).toBe(false);
+    expect(overlay.dataset.entering !== undefined).toBe(false);
     expect(scroller.style.scrollSnapType).toBe(
       position === "bottom" ? "y mandatory" : "x mandatory"
     );
   }
 );
+
+test("drop zone preserves focus on a shadow button containing slotted content", () => {
+  enableShadowDOM();
+  let shadowButton: HTMLButtonElement | undefined;
+
+  const host = mount(() => (
+    <DropZone aria-label="Upload">
+      <div
+        ref={(element) => {
+          const root = element.attachShadow({ mode: "open" });
+          const button = document.createElement("button");
+          button.append(document.createElement("slot"));
+          root.append(button);
+          shadowButton = button;
+        }}
+      >
+        <span data-slotted>Choose file</span>
+      </div>
+    </DropZone>
+  ));
+
+  const button = requireValue(shadowButton, "Expected shadow button");
+  button.focus();
+  requireValue(
+    host.querySelector("[data-slotted]"),
+    "Expected slotted content"
+  ).dispatchEvent(new MouseEvent("click", { bubbles: true, composed: true }));
+  flush();
+  expect(getActiveElement() === button).toBe(true);
+});
