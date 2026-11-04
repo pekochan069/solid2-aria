@@ -43,6 +43,49 @@ function mount(view: () => JSX.Element) {
   return host;
 }
 
+function mockAnimationFrames() {
+  const request = globalThis.requestAnimationFrame;
+  const cancel = globalThis.cancelAnimationFrame;
+  const frames = new Map<number, FrameRequestCallback>();
+  let nextFrame = 0;
+  globalThis.requestAnimationFrame = (frame) => {
+    nextFrame += 1;
+    frames.set(nextFrame, frame);
+
+    return nextFrame;
+  };
+
+  globalThis.cancelAnimationFrame = (id) => {
+    frames.delete(id);
+  };
+
+  cleanups.add(() => {
+    globalThis.requestAnimationFrame = request;
+    globalThis.cancelAnimationFrame = cancel;
+  });
+
+  return frames;
+}
+
+function mockAnimations(getAnimations: () => unknown[]) {
+  const original = Object.getOwnPropertyDescriptor(
+    HTMLElement.prototype,
+    "getAnimations"
+  );
+
+  Object.defineProperty(HTMLElement.prototype, "getAnimations", {
+    configurable: true,
+    value: getAnimations,
+  });
+  cleanups.add(() => {
+    if (original) {
+      Object.defineProperty(HTMLElement.prototype, "getAnimations", original);
+    } else {
+      Reflect.deleteProperty(HTMLElement.prototype, "getAnimations");
+    }
+  });
+}
+
 test.each([undefined, "red"] as const)(
   "color field channel %s inherits form validation behavior and permits an override",
   (channel) => {
@@ -325,25 +368,7 @@ test("nested tab panels reset size variables while preserving supplied styles", 
 });
 
 test("tab panels measure the settled content next frame and release pixel sizes after transition", async () => {
-  const request = globalThis.requestAnimationFrame;
-  const cancel = globalThis.cancelAnimationFrame;
-  const frames = new Map<number, FrameRequestCallback>();
-  let nextFrame = 0;
-  globalThis.requestAnimationFrame = (frame) => {
-    nextFrame += 1;
-    frames.set(nextFrame, frame);
-
-    return nextFrame;
-  };
-
-  globalThis.cancelAnimationFrame = (id) => {
-    frames.delete(id);
-  };
-
-  cleanups.add(() => {
-    globalThis.requestAnimationFrame = request;
-    globalThis.cancelAnimationFrame = cancel;
-  });
+  const frames = mockAnimationFrames();
 
   const { promise: finished, resolve: finish } =
     Promise.withResolvers<undefined>();
@@ -416,45 +441,8 @@ test("tab panels measure the settled content next frame and release pixel sizes 
 test.each(["bottom", "left"] as const)(
   "sheet skips offscreen travel from the %s edge and ignores the jump scrollend",
   async (position) => {
-    const request = globalThis.requestAnimationFrame;
-    const cancel = globalThis.cancelAnimationFrame;
-
-    const animations = Object.getOwnPropertyDescriptor(
-      HTMLElement.prototype,
-      "getAnimations"
-    );
-
-    const frames = new Map<number, FrameRequestCallback>();
-    let nextFrame = 0;
-    globalThis.requestAnimationFrame = (frame) => {
-      nextFrame += 1;
-      frames.set(nextFrame, frame);
-
-      return nextFrame;
-    };
-
-    globalThis.cancelAnimationFrame = (id) => {
-      frames.delete(id);
-    };
-
-    Object.defineProperty(HTMLElement.prototype, "getAnimations", {
-      configurable: true,
-      value: () => [],
-    });
-    cleanups.add(() => {
-      globalThis.requestAnimationFrame = request;
-      globalThis.cancelAnimationFrame = cancel;
-
-      if (animations) {
-        Object.defineProperty(
-          HTMLElement.prototype,
-          "getAnimations",
-          animations
-        );
-      } else {
-        Reflect.deleteProperty(HTMLElement.prototype, "getAnimations");
-      }
-    });
+    const frames = mockAnimationFrames();
+    mockAnimations(() => []);
     mount(() => (
       <SheetOverlay defaultOpen position={position}>
         <Sheet
@@ -565,3 +553,56 @@ test("drop zone preserves focus on a shadow button containing slotted content", 
   flush();
   expect(getActiveElement() === button).toBe(true);
 });
+
+test.each([false, true])(
+  "closing a sheet cancels entry after the queued step: %s",
+  async (afterQueue) => {
+    const frames = mockAnimationFrames();
+    const pending = Promise.withResolvers<undefined>();
+    mockAnimations(() => [{ finished: pending.promise, playState: "running" }]);
+    cleanups.add(() => {
+      pending.resolve();
+    });
+    const [open, setOpen] = createSignal(true);
+    mount(() => (
+      <SheetOverlay
+        isOpen={open()}
+        onOpenChange={(value) => {
+          setOpen(value);
+        }}
+      >
+        <Sheet
+          ref={(element) => {
+            Object.defineProperties(element, {
+              offsetHeight: { value: 400 },
+              offsetWidth: { value: 320 },
+            });
+          }}
+        >
+          <SheetContent
+            aria-label="Cancelable"
+            ref={(element) => {
+              Object.defineProperty(element, "getBoundingClientRect", {
+                value: () => new DOMRect(0, window.innerHeight + 200, 320, 400),
+              });
+            }}
+          >
+            Contents
+          </SheetContent>
+        </Sheet>
+      </SheetOverlay>
+    ));
+
+    if (afterQueue) {
+      await Promise.resolve();
+      flush();
+      expect(frames.size).toBe(1);
+    }
+
+    setOpen(false);
+    flush();
+    await Promise.resolve();
+    flush();
+    expect(frames.size).toBe(0);
+  }
+);
