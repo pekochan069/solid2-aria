@@ -9,7 +9,6 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-
 /*
  * Derived from Adobe React Spectrum: packages/react-aria/src/utils/typeHelpers.ts.
  * Modified for Solid Aria: adapted type guard narrowing and formatting for Solid 2.

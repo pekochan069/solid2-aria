@@ -21,7 +21,7 @@ import { isPresent } from "./is-present";
 import { noop } from "./noop";
 import { isDocument, isNode, isWindow } from "./type-helpers";
 
-export { isDocument, isShadowRoot } from "./type-helpers";
+export { isDocument, isNode, isShadowRoot } from "./type-helpers";
 
 export const getOwnerDocument = (target?: EventTarget | null): Document => {
   if (isWindow(target)) {

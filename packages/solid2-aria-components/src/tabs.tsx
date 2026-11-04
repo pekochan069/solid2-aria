@@ -37,6 +37,7 @@ import {
   createExitAnimation,
 } from "@solid2-aria/core/utils/animation";
 import { filterDOMProps } from "@solid2-aria/core/utils/filter-dom-props";
+import { finishAnimations } from "@solid2-aria/core/utils/finish-animations";
 import { mergeProps } from "@solid2-aria/core/utils/merge-props";
 import { isTruthy } from "@solid2-aria/core/utils/truthy";
 import { createTabListState } from "@solid2-aria/stately/tabs/create-tab-list-state";
@@ -458,7 +459,10 @@ export function TabPanels<T>(
             void getComputedStyle(element).height;
             element.style.setProperty("--tab-panel-width", `${width}px`);
             element.style.setProperty("--tab-panel-height", `${height}px`);
-            void resetTabPanelSize(element);
+            void finishAnimations(element.getAnimations(), () => {
+              element.style.setProperty("--tab-panel-width", "auto");
+              element.style.setProperty("--tab-panel-height", "auto");
+            });
           }
         });
       }
@@ -503,18 +507,6 @@ export function TabPanels<T>(
       <Collection {...props} />
     </dom.div>
   );
-}
-
-async function resetTabPanelSize(element: HTMLElement) {
-  try {
-    await Promise.all(
-      element.getAnimations().map(async (animation) => await animation.finished)
-    );
-    element.style.setProperty("--tab-panel-width", "auto");
-    element.style.setProperty("--tab-panel-height", "auto");
-  } catch {
-    // A canceled transition leaves the next selection responsible for its size.
-  }
 }
 
 export function TabPanel(
