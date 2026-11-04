@@ -11,10 +11,14 @@ import { render, spread } from "@solidjs/web";
 import { createRoot, createSignal, flush } from "solid-js";
 
 import { createHasTabbableChild } from "../src/focus/create-has-tabbable-child";
+import { createGridList } from "../src/gridlist/create-grid-list";
+import { createGridListItem } from "../src/gridlist/create-grid-list-item";
+import { setInteractionModality } from "../src/interactions/create-focus-visible";
 import { createKeyboard } from "../src/interactions/create-keyboard";
 import { createSelectableCollection } from "../src/selection/create-selectable-collection";
 import { createSelectableItem } from "../src/selection/create-selectable-item";
 import { createTypeSelect } from "../src/selection/create-type-select";
+import { ListKeyboardDelegate } from "../src/selection/list-keyboard-delegate";
 import { createCollectionId } from "../src/selection/utils";
 import { createTree } from "../src/tree/create-tree";
 import { createTreeItem } from "../src/tree/create-tree-item";
@@ -416,4 +420,125 @@ test("native double clicks invoke a selectable item's secondary action", () => {
   assert.equal(actions, 1);
   dispose();
   host.remove();
+});
+
+test("typeahead cycles repeated characters and refines from the original focused key", () => {
+  const host = document.createElement("div");
+  document.body.append(host);
+  let manager: MultipleSelectionManager | undefined;
+
+  const dispose = render(() => {
+    const state = createListState({
+      children: [
+        Item({ children: "Apple", key: "apple", textValue: "Apple" }),
+        Item({ children: "Apricot", key: "apricot", textValue: "Apricot" }),
+        Item({ children: "Banana", key: "banana", textValue: "Banana" }),
+      ],
+      selectionMode: "single",
+    });
+
+    const container = document.createElement("div");
+
+    const delegate = new ListKeyboardDelegate({
+      collator: new Intl.Collator("en", {
+        sensitivity: "base",
+        usage: "search",
+      }),
+      collection: state.collection,
+      disabledKeys: new Set(),
+      ref: () => container,
+    });
+
+    const aria = createTypeSelect(
+      { keyboardDelegate: delegate, selectionManager: state.selectionManager },
+      () => container
+    );
+
+    spread(container, () => aria.typeSelectProps);
+    manager = state.selectionManager;
+
+    return container;
+  }, host);
+
+  try {
+    flush();
+    const container = host.firstElementChild;
+    assert.ok(container);
+    assert.ok(manager);
+
+    for (const expected of ["apple", "apricot", "apple"]) {
+      container.dispatchEvent(
+        new KeyboardEvent("keydown", {
+          bubbles: true,
+          cancelable: true,
+          key: "a",
+        })
+      );
+      flush();
+      assert.equal(manager.focusedKey, expected);
+    }
+
+    container.dispatchEvent(
+      new KeyboardEvent("keydown", {
+        bubbles: true,
+        cancelable: true,
+        key: "p",
+      })
+    );
+    flush();
+    assert.equal(manager.focusedKey, "apple");
+    container.dispatchEvent(
+      new KeyboardEvent("keydown", {
+        bubbles: true,
+        cancelable: true,
+        key: "r",
+      })
+    );
+    flush();
+    assert.equal(manager.focusedKey, "apricot");
+  } finally {
+    dispose();
+    host.remove();
+  }
+});
+
+test("grid list rows update the focused item when a descendant receives pointer focus", () => {
+  const host = document.createElement("div");
+  document.body.append(host);
+  let manager: MultipleSelectionManager | undefined;
+
+  const dispose = render(() => {
+    const state = createListState({
+      children: [Item({ children: "Row", key: "row" })],
+      selectionMode: "single",
+    });
+
+    const list = document.createElement("div");
+    createGridList({ "aria-label": "Rows" }, state, () => list);
+    const row = document.createElement("div");
+    const button = document.createElement("button");
+    const node = state.collection.getItem("row");
+    assert.ok(node);
+    const aria = createGridListItem({ node }, state, () => row);
+    spread(row, () => aria.rowProps);
+    row.append(button);
+    list.append(row);
+    manager = state.selectionManager;
+
+    return list;
+  }, host);
+
+  try {
+    flush();
+    assert.ok(manager);
+    setInteractionModality("pointer");
+    const button = host.querySelector("button");
+    assert.ok(button);
+    button.focus();
+    flush();
+    assert.equal(manager.focusedKey, "row");
+  } finally {
+    dispose();
+    host.remove();
+  }
 });
