@@ -197,14 +197,82 @@ try {
       try {
         await page.goto(`${baseUrl}?position=${position}`);
 
-        for (const opening of ["initial", "reopened"]) {
-          if (opening === "reopened") {
+        const openings = ["initial", "reopened"];
+
+        if (reducedMotion === "no-preference") {
+          openings.splice(1, 0, "interrupted");
+          openings.push("viewport resized", "content resized");
+        }
+
+        for (const opening of openings) {
+          if (opening !== "initial") {
+            await page.setViewportSize({ height: 800, width: 1000 });
             await page.evaluate(() => {
               window.sheetFrames = [];
             });
             await page
               .getByRole("button", { exact: true, name: "Open sheet" })
               .click();
+          }
+
+          if (
+            opening === "interrupted" ||
+            opening === "viewport resized" ||
+            opening === "content resized"
+          ) {
+            await page.waitForFunction((direction) => {
+              const scroller = document.querySelector("[data-sheet-scroll]");
+
+              const entering = document.querySelector(
+                ".overlay[data-entering]"
+              );
+
+              return (
+                entering &&
+                scroller &&
+                (direction === "left"
+                  ? scroller.scrollLeft > 10 && scroller.scrollLeft < 310
+                  : scroller.scrollTop > 530 && scroller.scrollTop < 790)
+              );
+            }, position);
+
+            if (opening === "interrupted") {
+              await page
+                .getByRole("button", { name: "Close sheet" })
+                .evaluate((button) => {
+                  if (button instanceof HTMLElement) {
+                    button.click();
+                  }
+                });
+              await page
+                .getByRole("dialog", { name: "Entry regression" })
+                .waitFor({ state: "detached" });
+              await page.evaluate(async () => {
+                const { promise, resolve } = Promise.withResolvers<undefined>();
+
+                requestAnimationFrame(() => {
+                  requestAnimationFrame(() => {
+                    resolve();
+                  });
+                });
+                await promise;
+              });
+
+              continue;
+            }
+
+            if (opening === "viewport resized") {
+              await page.setViewportSize({ height: 900, width: 1100 });
+            }
+
+            if (opening === "content resized") {
+              await page.locator(".sheet").evaluate((sheet, direction) => {
+                if (sheet instanceof HTMLElement) {
+                  sheet.style[direction === "left" ? "width" : "height"] =
+                    "360px";
+                }
+              }, position);
+            }
           }
 
           await page.waitForFunction(
@@ -245,14 +313,16 @@ try {
                 scrollTop: scroller.scrollTop,
                 snap: scroller.style.scrollSnapType,
                 top: rect.top,
+                viewportHeight: innerHeight,
+                viewportWidth: innerWidth,
               };
             });
 
           assert.ok(
             state.top >= -1 &&
               state.left >= -1 &&
-              state.bottom <= 801 &&
-              state.right <= 1001,
+              state.bottom <= state.viewportHeight + 1 &&
+              state.right <= state.viewportWidth + 1,
             `${opening}: content outside viewport: ${JSON.stringify(state)}`
           );
           assert.equal(
@@ -261,7 +331,7 @@ try {
           );
           assert.equal(
             position === "left" ? state.scrollLeft : state.scrollTop,
-            position === "left" ? 0 : 800
+            position === "left" ? 0 : state.viewportHeight
           );
 
           if (reducedMotion === "no-preference") {
@@ -287,7 +357,9 @@ try {
             .waitFor({ state: "detached", timeout: 3000 });
         }
 
-        console.info(`PASS sheet entry, focus, Escape, and reopen: ${label}`);
+        console.info(
+          `PASS sheet entry lifecycle: ${label} (${openings.join(", ")})`
+        );
       } catch (error) {
         failures.push(
           `${label}: ${error instanceof Error ? error.message : String(error)}`
