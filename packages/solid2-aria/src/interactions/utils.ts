@@ -18,7 +18,7 @@
 import type { FocusableElement } from "@solid2-aria/types-shared";
 import { onCleanup } from "solid-js";
 
-import { getOwnerWindow, isNode, isShadowRoot } from "../utils/dom-helpers";
+import { getOwnerWindow } from "../utils/dom-helpers";
 import { focusableElementOrNull, requireElement } from "../utils/dom-value";
 import { focusWithoutScrolling } from "../utils/focus-without-scrolling";
 import { isFocusable } from "../utils/is-focusable";
@@ -27,7 +27,9 @@ import {
   getActiveElement,
   getEventTarget,
   nodeContains,
+  getParentElement,
 } from "../utils/shadowdom/dom-functions";
+import { isNode, isShadowRoot } from "../utils/type-helpers";
 
 export function setEventTarget<E extends Event, T extends Element>(
   event: E,
@@ -108,7 +110,7 @@ export function preventFocus(
     currentTarget &&
     !isFocusable(currentTarget, { skipVisibilityCheck: true })
   ) {
-    currentTarget = currentTarget.parentElement;
+    currentTarget = focusableElementOrNull(getParentElement(currentTarget));
   }
 
   const ownerWindow = getOwnerWindow(currentTarget);

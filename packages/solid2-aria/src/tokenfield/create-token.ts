@@ -22,6 +22,7 @@ import type { Accessor } from "solid-js";
 import type { HTMLAttributes } from "../types";
 import { createEvent } from "../utils/create-event";
 import { isVirtualClick } from "../utils/is-virtual-event";
+import { getParentElement } from "../utils/shadowdom/dom-functions";
 import { isTruthy } from "../utils/truthy";
 
 export type TokenProps = Record<string, never>;
@@ -84,7 +85,7 @@ export function createToken(
           }
 
           const selection = window.getSelection();
-          const wrapper = ref()?.parentElement;
+          const wrapper = getParentElement(ref());
 
           if (!selection || !wrapper) {
             return;

@@ -16,6 +16,7 @@
  */
 
 import { isScrollable } from "./is-scrollable";
+import { getParentElement } from "./shadowdom/dom-functions";
 import { getTruthyValue, isTruthy } from "./truthy";
 
 export function getScrollParents(
@@ -38,7 +39,7 @@ export function getScrollParents(
       break;
     }
 
-    currentNode = currentNode.parentElement;
+    currentNode = getParentElement(currentNode);
   }
 
   return parentElements;

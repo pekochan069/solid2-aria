@@ -46,6 +46,7 @@ import {
   getActiveElement,
   getEventTarget,
   nodeContains,
+  getParentElement,
 } from "../utils/shadowdom/dom-functions";
 import type { ShadowTreeWalker } from "../utils/shadowdom/shadow-tree-walker";
 import { createShadowTreeWalker } from "../utils/shadowdom/shadow-tree-walker";
@@ -534,7 +535,7 @@ function createFocusManagerForScope(
 
 function getScopeRoot(scope: Element[]) {
   return requireValue(
-    requireValue(scope[0], "Expected a present traversal value").parentElement,
+    getParentElement(scope[0]),
     "Expected scope[0]!.parentElement"
   );
 }

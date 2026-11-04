@@ -36,6 +36,7 @@ import { createGridListSection } from "@solid2-aria/core/gridlist/create-grid-li
 import { createGridListSelectionCheckbox } from "@solid2-aria/core/gridlist/create-grid-list-selection-checkbox";
 import { createCollator } from "@solid2-aria/core/i18n/create-collator";
 import { createLocale } from "@solid2-aria/core/i18n/i18n-provider";
+import { createFocus } from "@solid2-aria/core/interactions/create-focus";
 import { createHover } from "@solid2-aria/core/interactions/create-hover";
 import { ListKeyboardDelegate } from "@solid2-aria/core/selection/list-keyboard-delegate";
 import { createLoadMoreSentinel } from "@solid2-aria/core/utils/create-load-more-sentinel";
@@ -51,6 +52,7 @@ import type {
   LinkDOMProps,
   HoverEvents,
   PressEvents,
+  FocusEvents,
   Orientation,
   Node,
   SelectionBehavior,
@@ -178,6 +180,7 @@ export interface GridListItemProps<T = object>
     LinkDOMProps,
     HoverEvents,
     PressEvents,
+    FocusEvents<HTMLDivElement>,
     Omit<GlobalDOMAttributes<HTMLDivElement>, "onClick"> {
   class?: ClassOrFunction<GridListItemRenderProps>;
 
@@ -487,6 +490,7 @@ export const GridListItem = createLeafComponent(
       })
     );
 
+    const focusEvents = createFocus(props);
     const focus = createFocusRing();
     const within = createFocusRing({ within: true });
     const checkbox = createGridListSelectionCheckbox({ key: item.key }, state);
@@ -578,6 +582,7 @@ export const GridListItem = createLeafComponent(
             omit(filterDOMProps(props, { global: true }), "id", "onClick"),
             render,
             merge(() => aria.rowProps ?? {}),
+            merge(() => focusEvents.focusProps ?? {}),
             merge(() => focus.focusProps ?? {}),
             merge(() => within.focusProps ?? {}),
             merge(() => hover.hoverProps ?? {}),

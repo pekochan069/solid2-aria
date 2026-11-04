@@ -60,6 +60,7 @@ import { requireValue } from "../utils/require-value";
 import { scrollRectIntoView } from "../utils/scroll-into-view";
 import {
   getActiveElement,
+  getParentNode,
   nodeContains,
 } from "../utils/shadowdom/dom-functions";
 import { isTruthy } from "../utils/truthy";
@@ -922,9 +923,9 @@ function getPosition(
 
   const originalNode = currentNode;
 
-  while (currentNode.parentNode !== container) {
+  while (getParentNode(currentNode) !== container) {
     currentNode = requireValue(
-      currentNode.parentNode,
+      getParentNode(currentNode),
       "Expected node.parentNode"
     );
   }
@@ -1374,7 +1375,7 @@ function getCaretRect(root: HTMLElement, range: Range): DOMRect {
       let nextSibling = node === root ? null : node.nextSibling;
 
       while (node && node !== root && !nextSibling) {
-        node = node.parentNode;
+        node = getParentNode(node);
         nextSibling = node && node !== root ? node.nextSibling : null;
       }
 

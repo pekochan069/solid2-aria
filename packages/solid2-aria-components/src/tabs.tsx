@@ -11,7 +11,7 @@
  */
 /*
  * Derived from Adobe React Spectrum: packages/react-aria-components/src/Tabs.tsx.
- * Modified for Solid Aria: adapted collection ownership, contexts, accessibility primitives, and reactive properties for Solid 2; uses Solid class props.
+ * Modified for Solid Aria: adapted collection ownership, contexts, accessibility primitives, and reactive properties for Solid 2; defers panel size measurement and scopes size variables for nested tabs; uses Solid class props.
  * Licensed under Apache-2.0. See LICENSES/Apache-2.0.txt and NOTICE.txt at the repository root.
  */
 
@@ -37,6 +37,7 @@ import {
   createExitAnimation,
 } from "@solid2-aria/core/utils/animation";
 import { filterDOMProps } from "@solid2-aria/core/utils/filter-dom-props";
+import { finishAnimations } from "@solid2-aria/core/utils/finish-animations";
 import { mergeProps } from "@solid2-aria/core/utils/merge-props";
 import { isTruthy } from "@solid2-aria/core/utils/truthy";
 import { createTabListState } from "@solid2-aria/stately/tabs/create-tab-list-state";
@@ -58,6 +59,7 @@ import {
   merge,
   createSignal,
   createContext,
+  createEffect,
   useContext,
   omit,
   Show,
@@ -397,6 +399,85 @@ export function TabPanels<T>(
     return null;
   }
 
+  const state = useContext(TabListStateContext);
+
+  const [ref, setRef] = createSignal<HTMLDivElement | null>(null, {
+    ownedWrite: true,
+  });
+
+  let selectedKey = untrack(() => state?.selectedKey);
+  let hasTransition: boolean | undefined;
+
+  createEffect(
+    () => {
+      const element = ref();
+      const key = state?.selectedKey;
+
+      return {
+        element,
+        key,
+        previousSize:
+          hasTransition === true && element
+            ? element.getBoundingClientRect()
+            : null,
+      };
+    },
+    ({ element, key, previousSize }): undefined | (() => void) => {
+      if (!element) {
+        return undefined;
+      }
+
+      hasTransition ??= /width|height|block-size|inline-size|all/u.test(
+        getComputedStyle(element).transition
+      );
+      let frame: number | undefined;
+
+      if (
+        hasTransition &&
+        selectedKey !== null &&
+        selectedKey !== undefined &&
+        key !== selectedKey
+      ) {
+        frame = requestAnimationFrame(() => {
+          element.style.setProperty("--tab-panel-width", "auto");
+          element.style.setProperty("--tab-panel-height", "auto");
+          const { width, height } = element.getBoundingClientRect();
+
+          if (
+            previousSize &&
+            (previousSize.width !== width || previousSize.height !== height)
+          ) {
+            element.style.setProperty(
+              "--tab-panel-width",
+              `${previousSize.width}px`
+            );
+            element.style.setProperty(
+              "--tab-panel-height",
+              `${previousSize.height}px`
+            );
+            // Commit the starting size before setting the transition target.
+            void getComputedStyle(element).height;
+            element.style.setProperty("--tab-panel-width", `${width}px`);
+            element.style.setProperty("--tab-panel-height", `${height}px`);
+            void finishAnimations(element.getAnimations(), () => {
+              element.style.setProperty("--tab-panel-width", "auto");
+              element.style.setProperty("--tab-panel-height", "auto");
+            });
+          }
+        });
+      }
+
+      selectedKey = key;
+
+      return () => {
+        if (frame !== undefined) {
+          cancelAnimationFrame(frame);
+        }
+      };
+    },
+    { ssrSource: "client" }
+  );
+
   return (
     <dom.div
       {
@@ -404,10 +485,24 @@ export function TabPanels<T>(
         ...omit(filterDOMProps(props, { global: true, labelable: true }), "id")
         // oxlint-enable solid/reactivity
       }
-      ref={props.ref}
+      ref={[
+        (element: HTMLDivElement) => {
+          setRef(element);
+        },
+        (element: HTMLDivElement) => {
+          assignRef(
+            untrack(() => props.ref),
+            element
+          );
+        },
+      ]}
       render={props.render}
       class={props.class ?? "solid2-aria-TabPanels"}
-      style={props.style}
+      style={{
+        "--tab-panel-height": "auto",
+        "--tab-panel-width": "auto",
+        ...props.style,
+      }}
     >
       <Collection {...props} />
     </dom.div>

@@ -15,10 +15,11 @@
  * Licensed under Apache-2.0. See LICENSES/Apache-2.0.txt and NOTICE.txt at the repository root.
  */
 
-import type { Key } from "@solid2-aria/types-shared";
 import type { Element as SolidElement } from "solid-js";
 
 import type { LinkDOMProps } from "./dom.js";
+import type { Key } from "./key.js";
+import type { Rect, Size } from "./layout.js";
 
 export interface ItemProps<T> extends LinkDOMProps {
   /** Rendered contents of the item or child items. */
@@ -148,18 +149,6 @@ export interface KeyboardDelegate {
 
   /** Returns the next key after `fromKey` that matches the given search string, or `null` for none. */
   getKeyForSearch?(search: string, fromKey?: Key | null): Key | null;
-}
-
-export interface Rect {
-  x: number;
-  y: number;
-  width: number;
-  height: number;
-}
-
-export interface Size {
-  width: number;
-  height: number;
 }
 
 /** A LayoutDelegate provides layout information for collection items. */

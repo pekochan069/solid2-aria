@@ -39,7 +39,10 @@ import type { Accessor } from "solid-js";
 
 import intlMessages from "../../intl/combobox/index";
 import type { AriaButtonProps } from "../button/create-button";
-import { dispatchVirtualFocus } from "../focus/virtual-focus";
+import {
+  dispatchVirtualFocus,
+  getOriginalRelatedTarget,
+} from "../focus/virtual-focus";
 import { createLocalizedStringFormatter } from "../i18n/create-localized-string-formatter";
 import { setInteractionModality } from "../interactions/create-focus-visible";
 import { createKeyboard } from "../interactions/create-keyboard";
@@ -373,7 +376,7 @@ export function createComboBox<T, M extends SelectionMode = "single">(
 
     const blurIntoPopover = nodeContains(
       props.popoverRef(),
-      e.relatedTarget instanceof Node ? e.relatedTarget : null
+      getOriginalRelatedTarget(e)
     );
 
     // Ignore blur if focused moved to the button(if exists) or into the popover.

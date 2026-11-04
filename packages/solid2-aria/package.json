@@ -1283,6 +1283,11 @@
       "browser": "./dist/browser/utils/truthy.js",
       "default": "./dist/server/utils/truthy.js"
     },
+    "./utils/type-helpers": {
+      "types": "./dist/browser/utils/type-helpers.d.ts",
+      "browser": "./dist/browser/utils/type-helpers.js",
+      "default": "./dist/server/utils/type-helpers.js"
+    },
     "./virtualizer/create-virtualizer-item": {
       "types": "./dist/browser/virtualizer/create-virtualizer-item.d.ts",
       "browser": "./dist/browser/virtualizer/create-virtualizer-item.js",

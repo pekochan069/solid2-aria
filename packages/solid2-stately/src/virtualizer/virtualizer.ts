@@ -101,6 +101,8 @@ export class Virtualizer<T extends object, V> {
   private _invalidationContext: InvalidationContext;
   private readonly _overscanManager: OverscanManager;
   private readonly _scrollAnchor: ScrollAnchorTracker;
+  private _hadItemResize = false;
+  private _batchIncludedEdgeContent = false;
   constructor(options: VirtualizerOptions<T, V>) {
     this.delegate = options.delegate;
     this._collection = options.collection;
@@ -250,16 +252,17 @@ export class Virtualizer<T extends object, V> {
     const target = this._scrollAnchor.resolveAfterLayout({
       anchor,
       anchorInfo,
+      changeIsAtEdge: !this._hadItemResize || this._batchIncludedEdgeContent,
       contentSize: this.contentSize,
       getLayoutInfo: (key: Key) => this.layout.getLayoutInfo(key),
-      isScrolling: this._isScrolling,
       itemSizeChanged: context.itemSizeChanged ?? false,
-      postLayoutInfos: anchorInfo
-        ? this.getVisibleLayoutInfos()
-        : new Map<Key, LayoutInfo>(),
       previousContentSize,
       previousVisibleRect,
     });
+
+    // Resize classification only applies to this layout pass.
+    this._hadItemResize = false;
+    this._batchIncludedEdgeContent = false;
 
     if (target) {
       // Queues a new render cycle. Return early to skip updateSubviews — running it now
@@ -532,9 +535,19 @@ export class Virtualizer<T extends object, V> {
     const changed = this.layout.updateItemSize(key, size);
 
     if (changed) {
+      this._hadItemResize = true;
+      this._batchIncludedEdgeContent ||= this.isEdgeContent(key);
       this.invalidate({
         itemSizeChanged: true,
       });
     }
+  }
+
+  private isEdgeContent(key: Key): boolean {
+    const anchorInfo = this.layout.UNSTABLE_getScrollAnchorInfo?.(
+      this._invalidationContext.layoutOptions
+    );
+
+    return anchorInfo?.isEdgeContent?.(key) ?? true;
   }
 }

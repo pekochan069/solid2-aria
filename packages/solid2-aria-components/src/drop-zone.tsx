@@ -28,6 +28,12 @@ import { filterDOMProps } from "@solid2-aria/core/utils/filter-dom-props";
 import { focusWithoutScrolling } from "@solid2-aria/core/utils/focus-without-scrolling";
 import { isFocusable } from "@solid2-aria/core/utils/is-focusable";
 import { mergeProps } from "@solid2-aria/core/utils/merge-props";
+import {
+  getEventTarget,
+  getParentElement,
+  nodeContains,
+} from "@solid2-aria/core/utils/shadowdom/dom-functions";
+import { isElement } from "@solid2-aria/core/utils/type-helpers";
 import { createVisuallyHidden } from "@solid2-aria/core/visually-hidden/visually-hidden";
 import type { AriaLabelingProps, HoverEvents } from "@solid2-aria/types-shared";
 import type { GlobalDOMAttributes } from "@solid2-aria/types-shared-web";
@@ -175,10 +181,13 @@ export function DropZone(input: DropZoneProps) {
         data-drop-target={drop.isDropTarget || undefined}
         data-disabled={props.isDisabled ?? undefined}
         onClick={(event) => {
-          let target =
-            event.target instanceof HTMLElement ? event.target : null;
+          const eventTarget = getEventTarget(event);
 
-          while (target && ref()?.contains(target) === true) {
+          let target: Element | null = isElement(eventTarget)
+            ? eventTarget
+            : null;
+
+          while (target && nodeContains(ref(), target)) {
             if (isFocusable(target)) {
               break;
             }
@@ -190,7 +199,7 @@ export function DropZone(input: DropZoneProps) {
               break;
             }
 
-            target = target.parentElement;
+            target = getParentElement(target);
           }
         }}
       >

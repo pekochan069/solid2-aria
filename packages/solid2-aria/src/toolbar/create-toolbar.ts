@@ -40,6 +40,7 @@ import {
   getActiveElement,
   getEventTarget,
   nodeContains,
+  getParentElement,
 } from "../utils/shadowdom/dom-functions";
 
 export interface AriaToolbarProps extends AriaLabelingProps {
@@ -79,7 +80,10 @@ export function createToolbar(
     ({ element }) => {
       const refElement = element;
       setInToolbar(
-        !!(refElement && refElement.parentElement?.closest('[role="toolbar"]'))
+        !!(
+          refElement &&
+          getParentElement(refElement)?.closest('[role="toolbar"]')
+        )
       );
     },
     { ssrSource: "client" }

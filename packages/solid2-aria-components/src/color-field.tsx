@@ -43,6 +43,7 @@ import {
 } from "solid-js";
 
 import { FieldErrorContext } from "./field-error";
+import { FormContext } from "./form";
 import { GroupContext } from "./group";
 import { InputContext } from "./input";
 import { LabelContext } from "./label";
@@ -53,6 +54,7 @@ import {
   createContextProps,
   createRenderProps,
   createSlot,
+  createSlottedContext,
   removeDataAttributes,
 } from "./utils";
 import type {
@@ -100,11 +102,21 @@ export const ColorFieldStateContext = createContext<ColorFieldState | null>(
 );
 
 export function ColorField(input: ColorFieldProps): JSX.Element {
-  const [props, , setRef] = createContextProps(
+  const [contextProps, , setRef] = createContextProps(
     input,
     untrack(() => input.ref),
     ColorFieldContext
   );
+
+  const form = createSlottedContext(FormContext);
+
+  const props = mergeProps(contextProps, {
+    get validationBehavior() {
+      return (
+        contextProps.validationBehavior ?? form?.validationBehavior ?? "native"
+      );
+    },
+  });
 
   return (
     <Show

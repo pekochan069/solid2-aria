@@ -939,7 +939,7 @@ export function createComboBoxState<
         open(null, "focus");
       }
     } else {
-      if (currentShouldCloseOnBlur) {
+      if (currentShouldCloseOnBlur && props.isReadOnly !== true) {
         commitValue();
       }
 

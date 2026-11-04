@@ -47,16 +47,27 @@ interface HoverState {
 // We want to ignore these emulated events so they do not trigger hover behavior.
 // See https://bugs.webkit.org/show_bug.cgi?id=214609.
 let globalIgnoreEmulatedMouseEvents = false;
+
+let globalIgnoreEmulatedMouseEventsTimeout: ReturnType<
+  typeof setTimeout
+> | null = null;
+
 let hoverCount = 0;
 
 function setGlobalIgnoreEmulatedMouseEvents() {
   globalIgnoreEmulatedMouseEvents = true;
+
   // Clear globalIgnoreEmulatedMouseEvents after a short timeout. iOS fires onPointerEnter
   // with pointerType="mouse" immediately after onPointerUp and before onFocus. On other
   // devices that don't have this quirk, we don't want to ignore a mouse hover sometime in
   // the distant future because a user previously touched the element.
-  setTimeout(() => {
+  if (globalIgnoreEmulatedMouseEventsTimeout !== null) {
+    clearTimeout(globalIgnoreEmulatedMouseEventsTimeout);
+  }
+
+  globalIgnoreEmulatedMouseEventsTimeout = setTimeout(() => {
     globalIgnoreEmulatedMouseEvents = false;
+    globalIgnoreEmulatedMouseEventsTimeout = null;
   }, 500);
 }
 
@@ -128,8 +139,6 @@ export function createHover(props: HoverProps): HoverResult {
     pointerType: string
   ) {
     const { target } = state;
-    state.pointerType = "";
-    state.target = null;
 
     if (
       (pointerType !== "mouse" && pointerType !== "pen") ||
@@ -139,6 +148,8 @@ export function createHover(props: HoverProps): HoverResult {
       return;
     }
 
+    state.pointerType = "";
+    state.target = null;
     state.isHovered = false;
     _result1.removeAllGlobalListeners();
 
@@ -161,8 +172,6 @@ export function createHover(props: HoverProps): HoverResult {
     event: MouseEvent | PointerEvent,
     pointerType: string
   ) => {
-    state.pointerType = pointerType;
-
     if (
       isTruthy(props.isDisabled) ||
       (pointerType !== "mouse" && pointerType !== "pen") ||
@@ -173,6 +182,7 @@ export function createHover(props: HoverProps): HoverResult {
       return;
     }
 
+    state.pointerType = pointerType;
     state.isHovered = true;
     const target = event.currentTarget;
 

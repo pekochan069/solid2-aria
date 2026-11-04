@@ -1,7 +1,8 @@
 import type { FocusableElement } from "@solid2-aria/types-shared";
 
-import { getOwnerWindow, isNode } from "./dom-helpers";
+import { getOwnerWindow } from "./dom-helpers";
 import { isPresent } from "./is-present";
+import { isNode } from "./type-helpers";
 
 export function requireElement(
   // oxlint-disable-next-line anti-slop/no-unknown-parameters -- Native and framework event targets are validated against their own DOM realm here.

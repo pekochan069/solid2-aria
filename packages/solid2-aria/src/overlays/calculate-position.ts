@@ -20,7 +20,10 @@ import { clamp } from "@solid2-aria/stately/utils/number";
 import { isPresent } from "../utils/is-present";
 import { isWebKit } from "../utils/platform";
 import { requireValue } from "../utils/require-value";
-import { nodeContains } from "../utils/shadowdom/dom-functions";
+import {
+  nodeContains,
+  getParentElement,
+} from "../utils/shadowdom/dom-functions";
 import { getTruthyValue, isTruthy } from "../utils/truthy";
 import type {
   Placement,
@@ -919,10 +922,10 @@ function getContainingBlock(node: HTMLElement): Element {
   // We have to walk up the tree manually in this case because fixed positioned elements
   // are still positioned relative to their containing block, which is not always the viewport.
   if (!isPresent(offsetParent)) {
-    offsetParent = node.parentElement;
+    offsetParent = getParentElement(node);
 
     while (offsetParent && !isContainingBlock(offsetParent)) {
-      offsetParent = offsetParent.parentElement;
+      offsetParent = getParentElement(offsetParent);
     }
   }
 

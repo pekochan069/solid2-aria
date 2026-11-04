@@ -67,6 +67,7 @@ export function createTypeSelect(
   const _result0 = options;
 
   let search = "";
+  let startKey: Key | null = null;
   let timeout: ReturnType<typeof setTimeout> | undefined;
 
   const handleCaptureKeyDown = (e: KeyboardEvent) => {
@@ -86,11 +87,8 @@ export function createTypeSelect(
 
       if (typeof _result0.keyboardDelegate.getKeyForSearch === "function") {
         // Use the delegate to find a key to focus.
-        // Prioritize items after the currently focused item, falling back to searching the whole list.
-        let key = _result0.keyboardDelegate.getKeyForSearch(
-          search,
-          _result0.selectionManager.focusedKey
-        );
+        // Prioritize items after the item focused when the search started, falling back to the whole list.
+        let key = _result0.keyboardDelegate.getKeyForSearch(search, startKey);
 
         // If no key found, search from the top.
         key ??= _result0.keyboardDelegate.getKeyForSearch(search);
@@ -107,6 +105,7 @@ export function createTypeSelect(
       clearTimeout(timeout);
       timeout = setTimeout(() => {
         search = "";
+        startKey = null;
       }, TYPEAHEAD_DEBOUNCE_WAIT_MS);
     }
   };
@@ -125,21 +124,25 @@ export function createTypeSelect(
       return;
     }
 
-    search += character;
+    // Repeated characters cycle through items, matching native browser behavior.
+    if (search === "" || search === character) {
+      search = character;
+      startKey = _result0.selectionManager.focusedKey;
+    } else {
+      search += character;
+    }
 
     if (typeof _result0.keyboardDelegate.getKeyForSearch === "function") {
       // Use the delegate to find a key to focus.
-      // Prioritize items after the currently focused item, falling back to searching the whole list.
-      let key = _result0.keyboardDelegate.getKeyForSearch(
-        search,
-        _result0.selectionManager.focusedKey
-      );
+      // Prioritize items after the item focused when the search started, falling back to the whole list.
+      let key = _result0.keyboardDelegate.getKeyForSearch(search, startKey);
 
       key ??= _result0.keyboardDelegate.getKeyForSearch(search);
 
       if (!isPresent(key)) {
         // if still nothing then the type to select is done and everything is reset
         search = "";
+        startKey = null;
         clearTimeout(timeout);
         timeout = undefined;
 
@@ -162,6 +165,7 @@ export function createTypeSelect(
     clearTimeout(timeout);
     timeout = setTimeout(() => {
       search = "";
+      startKey = null;
     }, TYPEAHEAD_DEBOUNCE_WAIT_MS);
   };
 
@@ -170,6 +174,7 @@ export function createTypeSelect(
     (disabled) => {
       if (disabled) {
         search = "";
+        startKey = null;
         clearTimeout(timeout);
         timeout = undefined;
       }

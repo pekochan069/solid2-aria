@@ -11,7 +11,7 @@
  */
 /*
  * Derived from Adobe React Spectrum: packages/react-aria-components/src/Sheet.tsx.
- * Modified for Solid Aria: adapted components, contexts, refs, and reactive properties for Solid 2; measures rendered CSS snap lengths, tracks page offsets, preserves native scrolling, defers focus until entry, and settles handle gestures on release.
+ * Modified for Solid Aria: adapted components, contexts, refs, and reactive properties for Solid 2; measures rendered CSS snap lengths, tracks page offsets, skips offscreen entry travel, preserves native entry scrolling across geometry measurements, defers focus until entry, and settles handle gestures on release.
  * Licensed under Apache-2.0. See LICENSES/Apache-2.0.txt and NOTICE.txt at the repository root.
  */
 
@@ -431,6 +431,19 @@ export function SheetOverlay(props: SheetOverlayProps): JSX.Element {
   };
 
   const fullValues = (modal: ModalRenderProps) => mergeProps(values, modal);
+  let disposeEnter: (() => void) | undefined;
+  onSettled(() => () => {
+    disposeEnter?.();
+  });
+  createEffect(
+    () => state.isOpen,
+    (open) => {
+      if (!open) {
+        disposeEnter?.();
+      }
+    },
+    { ssrSource: "client" }
+  );
 
   return (
     <ModalOverlay
@@ -455,6 +468,95 @@ export function SheetOverlay(props: SheetOverlayProps): JSX.Element {
       isDismissable={props.preventDismissal !== true}
       isKeyboardDismissDisabled={props.preventDismissal}
       UNSTABLE_overrideFocus
+      onEnter={(element): void | Promise<void> => {
+        disposeEnter?.();
+        const scroller = element.closest<HTMLElement>("[data-sheet-scroll]");
+
+        if (!scroller) {
+          return undefined;
+        }
+
+        const { promise, resolve } = Promise.withResolvers<undefined>();
+        const snapType = scroller.style.scrollSnapType;
+        let canceled = false;
+        let skipped = false;
+        let frame: number | undefined;
+
+        const onScrollEnd = () => {
+          if (skipped) {
+            scroller.style.scrollSnapType = snapType;
+          }
+
+          resolve();
+        };
+
+        disposeEnter = () => {
+          canceled = true;
+
+          if (frame !== undefined) {
+            cancelAnimationFrame(frame);
+          }
+
+          scroller.removeEventListener("scrollend", onScrollEnd);
+          onScrollEnd();
+        };
+
+        queueMicrotask(() => {
+          if (
+            canceled ||
+            !element.isConnected ||
+            !untrack(() => state.isOpen)
+          ) {
+            resolve();
+
+            return;
+          }
+
+          const {
+            axis: initialAxis,
+            enteredScroll,
+            maxScroll,
+          } = untrack(() => swipeConfig(swipe()));
+
+          const viewport =
+            initialAxis === "y" ? window.innerHeight : window.innerWidth;
+
+          const rest =
+            initialAxis === "y" ? scroller.scrollTop : scroller.scrollLeft;
+
+          const reduced = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+          ).matches;
+
+          scrollAlongAxis(
+            scroller,
+            initialAxis,
+            enteredScroll === 0 ? (maxScroll / 100) * viewport : 0
+          );
+
+          const content = element.querySelector<HTMLElement>(
+            "[data-sheet-content]"
+          );
+
+          skipped =
+            content !== null &&
+            !reduced &&
+            skipOffscreenTravel(scroller, content, initialAxis, viewport);
+
+          const startEnterScroll = () => {
+            scrollAlongAxis(scroller, initialAxis, rest, !reduced);
+            scroller.addEventListener("scrollend", onScrollEnd, { once: true });
+          };
+
+          if (enteredScroll === 0 || skipped) {
+            frame = requestAnimationFrame(startEnterScroll);
+          } else {
+            startEnterScroll();
+          }
+        });
+
+        return promise;
+      }}
       class={(modal) => {
         const value = props.class;
 
@@ -584,6 +686,48 @@ function viewTimelineSupported() {
     typeof CSS.supports === "function" &&
     CSS.supports("animation-timeline: view()")
   );
+}
+
+function scrollAlongAxis(
+  element: HTMLElement,
+  axis: Axis,
+  value: number,
+  smooth = false
+) {
+  const behavior = smooth ? "smooth" : "instant";
+  element.scrollTo(
+    axis === "y" ? { behavior, top: value } : { behavior, left: value }
+  );
+}
+
+function skipOffscreenTravel(
+  scroller: HTMLElement,
+  content: HTMLElement,
+  axis: Axis,
+  viewport: number
+) {
+  const rect = content.getBoundingClientRect();
+  const start = axis === "y" ? rect.top : rect.left;
+  const end = axis === "y" ? rect.bottom : rect.right;
+  let delta = Math.min(end, 0);
+
+  if (start > viewport) {
+    delta = start - viewport;
+  }
+
+  if (delta === 0) {
+    return false;
+  }
+
+  scroller.style.scrollSnapType = "none";
+
+  if (axis === "y") {
+    scroller.scrollTop += delta;
+  } else {
+    scroller.scrollLeft += delta;
+  }
+
+  return true;
 }
 
 function toLength(point: number | string) {
@@ -767,7 +911,17 @@ export function Sheet(props: SheetProps): JSX.Element {
     points: number[];
     size: number;
     viewport: number;
-  }>({ points: [], size: 0, viewport: 0 }, { ownedWrite: true });
+  }>(
+    { points: [], size: 0, viewport: 0 },
+    {
+      equals: (previous, next) =>
+        previous.size === next.size &&
+        previous.viewport === next.viewport &&
+        previous.points.length === next.points.length &&
+        previous.points.every((point, index) => point === next.points[index]),
+      ownedWrite: true,
+    }
+  );
 
   const [scroll, setScroll] = createSignal(0, { ownedWrite: true });
   const [isDragging, setDragging] = createSignal(false, { ownedWrite: true });
@@ -838,9 +992,9 @@ export function Sheet(props: SheetProps): JSX.Element {
 
     const position = Math.max(lower, Math.min(upper, value));
 
-    if (conf.axis === "y") {
+    if (conf.axis === "y" && scroller.scrollTop !== position) {
       scroller.scrollTop = position;
-    } else {
+    } else if (conf.axis === "x" && scroller.scrollLeft !== position) {
       scroller.scrollLeft = position;
     }
 
@@ -986,6 +1140,7 @@ export function Sheet(props: SheetProps): JSX.Element {
         axis: conf.axis,
         direction: context.values.swipeDirection,
         entered: start,
+        entering: context.values.isEntering,
         initial: scrollForPoint(points()[0] ?? size),
         lower: isClamped && dual ? start - 1 : 0,
         points: context.props.snapPoints?.join(" "),
@@ -1002,6 +1157,13 @@ export function Sheet(props: SheetProps): JSX.Element {
 
       const initialKey = `${next.direction}:${next.points ?? ""}`;
 
+      if (initialized && initialKey === lastInitial && next.entering) {
+        return;
+      }
+
+      const current =
+        next.axis === "y" ? scroller.scrollTop : scroller.scrollLeft;
+
       const target =
         !initialized || initialKey !== lastInitial
           ? next.initial
@@ -1009,9 +1171,9 @@ export function Sheet(props: SheetProps): JSX.Element {
 
       const position = Math.max(next.lower, Math.min(next.upper, target));
 
-      if (next.axis === "y") {
+      if (next.axis === "y" && current !== position) {
         scroller.scrollTop = position;
-      } else {
+      } else if (next.axis === "x" && current !== position) {
         scroller.scrollLeft = position;
       }
 
@@ -1030,7 +1192,7 @@ export function Sheet(props: SheetProps): JSX.Element {
   );
 
   const finish = () => {
-    if (!initialized) {
+    if (!initialized || context.values.isEntering || context.values.isExiting) {
       return;
     }
 

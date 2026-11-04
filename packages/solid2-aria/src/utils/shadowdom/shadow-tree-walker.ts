@@ -6,9 +6,9 @@
 
 import { shadowDOM } from "@solid2-aria/stately/flags/flags";
 
-import { isShadowRoot } from "../dom-helpers";
 import { requireElement } from "../dom-value";
 import { isTruthy } from "../truthy";
+import { isShadowRoot } from "../type-helpers";
 // https://github.com/microsoft/tabster/blob/a89fc5d7e332d48f68d03b1ca6e344489d1c3898/src/Shadowdomize/ShadowTreeWalker.ts
 import { nodeContains } from "./dom-functions";
 

@@ -50,6 +50,7 @@ import {
   getEventTarget,
   isFocusWithin,
   nodeContains,
+  getParentElement,
 } from "../utils/shadowdom/dom-functions";
 import { isTruthy } from "../utils/truthy";
 import { gridMap } from "./utils";
@@ -248,7 +249,7 @@ export function createGridCell<T, C extends GridCollection<T>>(
         // We prevent the capturing event from reaching children of the cell, e.g. pickers.
         // We want arrow keys to navigate to the next cell instead. We need to re-dispatch
         // the event from a higher parent so it still bubbles and gets handled by useSelectableCollection.
-        cell.parentElement?.dispatchEvent(new KeyboardEvent(e.type, e));
+        getParentElement(cell)?.dispatchEvent(new KeyboardEvent(e.type, e));
 
         return;
       }
@@ -304,7 +305,7 @@ export function createGridCell<T, C extends GridCollection<T>>(
         // We prevent the capturing event from reaching children of the cell, e.g. pickers.
         // We want arrow keys to navigate to the next cell instead. We need to re-dispatch
         // the event from a higher parent so it still bubbles and gets handled by useSelectableCollection.
-        cell.parentElement?.dispatchEvent(new KeyboardEvent(e.type, e));
+        getParentElement(cell)?.dispatchEvent(new KeyboardEvent(e.type, e));
 
         return;
       }
@@ -366,7 +367,9 @@ export function createGridCell<T, C extends GridCollection<T>>(
         if (!e.altKey && nodeContains(refElement, getEventTarget(e))) {
           e.stopPropagation();
           e.preventDefault();
-          refElement.parentElement?.dispatchEvent(new KeyboardEvent(e.type, e));
+          getParentElement(refElement)?.dispatchEvent(
+            new KeyboardEvent(e.type, e)
+          );
         }
 
         break;

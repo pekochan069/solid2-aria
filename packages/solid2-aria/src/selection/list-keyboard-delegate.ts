@@ -512,7 +512,10 @@ export class ListKeyboardDelegate<T> implements KeyboardDelegate {
     }
 
     const { collection } = this;
-    let key = getTruthyValue(fromKey) ?? this.getFirstKey();
+
+    let key = isPresent(fromKey)
+      ? this.getNextKey(fromKey)
+      : this.getFirstKey();
 
     while (isPresent(key)) {
       const item = collection.getItem(key);

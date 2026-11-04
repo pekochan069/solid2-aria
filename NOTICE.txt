@@ -30,7 +30,7 @@ and dark CSS between Solid previews and exported configuration. Copyright (c)
 This repository contains code and translations derived from Adobe React Spectrum.
 
 Upstream: https://github.com/adobe/react-spectrum
-Reference revision: 261344335e54265b2d02dc57a43b911a718de707
+Reference revision: 6dec77beccf0545a04318e6a01b8eb9cbe2dccc6
 License: Apache License, Version 2.0 (LICENSES/Apache-2.0.txt).
 Original copyright and attribution notices are retained in the source files.
 The upstream NOTICE.txt is reproduced in LICENSES/react-spectrum-NOTICE.txt.
@@ -43,6 +43,12 @@ packages/solid2-aria-components/src. Changes include Solid
 type declarations, Solid 2
 reactivity, state APIs, module organization, imports, and formatting.
 These notices apply to the derived files identified by their source headers.
+
+The upstream update from 261344335e54265b2d02dc57a43b911a718de707 adds
+packages/@react-types/shared/src/layout.d.ts and
+packages/react-aria/src/utils/typeHelpers.ts. Their Solid counterparts retain
+Copyright 2026 Adobe and their Apache-2.0 notices. The update adapts shadow DOM
+traversal, interaction fixes, scroll anchoring, and component behavior to Solid 2.
 
 The type packages packages/@solid2-aria/types-shared, packages/@solid2-aria/types-shared-web,
 and packages/solid2-aria-types distribute the original Apache-2.0 license and

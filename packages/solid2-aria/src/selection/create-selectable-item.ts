@@ -47,6 +47,7 @@ import { requireValue } from "../utils/require-value";
 import {
   getActiveElement,
   getEventTarget,
+  getParentElement,
 } from "../utils/shadowdom/dom-functions";
 import { getTruthyValue, isTruthy } from "../utils/truthy";
 import { getCollectionId, isNonContiguousSelectionModifier } from "./utils";
@@ -641,7 +642,7 @@ export function createSelectableItem(
         return elCollection !== collectionId();
       }
 
-      el = el.parentElement;
+      el = getParentElement(el);
     }
 
     return isTabbable(target);
