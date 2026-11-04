@@ -38,7 +38,7 @@ await writeFile(
   .overlay { position: fixed; inset: 0; }
   .sheet { flex-shrink: 0; background: white; }
   .bottom { width: 100%; height: 280px; }
-  .left { width: 320px; height: 100%; }
+  .left, .right { width: 320px; height: 100%; }
   .content { padding: 32px; }
 </style>
 <div id="app"></div><script type="module" src="/fixture.tsx"></script></html>`
@@ -52,11 +52,13 @@ import { createSignal } from "solid-js";
 import { SheetOverlay, Sheet, SheetContent } from "@solid2-aria/components/sheet";
 
 function App() {
-  const position = new URLSearchParams(location.search).get("position") === "left" ? "left" : "bottom";
+  const params = new URLSearchParams(location.search);
+  const position = params.get("position") || "bottom";
+  const snapPoints = params.has("detents") ? [100, 280] : undefined;
   const [open, setOpen] = createSignal(true);
   return <>
     <button onClick={() => setOpen(true)}>Open sheet</button>
-    <SheetOverlay isOpen={open()} onOpenChange={setOpen} position={position} class="overlay">
+    <SheetOverlay isOpen={open()} onOpenChange={setOpen} position={position} snapPoints={snapPoints} class="overlay">
       <Sheet class={["sheet", position]}>
         <SheetContent aria-label="Entry regression" class="content">
           <p>Native scrolling brings the sheet into view.</p>
@@ -360,6 +362,100 @@ try {
         console.info(
           `PASS sheet entry lifecycle: ${label} (${openings.join(", ")})`
         );
+      } catch (error) {
+        failures.push(
+          `${label}: ${error instanceof Error ? error.message : String(error)}`
+        );
+      } finally {
+        await page.close();
+      }
+    }
+  }
+
+  for (const position of ["bottom", "right"]) {
+    for (const resizeAt of ["entering", "open"]) {
+      const label = `${position}, custom detent, resize while ${resizeAt}`;
+
+      const page = await browser.newPage({
+        reducedMotion: "no-preference",
+        viewport: { height: 800, width: 1000 },
+      });
+
+      page.on("pageerror", (error) => errors.push(error.message));
+      page.on("console", (message) => {
+        if (message.type() === "error" || message.type() === "warning") {
+          errors.push(message.text());
+        }
+      });
+
+      try {
+        await page.goto(`${baseUrl}?position=${position}&detents`);
+        await page.waitForFunction(
+          (phase) => {
+            const overlay = document.querySelector<HTMLElement>(".overlay");
+            const scroller = document.querySelector("[data-sheet-scroll]");
+            const content = document.querySelector("[data-sheet-content]");
+
+            return (
+              overlay &&
+              scroller &&
+              (phase === "entering"
+                ? Object.hasOwn(overlay.dataset, "entering") &&
+                  (scroller.scrollTop > 0 || scroller.scrollLeft > 0)
+                : !Object.hasOwn(overlay.dataset, "entering") &&
+                  content?.contains(document.activeElement))
+            );
+          },
+          resizeAt,
+          { timeout: 3000 }
+        );
+        await page.setViewportSize({ height: 900, width: 1100 });
+        await page.waitForFunction(
+          () => {
+            const overlay = document.querySelector<HTMLElement>(".overlay");
+            const content = document.querySelector("[data-sheet-content]");
+
+            return (
+              overlay &&
+              !Object.hasOwn(overlay.dataset, "entering") &&
+              content?.contains(document.activeElement)
+            );
+          },
+          undefined,
+          { timeout: 3000 }
+        );
+        await page.waitForTimeout(700);
+
+        const state = await page
+          .locator("[data-sheet-scroll]")
+          .evaluate((scroller) => {
+            const sheet = scroller.querySelector(".sheet");
+
+            if (!sheet || !(scroller instanceof HTMLElement)) {
+              throw new Error("Missing sheet");
+            }
+
+            const rect = sheet.getBoundingClientRect();
+
+            return {
+              left: rect.left,
+              scrollLeft: scroller.scrollLeft,
+              scrollTop: scroller.scrollTop,
+              snap: scroller.style.scrollSnapType,
+              top: rect.top,
+            };
+          });
+
+        assert.deepEqual(
+          position === "bottom"
+            ? { edge: state.top, offset: state.scrollTop, snap: state.snap }
+            : { edge: state.left, offset: state.scrollLeft, snap: state.snap },
+          position === "bottom"
+            ? { edge: 800, offset: 720, snap: "y mandatory" }
+            : { edge: 1000, offset: 880, snap: "x mandatory" },
+          `${label}: viewport resize changed the visible 100px detent`
+        );
+        console.info(`PASS sheet custom detent: ${label}`);
       } catch (error) {
         failures.push(
           `${label}: ${error instanceof Error ? error.message : String(error)}`
