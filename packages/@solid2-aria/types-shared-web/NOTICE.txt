@@ -3,7 +3,7 @@
 
 This package contains type declarations derived from Adobe React Spectrum.
 Upstream: https://github.com/adobe/react-spectrum
-Reference revision: 261344335e54265b2d02dc57a43b911a718de707
+Reference revision: 6dec77beccf0545a04318e6a01b8eb9cbe2dccc6
 Upstream sources: packages/@react-types/shared/src.
 
 Derived files in types/ retain their original copyright years, license
