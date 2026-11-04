@@ -1144,6 +1144,7 @@ export function Sheet(props: SheetProps): JSX.Element {
         initial: scrollForPoint(points()[0] ?? size),
         lower: isClamped && dual ? start - 1 : 0,
         points: context.props.snapPoints?.join(" "),
+        scroll: untrack(scroll),
         size,
         upper,
         viewport,
@@ -1166,7 +1167,7 @@ export function Sheet(props: SheetProps): JSX.Element {
       const target =
         !initialized || initialKey !== lastInitial
           ? next.initial
-          : current + next.entered - previousEntered;
+          : next.scroll + next.entered - previousEntered;
 
       const position = Math.max(next.lower, Math.min(next.upper, target));
 
