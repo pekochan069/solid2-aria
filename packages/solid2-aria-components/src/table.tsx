@@ -20,6 +20,7 @@ import { createCachedChildren } from "@solid2-aria/core/collections/create-cache
 import { createFocusRing } from "@solid2-aria/core/focus/create-focus-ring";
 import { createLocalizedStringFormatter } from "@solid2-aria/core/i18n/create-localized-string-formatter";
 import { createLocale } from "@solid2-aria/core/i18n/i18n-provider";
+import { createFocus } from "@solid2-aria/core/interactions/create-focus";
 import { createHover } from "@solid2-aria/core/interactions/create-hover";
 import { createTable } from "@solid2-aria/core/table/create-table";
 import { createTableCell } from "@solid2-aria/core/table/create-table-cell";
@@ -38,6 +39,7 @@ import { filterDOMProps } from "@solid2-aria/core/utils/filter-dom-props";
 import { isPresent } from "@solid2-aria/core/utils/is-present";
 import { mergeProps } from "@solid2-aria/core/utils/merge-props";
 import { requireValue } from "@solid2-aria/core/utils/require-value";
+import { getParentElement } from "@solid2-aria/core/utils/shadowdom/dom-functions";
 import { isTruthy } from "@solid2-aria/core/utils/truthy";
 import type { GridNode } from "@solid2-aria/stately/grid/grid-collection";
 import type {
@@ -61,6 +63,7 @@ import type {
   LinkDOMProps,
   HoverEvents,
   PressEvents,
+  FocusEvents,
   SelectionMode,
   SelectionBehavior,
   DisabledBehavior,
@@ -710,6 +713,7 @@ export interface RowProps<T>
     LinkDOMProps,
     HoverEvents,
     PressEvents,
+    FocusEvents<HTMLTableRowElement | HTMLDivElement>,
     Omit<GlobalDOMAttributes<HTMLTableRowElement>, "onClick"> {
   class?: ClassOrFunction<RowRenderProps>;
 
@@ -850,14 +854,14 @@ export function ResizableTableContainer(
 
   const [width, setWidth] = createSignal(0);
   onSettled((): undefined | (() => void) => {
-    let measured: HTMLElement | null = tableRef();
+    let measured: Element | null = tableRef();
 
     while (
       measured &&
       measured !== ref() &&
       measured.scrollWidth <= measured.clientWidth
     ) {
-      measured = measured.parentElement;
+      measured = getParentElement(measured);
     }
 
     measured ??= ref();
@@ -1700,6 +1704,7 @@ export function Row<T>(
         ref
       );
 
+      const focusEvents = createFocus(props);
       const focus = createFocusRing();
       const within = createFocusRing({ within: true });
 
@@ -1792,6 +1797,7 @@ export function Row<T>(
             omit(filterDOMProps(props, { global: true }), "id", "onClick"),
             render,
             merge(() => aria.rowProps ?? {}),
+            merge(() => focusEvents.focusProps ?? {}),
             merge(() => focus.focusProps ?? {}),
             merge(() => within.focusProps ?? {}),
             merge(() => hover.hoverProps ?? {}),

@@ -105,6 +105,7 @@ import {
 } from "./grid-list";
 import type { GridListHeaderProps } from "./grid-list";
 import { SelectionIndicatorContext } from "./selection-indicator";
+import { TextContext } from "./text";
 import { TreeDropTargetDelegate } from "./tree-drop-target-delegate";
 import {
   assignRef,
@@ -952,17 +953,28 @@ export const TreeItem = createBranchComponent(
                     },
                   }}
                 >
-                  <TreeItemContentContext value={values}>
-                    <SelectionIndicatorContext
-                      value={{
-                        get isSelected() {
-                          return aria.isSelected;
+                  <TextContext
+                    value={{
+                      slots: {
+                        [DEFAULT_SLOT]: {},
+                        get description() {
+                          return aria.descriptionProps;
                         },
-                      }}
-                    >
-                      <TreeItemChildren state={state} itemKey={item.key} />
-                    </SelectionIndicatorContext>
-                  </TreeItemContentContext>
+                      },
+                    }}
+                  >
+                    <TreeItemContentContext value={values}>
+                      <SelectionIndicatorContext
+                        value={{
+                          get isSelected() {
+                            return aria.isSelected;
+                          },
+                        }}
+                      >
+                        <TreeItemChildren state={state} itemKey={item.key} />
+                      </SelectionIndicatorContext>
+                    </TreeItemContentContext>
+                  </TextContext>
                 </ButtonContext>
               </CheckboxFieldContext>
             </CheckboxContext>
