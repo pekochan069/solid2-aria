@@ -11,7 +11,7 @@
  */
 /*
  * Derived from Adobe React Spectrum: packages/react-aria-components/src/Sheet.tsx.
- * Modified for Solid Aria: adapted components, contexts, refs, and reactive properties for Solid 2; measures rendered CSS snap lengths, tracks page offsets, skips offscreen entry travel, preserves native scrolling, defers focus until entry, and settles handle gestures on release.
+ * Modified for Solid Aria: adapted components, contexts, refs, and reactive properties for Solid 2; measures rendered CSS snap lengths, tracks page offsets, skips offscreen entry travel, preserves native entry scrolling across geometry measurements, defers focus until entry, and settles handle gestures on release.
  * Licensed under Apache-2.0. See LICENSES/Apache-2.0.txt and NOTICE.txt at the repository root.
  */
 
@@ -911,7 +911,17 @@ export function Sheet(props: SheetProps): JSX.Element {
     points: number[];
     size: number;
     viewport: number;
-  }>({ points: [], size: 0, viewport: 0 }, { ownedWrite: true });
+  }>(
+    { points: [], size: 0, viewport: 0 },
+    {
+      equals: (previous, next) =>
+        previous.size === next.size &&
+        previous.viewport === next.viewport &&
+        previous.points.length === next.points.length &&
+        previous.points.every((point, index) => point === next.points[index]),
+      ownedWrite: true,
+    }
+  );
 
   const [scroll, setScroll] = createSignal(0, { ownedWrite: true });
   const [isDragging, setDragging] = createSignal(false, { ownedWrite: true });
@@ -982,9 +992,9 @@ export function Sheet(props: SheetProps): JSX.Element {
 
     const position = Math.max(lower, Math.min(upper, value));
 
-    if (conf.axis === "y") {
+    if (conf.axis === "y" && scroller.scrollTop !== position) {
       scroller.scrollTop = position;
-    } else {
+    } else if (conf.axis === "x" && scroller.scrollLeft !== position) {
       scroller.scrollLeft = position;
     }
 
@@ -1130,10 +1140,10 @@ export function Sheet(props: SheetProps): JSX.Element {
         axis: conf.axis,
         direction: context.values.swipeDirection,
         entered: start,
+        entering: context.values.isEntering,
         initial: scrollForPoint(points()[0] ?? size),
         lower: isClamped && dual ? start - 1 : 0,
         points: context.props.snapPoints?.join(" "),
-        scroll: untrack(scroll),
         size,
         upper,
         viewport,
@@ -1146,16 +1156,23 @@ export function Sheet(props: SheetProps): JSX.Element {
 
       const initialKey = `${next.direction}:${next.points ?? ""}`;
 
+      if (initialized && initialKey === lastInitial && next.entering) {
+        return;
+      }
+
+      const current =
+        next.axis === "y" ? scroller.scrollTop : scroller.scrollLeft;
+
       const target =
         !initialized || initialKey !== lastInitial
           ? next.initial
-          : next.scroll + next.entered - previousEntered;
+          : current + next.entered - previousEntered;
 
       const position = Math.max(next.lower, Math.min(next.upper, target));
 
-      if (next.axis === "y") {
+      if (next.axis === "y" && current !== position) {
         scroller.scrollTop = position;
-      } else {
+      } else if (next.axis === "x" && current !== position) {
         scroller.scrollLeft = position;
       }
 
