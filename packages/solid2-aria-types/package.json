@@ -1,6 +1,6 @@
 {
   "name": "@solid2-aria/types",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": false,
   "description": "Accessible UI component types for Solid",
   "keywords": [
@@ -175,14 +175,14 @@
   },
   "dependencies": {
     "@internationalized/date": "^3.0.0",
-    "@solid2-aria/types-shared": "^0.0.1",
-    "@solid2-aria/types-shared-web": "^0.0.1"
+    "@solid2-aria/types-shared": "^0.1.0",
+    "@solid2-aria/types-shared-web": "^0.1.0"
   },
   "devDependencies": {
     "typescript": "^7.1.0-beta"
   },
   "peerDependencies": {
-    "@solidjs/web": "^2.0.0-rc.17",
-    "solid-js": "^2.0.0-rc.17"
+    "@solidjs/web": "^2.0.0",
+    "solid-js": "^2.0.0"
   }
 }

@@ -490,9 +490,10 @@ LICENSES/inter-OFL.txt and public/licenses/inter-OFL.txt.
 
 The Solid tool menu and Create welcome dialog additionally adapt
 apps/v4/app/(app)/{(create),(typeset)}/components/main-menu.tsx and
-apps/v4/app/(app)/(create)/components/welcome-dialog.tsx, with the logo from
-apps/v4/components/icons.tsx. They retain Copyright (c) 2023 shadcn and MIT
-attribution, replacing React state and dialogs with Solid 2 and Solid2 Aria.
+apps/v4/app/(app)/(create)/components/welcome-dialog.tsx. The site logo and
+favicon use an independently authored S mark. The derived components retain
+Copyright (c) 2023 shadcn and MIT attribution, replacing React state and dialogs
+with Solid 2 and Solid2 Aria.
 
 The dashboard SVG node data in src/components/showcase/dashboard-icons.tsx in
 apps/shadcn-solid2-aria derives from @tabler/icons-react 3.34.1, dist/esm/icons,

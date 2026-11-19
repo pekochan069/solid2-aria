@@ -1,6 +1,6 @@
 {
   "name": "@solid2-aria/stately",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": false,
   "keywords": [
     "solid",
@@ -162,15 +162,15 @@
     "@internationalized/date": "^3.12.4",
     "@internationalized/number": "^3.6.9",
     "@internationalized/string": "^3.2.10",
-    "@solid2-aria/types-shared": "^0.0.1"
+    "@solid2-aria/types-shared": "^0.1.0"
   },
   "devDependencies": {
     "@types/bun": "^1.4.4",
     "tsdown": "^0.23.2",
-    "tsrs": "^0.20.0-ts7.1.0-beta",
+    "tsrs": "^7.1.0-beta.tsrs3",
     "typescript": "^7.1.0-beta"
   },
   "peerDependencies": {
-    "solid-js": "^2.0.0-rc.17"
+    "solid-js": "^2.0.0"
   }
 }

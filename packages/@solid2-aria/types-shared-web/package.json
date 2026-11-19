@@ -1,6 +1,6 @@
 {
   "name": "@solid2-aria/types-shared-web",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": false,
   "description": "Web renderer attributes, refs, and style types for Solid",
   "keywords": [
@@ -38,13 +38,13 @@
     "access": "public"
   },
   "dependencies": {
-    "@solid2-aria/types-shared": "^0.0.1"
+    "@solid2-aria/types-shared": "^0.1.0"
   },
   "devDependencies": {
     "typescript": "^7.1.0-beta"
   },
   "peerDependencies": {
-    "@solidjs/web": "^2.0.0-rc.17",
-    "solid-js": "^2.0.0-rc.17"
+    "@solidjs/web": "^2.0.0",
+    "solid-js": "^2.0.0"
   }
 }

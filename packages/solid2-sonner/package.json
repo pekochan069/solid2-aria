@@ -1,6 +1,6 @@
 {
   "name": "@solid2-aria/sonner",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": false,
   "description": "Toast notifications for Solid 2, based on Sonner",
   "keywords": [
@@ -55,17 +55,17 @@
     "fix": "ultracite fix"
   },
   "devDependencies": {
-    "@solidjs/web": "^2.0.0-rc.17",
+    "@solidjs/web": "^2.0.0",
     "@types/bun": "^1.4.4",
     "happy-dom": "^21.0.4",
-    "rolldown-plugin-solid-compiler": "^0.1.0",
-    "solid-js": "^2.0.0-rc.17",
+    "rolldown-plugin-solid-compiler": "^1.0.0",
+    "solid-js": "^2.0.0",
     "tsdown": "^0.23.2",
-    "tsrs": "^0.20.0-ts7.1.0-beta",
+    "tsrs": "^7.1.0-beta.tsrs3",
     "typescript": "^7.1.0-beta"
   },
   "peerDependencies": {
-    "@solidjs/web": "^2.0.0-rc.17",
-    "solid-js": "^2.0.0-rc.17"
+    "@solidjs/web": "^2.0.0",
+    "solid-js": "^2.0.0"
   }
 }
